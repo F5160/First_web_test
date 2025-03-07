@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      position: relative;
+    }
+    #overlay {
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(200, 200, 255);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 400ms ease-out;
+    }
+    #buttonOne {
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+    #audioControl {
+      z-index: 0;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: opacity 0.5s ease;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    #audioControl.paused {
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+  <div id="overlay">
+    <button id="buttonOne">Click to start</button>
+  </div>
+  <button id="audioControl">暂停</button>
+  <audio id="backgroundAudio" loop>
+    <source src="Flie/audio/arcaea.mp3" type="audio/mpeg">
+    您的浏览器不支持 audio 元素。
+  </audio>
+
+  <script>
+    const audio = document.getElementById('backgroundAudio');
+    const controlButton = document.getElementById('audioControl');
+    const overlay = document.getElementById('overlay');
+    const buttonOne = document.getElementById('buttonOne');
+
+    audio.volume = 0;
+
+    // 移除自动播放
+    // window.addEventListener('load', () => {
+    //   audio.play().catch(error => {
+    //     console.error('自动播放被阻止:', error);
+    //   });
+    // });
+
+    function fadeAudio(toVolume, duration) {
+      let startVolume = audio.volume;
+      let change = toVolume - startVolume;
+      let startTime = Date.now();
+      let fadeInterval = setInterval(() => {
+        let currentTime = Date.now();
+        let timeElapsed = currentTime - startTime;
+        let newVolume = startVolume + (change * (timeElapsed / duration));
+        if (timeElapsed > duration) {
+          newVolume = toVolume;
+          clearInterval(fadeInterval);
+        }
+        audio.volume = newVolume;
+      }, 10);
+    }
+
+    controlButton.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play().then(() => {
+          fadeAudio(1, 1000); // 淡入1秒
+        }).catch(error => {
+          console.error('播放被阻止:', error);
+        });
+        controlButton.textContent = '暂停';
+        controlButton.classList.remove('paused');
+      } else {
+        fadeAudio(0, 1000); // 淡出1秒
+        setTimeout(() => {
+          audio.pause();
+        }, 1000);
+        controlButton.textContent = '继续';
+        controlButton.classList.add('paused');
+      }
+    });
+
+    audio.addEventListener('play', () => {
+      controlButton.classList.remove('paused');
+    });
+
+    audio.addEventListener('pause', () => {
+      controlButton.classList.add('paused');
+    });
+
+    buttonOne.addEventListener('click', () => {
+        // 在点击 buttonOne 时播放音频
+        audio.play().then(() => {
+          audio.volume = 1; // 立即设置音量为1
+        }).catch(error => {
+          console.error('播放被阻止:', error);
+        });
+        setTimeout(() => {
+          overlay.style.transform = 'translateY(-100%)';
+          setTimeout(() => {
+            overlay.remove();
+            buttonOne.remove();
+          }, 1000); // 与CSS的transition时间一致
+        }, 200)
+    });
+
+  </script>
+</body>
+</html>
