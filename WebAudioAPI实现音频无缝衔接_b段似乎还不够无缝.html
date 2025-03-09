@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Audio API无缝衔接</title>
+    <!-- 感谢DeepSeek, 感谢开源, 感谢开发者 25/03/09 02:58:27 来自自己 -->
+    <!-- 差一点就实现了啊淦, 也就本地能跑啊淦, 网页加载太慢了啊淦, WebAudioAPI要求文件完全加载才行啊淦, 流式加载不会啊淦 25/03/09 17:39 来自自己 -->
+</head>
+<body>
+    <button id="playButton">播放音频</button>
+
+    <script>
+        // 音频文件路径  // OGG你不是适合浏览器吗为毛空间还更大啊!(╯‵□′)╯︵┻━┻
+        const audioFileA = 'File/audio/bgm_full.mp3';
+        const audioFileB = 'File/audio/bgm_loop.mp3';
+        // const audioFileA = 'File/audio/bgm_full.ogg';
+        // const audioFileB = 'File/audio/bgm_loop.ogg';
+        // 创建音频上下文
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        // 加载音频文件
+        async function loadAudio(url) {
+            const response = await fetch(url);
+            const arrayBuffer = await response.arrayBuffer();
+            return await audioContext.decodeAudioData(arrayBuffer);
+        }
+        // 创建 GainNode 来调整音量
+        const gainNode = audioContext.createGain();
+        gainNode.gain.value = 0.22; // 设置音量为原来的 22%
+
+        // 播放音频
+        function playAudio(buffer, startTime, offset = 0) {
+            const source = audioContext.createBufferSource();
+            source.buffer = buffer;
+            gainNode.connect(audioContext.destination); // GainNode连接到音频上下文的目标
+            source.connect(gainNode); // 连接到GainNode
+            source.start(startTime, offset);
+            return source;
+        }
+        // 主逻辑
+        async function main() {
+            // 加载音频文件
+            const bufferA = await loadAudio(audioFileA);
+            const bufferB = await loadAudio(audioFileB);
+            // 获取音频时长
+            const durationA = bufferA.duration;
+            const durationB = bufferB.duration;
+            // 播放音频 A
+            const startTime = audioContext.currentTime;
+            const sourceA = playAudio(bufferA, startTime);
+
+            // 监听音频 A 的结束事件
+            sourceA.onended = () => {
+                console.log('音频 A 播放完毕');
+                // 在音频 A 结束后立即播放音频 B
+                const playBTime = audioContext.currentTime;
+                const sourceB = playAudio(bufferB, playBTime);
+                // 音频 B 循环播放
+                let currentBStartTime = playBTime + durationB;
+                function loopB() {
+                    const source = playAudio(bufferB, currentBStartTime);
+                    currentBStartTime += durationB; // 直接使用完整时长
+                    source.onended = loopB; // 递归调用实现循环
+                }
+                sourceB.onended = loopB; // 第一次播放结束后开始循环
+            };
+        }
+
+        // 点击按钮开始播放
+        document.getElementById('playButton').addEventListener('click', main);
+        
+    </script>
+</body>
+</html>

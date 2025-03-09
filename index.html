@@ -1,59 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>使用 &lt;audio&gt; 元素</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      position: relative;
+    }
+    #overlay {
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(200, 200, 255);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease-out;
+    }
+    #audioControl {
+      z-index: 0;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: opacity 0.5s ease;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    #audioControl.paused {
+      opacity: 0.5;
+    }
+    #grayOverlay {
+      z-index: 2;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(225, 225, 225);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease-out;
+    }
+  </style>
 </head>
 <body>
-    <button id="playButton">播放音频</button>
+  <div id="grayOverlay">Tap somewhere</div>
+  <div id="overlay">Click to start</div>
 
-    <script>
-        // 音频文件路径
-        const audioFileA = 'File/audio/bgm_full.ogg'; // 音频 A
-        const audioFileB = 'File/audio/bgm_loop.ogg'; // 音频 B
+  <button id="audioControl">暂停</button>
 
-        // 创建音频元素
-        const audioA = new Audio(audioFileA);
-        const audioB = new Audio(audioFileB);
+  <audio id="backgroundAudio" loop>
+    <source src="File/audio/bgm_full.mp3" type="audio/mpeg">
+    <source src="File/audio/bgm_loop.mp3" type="audio/mpeg">
+    您的浏览器不支持 audio 元素。
+  </audio>
+  <audio id="sound_effect">
+    <source src="File/audio/shutter_close.mp3" type="audio/mpeg">
+    <source src="File/audio/shutter_open.mp3" type="audio/mpeg">
+    您的浏览器不支持 audio 元素。
+  </audio>
 
-        // 定义关键时间点
-        const durationA = 58.15; // 音频 A 的总时长
-        const durationB = 57.37; // 音频 B 的总时长
-        const switchTimeA = 57.89; // 音频 A 切换到音频 B 的时间点
-        const switchTimeB = 56.90; // 音频 B 切换到下一次播放的时间点
+  <script>
+    const bgm_start = document.querySelector('#backgroundAudio');
+    const controlButton = document.querySelector('#audioControl');
+    const overlay = document.querySelector('#overlay');
+    const grayOverlay = document.querySelector('#grayOverlay');
+    bgm_start.volume = 0;  // 初始音量为0
 
-        // 主逻辑
-        function main() {
-            // 播放音频 A
-            audioA.play();
-
-            // 在音频 A 播放至 57.71 秒时开始播放音频 B
-            setTimeout(() => {
-                audioB.play();
-
-                // 监听音频 B 的时间更新事件
-                audioB.addEventListener('timeupdate', () => {
-                    // 如果音频 B 播放至 57.14 秒，重新开始播放
-                    if (audioB.currentTime >= switchTimeB) {
-                        console.log('音频 B 播放至 57.14 秒，重新开始播放');
-                        audioB.currentTime = 0; // 重置音频 B 的播放位置
-                        audioB.play(); // 重新播放音频 B
-                    }
-                });
-            }, (switchTimeA) * 1000); // 57.71 秒后播放音频 B
-
-            // 监听音频 A 的结束事件
-            audioA.addEventListener('ended', () => {
-                console.log('音频 A 播放完毕');
-            }, { once: true });
+    // 音量渐变
+    function fadeAudio(toVolume, duration) {
+      let startVolume = bgm_start.volume;
+      let change = toVolume - startVolume;
+      let startTime = Date.now();
+      let fadeInterval = setInterval(() => {
+        let currentTime = Date.now();
+        let timeElapsed = currentTime - startTime;
+        let newVolume = startVolume + (change * (timeElapsed / duration));
+        if (timeElapsed > duration) {
+          newVolume = toVolume;
+          clearInterval(fadeInterval);
         }
+        bgm_start.volume = newVolume;
+      }, 10);
+    }
 
-        // 点击按钮开始播放
-        document.getElementById('playButton').addEventListener('click', () => {
-            console.log('点击播放按钮');
-            main();
+    // 暂停按钮
+    controlButton.addEventListener('click', () => {
+      if (bgm_start.paused) {
+        bgm_start.play().then(() => {
+          fadeAudio(1, 1000); // 淡入1秒
+        }).catch(error => {
+          console.error('播放被阻止:', error);
         });
-    </script>
+        controlButton.textContent = '暂停';
+        controlButton.classList.remove('paused');
+      } else {
+        fadeAudio(0, 1000); // 淡出1秒
+        setTimeout(() => {
+          bgm_start.pause();
+        }, 1000);
+        controlButton.textContent = '继续';
+        controlButton.classList.add('paused');
+      }
+    });
+    // 监听音频状态更新暂停按钮样式
+    bgm_start.addEventListener('play', () => {
+      controlButton.classList.remove('paused');
+    });
+    bgm_start.addEventListener('pause', () => {
+      controlButton.classList.add('paused');
+    });
+
+    // 随机缓冲
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    const randomInt = getRandomInt(4000, 8000);
+    console.log(randomInt)
+    // 淡紫色块点击事件
+    overlay.addEventListener('click', () => {
+      overlay.textContent = "Please wait.."
+        setTimeout(() => {
+            bgm_start.play().then(() => {
+            bgm_start.volume = 1; // 立即设置音量为1
+          }).catch(error => {
+            console.error('播放被阻止:', error);
+          });
+          setTimeout(() => {
+            overlay.style.transform = 'translateY(-100%)';
+            setTimeout(() => {
+              overlay.remove();
+              overlay.remove();
+            }, 1000); // 与CSS的transition时间一致
+          }, 200)
+        }, randomInt) // 等待随机秒数
+    });
+    // 淡灰色块点击事件
+    grayOverlay.addEventListener('click', () => {
+      bgm_start.currentTime = 0; // 确保音频从头开始播放
+      bgm_start.play().then(() => {
+        setTimeout(() => {
+          bgm_start.pause();
+          grayOverlay.style.transform = 'translateX(-100%)';
+          grayOverlay.addEventListener('transitionend', () => {
+            grayOverlay.remove();
+          });
+        }, 4); // 4ms后暂停
+      }).catch(error => {
+        console.error('播放被阻止:', error);
+      });
+    });
+
+  </script>
 </body>
 </html>
