@@ -126,7 +126,7 @@
       controlButton.classList.add('paused');
     });
 
-    // 随机缓冲
+    // 生成随机缓冲
     function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
@@ -148,7 +148,7 @@
               overlay.remove();
             }, 1000); // 与CSS的transition时间一致
           }, 200)
-        }, randomInt) // 等待随机秒数
+        }, randomInt) // 随机缓冲时间
     });
     // 淡灰色块点击事件
     grayOverlay.addEventListener('click', () => {
