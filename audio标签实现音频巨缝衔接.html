@@ -11,42 +11,42 @@
 
     <script>
         // 音频文件路径
-        const audioFileA = 'File/audio/bgm_full.ogg'; // 音频 A
-        const audioFileB = 'File/audio/bgm_loop.ogg'; // 音频 B
+        const audioFileA = 'File/audio/bgm_full.ogg'; // 音频A
+        const audioFileB = 'File/audio/bgm_loop.ogg'; // 音频B
 
         // 创建音频元素
         const audioA = new Audio(audioFileA);
         const audioB = new Audio(audioFileB);
 
         // 定义关键时间点
-        const durationA = 58.15; // 音频 A 的总时长
-        const durationB = 57.37; // 音频 B 的总时长
-        const switchTimeA = 57.89; // 音频 A 切换到音频 B 的时间点
-        const switchTimeB = 56.90; // 音频 B 切换到下一次播放的时间点
+        const durationA = 58.15; // A的总时长
+        const durationB = 57.37; // B的总时长
+        const switchTimeA = 57.89; // A切换到B的时间点
+        const switchTimeB = 56.90; // B切换到下一次播放的时间点
 
         // 主逻辑
         function main() {
-            // 播放音频 A
+            // 播放A
             audioA.play();
 
-            // 在音频 A 播放至 57.71 秒时开始播放音频 B
+            // 在A播放至57.71秒时开始播放B
             setTimeout(() => {
                 audioB.play();
 
-                // 监听音频 B 的时间更新事件
+                // 监听B的时间更新事件
                 audioB.addEventListener('timeupdate', () => {
-                    // 如果音频 B 播放至 57.14 秒，重新开始播放
+                    // 如果B播放至57.14秒则重新开始播放
                     if (audioB.currentTime >= switchTimeB) {
-                        console.log('音频 B 播放至 57.14 秒，重新开始播放');
-                        audioB.currentTime = 0; // 重置音频 B 的播放位置
-                        audioB.play(); // 重新播放音频 B
+                        console.log('B播放至57.14秒，重新开始播放');
+                        audioB.currentTime = 0; // 重置B的播放位置
+                        audioB.play(); // 重新播放B
                     }
                 });
-            }, (switchTimeA) * 1000); // 57.71 秒后播放音频 B
+            }, (switchTimeA) * 1000); // 57.71秒后播放B
 
-            // 监听音频 A 的结束事件
+            // 监听A的结束事件
             audioA.addEventListener('ended', () => {
-                console.log('音频 A 播放完毕');
+                console.log('A播放完毕');
             }, { once: true });
         }
 
