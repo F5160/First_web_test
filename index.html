@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake bili</title>
+</head>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    height: 100dvh;
+    width: 100%;
+    background-color: #f9f9f9;
+  }
+
+
+  #title {
+    position: fixed;
+    height: 4rem;
+    width: 100%;
+    backdrop-filter: blur(50px) brightness(100%);
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 0px;
+    transition: transform 0.2s ease;
+    transform: translateY(-100%);
+    pointer-events: none; /* 隐藏时不可点击 */
+  }
+  #title.visible {
+    transform: translateY(0);
+    pointer-events: auto; /* 显示时可点击 */
+  }
+
+
+  #background {
+    height: 100rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  #head {
+    min-height: 155px;
+    height: 10.375vw;
+    max-height: 240px;
+    /* height: clamp(155px, 10.375vw, 240px); */
+    /* min-width: 1000px; */
+    background-color: rgb(202, 200, 255);
+    /* background-image: url(File/img/head_img.png@3840w_360h_1c.webp); */
+    background-size: cover; /* 确保图片按比例填充 */
+    background-position: center; /* 确保图片居中显示 */
+    background-repeat: no-repeat; /* 防止图片平铺 */
+    box-shadow: 0px 50px 40px 20px rgba(0, 0, 0, 0.17) inset,
+                0px 45px 30px 0px rgba(0, 0, 0, 0.15) inset,
+                0px 55px 40px 0px rgba(0, 0, 0, 0.1) inset;
+  }
+
+  #head_title {
+    height: 3.5rem;
+    display: flex;
+    justify-content: space-between; /* 均匀分布子元素 */
+    /* justify-content: center; 水平居中 */
+    align-items: center; /* 垂直居中对齐 */
+    padding: 0 20px;
+  }
+  .section {
+    flex: 1; /* 每个子元素占据相等空间 */
+    height: 100%; /* 子元素高度填满父容器 */
+    margin-top: 0.5rem;
+    color: #FFF;
+    text-align: center; /* 文本居中 */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 3.5rem; /* 垂直居中文本_行高等于容器 */
+  }
+
+  #first_section {
+    display: flex;
+    padding-left: 1rem;
+  }
+  #first_section > span {
+    /* flex: 1; */
+    height: 100%;
+    padding: 0 1rem;
+    transition: .3s;
+  }
+  #first_section > span:first-child {
+    padding-left: 0;
+  }
+  #first_section > span > span{
+    cursor: pointer;
+  }
+  /* #first_section > span > span:hover{
+    border-bottom: #FFF solid 2px;
+  } 挺廉价的 25/03/13 22:33 来自自己 */
+  #first_section > span:has(+ span:hover){
+    line-height: 3.75rem;
+  }
+  #first_section > span:hover{
+    line-height: 4rem;
+    /* background-color: rgba(0, 0, 0, .4); 难做 25/03/13 22:34 来自自己 */
+  }
+  #first_section > span:hover + span{
+    line-height: 3.75rem;
+  }
+
+  #third_section {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 1rem;
+  }
+  #third_section > span {
+    height: 100%;
+    padding: 0 1rem;
+    transition: .3s;
+  }
+  #third_section > span:first-child {
+    padding-right: 0;
+  }
+  #third_section > span > span{
+    cursor: pointer;
+  }
+  #third_section > span:has(+ span:hover){
+    line-height: 3.75rem;
+  }
+  #third_section > span:hover{
+    line-height: 4rem;
+  }
+  #third_section > span:hover + span{
+    line-height: 3.75rem;
+  }
+  
+
+  #body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; 水平居中 */
+    /* align-items: center; 垂直居中 */
+  }
+
+
+  #head_in {
+    width: auto;
+    padding: 0 var(--layout-padding);
+  }
+  #body_in {
+    width: auto;
+    flex: 1;
+    padding: 0 var(--layout-padding);
+  }
+
+
+  #head_in_in {
+    height: 7.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+    background-color:rgb(255, 200, 200);
+    display: flex;
+    /* flex-direction: column; */
+  }
+  #body_in_in {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    background-color:rgb(255, 250, 150);
+    display: flex;
+    /* flex-direction: column; */
+  }
+
+  @media (min-width: 1140px) and (max-width: 1399.9px) {
+    :root {
+        --layout-padding: 40px
+    }
+  }
+  @media (min-width: 1400px) and (max-width: 1559.9px) {
+      :root {
+          --layout-padding: 60px
+      }
+  }
+  @media (min-width: 1560px) and (max-width: 2059.9px) {
+      :root {
+          --layout-padding: 140px
+      }
+  }
+  @media (min-width: 2060px) {
+      :root {
+          --layout-padding: 160px
+      }
+  }
+
+</style>
+
+<body>
+  <div id="title"></div>
+  <div id="background">
+    <div id="head">
+      <div id="head_title">
+        <div class="section" id="first_section">
+          <span><span>首页</span></span>
+          <span><span>影集</span></span>
+          <span><span>开发/创作工具</span></span>
+          <span><span>源码下载</span></span>
+        </div>
+        <div class="section" id="second_section">Section 2</div>
+        <div class="section" id="third_section">
+          <span><span>致谢</span></span>
+          <span><span>投递邮件</span></span>
+          <span><span>联系我</span></span>
+          <span><span>个人主页</span></span>
+        </div>
+      </div>
+    </div>
+    <div id="body">
+      <div id="head_in">
+        <div id="head_in_in"></div>
+      </div>
+      <div id="body_in">
+        <div id="body_in_in"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script>
+  // 获取title元素
+  const title = document.getElementById('title');
+
+  // 监听滚动事件
+  window.addEventListener('scroll', function() {
+    // 获取滚动距离
+    const scrollDistance = window.scrollY;
+
+    // 如果滚动距离超过一定距离(px)则显示title
+    if (scrollDistance > 64) {
+      title.classList.add('visible');
+    } else {
+      title.classList.remove('visible');
+    }
+  });
+</script>
+
+</html>
