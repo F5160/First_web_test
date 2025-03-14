@@ -45,12 +45,12 @@
     min-height: 155px;
     height: 10.375vw;
     max-height: 240px;
-    /* height: clamp(155px, 10.375vw, 240px); */
+    /* height: clamp(155px, 10.375vw, 240px); 有点问题 25/03/14 00:30 来自自己 */
     /* min-width: 1000px; */
     background-color: rgb(202, 200, 255);
     /* background-image: url(File/img/head_img.png@3840w_360h_1c.webp); */
-    background-size: cover; /* 确保图片按比例填充 */
-    background-position: center; /* 确保图片居中显示 */
+    background-size: cover; /* 图片按比例填充 */
+    background-position: center; /* 图片居中显示 */
     background-repeat: no-repeat; /* 防止图片平铺 */
     box-shadow: 0px 50px 40px 20px rgba(0, 0, 0, 0.17) inset,
                 0px 45px 30px 0px rgba(0, 0, 0, 0.15) inset,
@@ -62,7 +62,7 @@
     display: flex;
     justify-content: space-between; /* 均匀分布子元素 */
     /* justify-content: center; 水平居中 */
-    align-items: center; /* 垂直居中对齐 */
+    align-items: center; /* 垂直居中 */
     padding: 0 20px;
   }
   .section {
@@ -91,12 +91,6 @@
   #first_section > span:first-child {
     padding-left: 0;
   }
-  #first_section > span > span{
-    cursor: pointer;
-  }
-  /* #first_section > span > span:hover{
-    border-bottom: #FFF solid 2px;
-  } 挺廉价的 25/03/13 22:33 来自自己 */
   #first_section > span:has(+ span:hover){
     line-height: var(--line-height-down-beside);
   }
@@ -107,6 +101,12 @@
   #first_section > span:hover + span{
     line-height: var(--line-height-down-beside);
   }
+  #first_section > span > span{
+    cursor: pointer;
+  }
+  /* #first_section > span > span:hover{
+    border-bottom: #FFF solid 2px;
+  } 挺廉价的 25/03/13 22:33 来自自己 */
 
   #third_section {
     display: flex;
@@ -121,9 +121,6 @@
   #third_section > span:first-child {
     padding-right: 0;
   }
-  #third_section > span > span{
-    cursor: pointer;
-  }
   #third_section > span:has(+ span:hover){
     line-height: var(--line-height-down-beside);
   }
@@ -132,6 +129,9 @@
   }
   #third_section > span:hover + span{
     line-height: var(--line-height-down-beside);
+  }
+  #third_section > span > span{
+    cursor: pointer;
   }
   
 
@@ -149,13 +149,6 @@
     width: auto;
     padding: 0 var(--layout-padding);
   }
-  #body_in {
-    width: auto;
-    flex: 1;
-    padding: 0 var(--layout-padding);
-  }
-
-
   #head_in_in {
     height: 7.5rem;
     width: 100%;
@@ -165,6 +158,12 @@
     display: flex;
     /* flex-direction: column; */
   }
+
+  #body_in {
+    width: auto;
+    flex: 1;
+    padding: 0 var(--layout-padding);
+  }
   #body_in_in {
     height: 100%;
     width: 100%;
@@ -173,6 +172,7 @@
     display: flex;
     /* flex-direction: column; */
   }
+
 
   @media (min-width: 1140px) and (max-width: 1399.9px) {
     :root {
@@ -237,7 +237,7 @@
     // 获取滚动距离
     const scrollDistance = window.scrollY;
 
-    // 如果滚动距离超过一定距离(px)则显示title
+    // 如果滚动距离超过一定距离(64px)则显示title
     if (scrollDistance > 64) {
       title.classList.add('visible');
     } else {
