@@ -72,7 +72,10 @@
     color: #FFF;
     text-align: center; /* 文本居中 */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 3.5rem; /* 垂直居中文本_行高等于容器 */
+    line-height: var(--line-height-normal); /* 垂直居中文本_行高等于容器 */
+    --line-height-normal: 3.5rem;
+    --line-height-down-middle: calc(var(--line-height-normal) + 0.5rem);
+    --line-height-down-beside: calc(var(--line-height-normal) + 0.25rem);
   }
 
   #first_section {
@@ -95,14 +98,14 @@
     border-bottom: #FFF solid 2px;
   } 挺廉价的 25/03/13 22:33 来自自己 */
   #first_section > span:has(+ span:hover){
-    line-height: 3.75rem;
+    line-height: var(--line-height-down-beside);
   }
   #first_section > span:hover{
-    line-height: 4rem;
+    line-height: var(--line-height-down-middle);
     /* background-color: rgba(0, 0, 0, .4); 难做 25/03/13 22:34 来自自己 */
   }
   #first_section > span:hover + span{
-    line-height: 3.75rem;
+    line-height: var(--line-height-down-beside);
   }
 
   #third_section {
@@ -122,13 +125,13 @@
     cursor: pointer;
   }
   #third_section > span:has(+ span:hover){
-    line-height: 3.75rem;
+    line-height: var(--line-height-down-beside);
   }
   #third_section > span:hover{
-    line-height: 4rem;
+    line-height: var(--line-height-down-middle);
   }
   #third_section > span:hover + span{
-    line-height: 3.75rem;
+    line-height: var(--line-height-down-beside);
   }
   
 
