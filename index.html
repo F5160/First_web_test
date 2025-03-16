@@ -98,6 +98,8 @@
     height: 100%; /* 子元素高度填满父容器 */
     color: #FFF;
     text-align: center; /* 文本居中 */
+    font-size: 14px;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: var(--line-height-normal); /* 垂直居中文本_行高等于容器 */
     --line-height-normal: 4rem;
@@ -116,21 +118,42 @@
   #first_section > span, #first_section_title > span {
     /* flex: 1; */
     height: 100%;
-    padding: 0 1rem;
+    padding: 0 var(--padding-right-normal);
+    --padding-left-normal: 0rem;
+    --padding-right-normal: 1rem;
+    --padding-left-hovor: calc(var(--padding-left-normal) + 0.2rem);
+    --padding-right-hovor: calc(var(--padding-right-normal) + 0.2rem);
+    --padding-left-beside: calc(var(--padding-left-normal) + 0.1rem);
+    --padding-right-beside: calc(var(--padding-right-normal) + 0.1rem);
     transition: var(--transition-normal);
   }
   #first_section > span:first-child, #first_section_title > span:first-child {
     padding-left: 0;
+    padding-left: var(--padding-left-normal);
+  }
+  #first_section > span:first-child:has(+ span:hover), #first_section_title > span:first-child:has(+ span:hover) {
+    padding-left: var(--padding-left-beside);
+  }
+  #first_section > span:first-child:hover, #first_section_title > span:first-child:hover {
+    padding-left: var(--padding-left-hovor);
+  }
+  #first_section > span:first-child:hover + span, #first_section_title > span:first-child:hover + span {
+    padding-left: var(--padding-right-beside);
   }
   #first_section > span:has(+ span:hover), #first_section_title > span:has(+ span:hover){
     line-height: var(--line-height-down-beside);
+    padding-right: var(--padding-right-beside);
   }
   #first_section > span:hover, #first_section_title > span:hover{
     line-height: var(--line-height-down-middle);
+    padding-right: var(--padding-right-hovor);
+    text-shadow: 0px 0px 5px #ffffff;
+    font-size: 18px;
     /* background-color: rgba(0, 0, 0, .4); 难做 25/03/13 22:34 来自自己 */
   }
   #first_section > span:hover + span, #first_section_title > span:hover + span{
     line-height: var(--line-height-down-beside);
+    padding-right: var(--padding-right-beside);
   }
   #first_section > span > span, #first_section_title > span > span{
     cursor: pointer;
@@ -185,6 +208,7 @@
   }
   #second_section > #search > #search_btn, #second_section_title > #search > #search_btn {
     width: 7%;
+    min-width: 30px;
     height: 80%;
     box-sizing: border-box;
     padding: 0.2rem;
@@ -228,6 +252,8 @@
   }
   #third_section > span:hover, #third_section_title > span:hover {
     line-height: var(--line-height-down-middle);
+    text-shadow: 0px 0px 5px #ffffff;
+    font-size: 18px;
   }
   #third_section > span:hover + span, #third_section_title > span:hover + span {
     line-height: var(--line-height-down-beside);
@@ -278,6 +304,7 @@
 
   /* @media (min-width: 1040px) {
   } */
+  /* *宽度小于1040则变为移动端样式 */
   @media (min-width: 1140px) and (max-width: 1399.9px) {
     :root {
       --layout-padding: 40px
