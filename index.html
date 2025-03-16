@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fake bili</title>
+  <title>噼里啪啦 ( ゜∀゜)つロ 干杯~-PiliPala</title>
 </head>
 <style>
   :root {
@@ -29,8 +29,8 @@
     width: 100%;
     box-sizing: border-box;
     padding: 0 36px;
+    background-color: rgba(0, 0, 0, 0.02);
     backdrop-filter: blur(50px) brightness(100%);
-    background-color: rgba(0, 0, 0, 0.1);
     border-radius: 0px;
     display: flex;
     justify-content: space-between; /* 均匀分布子元素 */
@@ -65,11 +65,21 @@
     background-repeat: no-repeat; /* 防止图片平铺 */
     box-shadow: 0px 50px 40px 20px rgba(0, 0, 0, 0.17) inset,
                 0px 45px 30px 0px rgba(0, 0, 0, 0.15) inset,
-                0px 55px 40px 0px rgba(0, 0, 0, 0.1) inset;
+                0px 85px 40px 0px rgba(0, 0, 0, 0.1) inset;
+  }
+
+  #head > img {
+    height: 40px;
+    position: relative;
+    --logo-top: 1.2rem;
+    --logo-left: 6rem;
+    top: var(--logo-top);
+    left: var(--logo-left);
   }
 
   #head_title {
     height: 4rem;
+    margin-top: 0.06rem;
     display: flex;
     justify-content: space-between; /* 均匀分布子元素 */
     /* justify-content: center; 水平居中 */
@@ -95,43 +105,50 @@
     --line-height-down-beside: calc(var(--line-height-normal) + 0.25rem);
   }
 
-  #first_section {
+  #first_section, #first_section_title {
     display: flex;
     padding-left: 1rem;
+    white-space: nowrap;
   }
-  #first_section > span {
+  #first_section_title {
+    color: black;
+  }
+  #first_section > span, #first_section_title > span {
     /* flex: 1; */
     height: 100%;
     padding: 0 1rem;
     transition: var(--transition-normal);
   }
-  #first_section > span:first-child {
+  #first_section > span:first-child, #first_section_title > span:first-child {
     padding-left: 0;
   }
-  #first_section > span:has(+ span:hover){
+  #first_section > span:has(+ span:hover), #first_section_title > span:has(+ span:hover){
     line-height: var(--line-height-down-beside);
   }
-  #first_section > span:hover{
+  #first_section > span:hover, #first_section_title > span:hover{
     line-height: var(--line-height-down-middle);
     /* background-color: rgba(0, 0, 0, .4); 难做 25/03/13 22:34 来自自己 */
   }
-  #first_section > span:hover + span{
+  #first_section > span:hover + span, #first_section_title > span:hover + span{
     line-height: var(--line-height-down-beside);
   }
-  #first_section > span > span{
+  #first_section > span > span, #first_section_title > span > span{
     cursor: pointer;
   }
   /* #first_section > span > span:hover{
     border-bottom: #FFF solid 2px;
   } 挺廉价的 25/03/13 22:33 来自自己 */
 
-  #second_section {
+  #second_section, #second_section_title {
+    min-width: 300px;
+    width: 100%;
+    max-width: 480px;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center; /* 垂直居中 */
   }
-  #second_section > #search {
+  #second_section > #search, #second_section_title > #search {
     width: 96%;
     height: 60%;
     box-sizing: border-box;
@@ -143,11 +160,11 @@
     display: flex;
     align-items: center; /* 垂直居中 */
   }
-  #second_section > #search:hover {
+  #second_section > #search:hover, #second_section_title > #search:hover {
     background-color: rgba(255, 255, 255, 0.64);
   }
   
-  #second_section > #search > #input {
+  #second_section > #search > #input, #second_section_title > #search > #input_title {
     display: block;
     width: 90%;
     height: 80%;
@@ -162,14 +179,15 @@
     outline: none;
     transition: border-color 0.2s ease;
   }
-  #second_section > #search > #input:focus {
+  #second_section > #search > #input:focus, #second_section_title > #search > #input:focus {
     background-color: rgba(0, 0, 0, 0.15);
     border-color: #007bff;
   }
-  #second_section > #search > #search_btn {
-    width: 10%;
+  #second_section > #search > #search_btn, #second_section_title > #search > #search_btn {
+    width: 7%;
     height: 80%;
     box-sizing: border-box;
+    padding: 0.2rem;
     margin-right: 0.3rem;
     background-color: rgba(0, 0, 0, 0.1);
     background-image: url(File/img/search.png);
@@ -179,38 +197,42 @@
     display: flex;
     justify-content: center; /* 水平居中 */
     align-items: center; /* 垂直居中 */
-    background-size: cover; /* 图片按比例填充 */
+    background-size: 46%;
     background-position: center; /* 图片居中显示 */
     background-repeat: no-repeat; /* 防止图片平铺 */
   }
-  #second_section > #search > #search_btn:active {
+  #second_section > #search > #search_btn:active, #second_section_title > #search > #search_btn:active {
     background-color: rgba(0, 0, 0, 0.2);
     transition: none;
   }
 
-  #third_section {
+  #third_section, #third_section_title {
     display: flex;
     flex-direction: row-reverse;
     padding-right: 1rem;
+    white-space: nowrap;
   }
-  #third_section > span {
+  #third_section_title {
+    color: black;
+  }
+  #third_section > span, #third_section_title > span {
     height: 100%;
     padding: 0 1rem;
     transition: var(--transition-normal);
   }
-  #third_section > span:first-child {
+  #third_section > span:first-child, #third_section_title > span:first-child {
     padding-right: 0;
   }
-  #third_section > span:has(+ span:hover){
+  #third_section > span:has(+ span:hover), #third_section_title > span:has(+ span:hover) {
     line-height: var(--line-height-down-beside);
   }
-  #third_section > span:hover{
+  #third_section > span:hover, #third_section_title > span:hover {
     line-height: var(--line-height-down-middle);
   }
-  #third_section > span:hover + span{
+  #third_section > span:hover + span, #third_section_title > span:hover + span {
     line-height: var(--line-height-down-beside);
   }
-  #third_section > span > span{
+  #third_section > span > span, #third_section_title > span > span {
     cursor: pointer;
   }
   
@@ -254,44 +276,58 @@
   }
 
 
+  /* @media (min-width: 1040px) {
+  } */
   @media (min-width: 1140px) and (max-width: 1399.9px) {
     :root {
-        --layout-padding: 40px
+      --layout-padding: 40px
     }
   }
   @media (min-width: 1400px) and (max-width: 1559.9px) {
-      :root {
-          --layout-padding: 60px
-      }
+    :root {
+      --layout-padding: 60px
+    }
+    #head > img {
+      --logo-top: 1.1rem;
+      --logo-left: 6rem;
+    }
   }
   @media (min-width: 1560px) and (max-width: 2059.9px) {
-      :root {
-          --layout-padding: 140px
-      }
+    :root {
+      --layout-padding: 140px
+    }
+    #head > img {
+      --logo-top: 1.6rem;
+      --logo-left: 8rem;
+    }
   }
   @media (min-width: 2060px) {
-      :root {
-          --layout-padding: 160px
-      }
+    :root {
+      --layout-padding: 160px
+    }
+    #head > img {
+      --logo-top: 2rem;
+      --logo-left: 10rem;
+    }
   }
 
 </style>
 
 <body>
   <div id="title">
-    <div class="section" id="first_section">
+    <div class="section" id="first_section_title">
       <span><span>首页</span></span>
       <span><span>影集</span></span>
       <span><span>开发/创作工具</span></span>
       <span><span>源码下载</span></span>
     </div>
-    <div class="section" id="second_section">
+    <div class="section" id="second_section_title">
       <div id="search">
-        <input type="text" id="input" placeholder="查找内容.." autocomplete="off">
+        <input type="text" id="input_title" placeholder="查找内容.." autocomplete="off">
         <div id="search_btn"></div>
       </div>
     </div>
-    <div class="section" id="third_section">
+    <div class="section" id="third_section_title">
       <span><span>致谢</span></span>
       <span><span>投递邮件</span></span>
       <span><span>联系我</span></span>
@@ -322,6 +358,7 @@
           <span><span>个人主页</span></span>
         </div>
       </div>
+      <img src="File/img/pilipala.png" alt="">
     </div>
     
     <div id="body">
@@ -338,8 +375,8 @@
 
 <script>
   // 获取title元素
-  const title = document.getElementById('title');
-  const head_title = document.getElementById('head_title');
+  const title = document.querySelector('#title');
+  const head_title = document.querySelector('#head_title');
 
   // 监听滚动
   window.addEventListener('scroll', function() {
