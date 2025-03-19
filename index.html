@@ -352,12 +352,38 @@
   }
 
   #head_second_section {
+    height: 100%;
     min-width: 670px;
     width: 100%;
     box-sizing: border-box;
-    padding: 0 1rem;
+    padding: 1rem 0;
     background-color: powderblue;
+  }
+  #head_second_section_in {
     display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    border-left: solid 1px #f1f2f3;
+    border-right: solid 1px #f1f2f3;
+    justify-content: space-between;
+    gap: var(--head_second_section_in_gap);
+    --head_second_section_in_gap: 14px;
+  }
+  #head_second_section_in > span {
+    height: calc(51px - var(--head_second_section_in_gap));
+    width: calc(14.28% - var(--head_second_section_in_gap)); /* 每个色块占据1/6宽度减去间距 */
+    box-sizing: border-box;
+    color: #61666d;
+    border: solid 1px #f1f2f3;
+    border-radius: 6px;
+    background-color: #f6f7f8;
+    transition: background-color 0.3s;
+    cursor: pointer;
+  }
+  #head_second_section_in > span:hover {
+    color: #424242;
+    background-color: rgb(231, 232, 233);
   }
 
   #head_third_section {
@@ -366,6 +392,17 @@
     max-width: 240px;
     background-color: lightskyblue;
     display: flex;
+  }
+  #head_third_section_in {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    border-left: solid 1px #f1f2f3;
+    border-right: solid 1px #f1f2f3;
+    justify-content: space-between;
+    gap: var(--head_second_section_in_gap);
+    --head_second_section_in_gap: 14px;
   }
   
 
@@ -483,8 +520,32 @@
               <span id="head_first_section_right_text">热门</span>
             </span>
           </div>
-          <div class="head_section" id="head_second_section"></div>
-          <div class="head_section" id="head_third_section"></div>
+          <div class="head_section" id="head_second_section">
+            <div id="head_second_section_in">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div class="head_section" id="head_third_section">
+            <div id="head_third_section_in">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
         </div>
       </div>
       <div id="body_in">
