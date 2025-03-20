@@ -280,14 +280,15 @@
   }
 
 
-  #head_in {
+  #in_head {
     width: auto;
     padding: 0 var(--layout-padding);
   }
-  #head_in_in {
+  #in_head_in {
     height: 7.5rem;
     width: 100%;
     box-sizing: border-box;
+    /* padding: 1rem 0; */
     color: #FFF;
     font-size: 14px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -308,13 +309,15 @@
     width: var(--in_in_section_width);
     max-width: 160px;
     box-sizing: border-box;
+    padding-left: 0.8rem;
     padding-right: 1.2rem;
-    gap: 20%;
+    gap: 10%;
     /* letter-spacing: 0.1rem; */
     /* 居中问题 25/03/18 19:59 来自自己 */
     color: black;
     /* background-color: aquamarine; */
     display: flex;
+    align-items: center; /* 垂直居中 */
   }
   #head_first_section > .head_first_section_in {
     display: flex;
@@ -322,36 +325,39 @@
     flex: 1;
     flex-direction: column;
     gap: 0.4rem;
-  }
-  #head_first_section > #head_first_section_left {
     margin: 1rem 0;
-    /* background-color: #56a8ff; */
-  }
-  #head_first_section_left_icon {
-    width: 100%;
-    aspect-ratio: 1/1;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 100%;
-  }
-  #head_first_section_left_text {
-    flex: 1;
   }
 
-  #head_first_section > #head_first_section_right {
-    margin: 1rem 0;
-    /* background-color: #a176ff; */
+  /* #head_first_section > #head_first_section_left {
+    background-color: #56a8ff;
   }
-  #head_first_section_right_icon {
+  #head_first_section > #head_first_section_right {
+    background-color: #a176ff;
+  } */
+  #head_first_section_left_in, #head_first_section_right_in {
     width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  #head_first_section_left_icon, #head_first_section_right_icon {
+    width: 90%;
     aspect-ratio: 1/1;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 100%;
   }
-  #head_first_section_right_text {
-    flex: 1;
+  #head_first_section_left_icon {
+    background: rgb(255, 146, 18);
   }
+  #head_first_section_right_icon {
+    background: #f07775;
+  }
+  /* #head_first_section_left_text, #head_first_section_right_text {
+    flex: 1;
+  } */
 
   #head_second_section {
     height: 100%;
@@ -373,7 +379,7 @@
     --head_second_section_in_gap: 14px;
   }
   #head_second_section_in > span {
-    height: calc(44.6px - var(--head_second_section_in_gap));
+    height: calc(50% - var(--head_second_section_in_gap));
     width: calc(14.28% - var(--head_second_section_in_gap)); /* 每个色块占据1/6宽度减去间距 */
     box-sizing: border-box;
     line-height: 29px;
@@ -403,14 +409,15 @@
     flex-wrap: wrap;
     box-sizing: border-box;
     justify-content: space-between;
-    gap: var(--head_third_section_in_gap);
+    /* gap: var(--head_third_section_in_gap); */
     --head_third_section_in_gap: 14px;
   }
   #head_third_section_in > span {
-    height: calc(51px - var(--head_third_section_in_gap));
+    height: var(--third_section_height);
+    --third_section_height: 44px;
     width: calc(100px - var(--head_third_section_in_gap));
     box-sizing: border-box;
-    line-height: 37px;
+    line-height: var(--third_section_height);
     color: black;
     cursor: pointer;
     transition: var(--transition-quick);
@@ -431,7 +438,19 @@
     box-sizing: border-box;
     background-color:rgb(255, 250, 150);
     display: flex;
+    flex-direction: column;
     /* flex-direction: column; */
+  }
+
+  #body_in_in_top {
+    height: 400px;
+    width: 100%;
+    background-color: rgb(215, 250, 215);
+  }
+  
+  #body_in_in_bottom {
+    flex: 1;
+    background-color: rgb(255, 165, 165);
   }
 
 
@@ -522,16 +541,36 @@
     </div>
     
     <div id="body">
-      <div id="head_in">
-        <div id="head_in_in">
+      <div id="in_head">
+        <div id="in_head_in">
           <div class="head_section" id="head_first_section">
             <span class="head_first_section_in" id="head_first_section_left">
-              <span id="head_first_section_left_icon"></span>
-              <span id="head_first_section_left_text">动态</span>
+              <span id="head_first_section_left_in">
+                <span id="head_first_section_left_icon">
+                  <svg id="head_first_section_left_icon_in" width="100%" height="100%" viewBox="-8.8 0 40 23" fill="none" data-v-52e2e17a xmlns="http://www.w3.org/2000/svg" >
+                    <path d="M6.41659 15.625C3.88528 15.625 1.83325 13.7782 1.83325 11.5H10.9999C10.9999 13.7782 8.94789 15.625 6.41659 15.625Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M15.125 16.0827C15.125 18.614 13.2782 20.666 11 20.666L11 11.4993C13.2782 11.4993 15.125 13.5514 15.125 16.0827Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M6.875 6.91667C6.875 9.44797 8.72183 11.5 11 11.5L11 2.33333C8.72182 2.33333 6.875 4.38536 6.875 6.91667Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M15.5833 7.375C13.052 7.375 11 9.22183 11 11.5H20.1667C20.1667 9.22183 18.1146 7.375 15.5833 7.375Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </span>
+                <span id="head_first_section_left_text">动态</span>
+              </span>
             </span>
             <span class="head_first_section_in" id="head_first_section_right">
-              <span id="head_first_section_right_icon"></span>
-              <span id="head_first_section_right_text">热门</span>
+              <span id="head_first_section_right_in">
+                <span id="head_first_section_right_icon">
+                  <svg id="head_first_section_right_icon_in" width="100%" height="100%" viewBox="-8 0.6 38 20" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M 4.89054 17.272 L 4.89277 17.2742 C 6.49674 18.8782 8.66472 19.7888 10.9624 19.7888 C 13.2503 19.7888 15.2113 19.0539 16.6107 17.6108 L 16.6108 17.6108 L 16.6128 17.6086 C 18.0002 16.1345 18.7835 14.182 18.7421 12.1819 C 18.7852 11.3835 18.6916 9.36321 17.4088 6.75488 L 17.4082 6.7537 C 17.209 6.35523 16.8163 6.06598 16.3391 5.96993 C 15.8904 5.87103 15.4021 6.01997 15.061 6.35741 C 14.9094 6.48781 14.7796 6.61755 14.6655 6.7317 L 14.6637 6.73348 L 14.6329 6.76426 C 14.2107 3.35588 12.6083 1.7368 11.1654 1.00465 C 11.148 0.987812 11.1265 0.967972 11.1036 0.950782 C 11.0775 0.931205 11.0311 0.900467 10.9694 0.888912 C 10.2276 0.608301 9.41043 1.01168 9.1237 1.77629 L 9.12314 1.7778 C 8.50566 3.46558 7.35287 4.62281 6.16627 5.76704 C 4.51756 7.33121 2.75938 9.03623 2.80163 12.093 C 2.75906 14.055 3.54464 15.8826 4.89054 17.272 Z M 3.04999 13.0648 C 3.01092 12.7459 2.99439 12.4218 3.00168 12.0939 C 2.95933 9.12977 4.6531 7.47834 6.30453 5.9116 C 7.49017 4.76831 8.67581 3.58267 9.31098 1.84655 C 9.56504 1.16904 10.2849 0.830288 10.9201 1.08435 C 10.9624 1.08435 11.0048 1.1267 11.0471 1.16904 C 11.9267 1.60884 12.8853 2.39635 13.5753 3.77299 C 12.8853 2.39633 11.9267 1.6088 11.0471 1.16901 C 11.0047 1.12666 10.9624 1.08432 10.9201 1.08432 C 10.2849 0.830251 9.56503 1.16901 9.31097 1.84651 C 8.6758 3.58263 7.49016 4.76827 6.30452 5.91157 C 4.65309 7.47831 2.95932 9.12973 3.00166 12.0938 C 2.99438 12.4218 3.01092 12.7459 3.04999 13.0648 Z M 14.477 7.18189 C 14.477 7.1819 14.477 7.18192 14.477 7.18193 C 14.5828 7.09724 14.6887 6.99138 14.8052 6.87493 C 14.9216 6.75849 15.0486 6.63146 15.1968 6.50442 C 15.4932 6.20801 15.9167 6.08098 16.2978 6.16567 C 16.7212 6.25036 17.06 6.50443 17.2294 6.84318 C 17.3088 7.0046 17.3835 7.16371 17.4539 7.32035 C 17.3835 7.1637 17.3087 7.00458 17.2294 6.84314 C 17.06 6.50439 16.7212 6.25032 16.2978 6.16563 C 15.9167 6.08094 15.4932 6.20798 15.1968 6.50439 C 15.0486 6.63142 14.9216 6.75845 14.8051 6.87489 L 14.8051 6.8749 C 14.7557 6.92437 14.7081 6.97191 14.6617 7.01675 C 14.5988 7.07745 14.5379 7.13318 14.477 7.18189 Z M 12.6977 6.35925 C 12.8428 7.15476 12.8833 7.97963 12.8679 8.74864 C 12.8679 8.79032 12.8704 8.8315 12.8754 8.87195 C 12.8704 8.83151 12.8679 8.79035 12.8679 8.74867 C 12.8833 7.97966 12.8428 7.15478 12.6977 6.35925 Z M 16.7358 10.6654 C 16.8108 11.1478 16.8483 11.6393 16.8483 12.1362 V 12.1786 C 16.8483 13.703 16.2978 15.2274 15.2392 16.3283 C 14.0535 17.4293 12.5291 18.0221 10.9201 17.9374 C 9.1416 17.9374 7.44783 17.2175 6.21984 15.9472 C 5.82743 15.5548 5.50448 15.1119 5.25584 14.6331 C 5.50447 15.1119 5.82743 15.5548 6.21983 15.9472 C 7.44782 17.2175 9.14159 17.9373 10.9201 17.9373 C 12.5291 18.022 14.0535 17.4292 15.2392 16.3283 C 16.2978 15.2273 16.8483 13.7029 16.8483 12.1785 V 12.1362 C 16.8483 11.6393 16.8108 11.1478 16.7358 10.6654 Z M 10.9306 17.7376 C 12.4802 17.8192 13.9509 17.2497 15.0989 16.1856 C 16.1154 15.1261 16.6483 13.655 16.6483 12.1785 V 12.1362 C 16.6483 10.8624 16.3969 9.6266 15.8955 8.49474 C 15.2436 9.11663 14.7845 9.49093 14.4179 9.68717 C 14.2122 9.79725 14.0268 9.85633 13.846 9.86789 C 13.6644 9.8795 13.5028 9.84219 13.3473 9.78249 C 12.9207 9.62211 12.6679 9.20129 12.6679 8.74864 V 8.74464 L 12.6679 8.74464 C 12.6889 7.69735 12.6046 6.55594 12.2954 5.53554 C 12.01 4.59379 11.5372 3.76766 10.7904 3.20655 C 9.96581 4.94926 8.72521 6.18561 7.58695 7.28323 L 7.50836 7.35967 C 5.97191 8.85397 4.81321 9.98087 4.85306 12.1325 L 4.85313 12.1362 H 4.85309 C 4.85309 13.5239 5.38326 14.8277 6.36125 15.8057 L 6.36365 15.8081 L 6.36363 15.8082 C 7.55387 17.0394 9.19573 17.7374 10.9201 17.7374 H 10.9306 L 10.9306 17.7376 Z"
+                      fill="rgb(255, 255, 255)"
+                    />
+                  </svg>
+                </span>
+                <span id="head_first_section_right_text">热门</span>
+              </span>
             </span>
           </div>
           <div class="head_section" id="head_second_section">
@@ -563,7 +602,10 @@
         </div>
       </div>
       <div id="body_in">
-        <div id="body_in_in"></div>
+        <div id="body_in_in">
+          <div id="body_in_in_top"></div>
+          <div id="body_in_in_bottom"></div>
+        </div>
       </div>
     </div>
   </div>
