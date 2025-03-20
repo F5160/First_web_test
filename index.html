@@ -312,8 +312,8 @@
     padding-left: 0.8rem;
     padding-right: 1.2rem;
     gap: 10%;
-    /* letter-spacing: 0.1rem; */
-    /* 居中问题 25/03/18 19:59 来自自己 */
+    letter-spacing: 0.1rem;
+    /* 注意居中问题 25/03/18 19:59 来自自己 */
     color: black;
     /* background-color: aquamarine; */
     display: flex;
@@ -343,17 +343,28 @@
     gap: 0.4rem;
   }
   #head_first_section_left_icon, #head_first_section_right_icon {
-    width: 90%;
+    width: 88%;
     aspect-ratio: 1/1;
     box-sizing: border-box;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     border-radius: 100%;
+  }
+  #head_first_section_left_in:hover, #head_first_section_right_in:hover {
+    cursor: pointer; /* 鼠标变手 */
   }
   #head_first_section_left_icon {
     background: rgb(255, 146, 18);
+    transition: var(--transition-quick);
+  }
+  #head_first_section_left_icon:hover {
+    background: rgb(255, 162, 56);
   }
   #head_first_section_right_icon {
     background: #f07775;
+    transition: var(--transition-quick);
+  }
+  #head_first_section_right_icon:hover {
+    background: #f68785;
   }
   /* #head_first_section_left_text, #head_first_section_right_text {
     flex: 1;
@@ -372,8 +383,8 @@
     flex-wrap: wrap;
     box-sizing: border-box;
     padding: 0 1rem;
-    border-left: solid 1px #f1f2f3;
-    border-right: solid 1px #f1f2f3;
+    border-left: solid 1px #ebebeb;
+    border-right: solid 1px #ebebeb;
     justify-content: space-between;
     gap: var(--head_second_section_in_gap);
     --head_second_section_in_gap: 14px;
