@@ -463,136 +463,153 @@
     height: calc(100dvh - 275px);
     max-height: 500px;
     width: 100%;
-    background-color: rgb(215, 250, 215);
+    /* background-color: rgb(215, 250, 215); */
     display: flex;
   }
   #in_in_top_left {
     width: var(--in_in_top_left_width);
-    background-color: rgb(141, 255, 255);
+    /* background-color: rgb(141, 255, 255); */
     --in_in_top_left_width: 46%
   }
 
   .cycle_img {
-    height: 92%;
-    width: 98%;
-    display: flex;
-    flex-direction: column;
+      height: 92%;
+      width: 98%;
+      display: flex;
+      flex-direction: column;
 
-    --color_r: 0;
-    --color_g: 0;
-    --color_b: 0;
-    --color_a: 0.4;
-    --bottom_z_index: 1;
-  }
+      --color_r: 0;
+      --color_g: 0;
+      --color_b: 0;
+      --color_a: 1;
+      --bottom_z_index: 1;
+    }
 
-  #cycle_img_top {
-    flex: 4;
-    box-shadow: 0px -22px 18px -20px rgba(var(--color_r), var(--color_g), var(--color_b), calc(var(--color_a) + 0.4)) inset;
-    cursor: pointer; /* 鼠标变手 */
-    z-index: calc(var(--bottom_z_index) - 1);
-  }
-  #cycle_img_top_in {
-    height: 100%;
-    width: 100%;
-    z-index: calc(var(--bottom_z_index) - 2);
-  }
 
-  #cycle_img_bottom {
-    flex: 1;
-    background-color: rgba(var(--color_r), var(--color_g), var(--color_b), var(--color_a));
-    bottom: 0;
-    z-index: var(--bottom_z_index);
-    display: flex;
-  }
-  #cycle_img_bottom_in {
-    flex: 1;
-    margin: 0.8rem 1rem;
-    display: flex;
-  }
+    #cycle_img_top {
+      height: 80%;
+      /* border-style: solid;
+      border-color: rgba(var(--color_r), var(--color_g), var(--color_b), calc(var(--color_a) + 0.4));
+      border-left-width: 10px;
+      border-right-width: 10px;
+      border-top-width: 10px;
+      border-bottom-width: 0px; */
+      background-color: rgb(255, 255, 250);
+      box-shadow: 0px 0px 30px 18px rgba(255, 230, 0, 0);
+      cursor: pointer; /* 鼠标变手 */
+      transition: 0.3s ease-in-out; /* 添加过渡效果 */
+    }
+    #cycle_img_top_in {
+      height: 100%;
+      width: 100%;
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+      transition: filter 0.3s ease-in-out;
+    }
+    
+    #cycle_img_bottom {
+      height: 20%;
+      background-color: rgba(var(--color_r), var(--color_g), var(--color_b), var(--color_a));
+      bottom: 0;
+      border-bottom-left-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+      z-index: var(--bottom_z_index);
+      display: flex;
+      transition: 0.3s;
+    }
+    #cycle_img_bottom_in {
+      flex: 1;
+      margin: 0.8rem 1rem;
+      display: flex;
+    }
 
-  #cycle_img_text_and_points {
-    flex: 3;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
 
-  #cycle_img_text {
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 18px;
-    /* font-weight: 700; */
-    z-index: calc(var(--bottom_z_index) + 1);
-  }
+    #cycle_img_text_and_points {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
-  #cycle_img_points {
-    margin-bottom: 0.4rem;
-    justify-content: flex-start;
-    display: flex;
-    z-index: calc(var(--bottom_z_index) + 1);
-  }
-  #cycle_img_points dd {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  #cycle_img_points dd:first-child {
-    margin-left: 0;
-  }
-  #cycle_img_points dd:last-child {
-    margin-right: 0;
-  }
-  #cycle_img_points dd:hover {
-    background-color: rgba(255, 255, 255, 0.7);
-  }
-  #cycle_img_points dd:active {
-    background-color: rgba(255, 255, 255, 0.6);
-    transition: none;
-  }
-  #cycle_img_points .cycle_img_high_light_point {
-    background-color: white;
-  }
+    #cycle_img_text {
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 18px;
+      /* font-weight: 700; */
+      z-index: calc(var(--bottom_z_index) + 1);
+      cursor: default;
+    }
 
-  #cycle_img_buttons_and_numbers {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  #cycle_img_buttons {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    gap: 0.6rem;
-  }
-  .cycle_img_button {
-    height: 50%;
-    aspect-ratio: 1/1; /* 宽高比1/1 */
-    margin-top: 0.2rem;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.2);
-    border: none;
-    border-radius: 20%;
-    line-height: 28.2px;
-    z-index: calc(var(--bottom_z_index) + 1);
-    transition: 0.2s;
-  }
-  #cycle_img_r_button {
-    margin-right: 0.4rem;
-  }
-  .cycle_img_button:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-    transition: 0.1s;
-  }
-  .cycle_img_button:active {
-    background-color: rgba(0, 0, 0, 0.3);
-    transition: none;
-  }
+    #cycle_img_points {
+      margin-top: 0.6rem;
+      justify-content: flex-start;
+      display: flex;
+      z-index: calc(var(--bottom_z_index) + 1);
+    }
+    #cycle_img_points dd {
+      height: 10px;
+      aspect-ratio: 1/1; /* 宽高比1/1 */
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+      margin: 0 5px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    #cycle_img_points dd:first-child {
+      margin-left: 0;
+    }
+    #cycle_img_points dd:last-child {
+      margin-right: 0;
+    }
+    #cycle_img_points dd:hover {
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+    #cycle_img_points dd:active {
+      background-color: rgba(255, 255, 255, 0.6);
+      transition: none;
+    }
+    #cycle_img_points .cycle_img_high_light_point {
+      background-color: white;
+    }
+
+
+    #cycle_img_buttons_and_numbers {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    #cycle_img_buttons {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.6rem;
+    }
+    .cycle_img_button {
+      height: 50%;
+      aspect-ratio: 1/1; /* 宽高比1/1 */
+      margin-top: 0.2rem;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.2);
+      border: none;
+      border-radius: 20%;
+      line-height: 25.2px;
+      z-index: calc(var(--bottom_z_index) + 1);
+      transition: 0.2s;
+    }
+    #cycle_img_r_button {
+      margin-right: 0.4rem;
+    }
+    .cycle_img_button:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+      transition: 0.1s;
+      cursor: pointer; /* 鼠标变手 */
+    }
+    .cycle_img_button:active {
+      background-color: rgba(0, 0, 0, 0.3);
+      transition: none;
+    }
 
 
   #in_in_top_right {
@@ -842,21 +859,23 @@
   });
   
   let cycle_img = [
-      {url: 'File/img/test_1.jpg', text: '努 力 做 个 人', r: 108, g: 81, b: 81, a: 0.4}, 
-      {url: 'File/img/test_2.jpg', text: '虽然但是..', r: 150, g: 0, b: 0, a: 0.4}, 
-      {url: 'File/img/test_3.jpg', text: '小草说..', r: 0, g: 150, b: 0, a: 0.4}, 
-      {url: 'File/img/test_4.jpg', text: '上西天~', r: 0, g: 100, b: 0, a: 0.4}, 
-      {url: 'File/img/test_5.jpg', text: '向前一小步', r: 135, g: 62, b: 59, a: 0.4}, 
-      {url: 'File/img/test_6.jpg', text: '感谢配合~', r: 50, g: 50, b: 50, a: 0.4}
+      {url: 'File/img/test_1.jpg', text: '努 力 做 个 人', r: 108, g: 81, b: 81, a: 1}, 
+      {url: 'File/img/test_2.jpg', text: '虽然但是..', r: 150, g: 0, b: 0, a: 1}, 
+      {url: 'File/img/test_3.jpg', text: '小草说..', r: 0, g: 150, b: 0, a: 1}, 
+      {url: 'File/img/test_4.jpg', text: '上西天~', r: 0, g: 100, b: 0, a: 1}, 
+      {url: 'File/img/test_5.jpg', text: '向前一小步', r: 135, g: 62, b: 59, a: 1}, 
+      {url: 'File/img/test_6.jpg', text: '感谢配合~', r: 50, g: 50, b: 50, a: 1}
       ]
   
   let cycle_num = 1
 
   const cycle_img_Element = document.querySelector('.cycle_img');
+  const cycle_img_top_Element = document.querySelector('#cycle_img_top');
   const cycle_img_top_in_Element = document.querySelector('#cycle_img_top_in');
   const cycle_img_bottom_Element = document.querySelector('#cycle_img_bottom');
   const cycle_img_text_Element = document.querySelector('#cycle_img_text');
   const cycle_img_point_Elements = document.querySelectorAll('#cycle_img_points dd');
+  // const cycle_img_numberElement = document.querySelector('#cycle_img_number');
   const cycle_img_r_button_Element = document.querySelector('#cycle_img_r_button');
   const cycle_img_l_button_Element = document.querySelector('#cycle_img_l_button');
 
@@ -864,12 +883,28 @@
   function updateCarousel() {
     const currentSlide = cycle_img[cycle_num - 1];
     cycle_img_top_in_Element.src = currentSlide.url;
+    // cycle_image_inElement.src = `temp/DOM/轮播图测试/test_${num}.jpg`;  // 二者皆可, 上面一行似乎更好 (25/01/05 22:50 来自自己)
+    
+    // cycle_image_numberElement.textContent = `${cycle_num}/${lunbotu.length}`;
+  }
+  updateCarousel();
+  // 更换图片时闪烁
+  function updateCarousel_visual() {
+    cycle_img_top_Element.style.boxShadow = '0px 0px 10px 2px rgba(255, 255, 200, 0.42)';
+    cycle_img_top_in_Element.style.filter = 'blur(8px) brightness(200%) contrast(300%) saturate(180%) opacity(0%)';
+  setTimeout(() => {
+    cycle_img_top_in_Element.style.filter = 'blur(0px) brightness(100%) contrast(100%) saturate(100%) opacity(100%)';
+    cycle_img_top_Element.style.boxShadow = '0px 0px 10px 2px rgba(255, 255, 200, 0)';
+  }, 400); // 恢复延迟0.4秒(闪烁0.3秒)
+  }
+  // 底栏跟随切换
+  function updateCarousel_text_color_and_points() {
+    const currentSlide = cycle_img[cycle_num - 1];
     cycle_img_text_Element.textContent = currentSlide.text;
     cycle_img_Element.style.setProperty('--color_r', currentSlide.r);
     cycle_img_Element.style.setProperty('--color_g', currentSlide.g);
     cycle_img_Element.style.setProperty('--color_b', currentSlide.b);
     cycle_img_Element.style.setProperty('--color_a', currentSlide.a);
-
     cycle_img_point_Elements.forEach((point, index) => {
       if (index === cycle_num - 1) {
         point.classList.add('cycle_img_high_light_point');
@@ -878,60 +913,116 @@
       }
     });
   }
-  updateCarousel();
+  updateCarousel_text_color_and_points();
 
   // 按钮切换
   cycle_img_r_button_Element.addEventListener('click', () => {
+    clearTimeout(cycle_timeId); // 清除当前的定时器
     if (cycle_num < cycle_img.length) {
       cycle_num++;
-    }else {
+    } else {
       cycle_num = 1;
     }
-    updateCarousel();
+    updateCarousel_visual();
+    updateCarousel_text_color_and_points();
+    setTimeout(updateCarousel, 300); // 延迟0.3秒更新轮播图
   });
   cycle_img_l_button_Element.addEventListener('click', () => {
+    clearTimeout(cycle_timeId); // 清除当前的定时器
     if (cycle_num > 1) {
       cycle_num--;
-    }else {
+    } else {
       cycle_num = cycle_img.length;
     }
-    updateCarousel();
+    updateCarousel_visual();
+    updateCarousel_text_color_and_points();
+    setTimeout(updateCarousel, 300); // 延迟0.3秒更新轮播图
   });
 
   // 选择切换
   cycle_img_point_Elements.forEach((point, index) => {
     point.addEventListener('click', () => {
+      clearTimeout(cycle_timeId); // 清除当前的定时器
       cycle_num = index + 1;
-      updateCarousel();
-      console.log(point, index);
+      updateCarousel_visual();
+      updateCarousel_text_color_and_points();
+      setTimeout(updateCarousel, 300); // 延迟0.3秒更新轮播图
     });
   });
 
   // 自动切换
   let cycle_timeId;
-  
+
   function startCarousel() {
     cycle_timeId = setInterval(() => {
       if (cycle_num < cycle_img.length) {
         cycle_num++;
-      }else {
+      } else {
         cycle_num = 1;
       }
-      updateCarousel();
+      updateCarousel_visual(); // 先执行视觉效果
+      setTimeout(() => {
+        updateCarousel_text_color_and_points(); // 延迟0.4秒更新文本和点
+        updateCarousel(); // 延迟0.4秒更新轮播图
+      }, 400);
       console.log('setInterval success')
-    }, 2000);
+    }, 4000);
   };
   startCarousel();
   //鼠标进入则暂停自动切换
   cycle_img_Element.addEventListener('mouseenter', () => {
     clearInterval(cycle_timeId);
-    console.log('setInterval now stop')
+    console.log('cycle_timeId now stop');
   });
   cycle_img_Element.addEventListener('mouseleave', () => {
-    startCarousel()
-    console.log('setInterval now start')
+    startCarousel();
+    console.log('cycle_timeId now start');
   });
 
+  // 触摸事件处理
+  let touch_startX = 0;
+  let touch_startY = 0;
+
+  cycle_img_top_Element.addEventListener('touchstart', (event) => {
+    const touch = event.touches[0];
+    touch_startX = touch.clientX;
+    touch_startY = touch.clientY;
+  });
+  cycle_img_top_Element.addEventListener('touchend', (event) => {
+    const touch = event.changedTouches[0];
+    const endX = touch.clientX;
+    const endY = touch.clientY;
+
+    const deltaX = touch_startX - endX;
+    const deltaY = touch_startY - endY;
+
+    // 判断滑动方向
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+      if (deltaX > 0) {
+        // 从右往左滑动
+        clearTimeout(cycle_timeId); // 清除当前的定时器
+        if (cycle_num < cycle_img.length) {
+          cycle_num++;
+        } else {
+          cycle_num = 1;
+        }
+        updateCarousel_visual();
+        updateCarousel_text_color_and_points();
+        setTimeout(updateCarousel, 300); // 延迟0.3秒更新轮播图
+      } else {
+        // 从左往右滑动
+        clearTimeout(cycle_timeId); // 清除当前的定时器
+        if (cycle_num > 1) {
+          cycle_num--;
+        } else {
+          cycle_num = cycle_img.length;
+        }
+        updateCarousel_visual();
+        updateCarousel_text_color_and_points();
+        setTimeout(updateCarousel, 300); // 延迟0.3秒更新轮播图
+      }
+    }
+  });
 
 </script>
 
