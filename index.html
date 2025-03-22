@@ -838,148 +838,144 @@
 
 <script>
   console.log("cl test");
-  
-  // 获取title元素
-  const title = document.querySelector('#title');
-  const head_title = document.querySelector('#head_title');
+    
+    // 获取title元素
+    const title = document.querySelector('#title');
+    const head_title = document.querySelector('#head_title');
 
-  // 监听滚动
-  window.addEventListener('scroll', function() {
-    // 获取滚动距离
-    const scrollDistance = window.scrollY;
+    // 监听滚动
+    window.addEventListener('scroll', function() {
+      // 获取滚动距离
+      const scrollDistance = window.scrollY;
 
-    // 滚动距离超过设定值(px)则执行操作
-    if (scrollDistance > 64) {
-      title.classList.add('visible');
-      head_title.classList.add('hidden');
-    } else {
-      title.classList.remove('visible');
-      head_title.classList.remove('hidden');
-    }
-  });
-  
-  let cycle_img = [
+      // 滚动距离超过设定值(px)则执行操作
+      if (scrollDistance > 64) {
+        title.classList.add('visible');
+        head_title.classList.add('hidden');
+      } else {
+        title.classList.remove('visible');
+        head_title.classList.remove('hidden');
+      }
+    });
+    
+    let cycle_img = [
       {url: 'File/img/test_1.jpg', text: '努 力 做 个 人', r: 108, g: 81, b: 81, a: 1}, 
       {url: 'File/img/test_2.jpg', text: '虽然但是..', r: 150, g: 0, b: 0, a: 1}, 
       {url: 'File/img/test_3.jpg', text: '小草说..', r: 0, g: 150, b: 0, a: 1}, 
       {url: 'File/img/test_4.jpg', text: '上西天~', r: 0, g: 100, b: 0, a: 1}, 
       {url: 'File/img/test_5.jpg', text: '向前一小步', r: 135, g: 62, b: 59, a: 1}, 
       {url: 'File/img/test_6.jpg', text: '感谢配合~', r: 50, g: 50, b: 50, a: 1}
-      ]
-  
-  let cycle_num = 1
-
-  const cycle_img_Element = document.querySelector('.cycle_img');
-  const cycle_img_top_Element = document.querySelector('#cycle_img_top');
-  const cycle_img_top_in_Element = document.querySelector('#cycle_img_top_in');
-  const cycle_img_bottom_Element = document.querySelector('#cycle_img_bottom');
-  const cycle_img_text_Element = document.querySelector('#cycle_img_text');
-  const cycle_img_point_Elements = document.querySelectorAll('#cycle_img_points dd');
-  // const cycle_img_numberElement = document.querySelector('#cycle_img_number');
-  const cycle_img_r_button_Element = document.querySelector('#cycle_img_r_button');
-  const cycle_img_l_button_Element = document.querySelector('#cycle_img_l_button');
-
-  // 更新轮播图内容
-  function updateCarousel() {
-    const currentSlide = cycle_img[cycle_num - 1];
-    cycle_img_top_in_Element.src = currentSlide.url;
-    // cycle_image_inElement.src = `temp/DOM/轮播图测试/test_${num}.jpg`;  // 二者皆可, 上面一行似乎更好 (25/01/05 22:50 来自自己)
+    ]
     
-    // cycle_image_numberElement.textContent = `${cycle_num}/${lunbotu.length}`;
-  }
-  updateCarousel();
-  // 更换图片时闪烁
-  function updateCarousel_visual() {
-    cycle_img_top_Element.style.boxShadow = '0px 0px 10px 2px rgba(255, 255, 200, 0.42)';
-    cycle_img_top_in_Element.style.filter = 'blur(8px) brightness(200%) contrast(300%) saturate(180%) opacity(0%)';
-  setTimeout(() => {
-    cycle_img_top_in_Element.style.filter = 'blur(0px) brightness(100%) contrast(100%) saturate(100%) opacity(100%)';
-    cycle_img_top_Element.style.boxShadow = '0px 0px 10px 2px rgba(255, 255, 200, 0)';
-  }, 400); // 恢复延迟0.4秒(闪烁0.3秒)
-  }
-  // 底栏跟随切换
-  function updateCarousel_text_color_and_points() {
-    const currentSlide = cycle_img[cycle_num - 1];
-    cycle_img_text_Element.textContent = currentSlide.text;
-    cycle_img_Element.style.setProperty('--color_r', currentSlide.r);
-    cycle_img_Element.style.setProperty('--color_g', currentSlide.g);
-    cycle_img_Element.style.setProperty('--color_b', currentSlide.b);
-    cycle_img_Element.style.setProperty('--color_a', currentSlide.a);
-    cycle_img_point_Elements.forEach((point, index) => {
-      if (index === cycle_num - 1) {
-        point.classList.add('cycle_img_high_light_point');
-      } else {
-        point.classList.remove('cycle_img_high_light_point');
-      }
-    });
-  }
-  updateCarousel_text_color_and_points();
+    let cycle_num = 1
 
-  // 按钮切换
-  cycle_img_r_button_Element.addEventListener('click', () => {
-    clearTimeout(cycle_timeId); // 清除当前的定时器
-    if (cycle_num < cycle_img.length) {
-      cycle_num++;
-    } else {
-      cycle_num = 1;
-    }
-    updateCarousel_visual();
-    updateCarousel_text_color_and_points();
-    setTimeout(updateCarousel, 300); // 延迟0.3秒更新轮播图
-  });
-  cycle_img_l_button_Element.addEventListener('click', () => {
-    clearTimeout(cycle_timeId); // 清除当前的定时器
-    if (cycle_num > 1) {
-      cycle_num--;
-    } else {
-      cycle_num = cycle_img.length;
-    }
-    updateCarousel_visual();
-    updateCarousel_text_color_and_points();
-    setTimeout(updateCarousel, 300); // 延迟0.3秒更新轮播图
-  });
+    const cycle_img_Element = document.querySelector('.cycle_img');
+    const cycle_img_top_Element = document.querySelector('#cycle_img_top');
+    const cycle_img_top_in_Element = document.querySelector('#cycle_img_top_in');
+    const cycle_img_bottom_Element = document.querySelector('#cycle_img_bottom');
+    const cycle_img_text_Element = document.querySelector('#cycle_img_text');
+    const cycle_img_point_Elements = document.querySelectorAll('#cycle_img_points dd');
+    const cycle_img_r_button_Element = document.querySelector('#cycle_img_r_button');
+    const cycle_img_l_button_Element = document.querySelector('#cycle_img_l_button');
 
-  // 选择切换
-  cycle_img_point_Elements.forEach((point, index) => {
-    point.addEventListener('click', () => {
+    // 更新轮播图内容
+    function updateCarousel() {
+      const currentSlide = cycle_img[cycle_num - 1];
+      cycle_img_top_in_Element.src = currentSlide.url;
+    }
+    updateCarousel();
+    // 更换图片时闪烁
+    function updateCarousel_visual() {
+      cycle_img_top_Element.style.boxShadow = '0px 0px 10px 2px rgba(255, 255, 200, 0.42)';
+      cycle_img_top_in_Element.style.filter = 'blur(8px) brightness(200%) contrast(300%) saturate(180%) opacity(0%)';
+      setTimeout(() => {
+        cycle_img_top_in_Element.style.filter = 'blur(0px) brightness(100%) contrast(100%) saturate(100%) opacity(100%)';
+        cycle_img_top_Element.style.boxShadow = '0px 0px 10px 2px rgba(255, 255, 200, 0)';
+      }, 400); // 恢复延迟0.4秒(闪烁0.3秒)
+    }
+    // 底栏跟随切换
+    function updateCarousel_text_color_and_points() {
+      const currentSlide = cycle_img[cycle_num - 1];
+      cycle_img_text_Element.textContent = currentSlide.text;
+      cycle_img_Element.style.setProperty('--color_r', currentSlide.r);
+      cycle_img_Element.style.setProperty('--color_g', currentSlide.g);
+      cycle_img_Element.style.setProperty('--color_b', currentSlide.b);
+      cycle_img_Element.style.setProperty('--color_a', currentSlide.a);
+      cycle_img_point_Elements.forEach((point, index) => {
+        if (index === cycle_num - 1) {
+          point.classList.add('cycle_img_high_light_point');
+        } else {
+          point.classList.remove('cycle_img_high_light_point');
+        }
+      });
+    }
+    updateCarousel_text_color_and_points();
+
+    // 按钮切换
+    cycle_img_r_button_Element.addEventListener('click', () => {
       clearTimeout(cycle_timeId); // 清除当前的定时器
-      cycle_num = index + 1;
-      updateCarousel_visual();
-      updateCarousel_text_color_and_points();
-      setTimeout(updateCarousel, 300); // 延迟0.3秒更新轮播图
-    });
-  });
-
-  // 自动切换
-  let cycle_timeId;
-
-  function startCarousel() {
-    cycle_timeId = setInterval(() => {
       if (cycle_num < cycle_img.length) {
         cycle_num++;
       } else {
         cycle_num = 1;
       }
-      updateCarousel_visual(); // 先执行视觉效果
-      setTimeout(() => {
-        updateCarousel_text_color_and_points(); // 延迟0.4秒更新文本和点
-        updateCarousel(); // 延迟0.4秒更新轮播图
-      }, 400);
-      console.log('setInterval success')
-    }, 4000);
-  };
-  startCarousel();
-  //鼠标进入则暂停自动切换
-  cycle_img_Element.addEventListener('mouseenter', () => {
-    clearInterval(cycle_timeId);
-    console.log('cycle_timeId now stop');
-  });
-  cycle_img_Element.addEventListener('mouseleave', () => {
-    startCarousel();
-    console.log('cycle_timeId now start');
-  });
+      updateCarousel_visual();
+      updateCarousel_text_color_and_points();
+      setTimeout(updateCarousel, 300); // 延迟0.3秒更新轮播图
+    });
+    cycle_img_l_button_Element.addEventListener('click', () => {
+      clearTimeout(cycle_timeId); // 清除当前的定时器
+      if (cycle_num > 1) {
+        cycle_num--;
+      } else {
+        cycle_num = cycle_img.length;
+      }
+      updateCarousel_visual();
+      updateCarousel_text_color_and_points();
+      setTimeout(updateCarousel, 300); // 延迟0.3秒更新轮播图
+    });
 
-  // 触摸事件处理
+    // 选择切换
+    cycle_img_point_Elements.forEach((point, index) => {
+      point.addEventListener('click', () => {
+        clearTimeout(cycle_timeId); // 清除当前的定时器
+        cycle_num = index + 1;
+        updateCarousel_visual();
+        updateCarousel_text_color_and_points();
+        setTimeout(updateCarousel, 300); // 延迟0.3秒更新轮播图
+      });
+    });
+
+    // 自动切换
+    let cycle_timeId;
+
+    function startCarousel() {
+      cycle_timeId = setInterval(() => {
+        if (cycle_num < cycle_img.length) {
+          cycle_num++;
+        } else {
+          cycle_num = 1;
+        }
+        updateCarousel_visual(); // 先执行视觉效果
+        setTimeout(() => {
+          updateCarousel_text_color_and_points(); // 延迟0.4秒更新文本和点
+          updateCarousel(); // 延迟0.4秒更新轮播图
+        }, 400);
+        console.log('setInterval success')
+      }, 4000);
+    };
+    startCarousel();
+    //鼠标进入则暂停自动切换
+    cycle_img_Element.addEventListener('mouseenter', () => {
+      clearInterval(cycle_timeId);
+      console.log('cycle_timeId now stop');
+    });
+    cycle_img_Element.addEventListener('mouseleave', () => {
+      startCarousel();
+      console.log('cycle_timeId now start');
+    });
+
+    // 触摸事件处理
   let touch_startX = 0;
   let touch_startY = 0;
 
@@ -987,19 +983,21 @@
     const touch = event.touches[0];
     touch_startX = touch.clientX;
     touch_startY = touch.clientY;
+    console.log('touchstart', touch_startX, touch_startY); // 添加调试信息
   });
   cycle_img_top_Element.addEventListener('touchend', (event) => {
     const touch = event.changedTouches[0];
     const endX = touch.clientX;
     const endY = touch.clientY;
-
     const deltaX = touch_startX - endX;
     const deltaY = touch_startY - endY;
-
+    console.log('touchend', endX, endY, deltaX, deltaY); // 添加调试信息
+    
     // 判断滑动方向
     if (Math.abs(deltaX) > Math.abs(deltaY)) {
       if (deltaX > 0) {
         // 从右往左滑动
+        console.log('从右往左滑动'); // 添加调试信息
         clearTimeout(cycle_timeId); // 清除当前的定时器
         if (cycle_num < cycle_img.length) {
           cycle_num++;
@@ -1011,6 +1009,7 @@
         setTimeout(updateCarousel, 300); // 延迟0.3秒更新轮播图
       } else {
         // 从左往右滑动
+        console.log('从左往右滑动'); // 添加调试信息
         clearTimeout(cycle_timeId); // 清除当前的定时器
         if (cycle_num > 1) {
           cycle_num--;
