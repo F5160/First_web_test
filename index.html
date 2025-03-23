@@ -463,7 +463,7 @@
 
   #body_in_in_top {
     min-height: 420px;
-    height: calc(100dvh - 275px);
+    height: calc(100dvh - 220px);
     max-height: 500px;
     width: 100%;
     /* background-color: rgb(215, 250, 215); */
@@ -476,8 +476,8 @@
   }
 
   .cycle_img {
-    height: 92%;
-    width: 98%;
+    height: 82%;
+    width: 100%;
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -672,12 +672,68 @@
 
   #in_in_top_right {
     flex: 1;
-    background-color: rgb(255, 222, 173);
+    /* background-color: rgb(255, 222, 173); */
+    margin-left: 1rem;
+  }
+  #in_in_top_right_in {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--in_in_top_right_in_gap);
+    --in_in_top_right_in_gap: 1rem;
+  }
+  #in_in_top_right_in > span {
+    width: calc(33.33% - var(--in_in_top_right_in_gap));
+    height: calc(51.8% - var(--in_in_top_right_in_gap));
+    /* background-color: linen; */
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: flex;
+  }
+  #in_in_top_right_in > span > span {
+    flex: 1;
+    background-color: greenyellow;
+    display: flex;
+    flex-direction: column;
+  }
+  .in_in_top_right_in_span_in > .in_in_top_right_in_span_in_img {
+    flex: 5;
+    background-color: aquamarine;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  .in_in_top_right_in_span_in > .in_in_top_right_in_span_in_text {
+    flex: 3;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+  }
+  .in_in_top_right_in_span_in_text > .in_in_top_right_in_span_in_text_title {
+    flex: 3;
+    background-color: aqua;
+  }
+  .in_in_top_right_in_span_in_text > .in_in_top_right_in_span_in_text_others {
+    flex: 2;
+    background-color: deepskyblue;
+    display: flex;
+    justify-content: space-between;
+  }
+  .in_in_top_right_in_span_in_text_others > .in_in_top_right_in_span_in_others_info {
+    flex: 5;
+    background-color: dodgerblue;
+  }
+  .in_in_top_right_in_span_in_text_others > .in_in_top_right_in_span_in_others_time {
+    flex: 3;
+    background-color: blue;
   }
   
 
   #body_in_in_bottom {
     flex: 1;
+    margin-top: 1rem;
     background-color: rgb(255, 165, 165);
   }
   
@@ -886,7 +942,82 @@
                 </div>
               </div>
             </span>
-            <span id="in_in_top_right"></span>
+            <span id="in_in_top_right">
+              <div id="in_in_top_right_in">
+                <span class="in_in_top_right_in_span">
+                  <span class="in_in_top_right_in_span_in">
+                    <span class="in_in_top_right_in_span_in_img"></span>
+                    <span class="in_in_top_right_in_span_in_text">
+                      <span class="in_in_top_right_in_span_in_text_title"></span>
+                      <span class="in_in_top_right_in_span_in_text_others">
+                        <span class="in_in_top_right_in_span_in_others_info"></span>
+                        <span class="in_in_top_right_in_span_in_others_time"></span>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span class="in_in_top_right_in_span">
+                  <span class="in_in_top_right_in_span_in">
+                    <span class="in_in_top_right_in_span_in_img"></span>
+                    <span class="in_in_top_right_in_span_in_text">
+                      <span class="in_in_top_right_in_span_in_text_title"></span>
+                      <span class="in_in_top_right_in_span_in_text_others">
+                        <span class="in_in_top_right_in_span_in_others_info"></span>
+                        <span class="in_in_top_right_in_span_in_others_time"></span>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span class="in_in_top_right_in_span">
+                  <span class="in_in_top_right_in_span_in">
+                    <span class="in_in_top_right_in_span_in_img"></span>
+                    <span class="in_in_top_right_in_span_in_text">
+                      <span class="in_in_top_right_in_span_in_text_title"></span>
+                      <span class="in_in_top_right_in_span_in_text_others">
+                        <span class="in_in_top_right_in_span_in_others_info"></span>
+                        <span class="in_in_top_right_in_span_in_others_time"></span>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span class="in_in_top_right_in_span">
+                  <span class="in_in_top_right_in_span_in">
+                    <span class="in_in_top_right_in_span_in_img"></span>
+                    <span class="in_in_top_right_in_span_in_text">
+                      <span class="in_in_top_right_in_span_in_text_title"></span>
+                      <span class="in_in_top_right_in_span_in_text_others">
+                        <span class="in_in_top_right_in_span_in_others_info"></span>
+                        <span class="in_in_top_right_in_span_in_others_time"></span>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span class="in_in_top_right_in_span">
+                  <span class="in_in_top_right_in_span_in">
+                    <span class="in_in_top_right_in_span_in_img"></span>
+                    <span class="in_in_top_right_in_span_in_text">
+                      <span class="in_in_top_right_in_span_in_text_title"></span>
+                      <span class="in_in_top_right_in_span_in_text_others">
+                        <span class="in_in_top_right_in_span_in_others_info"></span>
+                        <span class="in_in_top_right_in_span_in_others_time"></span>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span class="in_in_top_right_in_span">
+                  <span class="in_in_top_right_in_span_in">
+                    <span class="in_in_top_right_in_span_in_img"></span>
+                    <span class="in_in_top_right_in_span_in_text">
+                      <span class="in_in_top_right_in_span_in_text_title"></span>
+                      <span class="in_in_top_right_in_span_in_text_others">
+                        <span class="in_in_top_right_in_span_in_others_info"></span>
+                        <span class="in_in_top_right_in_span_in_others_time"></span>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+              </div>
+            </span>
           </div>
           <div id="body_in_in_bottom"></div>
         </div>
