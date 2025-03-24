@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>噼哩啪啦 ( ゜∀゜)つロ 干杯~-PiliPala</title>
+  <!-- 天下笨蛋是一家 -->
 </head>
 <style>
   body {
@@ -17,6 +18,8 @@
     --transition-very-quick: 0.1s;
     --transition-quick: 0.2s;
     --transition-normal: 0.3s;
+    --transform-down-middle: 8%;
+    --transform-down-beside: 4%;
   }
 
 
@@ -49,6 +52,9 @@
     transform: translateY(-100%);
     pointer-events: none; /* 隐藏时不可点击 */
     z-index: 99;
+    --title-line-height-normal: 4rem;
+    --title-transform-down-middle: calc(var(--transform-down-middle) / 2);
+    --title-transform-down-beside: calc(var(--transform-down-beside) / 2);
   }
   #title.visible {
     transform: translateY(0);
@@ -79,6 +85,7 @@
     box-shadow: 0px 50px 40px 20px rgba(0, 0, 0, 0.17) inset,
                 0px 45px 30px 0px rgba(0, 0, 0, 0.15) inset,
                 0px 85px 40px 0px rgba(0, 0, 0, 0.1) inset;
+    --background-head-title-line-height-normal: 4rem;
   }
 
   #head > img {
@@ -94,16 +101,18 @@
   }
 
   #head_title {
-    height: 4rem;
+    height: var(--background-head-title-line-height-normal);
     margin-top: 0.06rem;
     display: flex;
     justify-content: space-between; /* 均匀分布子元素 */
     /* justify-content: center; 水平居中 */
     align-items: center; /* 垂直居中 */
     padding: 0 20px;
+    pointer-events: auto; /* 显示时可点击 */
     transition: var(--transition-very-quick);
     transform: translateY(0);
-    pointer-events: auto; /* 显示时可点击 */
+    --head-transform-down-middle: var(--transform-down-middle);
+    --head-transform-down-beside: var(--transform-down-beside);
   }
   #head_title.hidden {
     transform: translateY(-100%);
@@ -116,11 +125,11 @@
     font-size: 14px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center; /* 文本居中 */
-    line-height: var(--line-height-normal); /* 文本垂直居中_行高等于容器 */
+    line-height: var(--background-head-title-line-height-normal); /* 文本垂直居中_行高等于容器 */
     text-shadow: 0px 0px 20px rgba(0, 0, 0, 0);
-    --line-height-normal: 4rem;
-    --line-height-down-middle: calc(var(--line-height-normal) + 0.5rem);
-    --line-height-down-beside: calc(var(--line-height-normal) + 0.25rem);
+  }
+  #title > .section {
+    line-height: var(--title-line-height-normal); /* 文本垂直居中_行高等于容器 */
   }
 
   #first_section, #first_section_title {
@@ -136,24 +145,31 @@
     height: 100%;
     padding: 0 1rem;
     transition: var(--transition-normal);
+    transform: translateY(0%);
   }
   #first_section > span:first-child, #first_section_title > span:first-child {
     padding-left: 0;
   }
-  #first_section > span:has(+ span:hover), #first_section_title > span:has(+ span:hover){
-    line-height: var(--line-height-down-beside);
+  #first_section > span:has(+ span:hover){
+    transform: translateY(var(--head-transform-down-beside));
+  }
+  #first_section_title > span:has(+ span:hover) {
+    transform: translateY(var(--title-transform-down-beside));
   }
   #first_section > span:hover{
-    line-height: var(--line-height-down-middle);
+    transform: translateY(var(--head-transform-down-middle));
     text-shadow: 0px 0px 5px #fff;
     /* background-color: rgba(0, 0, 0, .4); 难做 25/03/13 22:34 来自自己 */
   }
   #first_section_title > span:hover {
-    line-height: var(--line-height-down-middle);
+    transform: translateY(var(--title-transform-down-middle));
     text-shadow: 0px 0px 5px #00000050;
   }
-  #first_section > span:hover + span, #first_section_title > span:hover + span{
-    line-height: var(--line-height-down-beside);
+  #first_section > span:hover + span{
+    transform: translateY(var(--head-transform-down-beside));
+  }
+  #first_section_title > span:hover + span {
+    transform: translateY(var(--title-transform-down-beside));
   }
   #first_section > span > span, #first_section_title > span > span{
     cursor: pointer;
@@ -215,7 +231,7 @@
     border-radius: 4px;
     border: 1.6px solid #aaaaaa00;
     outline: none;
-    transition: border-color 0.2s ease;
+    transition: border-color var(--transition-quick) ease;
   }
   #second_section > #search > .input:focus, #second_section_title > #search > .input:focus {
     background-color: rgba(0, 0, 0, 0.15);
@@ -257,24 +273,31 @@
   #third_section > span, #third_section_title > span {
     height: 100%;
     padding: 0 1rem;
+    transform: translateY(0%);
     transition: var(--transition-normal);
   }
   #third_section > span:first-child, #third_section_title > span:first-child {
     padding-right: 0;
   }
-  #third_section > span:has(+ span:hover), #third_section_title > span:has(+ span:hover) {
-    line-height: var(--line-height-down-beside);
+  #third_section > span:has(+ span:hover) {
+    transform: translateY(var(--head-transform-down-beside));
+  }
+  #third_section_title > span:has(+ span:hover) {
+    transform: translateY(var(--title-transform-down-beside));
   }
   #third_section > span:hover {
-    line-height: var(--line-height-down-middle);
+    transform: translateY(var(--head-transform-down-middle));
     text-shadow: 0px 0px 5px #fff;
   }
   #third_section_title > span:hover {
-    line-height: var(--line-height-down-middle);
+    transform: translateY(var(--title-transform-down-middle));
     text-shadow: 0px 0px 5px #00000050;
   }
-  #third_section > span:hover + span, #third_section_title > span:hover + span {
-    line-height: var(--line-height-down-beside);
+  #third_section > span:hover + span {
+    transform: translateY(var(--head-transform-down-beside));
+  }
+  #third_section_title > span:hover + span{
+    transform: translateY(var(--title-transform-down-beside));
   }
   #third_section > span > span, #third_section_title > span > span {
     cursor: pointer;
@@ -304,12 +327,12 @@
     font-size: 14px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center; /* 文本居中 */
-    line-height: var(--line-height-normal); /* 文本垂直居中_行高等于容器 */
+    line-height: var(--background-head-title-line-height-normal); /* 文本垂直居中_行高等于容器 */
     /* background-color:rgb(255, 200, 200); */
     display: flex;
     justify-content: space-between;
-    --in_in_section_width: 14.8%;
-    --in_in_section_padding: 1rem;
+    --in-in-section-width: 14.8%;
+    --in-in-section-padding: 1rem;
   }
   .head_section {
     height: 100%; /* 子元素高度填满父容器 */
@@ -317,7 +340,7 @@
 
   #head_first_section {
     min-width: 150px;
-    width: var(--in_in_section_width);
+    width: var(--in-in-section-width);
     max-width: 160px;
     box-sizing: border-box;
     padding-left: 0.8rem;
@@ -381,9 +404,9 @@
   #head_second_section {
     height: 100%;
     min-width: 670px;
-    width: calc(100% - var(--in_in_section_width));
+    width: calc(100% - var(--in-in-section-width));
     box-sizing: border-box;
-    padding: calc(1.4* var(--in_in_section_padding)) 0;
+    padding: calc(1.4* var(--in-in-section-padding)) 0;
     /* background-color: powderblue; */
   }
   #head_second_section_in {
@@ -394,19 +417,19 @@
     border-left: solid 1px #ebebeb;
     border-right: solid 1px #ebebeb;
     justify-content: space-between;
-    gap: var(--head_second_section_in_gap);
-    --head_second_section_in_gap: 14px;
+    gap: var(--head-second-section-in-gap);
+    --head-second-section-in-gap: 14px;
   }
   #head_second_section_in > span {
-    height: calc(50% - var(--head_second_section_in_gap));
-    width: calc(14.28% - var(--head_second_section_in_gap)); /* 每个色块占据1/6宽度减去间距 */
+    height: calc(50% - var(--head-second-section-in-gap));
+    width: calc(14.28% - var(--head-second-section-in-gap)); /* 每个色块占据1/6宽度减去间距 */
     box-sizing: border-box;
     line-height: 29px;
     color: #61666d;
     border: solid 1px #f1f2f3;
     border-radius: 6px;
     background-color: #f6f7f8;
-    transition: background-color 0.3s;
+    transition: background-color var(--transition-normal);
     cursor: pointer;
   }
   #head_second_section_in > span:hover {
@@ -428,14 +451,14 @@
     flex-wrap: wrap;
     box-sizing: border-box;
     justify-content: space-between;
-    --head_third_section_in_gap: 14px;
+    --head-third-section-in-gap: 14px;
   }
   #head_third_section_in > span {
-    height: var(--third_section_height);
-    --third_section_height: 44px;
-    width: calc(100px - var(--head_third_section_in_gap));
+    height: var(--third-section-height);
+    --third-section-height: 44px;
+    width: calc(100px - var(--head-third-section-in-gap));
     box-sizing: border-box;
-    line-height: var(--third_section_height);
+    line-height: var(--third-section-height);
     color: black;
     cursor: pointer;
     transition: var(--transition-quick);
@@ -459,6 +482,8 @@
     display: flex;
     flex-direction: column;
     /* flex-direction: column; */
+    --cards-border-radius: 0.5rem;
+    --cards-translateY-up: -1%;
   }
 
   #body_in_in_top {
@@ -470,15 +495,15 @@
     display: flex;
   }
   #in_in_top_left {
-    width: var(--in_in_top_left_width);
+    width: var(--in-in-top-left-width);
     /* background-color: rgb(141, 255, 255); */
-    --in_in_top_left_width: 46%
+    --in-in-top-left-width: 46%
   }
 
   .cycle_img {
     height: 82%;
-    width: 100%;
-    border-radius: 0.5rem;
+    width: 98%;
+    border-radius: var(--cards-border-radius);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -486,14 +511,14 @@
     transition: var(--transition-normal);
     transform: translateY(0);
 
-    --color_r: 0;
-    --color_g: 0;
-    --color_b: 0;
-    --color_a: 1;
-    --bottom_z_index: 1;
+    --color-r: 0;
+    --color-g: 0;
+    --color-b: 0;
+    --color-a: 1;
+    --bottom-z-index: 1;
   }
   .cycle_img:hover {
-    transform: translateY(-1%);
+    transform: translateY(var(--cards-translateY-up));
     box-shadow: 0px 4px 10px 4px rgba(0, 0, 0, 0.06),
                 0px 4px 10px 0px rgba(0, 0, 0, 0.09),
                 0px 8px 14px 0px rgba(0, 0, 0, 0.03),
@@ -505,13 +530,13 @@
     height: 80%;
     background-color: rgb(255, 255, 250);
     box-shadow: 0px 0px 30px 18px rgba(255, 230, 0, 0);
-    transition: 0.3s ease-in-out; /* 添加过渡效果 */
+    transition: var(--transition-normal) ease-in-out; /* 添加过渡效果 */
     z-index: 1;
   }
   #cycle_img_top_in {
     height: 100%;
     width: 100%;
-    transition: filter 0.3s ease-in-out;
+    transition: filter var(--transition-normal) ease-in-out;
     z-index: 1;
   }
   .cycle_img_top_visual {
@@ -521,6 +546,9 @@
     left: 0%;
     height: 80%;
     width: 100%;
+  }
+  .cycle_img:has(.cycle_img_top_visual:active) {
+    transform: translateY(calc(var(--cards-translateY-up) * 0.4));
   }
   #cycle_img_top_animation {
     box-shadow: 0px 0px 1000px 100px rgb(0, 0, 0) inset;
@@ -572,11 +600,11 @@
  
   #cycle_img_bottom {
     height: 20%;
-    background-color: rgba(var(--color_r), var(--color_g), var(--color_b), var(--color_a));
+    background-color: rgba(var(--color-r), var(--color-g), var(--color-b), var(--color-a));
     bottom: 0;
-    z-index: var(--bottom_z_index);
+    z-index: var(--bottom-z-index);
     display: flex;
-    transition: 0.3s;
+    transition: var(--transition-normal);
     z-index: 3;
   }
   #cycle_img_bottom_in {
@@ -596,24 +624,25 @@
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 18px;
-    z-index: calc(var(--bottom_z_index) + 1);
-    cursor: default;
+    z-index: calc(var(--bottom-z-index) + 1);
+    cursor: default; /* 原始鼠标 */
   }
 
   #cycle_img_points {
     margin-top: 0.6rem;
     justify-content: flex-start;
     display: flex;
-    z-index: calc(var(--bottom_z_index) + 1);
+    z-index: calc(var(--bottom-z-index) + 1);
   }
   #cycle_img_points dd {
     height: 10px;
     aspect-ratio: 1/1; /* 宽高比1/1 */
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, var(--point-color-a));
     margin: 0 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
+    cursor: pointer; /* 鼠标变手 */
+    transition: background-color var(--transition-quick);
+    --point-color-a: 0.5;
   }
   #cycle_img_points dd:first-child {
     margin-left: 0;
@@ -622,14 +651,21 @@
     margin-right: 0;
   }
   #cycle_img_points dd:hover {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, calc(var(--point-color-a) + 0.2));
   }
   #cycle_img_points dd:active {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, calc(var(--point-color-a) + 0.1));
     transition: none;
   }
   #cycle_img_points .cycle_img_high_light_point {
-    background-color: white;
+    background-color: rgba(255, 255, 255, calc(var(--point-color-a) + 0.4));
+  }
+  #cycle_img_points .cycle_img_high_light_point:hover {
+    background-color: rgba(255, 255, 255, calc(var(--point-color-a) + 0.5));
+  }
+  #cycle_img_points .cycle_img_high_light_point:active {
+    background-color: rgba(255, 255, 255, calc(var(--point-color-a) + 0.4));
+    transition: none;
   }
 
   #cycle_img_buttons_and_numbers {
@@ -654,15 +690,15 @@
     border: none;
     border-radius: 20%;
     line-height: 25.2px;
-    z-index: calc(var(--bottom_z_index) + 1);
-    transition: 0.2s;
+    z-index: calc(var(--bottom-z-index) + 1);
+    transition: var(--transition-quick);
   }
   #cycle_img_r_button {
     margin-right: 0.4rem;
   }
   .cycle_img_button:hover {
     background-color: rgba(0, 0, 0, 0.1);
-    transition: 0.1s;
+    transition: var(--transition-very-quick);
     cursor: pointer; /* 鼠标变手 */
   }
   .cycle_img_button:active {
@@ -682,17 +718,31 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: var(--in_in_top_right_in_gap);
-    --in_in_top_right_in_gap: 1rem;
+    gap: var(--in-in-top-right-in-gap);
+    --in-in-top-right-in-gap: 1rem;
   }
   #in_in_top_right_in > span {
-    width: calc(33.33% - var(--in_in_top_right_in_gap));
-    height: calc(51.8% - var(--in_in_top_right_in_gap));
-    /* background-color: linen; */
-    border-radius: 0.5rem;
+    width: calc(33.33% - var(--in-in-top-right-in-gap));
+    height: calc(51.8% - var(--in-in-top-right-in-gap));
+    background-color: white;
+    border-radius: var(--cards-border-radius);
     overflow: hidden;
     display: flex;
+    transition: var(--transition-normal);
+    transform: translateY(0);
   }
+  #in_in_top_right_in > span:hover {
+    transform: translateY(calc(var(--cards-translateY-up) * 1.8));
+    box-shadow: 0px 4px 16px 4px rgba(0, 0, 0, 0.01),
+                0px 6px 18px 4px rgba(0, 0, 0, 0.02),
+                0px 8px 20px 4px rgba(0, 0, 0, 0.01),
+                0px 10px 8px 0px rgba(0, 0, 0, 0.01),
+                0px 12px 12px 0px rgba(0, 0, 0, 0.01)
+                ;
+  }
+  /* #in_in_top_right_in > span:active {
+    transform: translateY(calc(var(--cards-translateY-up) * 1.8 * 0.4));
+  } */
   #in_in_top_right_in > span > span {
     flex: 1;
     background-color: greenyellow;
@@ -702,7 +752,7 @@
   .in_in_top_right_in_span_in > .in_in_top_right_in_span_in_img {
     flex: 5;
     background-color: aquamarine;
-    border-radius: 0.5rem;
+    border-radius: var(--cards-border-radius);
     overflow: hidden;
   }
   .in_in_top_right_in_span_in > .in_in_top_right_in_span_in_text {
@@ -746,7 +796,7 @@
       --layout-padding: 40px;
     }
     #in_in_top_left {
-      --in_in_top_left_width: 50%
+      --in-in-top-left-width: 50%
     }
   }
   @media (min-width: 1400px) and (max-width: 1559.9px) {
@@ -794,7 +844,7 @@
 
   @media (min-width: 1400px) {
     #in_in_top_left {
-      --in_in_top_left_width: 40%
+      --in-in-top-left-width: 40%
     }
   }
 
@@ -1090,10 +1140,10 @@
   function updateCarousel_text_color_and_points() {
     const currentSlide = cycle_img[cycle_num - 1];
     cycle_img_text_Element.textContent = currentSlide.text;
-    cycle_img_Element.style.setProperty('--color_r', currentSlide.r);
-    cycle_img_Element.style.setProperty('--color_g', currentSlide.g);
-    cycle_img_Element.style.setProperty('--color_b', currentSlide.b);
-    cycle_img_Element.style.setProperty('--color_a', currentSlide.a);
+    cycle_img_Element.style.setProperty('--color-r', currentSlide.r);
+    cycle_img_Element.style.setProperty('--color-g', currentSlide.g);
+    cycle_img_Element.style.setProperty('--color-b', currentSlide.b);
+    cycle_img_Element.style.setProperty('--color-a', currentSlide.a);
     cycle_img_point_Elements.forEach((point, index) => {
       if (index === cycle_num - 1) {
         point.classList.add('cycle_img_high_light_point');
