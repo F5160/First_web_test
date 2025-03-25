@@ -63,7 +63,7 @@
 
 
   #background {
-    height: 100rem;
+    height: 400rem;
     width: 100%;
     margin: 0 auto; /* 水平居中 */
     display: flex;
@@ -613,45 +613,47 @@
   #cycle_img_bottom {
     height: 20%;
     /* flex: 1; */
-    background-color: rgba(var(--color-r), var(--color-g), var(--color-b), var(--color-a));
-    bottom: 0;
-    display: flex;
+    background-color: rgba(var(--color-r), var(--color-g), var(--color-b), calc(var(--color-a)));
     transition: var(--transition-normal);
     z-index: calc(var(--bottom-z-index) + 3);
   }
   #cycle_img_bottom_in {
-    flex: 1;
-    margin: 0.8rem 1rem;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.8rem 1rem;
     display: flex;
   }
 
  #cycle_img_text_and_points {
-   flex: 3;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
- }
+    flex: 3;
+    height: 100%;
+  }
 
   #cycle_img_text {
+    height: 50%;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     z-index: calc(var(--bottom-z-index) + 4);
     cursor: default; /* 原始鼠标 */
   }
 
   #cycle_img_points {
-    margin-top: 0.6rem;
+    height: 50%;
+    /* 垂直居中 */
+    align-items: center;
+    margin: 0;
     justify-content: flex-start;
     display: flex;
     z-index: calc(var(--bottom-z-index) + 4);
   }
   #cycle_img_points dd {
-    height: 10px;
+    height: 50%;
     aspect-ratio: 1/1; /* 宽高比1/1 */
     border-radius: 50%;
     background-color: rgba(255, 255, 255, var(--point-color-a));
-    margin: 0 5px;
+    margin: 0 1%;
     cursor: pointer; /* 鼠标变手 */
     transition: background-color var(--transition-quick);
     --point-color-a: 0.5;
@@ -689,6 +691,7 @@
 
   #cycle_img_buttons {
     flex: 1;
+    height: 100%;
     display: flex;
     justify-content: flex-end;
     gap: 0.6rem;
