@@ -533,6 +533,7 @@
 
   #cycle_img_top {
     height: 80%;
+    /* flex: 4; */
     background-color: rgb(255, 255, 250);
     box-shadow: 0px 0px 30px 18px rgba(255, 230, 0, 0);
     transition: var(--transition-normal) ease-in-out; /* 添加过渡效果 */
@@ -611,6 +612,7 @@
  
   #cycle_img_bottom {
     height: 20%;
+    /* flex: 1; */
     background-color: rgba(var(--color-r), var(--color-g), var(--color-b), var(--color-a));
     bottom: 0;
     display: flex;
@@ -692,7 +694,7 @@
     gap: 0.6rem;
   }
   .cycle_img_button {
-    height: 60%;
+    height: 50%;
     aspect-ratio: 1/1; /* 宽高比1/1 */
     /* margin-top: 0.2rem; */
     color: white;
@@ -703,6 +705,9 @@
     justify-content: center;
     z-index: calc(var(--bottom-z-index) + 4);
     transition: var(--transition-quick);
+  }
+  .cycle_img_button_in {
+    height: 80%;
   }
   #cycle_img_r_button {
     margin-right: 0.4rem;
@@ -1010,16 +1015,20 @@
                       <div id="cycle_img_buttons_and_numbers">
                         <div id="cycle_img_buttons">
                           <button class="cycle_img_button" id="cycle_img_l_button">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -12 24 40" width="100%" height="20" data-v-9bad986e>
-                              <path d="M15.4571 3.04289C15.8476 3.43342 15.8476 4.06658 15.4571 4.45711L8.09098 11.8232C7.99335 11.9209 7.99335 12.0791 8.09098 12.1768L15.4571 19.5429C15.8476 19.9334 15.8476 20.5666 15.4571 20.9571C15.0666 21.3476 14.4334 21.3476 14.0429 20.9571L6.67677 13.591C5.79809 12.7123 5.79809 11.2877 6.67677 10.409L14.0429 3.04289C14.4334 2.65237 15.0666 2.65237 15.4571 3.04289z" fill="currentColor">
-                              </path>
-                            </svg>
+                            <div class="cycle_img_button_in" id="cycle_img_l_button_in">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -8 24 40" width="100%" height="100%" data-v-9bad986e>
+                                <path d="M15.4571 3.04289C15.8476 3.43342 15.8476 4.06658 15.4571 4.45711L8.09098 11.8232C7.99335 11.9209 7.99335 12.0791 8.09098 12.1768L15.4571 19.5429C15.8476 19.9334 15.8476 20.5666 15.4571 20.9571C15.0666 21.3476 14.4334 21.3476 14.0429 20.9571L6.67677 13.591C5.79809 12.7123 5.79809 11.2877 6.67677 10.409L14.0429 3.04289C14.4334 2.65237 15.0666 2.65237 15.4571 3.04289z" fill="currentColor">
+                                </path>
+                              </svg>
+                            </div>
                           </button>
                           <button class="cycle_img_button" id="cycle_img_r_button">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -12 24 40" width="100%" height="20" data-v-9bad986e>
-                              <path d="M8.5429 3.04289C8.15237 3.43342 8.15237 4.06658 8.5429 4.45711L15.909 11.8232C16.0066 11.9209 16.0066 12.0791 15.909 12.1768L8.5429 19.5429C8.15237 19.9334 8.15237 20.5666 8.5429 20.9571C8.93342 21.3476 9.56659 21.3476 9.95711 20.9571L17.3232 13.591C18.2019 12.7123 18.2019 11.2877 17.3232 10.409L9.95711 3.04289C9.56659 2.65237 8.93342 2.65237 8.5429 3.04289z" fill="currentColor">
-                              </path>
-                            </svg>
+                            <div class="cycle_img_button_in" id="cycle_img_r_button_in">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -8 24 40" width="100%" height="100%" data-v-9bad986e>
+                                <path d="M8.5429 3.04289C8.15237 3.43342 8.15237 4.06658 8.5429 4.45711L15.909 11.8232C16.0066 11.9209 16.0066 12.0791 15.909 12.1768L8.5429 19.5429C8.15237 19.9334 8.15237 20.5666 8.5429 20.9571C8.93342 21.3476 9.56659 21.3476 9.95711 20.9571L17.3232 13.591C18.2019 12.7123 18.2019 11.2877 17.3232 10.409L9.95711 3.04289C9.56659 2.65237 8.93342 2.65237 8.5429 3.04289z" fill="currentColor">
+                                </path>
+                              </svg>
+                            </div>
                           </button>
                         </div>
                       </div>
