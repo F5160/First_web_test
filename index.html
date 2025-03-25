@@ -541,11 +541,14 @@
   #cycle_img_top_in {
     height: 100%;
     width: 100%;
-    background-size: cover; /* 图片按比例填充 */
-    background-position: center; /* 图片居中显示 */
-    background-repeat: no-repeat; /* 防止图片平铺 */
+    /* 图片按比例填充 */
+    background-size: cover;
+    /* 图片居中显示 */
+    background-position: center;
+    /* 防止图片平铺 */
+    background-repeat: no-repeat; /* 这三条好像没啥用 */
     /* 保持图片的宽高比 */
-    object-fit: cover;
+    /* object-fit: cover; */
     /* 保持图片的宽高比并完全显示图片 */
     /* object-fit: contain;  */
     transition: filter var(--transition-normal) ease-in-out;
@@ -560,7 +563,14 @@
     width: 100%;
   }
   .cycle_img:has(.cycle_img_top_visual:active) {
+    /* transition: none; */
+    transition: var(--transition-very-quick);
     transform: translateY(calc(var(--cards-translateY-up) * 0.4));
+    box-shadow: 0px 4px 6px 4px rgba(0, 0, 0, 0.06),
+                0px 4px 6px 0px rgba(0, 0, 0, 0.09),
+                0px 6px 8px 0px rgba(0, 0, 0, 0.03),
+                0px 6px 12px 0px rgba(0, 0, 0, 0.06),
+                0px 8px 18px 0px rgba(0, 0, 0, 0.09);
   }
   #cycle_img_top_animation {
     box-shadow: 0px 0px 1000px 100px rgb(0, 0, 0) inset;
@@ -747,12 +757,12 @@
     margin-bottom: 1.6rem;
     background-color: white;
     border-radius: var(--cards-border-radius);
-    overflow: hidden;
+    /* overflow: hidden; */
     transition: transform var(--transition-normal), box-shadow var(--transition-normal); /* 仅对 transform 和 box-shadow 应用过渡效果 */
     transform: translateY(0);
   }
   .in_box_top_right_in_span:hover {
-    transform: translateY(calc(var(--cards-translateY-up) * 1.8));
+    transform: translateY(calc(var(--cards-translateY-up) * 1.2));
     box-shadow: 0px 4px 16px 4px rgba(0, 0, 0, 0.01),
                 0px 6px 18px 4px rgba(0, 0, 0, 0.02),
                 0px 8px 20px 4px rgba(0, 0, 0, 0.01),
@@ -760,48 +770,144 @@
                 0px 12px 12px 0px rgba(0, 0, 0, 0.01)
                 ;
   }
-  /* #in_box_top_right_in > span:active {
-    transform: translateY(calc(var(--cards-translateY-up) * 1.8 * 0.4));
-  } */
+  .content_box:hover {
+    transform: translateY(calc(var(--cards-translateY-up) * 1.2));
+    box-shadow: 0px 4px 16px 4px rgba(0, 0, 0, 0.01),
+                0px 6px 18px 4px rgba(0, 0, 0, 0.02),
+                0px 8px 20px 4px rgba(0, 0, 0, 0.01),
+                0px 10px 8px 0px rgba(0, 0, 0, 0.01),
+                0px 12px 12px 0px rgba(0, 0, 0, 0.01)
+                ;
+  }
+  .in_box_top_right_in_span:active {
+    transition: var(--transition-very-quick);
+    transform: translateY(calc(var(--cards-translateY-up) * 0.6));
+    box-shadow: 0px 4px 16px 2px rgba(0, 0, 0, 0.01),
+                0px 6px 18px 1px rgba(0, 0, 0, 0.02),
+                0px 6px 20px 2px rgba(0, 0, 0, 0.01),
+                0px 4px 8px 0px rgba(0, 0, 0, 0.01),
+                0px 4px 12px 0px rgba(0, 0, 0, 0.01)
+                ;
+  }
+  .content_box:active {
+    transition: var(--transition-very-quick);
+    transform: translateY(calc(var(--cards-translateY-up) * 0.6));
+    box-shadow: 0px 4px 16px 2px rgba(0, 0, 0, 0.01),
+                0px 6px 18px 1px rgba(0, 0, 0, 0.02),
+                0px 6px 20px 2px rgba(0, 0, 0, 0.01),
+                0px 4px 8px 0px rgba(0, 0, 0, 0.01),
+                0px 4px 12px 0px rgba(0, 0, 0, 0.01)
+                ;
+  }
   .in_box_top_right_in_span_in {
     height: 100%;
     width: 100%;
-    background-color: greenyellow;
+    /* background-color: greenyellow; */
     display: flex;
     flex-direction: column;
+    cursor: pointer; /* 鼠标变手 */
   }
   .in_box_top_right_in_span_in > .in_box_top_right_in_span_in_img {
     /* flex: 66; */
     /* 设置宽高比为2:1 */
     aspect-ratio: 2/1;
     border: 0;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     border-radius: var(--cards-border-radius);
     overflow: hidden;
+    transform: translateY(0);
+    transition: var(--transition-normal);
+  }
+  .in_box_top_right_in_span:hover .in_box_top_right_in_span_in_img {
+    transform: translateY(calc(var(--cards-translateY-up) * 1));
+    box-shadow: 0px 4px 2px 1px rgba(0, 0, 0, 0.02),
+                0px 6px 6px 2px rgba(0, 0, 0, 0.04),
+                0px 8px 8px 4px rgba(0, 0, 0, 0.02)
+                /* 0px 10px 8px 0px rgba(0, 0, 0, 0.01),
+                0px 12px 12px 0px rgba(0, 0, 0, 0.01) */
+                ;
+  }
+  .content_box:hover .content_box_img {
+    transform: translateY(calc(var(--cards-translateY-up) * 1));
+    box-shadow: 0px 4px 2px 1px rgba(0, 0, 0, 0.02),
+                0px 6px 6px 2px rgba(0, 0, 0, 0.04),
+                0px 8px 8px 4px rgba(0, 0, 0, 0.02)
+                /* 0px 10px 8px 0px rgba(0, 0, 0, 0.01),
+                0px 12px 12px 0px rgba(0, 0, 0, 0.01) */
+                ;
+  }
+  .in_box_top_right_in_span:active .in_box_top_right_in_span_in_img {
+    transition: var(--transition-very-quick);
+    transform: translateY(calc(var(--cards-translateY-up) * 0));
+    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.02),
+                0px 2px 6px 2px rgba(0, 0, 0, 0.04),
+                0px 4px 8px 4px rgba(0, 0, 0, 0.02)
+                /* 0px 10px 8px 0px rgba(0, 0, 0, 0.01),
+                0px 12px 12px 0px rgba(0, 0, 0, 0.01) */
+                ;
+  }
+  .content_box:active .content_box_img {
+    transition: var(--transition-very-quick);
+    transform: translateY(calc(var(--cards-translateY-up) * 0));
+    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.02),
+                0px 2px 6px 2px rgba(0, 0, 0, 0.04),
+                0px 4px 8px 4px rgba(0, 0, 0, 0.02)
+                /* 0px 10px 8px 0px rgba(0, 0, 0, 0.01),
+                0px 12px 12px 0px rgba(0, 0, 0, 0.01) */
+                ;
+  }
+  .in_box_top_right_in_span_in_img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 或者使用 contain */
+    display: block; /* 去除图片下方的空白间隙 */
   }
   .in_box_top_right_in_span_in > .in_box_top_right_in_span_in_text {
     flex: 34;
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
     display: flex;
     flex-direction: column;
   }
   .in_box_top_right_in_span_in_text > .in_box_top_right_in_span_in_text_title {
     flex: 3;
-    background-color: aqua;
+    margin: 0 0.1rem;
+    /* background-color: aqua; */
+  }
+  .content_box_title {
+    color: black;
+    font-weight: 500;
+    font-size: 105%;
+    white-space: normal; /* 允许自动换行 */
+    overflow-wrap: break-word; /* 确保长单词或 URL 换行 */
+    display: -webkit-box; /* 使用 WebKit 的盒模型 */
+    -webkit-line-clamp: 2; /* 限制行数为2行 */
+    -webkit-box-orient: vertical; /* 垂直排列内容 */
+    overflow: hidden; /* 隐藏溢出的内容 */
+    text-overflow: ellipsis; /* 在溢出时显示省略号 */
+
+    /* 补充标准属性（未来可能支持） */
+    line-clamp: 2;
   }
   .in_box_top_right_in_span_in_text > .in_box_top_right_in_span_in_text_others {
     flex: 2;
-    background-color: deepskyblue;
+    /* background-color: deepskyblue; */
+    margin: 0 0.1rem;
     display: flex;
     justify-content: space-between;
   }
+  .content_box_others {
+    color: gray;
+  }
   .in_box_top_right_in_span_in_text_others > .in_box_top_right_in_span_in_others_info {
     flex: 5;
-    background-color: dodgerblue;
+    /* background-color: dodgerblue; */
   }
   .in_box_top_right_in_span_in_text_others > .in_box_top_right_in_span_in_others_time {
     flex: 3;
-    background-color: blue;
+    /* background-color: blue; */
+  }
+  .content_box_time {
+    text-align: right;
   }
   
 
@@ -1042,74 +1148,86 @@
             </span>
             <span id="in_box_top_right">
               <div id="in_box_top_right_in">
-                <span class="in_box_top_right_in_span">
-                  <span class="in_box_top_right_in_span_in">
-                    <img class="in_box_top_right_in_span_in_img"></img>
-                    <span class="in_box_top_right_in_span_in_text">
-                      <span class="in_box_top_right_in_span_in_text_title"></span>
-                      <span class="in_box_top_right_in_span_in_text_others">
-                        <span class="in_box_top_right_in_span_in_others_info"></span>
-                        <span class="in_box_top_right_in_span_in_others_time"></span>
+                <span class="in_box_top_right_in_span content_box">
+                  <span class="in_box_top_right_in_span_in content_box_in">
+                    <div class="in_box_top_right_in_span_in_img content_box_img">
+                      <img src="File/img/test_1.jpg" alt="">
+                    </div>
+                    <span class="in_box_top_right_in_span_in_text content_box_text">
+                      <span class="in_box_top_right_in_span_in_text_title content_box_title">TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST_3</span>
+                      <span class="in_box_top_right_in_span_in_text_others content_box_others">
+                        <span class="in_box_top_right_in_span_in_others_info content_box_info">test_4</span>
+                        <span class="in_box_top_right_in_span_in_others_time content_box_time">test_5</span>
                       </span>
                     </span>
                   </span>
                 </span>
-                <span class="in_box_top_right_in_span">
-                  <span class="in_box_top_right_in_span_in">
-                    <img class="in_box_top_right_in_span_in_img"></img>
-                    <span class="in_box_top_right_in_span_in_text">
-                      <span class="in_box_top_right_in_span_in_text_title"></span>
-                      <span class="in_box_top_right_in_span_in_text_others">
-                        <span class="in_box_top_right_in_span_in_others_info"></span>
-                        <span class="in_box_top_right_in_span_in_others_time"></span>
+                <span class="in_box_top_right_in_span content_box">
+                  <span class="in_box_top_right_in_span_in content_box_in">
+                    <div class="in_box_top_right_in_span_in_img content_box_img">
+                      <img src="File/img/test_2.jpg" alt="">
+                    </div>
+                    <span class="in_box_top_right_in_span_in_text content_box_text">
+                      <span class="in_box_top_right_in_span_in_text_title content_box_title">TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST_3</span>
+                      <span class="in_box_top_right_in_span_in_text_others content_box_others">
+                        <span class="in_box_top_right_in_span_in_others_info content_box_info">test_4</span>
+                        <span class="in_box_top_right_in_span_in_others_time content_box_time">test_5</span>
                       </span>
                     </span>
                   </span>
                 </span>
-                <span class="in_box_top_right_in_span">
-                  <span class="in_box_top_right_in_span_in">
-                    <img class="in_box_top_right_in_span_in_img"></img>
-                    <span class="in_box_top_right_in_span_in_text">
-                      <span class="in_box_top_right_in_span_in_text_title"></span>
-                      <span class="in_box_top_right_in_span_in_text_others">
-                        <span class="in_box_top_right_in_span_in_others_info"></span>
-                        <span class="in_box_top_right_in_span_in_others_time"></span>
+                <span class="in_box_top_right_in_span content_box">
+                  <span class="in_box_top_right_in_span_in content_box_in">
+                    <div class="in_box_top_right_in_span_in_img content_box_img">
+                      <img src="File/img/test_3.jpg" alt="">
+                    </div>
+                    <span class="in_box_top_right_in_span_in_text content_box_text">
+                      <span class="in_box_top_right_in_span_in_text_title content_box_title">TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST_3</span>
+                      <span class="in_box_top_right_in_span_in_text_others content_box_others">
+                        <span class="in_box_top_right_in_span_in_others_info content_box_info">test_4</span>
+                        <span class="in_box_top_right_in_span_in_others_time content_box_time">test_5</span>
                       </span>
                     </span>
                   </span>
                 </span>
-                <span class="in_box_top_right_in_span">
-                  <span class="in_box_top_right_in_span_in">
-                    <img class="in_box_top_right_in_span_in_img"></img>
-                    <span class="in_box_top_right_in_span_in_text">
-                      <span class="in_box_top_right_in_span_in_text_title"></span>
-                      <span class="in_box_top_right_in_span_in_text_others">
-                        <span class="in_box_top_right_in_span_in_others_info"></span>
-                        <span class="in_box_top_right_in_span_in_others_time"></span>
+                <span class="in_box_top_right_in_span content_box">
+                  <span class="in_box_top_right_in_span_in content_box_in">
+                    <div class="in_box_top_right_in_span_in_img content_box_img">
+                      <img src="File/img/test_4.jpg" alt="">
+                    </div>
+                    <span class="in_box_top_right_in_span_in_text content_box_text">
+                      <span class="in_box_top_right_in_span_in_text_title content_box_title">TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST_3</span>
+                      <span class="in_box_top_right_in_span_in_text_others content_box_others">
+                        <span class="in_box_top_right_in_span_in_others_info content_box_info">test_4</span>
+                        <span class="in_box_top_right_in_span_in_others_time content_box_time">test_5</span>
                       </span>
                     </span>
                   </span>
                 </span>
-                <span class="in_box_top_right_in_span">
-                  <span class="in_box_top_right_in_span_in">
-                    <img class="in_box_top_right_in_span_in_img"></img>
-                    <span class="in_box_top_right_in_span_in_text">
-                      <span class="in_box_top_right_in_span_in_text_title"></span>
-                      <span class="in_box_top_right_in_span_in_text_others">
-                        <span class="in_box_top_right_in_span_in_others_info"></span>
-                        <span class="in_box_top_right_in_span_in_others_time"></span>
+                <span class="in_box_top_right_in_span content_box">
+                  <span class="in_box_top_right_in_span_in content_box_in">
+                    <div class="in_box_top_right_in_span_in_img content_box_img">
+                      <img src="File/img/test_5.jpg" alt="">
+                    </div>
+                    <span class="in_box_top_right_in_span_in_text content_box_text">
+                      <span class="in_box_top_right_in_span_in_text_title content_box_title">TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST_3</span>
+                      <span class="in_box_top_right_in_span_in_text_others content_box_others">
+                        <span class="in_box_top_right_in_span_in_others_info content_box_info">test_4</span>
+                        <span class="in_box_top_right_in_span_in_others_time content_box_time">test_5</span>
                       </span>
                     </span>
                   </span>
                 </span>
-                <span class="in_box_top_right_in_span">
-                  <span class="in_box_top_right_in_span_in">
-                    <img class="in_box_top_right_in_span_in_img"></img>
-                    <span class="in_box_top_right_in_span_in_text">
-                      <span class="in_box_top_right_in_span_in_text_title"></span>
-                      <span class="in_box_top_right_in_span_in_text_others">
-                        <span class="in_box_top_right_in_span_in_others_info"></span>
-                        <span class="in_box_top_right_in_span_in_others_time"></span>
+                <span class="in_box_top_right_in_span content_box">
+                  <span class="in_box_top_right_in_span_in content_box_in">
+                    <div class="in_box_top_right_in_span_in_img content_box_img">
+                      <img src="File/img/test_6.jpg" alt="">
+                    </div>
+                    <span class="in_box_top_right_in_span_in_text content_box_text">
+                      <span class="in_box_top_right_in_span_in_text_title content_box_title">TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST_3</span>
+                      <span class="in_box_top_right_in_span_in_text_others content_box_others">
+                        <span class="in_box_top_right_in_span_in_others_info content_box_info">test_4</span>
+                        <span class="in_box_top_right_in_span_in_others_time content_box_time">test_5</span>
                       </span>
                     </span>
                   </span>
@@ -1323,6 +1441,7 @@
 
 
 
+  // 动态监听窗口宽度决定显示6个或4个内容, 显示4个内容时不显示最后2个
   function adjustInBoxTopRightIn() {
     const inBoxTopRightIn = document.getElementById('in_box_top_right_in');
     const spans = inBoxTopRightIn.getElementsByClassName('in_box_top_right_in_span');
@@ -1341,6 +1460,17 @@
   adjustInBoxTopRightIn();
   // 监听窗口大小变化
   window.addEventListener('resize', adjustInBoxTopRightIn);
+
+
+
+
+  // JavaScript 动态截断字符_文字超出盒子宽度时换行, 并且只允许文字存在两行, 超出的部分用省略号表示
+  document.querySelectorAll('content_box_title').forEach(element => {
+    const lines = element.innerText.split('\n');
+      if (lines.length > 2) {
+          element.innerText = lines.slice(0, 2).join('\n') + '..';
+      }
+  });
 
 </script>
 
