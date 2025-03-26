@@ -7,12 +7,6 @@
   <!-- 天下笨蛋是一家 -->
 </head>
 <style>
-  body {
-      padding: 0;
-      margin: 0;
-    }
-
-
   :root {
     --layout-padding: 0px;
     --transition-very-quick: 0.1s;
@@ -20,6 +14,33 @@
     --transition-normal: 0.3s;
     --transform-down-middle: 8%;
     --transform-down-beside: 4%;
+  }
+
+
+  /* 移除移动端聚焦边框 */
+  button:active,
+  input[type="button"]:active,
+  input[type="submit"]:active,
+  input[type="reset"]:active {
+      background-color: transparent;
+      outline: none; /* 去掉点击时的聚焦边框 */
+  }
+  a:active {
+      background-color: transparent;
+      outline: none;
+  }
+  div:active, 
+  span:active, 
+  li:active, 
+  dl:active {
+      background-color: transparent;
+      outline: none;
+  }
+
+  /* 选中高亮样式 */
+  ::selection {
+    background-color: rgba(0, 0, 0, 0.2); /* 浅灰色 */
+    color: inherit; /* 继承父元素的文字颜色 */
   }
 
 
@@ -876,7 +897,7 @@
   .content_box_title {
     color: black;
     font-weight: 500;
-    font-size: 105%;
+    font-size: 102.5%;
     white-space: normal; /* 允许自动换行 */
     overflow-wrap: break-word; /* 确保长单词或 URL 换行 */
     display: -webkit-box; /* 使用 WebKit 的盒模型 */
@@ -915,6 +936,12 @@
     flex: 1;
     margin-top: 1rem;
     background-color: rgb(255, 165, 165);
+  }
+  #body_in_box_bottom_in {
+    height: 100%;
+    width: 100%;
+    background-color: antiquewhite;
+    display: flex;
   }
   
 
@@ -1030,7 +1057,7 @@
           <span><span>致谢</span></span>
           <span><span>投递邮件</span></span>
           <span><span>联系我</span></span>
-          <span><span>个人主页</span></span>
+          <span><span>个人简介</span></span>
         </div>
       </div>
       <img src="File/img/pilipala.png" alt="">
@@ -1071,28 +1098,28 @@
           </div>
           <div class="head_section" id="head_second_section">
             <div id="head_second_section_in">
-              <span>test_1</span>
-              <span>test_1</span>
-              <span>test_1</span>
-              <span>test_1</span>
-              <span>test_1</span>
-              <span>test_1</span>
-              <span>test_1</span>
-              <span>test_1</span>
-              <span>test_1</span>
-              <span>test_1</span>
-              <span>test_1</span>
-              <span>test_1</span>
-              <span>test_1</span>
-              <span>test_1</span>
+              <span>介绍</span>
+              <span>主题</span>
+              <span>主题</span>
+              <span>主题</span>
+              <span>主题</span>
+              <span>主题</span>
+              <span>主题</span>
+              <span>副题</span>
+              <span>副题</span>
+              <span>副题</span>
+              <span>副题</span>
+              <span>副题</span>
+              <span>副题</span>
+              <span>副题</span>
             </div>
           </div>
           <div class="head_section" id="head_third_section">
             <div id="head_third_section_in">
-              <span>test_2</span>
-              <span>test_2</span>
-              <span>test_2</span>
-              <span>test_2</span>
+              <span>留言板(测试)</span>
+              <span>投稿</span>
+              <span>问题反馈</span>
+              <span>关于本站</span>
             </div>
           </div>
         </div>
@@ -1235,7 +1262,9 @@
               </div>
             </span>
           </div>
-          <div id="body_in_box_bottom"></div>
+          <div id="body_in_box_bottom">
+            <div id="body_in_box_bottom_in"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -1245,11 +1274,10 @@
 
 <script>
   console.log("cl test");
-    
+
   // 获取title元素
   const title = document.querySelector('#title');
   const head_title = document.querySelector('#head_title');
-
   // 监听滚动
   window.addEventListener('scroll', function() {
     // 获取滚动距离
@@ -1268,7 +1296,6 @@
 
 
 
-
   let cycle_img = [
     {url: 'File/img/test_1.jpg', text: '努 力 做 个 人', r: 108, g: 81, b: 81, a: 1}, 
     {url: 'File/img/test_2.jpg', text: '虽然但是..', r: 150, g: 0, b: 0, a: 1}, 
@@ -1282,11 +1309,15 @@
   const cycle_img_Element = document.querySelector('.cycle_img');
   const cycle_img_top_Element = document.querySelector('#cycle_img_top');
   const cycle_img_top_in_Element = document.querySelector('#cycle_img_top_in');
+  const cycle_img_top_shadow_Element = document.querySelector('#cycle_img_top_shadow');
   const cycle_img_bottom_Element = document.querySelector('#cycle_img_bottom');
   const cycle_img_text_Element = document.querySelector('#cycle_img_text');
   const cycle_img_point_Elements = document.querySelectorAll('#cycle_img_points dd');
   const cycle_img_r_button_Element = document.querySelector('#cycle_img_r_button');
   const cycle_img_l_button_Element = document.querySelector('#cycle_img_l_button');
+
+
+
 
   // 更新轮播图内容
   function updateCarousel() {
@@ -1294,6 +1325,9 @@
     cycle_img_top_in_Element.src = currentSlide.url;
   }
   updateCarousel();
+
+
+
 
   // 更换图片时闪烁
   function updateCarousel_visual() {
@@ -1304,6 +1338,9 @@
       cycle_img_top_Element.style.boxShadow = '0px 0px 10px 2px rgba(255, 255, 200, 0)';
     }, 400); // 恢复延迟0.4秒(闪烁0.3秒)
   }
+
+
+
 
   // 底栏跟随切换
   function updateCarousel_text_color_and_points() {
@@ -1322,6 +1359,9 @@
     });
   }
   updateCarousel_text_color_and_points();
+
+
+
 
   // 按钮切换
   cycle_img_r_button_Element.addEventListener('click', () => {
@@ -1347,6 +1387,9 @@
     setTimeout(updateCarousel, 300); // 延迟0.3秒更新轮播图
   });
 
+
+
+
   // 选择切换
   cycle_img_point_Elements.forEach((point, index) => {
     point.addEventListener('click', () => {
@@ -1359,6 +1402,9 @@
       }
     });
   });
+
+
+
 
   // 自动切换
   let cycle_timeId;
@@ -1375,7 +1421,7 @@
         updateCarousel_text_color_and_points(); // 延迟0.4秒更新文本和点
         updateCarousel(); // 延迟0.4秒更新轮播图
       }, 400);
-      console.log('setInterval success')
+      console.log('setInterval循环')
     }, 8000);
   };
   startCarousel();
@@ -1383,24 +1429,27 @@
   // 鼠标进入则暂停自动切换
   cycle_img_Element.addEventListener('mouseenter', () => {
     clearInterval(cycle_timeId);
-    console.log('cycle_timeId now stop');
+    console.log('cycle_timeId停止');
   });
   cycle_img_Element.addEventListener('mouseleave', () => {
     startCarousel();
-    console.log('cycle_timeId now start');
+    console.log('cycle_timeId重新启动');
   });
 
-  // 触摸事件处理
+
+
+
+  // 触摸切换
   let touch_startX = 0;
   let touch_startY = 0;
 
-  cycle_img_top_Element.addEventListener('touchstart', (event) => {
+  cycle_img_top_shadow_Element.addEventListener('touchstart', (event) => {
     const touch = event.touches[0];
     touch_startX = touch.clientX;
     touch_startY = touch.clientY;
     console.log('touchstart', touch_startX, touch_startY); // 添加调试信息
   });
-  cycle_img_top_Element.addEventListener('touchend', (event) => {
+  cycle_img_top_shadow_Element.addEventListener('touchend', (event) => {
     const touch = event.changedTouches[0];
     const endX = touch.clientX;
     const endY = touch.clientY;
@@ -1435,6 +1484,71 @@
         updateCarousel_text_color_and_points();
         setTimeout(updateCarousel, 300); // 延迟0.3秒更新轮播图
       }
+    }
+  });
+
+
+
+
+  // 拖拽切换
+  let isDragging = false;
+  let mouse_startX = 0;
+  let mouse_startY = 0;
+
+  cycle_img_top_shadow_Element.addEventListener('mousedown', (event) => {
+    isDragging = true;
+    mouse_startX = event.clientX;
+    mouse_startY = event.clientY;
+    console.log('mousestart', mouse_startX, mouse_startY); // 添加调试信息
+  });
+  cycle_img_top_shadow_Element.addEventListener('mousemove', (event) => {
+    if (isDragging) {
+      // 记录当前鼠标位置
+      const currentX = event.clientX;
+      const currentY = event.clientY;
+    }
+  });
+  cycle_img_top_shadow_Element.addEventListener('mouseup', (event) => {
+    if (isDragging) {
+      isDragging = false;
+      const endX = event.clientX;
+      const endY = event.clientY;
+      const deltaX = mouse_startX - endX;
+      const deltaY = mouse_startY - endY;
+      console.log('mouseend', endX, endY, deltaX, deltaY); // 添加调试信息
+
+      // 拖拽至少大于20单位
+      if(Math.abs(deltaX) > 20) {
+        // 判断拖拽方向
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+          if (deltaX > 0) {
+            // 从右往左拖拽
+            console.log('从右往左拖拽'); // 添加调试信息
+            clearTimeout(cycle_timeId); // 清除当前的定时器
+            if (cycle_num < cycle_img.length) {
+              cycle_num++;
+            } else {
+              cycle_num = 1;
+            }
+            updateCarousel_visual();
+            updateCarousel_text_color_and_points();
+            setTimeout(updateCarousel, 300); // 延迟0.3秒更新轮播图
+          } else {
+            // 从左往右拖拽
+            console.log('从左往右拖拽'); // 添加调试信息
+            clearTimeout(cycle_timeId); // 清除当前的定时器
+            if (cycle_num > 1) {
+              cycle_num--;
+            } else {
+              cycle_num = cycle_img.length;
+            }
+            updateCarousel_visual();
+            updateCarousel_text_color_and_points();
+            setTimeout(updateCarousel, 300); // 延迟0.3秒更新轮播图
+          }
+        }
+      }
+      
     }
   });
 
