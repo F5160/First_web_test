@@ -18,23 +18,26 @@
 
 
   /* 移除移动端聚焦边框 */
+  * {
+   -webkit-tap-highlight-color: transparent; /* 透明 */
+  }
   button:active,
   input[type="button"]:active,
   input[type="submit"]:active,
   input[type="reset"]:active {
-      background-color: transparent;
-      outline: none; /* 去掉点击时的聚焦边框 */
+    background-color: transparent;
+    outline: none; /* 去掉点击时的聚焦边框 */
   }
   a:active {
-      background-color: transparent;
-      outline: none;
+    background-color: transparent;
+    outline: none;
   }
   div:active, 
   span:active, 
   li:active, 
   dl:active {
-      background-color: transparent;
-      outline: none;
+    background-color: transparent;
+    outline: none;
   }
 
   /* 选中高亮样式 */
@@ -507,9 +510,9 @@
   }
 
   #body_in_box_top {
-    /* min-height: 420px; */
+    min-height: 420px;
     width: 100%;
-    aspect-ratio: 16/5; /* 设置宽高比为16:5 */
+    /* aspect-ratio: 16/5; 设置宽高比为16:5 你要宽高比干什么 */
     /* background-color: rgb(215, 250, 215); */
     display: flex;
     gap: 1rem;
@@ -907,7 +910,7 @@
     text-overflow: ellipsis; /* 在溢出时显示省略号 */
 
     /* 补充标准属性（未来可能支持） */
-    line-clamp: 2;
+    line-clamp: 2; /* 限制行数为2行 */
   }
   .in_box_top_right_in_span_in_text > .in_box_top_right_in_span_in_text_others {
     flex: 2;
