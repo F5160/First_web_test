@@ -1181,7 +1181,7 @@
                 <span class="in_box_top_right_in_span content_box">
                   <span class="in_box_top_right_in_span_in content_box_in">
                     <div class="in_box_top_right_in_span_in_img content_box_img">
-                      <img src="File/img/test_1.jpg" alt="">
+                      <img src="https://s21.ax1x.com/2025/03/26/pEDRZGQ.jpg" alt="">
                     </div>
                     <span class="in_box_top_right_in_span_in_text content_box_text">
                       <span class="in_box_top_right_in_span_in_text_title content_box_title">TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST_3</span>
@@ -1460,32 +1460,35 @@
     const deltaY = touch_startY - endY;
     console.log('touchend', endX, endY, deltaX, deltaY); // 添加调试信息
     
-    // 判断滑动方向
-    if (Math.abs(deltaX) > Math.abs(deltaY)) {
-      if (deltaX > 0) {
-        // 从右往左滑动
-        console.log('从右往左滑动'); // 添加调试信息
-        clearTimeout(cycle_timeId); // 清除当前的定时器
-        if (cycle_num < cycle_img.length) {
-          cycle_num++;
+    // 滑动至少大于20单位
+    if(Math.abs(deltaX) > 20) {
+      // 判断滑动方向
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        if (deltaX > 0) {
+          // 从右往左滑动
+          console.log('从右往左滑动'); // 添加调试信息
+          clearTimeout(cycle_timeId); // 清除当前的定时器
+          if (cycle_num < cycle_img.length) {
+            cycle_num++;
+          } else {
+            cycle_num = 1;
+          }
+          updateCarousel_visual();
+          updateCarousel_text_color_and_points();
+          setTimeout(updateCarousel, 300); // 延迟0.3秒更新轮播图
         } else {
-          cycle_num = 1;
+          // 从左往右滑动
+          console.log('从左往右滑动'); // 添加调试信息
+          clearTimeout(cycle_timeId); // 清除当前的定时器
+          if (cycle_num > 1) {
+            cycle_num--;
+          } else {
+            cycle_num = cycle_img.length;
+          }
+          updateCarousel_visual();
+          updateCarousel_text_color_and_points();
+          setTimeout(updateCarousel, 300); // 延迟0.3秒更新轮播图
         }
-        updateCarousel_visual();
-        updateCarousel_text_color_and_points();
-        setTimeout(updateCarousel, 300); // 延迟0.3秒更新轮播图
-      } else {
-        // 从左往右滑动
-        console.log('从左往右滑动'); // 添加调试信息
-        clearTimeout(cycle_timeId); // 清除当前的定时器
-        if (cycle_num > 1) {
-          cycle_num--;
-        } else {
-          cycle_num = cycle_img.length;
-        }
-        updateCarousel_visual();
-        updateCarousel_text_color_and_points();
-        setTimeout(updateCarousel, 300); // 延迟0.3秒更新轮播图
       }
     }
   });
