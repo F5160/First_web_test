@@ -87,8 +87,9 @@
 
 
   #background {
-    height: 400rem;
+    height: 1000rem;
     width: 100%;
+    min-width: 1060px;
     margin: 0 auto; /* 水平居中 */
     display: flex;
     flex-direction: column;
@@ -100,7 +101,7 @@
     height: 10.375vw;
     max-height: 240px;
     /* height: clamp(155px, 10.375vw, 240px); 有点问题 25/03/14 00:30 来自自己 */
-    /* min-width: 1000px; */
+    min-width: 1060px;
     background-color: rgb(202, 200, 255);
     background-image: url(File/img/head_img.png@3840w_360h_1c.webp);
     background-size: cover; /* 图片按比例填充 */
@@ -400,6 +401,7 @@
     box-sizing: border-box;
     /* border: 1px solid #ccc; */
     border-radius: 100%;
+    vertical-align: middle;
   }
   #head_first_section_left_in:hover, #head_first_section_right_in:hover {
     cursor: pointer; /* 鼠标变手 */
@@ -441,6 +443,7 @@
     border-left: solid 1px #ebebeb;
     border-right: solid 1px #ebebeb;
     justify-content: space-between;
+    white-space: nowrap;
     gap: var(--head-second-section-in-gap);
     --head-second-section-in-gap: 14px;
   }
@@ -780,19 +783,13 @@
     aspect-ratio: 4/3;
     margin-bottom: 1.6rem;
     background-color: white;
-    border-radius: var(--cards-border-radius);
     /* overflow: hidden; */
     transition: transform var(--transition-normal), box-shadow var(--transition-normal); /* 仅对 transform 和 box-shadow 应用过渡效果 */
     transform: translateY(0);
   }
-  .in_box_top_right_in_span:hover {
-    transform: translateY(calc(var(--cards-translateY-up) * 1.2));
-    box-shadow: 0px 4px 16px 4px rgba(0, 0, 0, 0.01),
-                0px 6px 18px 4px rgba(0, 0, 0, 0.02),
-                0px 8px 20px 4px rgba(0, 0, 0, 0.01),
-                0px 10px 8px 0px rgba(0, 0, 0, 0.01),
-                0px 12px 12px 0px rgba(0, 0, 0, 0.01)
-                ;
+  .content_box {
+    border-radius: var(--cards-border-radius);
+    transition: var(--transition-normal);
   }
   .content_box:hover {
     transform: translateY(calc(var(--cards-translateY-up) * 1.2));
@@ -801,16 +798,6 @@
                 0px 8px 20px 4px rgba(0, 0, 0, 0.01),
                 0px 10px 8px 0px rgba(0, 0, 0, 0.01),
                 0px 12px 12px 0px rgba(0, 0, 0, 0.01)
-                ;
-  }
-  .in_box_top_right_in_span:active {
-    transition: var(--transition-very-quick);
-    transform: translateY(calc(var(--cards-translateY-up) * 0.6));
-    box-shadow: 0px 4px 16px 2px rgba(0, 0, 0, 0.01),
-                0px 6px 18px 1px rgba(0, 0, 0, 0.02),
-                0px 6px 20px 2px rgba(0, 0, 0, 0.01),
-                0px 4px 8px 0px rgba(0, 0, 0, 0.01),
-                0px 4px 12px 0px rgba(0, 0, 0, 0.01)
                 ;
   }
   .content_box:active {
@@ -823,49 +810,33 @@
                 0px 4px 12px 0px rgba(0, 0, 0, 0.01)
                 ;
   }
-  .in_box_top_right_in_span_in {
+  /* .in_box_top_right_in_span_in {
+    background-color: greenyellow;
+  } */
+  .content_box_in {
     height: 100%;
     width: 100%;
-    /* background-color: greenyellow; */
     display: flex;
     flex-direction: column;
     cursor: pointer; /* 鼠标变手 */
   }
-  .in_box_top_right_in_span_in > .in_box_top_right_in_span_in_img {
-    /* flex: 66; */
-    /* 设置宽高比为2:1 */
+  /* .in_box_top_right_in_span_in > .in_box_top_right_in_span_in_img {
+    flex: 66;
+    background-color: aquamarine;
+  } */
+  .content_box_img {
     aspect-ratio: 2/1;
     border: 0;
-    /* background-color: aquamarine; */
     border-radius: var(--cards-border-radius);
     overflow: hidden;
     transform: translateY(0);
     transition: var(--transition-normal);
-  }
-  .in_box_top_right_in_span:hover .in_box_top_right_in_span_in_img {
-    transform: translateY(calc(var(--cards-translateY-up) * 1));
-    box-shadow: 0px 4px 2px 1px rgba(0, 0, 0, 0.02),
-                0px 6px 6px 2px rgba(0, 0, 0, 0.04),
-                0px 8px 8px 4px rgba(0, 0, 0, 0.02)
-                /* 0px 10px 8px 0px rgba(0, 0, 0, 0.01),
-                0px 12px 12px 0px rgba(0, 0, 0, 0.01) */
-                ;
   }
   .content_box:hover .content_box_img {
     transform: translateY(calc(var(--cards-translateY-up) * 1));
     box-shadow: 0px 4px 2px 1px rgba(0, 0, 0, 0.02),
                 0px 6px 6px 2px rgba(0, 0, 0, 0.04),
                 0px 8px 8px 4px rgba(0, 0, 0, 0.02)
-                /* 0px 10px 8px 0px rgba(0, 0, 0, 0.01),
-                0px 12px 12px 0px rgba(0, 0, 0, 0.01) */
-                ;
-  }
-  .in_box_top_right_in_span:active .in_box_top_right_in_span_in_img {
-    transition: var(--transition-very-quick);
-    transform: translateY(calc(var(--cards-translateY-up) * 0));
-    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.02),
-                0px 2px 6px 2px rgba(0, 0, 0, 0.04),
-                0px 4px 8px 4px rgba(0, 0, 0, 0.02)
                 /* 0px 10px 8px 0px rgba(0, 0, 0, 0.01),
                 0px 12px 12px 0px rgba(0, 0, 0, 0.01) */
                 ;
@@ -880,22 +851,20 @@
                 0px 12px 12px 0px rgba(0, 0, 0, 0.01) */
                 ;
   }
-  .in_box_top_right_in_span_in_img > img {
+  .content_box_img > img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* 或者使用 contain */
     display: block; /* 去除图片下方的空白间隙 */
   }
-  .in_box_top_right_in_span_in > .in_box_top_right_in_span_in_text {
+  /* .in_box_top_right_in_span_in > .in_box_top_right_in_span_in_text {
+    background-color: antiquewhite;
+  } */
+  .content_box_text {
     flex: 34;
-    /* background-color: antiquewhite; */
+    margin: 0 0.1rem 0.2rem 0.1rem;
     display: flex;
     flex-direction: column;
-  }
-  .in_box_top_right_in_span_in_text > .in_box_top_right_in_span_in_text_title {
-    flex: 3;
-    margin: 0 0.1rem;
-    /* background-color: aqua; */
   }
   .content_box_title {
     color: black;
@@ -912,25 +881,27 @@
     /* 补充标准属性（未来可能支持） */
     line-clamp: 2; /* 限制行数为2行 */
   }
-  .in_box_top_right_in_span_in_text > .in_box_top_right_in_span_in_text_others {
+  /* .in_box_top_right_in_span_in_text > .in_box_top_right_in_span_in_text_others {
+    background-color: deepskyblue;
+  } */
+  .content_box_others {
     flex: 2;
-    /* background-color: deepskyblue; */
-    margin: 0 0.1rem;
+    color: gray;
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
   }
-  .content_box_others {
-    color: gray;
-  }
-  .in_box_top_right_in_span_in_text_others > .in_box_top_right_in_span_in_others_info {
+  /* .in_box_top_right_in_span_in_text_others > .in_box_top_right_in_span_in_others_info {
+    background-color: dodgerblue;
+  } */
+  .content_box_info {
     flex: 5;
-    /* background-color: dodgerblue; */
   }
-  .in_box_top_right_in_span_in_text_others > .in_box_top_right_in_span_in_others_time {
-    flex: 3;
-    /* background-color: blue; */
-  }
+  /* .in_box_top_right_in_span_in_text_others > .in_box_top_right_in_span_in_others_time {
+    background-color: blue;
+  } */
   .content_box_time {
+    flex: 3;
     text-align: right;
   }
   
@@ -938,20 +909,72 @@
   #body_in_box_bottom {
     flex: 1;
     margin-top: 1rem;
-    background-color: rgb(255, 165, 165);
+    /* background-color: rgb(255, 165, 165); */
   }
   #body_in_box_bottom_in {
-    height: 100%;
+    height: 600rem;
     width: 100%;
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
     display: flex;
+    flex-direction: column;
+  }
+
+  #body_in_box_bottom_in > div {
+    flex: 1;
+  }
+  #body_in_box_bottom_in > div:nth-child(odd) {
+    background-color: bisque;
+  }
+  #body_in_box_bottom_in > div:nth-child(even) {
+    background-color: antiquewhite;
   }
   
-
+  #body_in_box_bottom_in > div > .bottom_div_in {
+    height: var(--bottom-div-in-relative-height);
+    position: relative;
+    top: calc((100% - var(--bottom-div-in-relative-height)) / 2);
+    background-color: rgb(0, 0, 0, 0.05);
+    
+    --bottom-div-in-relative-height: 80%;
+  }
+  .bottom_div_in > .bottom_div_img {
+    height: 20%;
+    width: 100%;
+    position: absolute;
+    top: 16%;
+    background-color: rgb(0, 0, 0, 0.05);
+  }
+  .bottom_div_img > img {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    filter: drop-shadow(0px 0px 10px rgb(0, 0, 0, 0.2));
+    transition: calc(var(--transition-normal) * 2);
+    transform: translateX(0);
+  }
+  .bottom_div_img > img::selection {
+    background-color: transparent; /* 透明 */
+    color: inherit; /* 继承父元素的文字颜色 */
+  }
+  .bottom_div_img:hover {
+    cursor: pointer; /* 鼠标变手 */
+  }
+  .bottom_div_img:hover > img {
+    filter: drop-shadow(0px 0px 10px rgb(0, 0, 0, 0.2));
+    transform: translateX(4%);
+  }
+  
+  
+  /* 宽度小于1040则变为移动端样式 */
+  /* 难写, 不写了淦 */
   /* @media (min-width: 1040px) {
   } */
-  /* *宽度小于1040则变为移动端样式 */
+  
+  /* 这尼玛又是什么神奇逻辑啊 */
   @media (max-width: 1399.9px) {
+    #body_in{
+      padding: 0 40px;
+    }
     #in_box_top_right_in .in_box_top_right_in_span:nth-last-child(-n+2) {
       display: none;
     }
@@ -961,7 +984,7 @@
   }
   @media (min-width: 1140px) and (max-width: 1399.9px) {
     :root {
-      --layout-padding: 100px;
+      --layout-padding: 40px;
     }
     #in_box_top_left {
       --in-in-top-left-width: 50%
@@ -1121,7 +1144,7 @@
             <div id="head_third_section_in">
               <span>留言(测试)</span>
               <span>投稿</span>
-              <span>问题反馈</span>
+              <span>建议及反馈</span>
               <span>关于本站</span>
             </div>
           </div>
@@ -1266,7 +1289,120 @@
             </span>
           </div>
           <div id="body_in_box_bottom">
-            <div id="body_in_box_bottom_in"></div>
+            <div id="body_in_box_bottom_in">
+              <!-- <span class="content_box" style="height: 194px; width: 258px;">
+                <span class="content_box_in">
+                  <div class="content_box_img">
+                    <img src="File/img/test_6.jpg" alt="">
+                  </div>
+                  <span class="content_box_text">
+                    <span class="content_box_title">TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST_3</span>
+                    <span class="content_box_others">
+                      <span class="content_box_info">test_4</span>
+                      <span class="content_box_time">test_5</span>
+                    </span>
+                  </span>
+                </span>
+              </span> -->
+              <div>
+                <div class="bottom_div_in">
+                  <div class="bottom_div_img">
+                    <img src="File/img/pilipala.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="bottom_div_in">
+                  <div class="bottom_div_img">
+                    <img src="File/img/pilipala.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="bottom_div_in">
+                  <div class="bottom_div_img">
+                    <img src="File/img/pilipala.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="bottom_div_in">
+                  <div class="bottom_div_img">
+                    <img src="File/img/pilipala.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="bottom_div_in">
+                  <div class="bottom_div_img">
+                    <img src="File/img/pilipala.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="bottom_div_in">
+                  <div class="bottom_div_img">
+                    <img src="File/img/pilipala.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="bottom_div_in">
+                  <div class="bottom_div_img">
+                    <img src="File/img/pilipala.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="bottom_div_in">
+                  <div class="bottom_div_img">
+                    <img src="File/img/pilipala.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="bottom_div_in">
+                  <div class="bottom_div_img">
+                    <img src="File/img/pilipala.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="bottom_div_in">
+                  <div class="bottom_div_img">
+                    <img src="File/img/pilipala.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="bottom_div_in">
+                  <div class="bottom_div_img">
+                    <img src="File/img/pilipala.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="bottom_div_in">
+                  <div class="bottom_div_img">
+                    <img src="File/img/pilipala.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="bottom_div_in">
+                  <div class="bottom_div_img">
+                    <img src="File/img/pilipala.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="bottom_div_in">
+                  <div class="bottom_div_img">
+                    <img src="File/img/pilipala.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1514,7 +1650,7 @@
       const currentY = event.clientY;
     }
   });
-  cycle_img_top_shadow_Element.addEventListener('mouseup', (event) => {
+  cycle_img_top_shadow_Element.addEventListener('mouseup', (event) => { 
     if (isDragging) {
       isDragging = false;
       const endX = event.clientX;
