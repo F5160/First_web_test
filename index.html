@@ -12,6 +12,7 @@
     --transition-very-quick: 0.1s;
     --transition-quick: 0.2s;
     --transition-normal: 0.3s;
+    --transition-slow: 0.6s;
     --transform-down-middle: 8%;
     --transform-down-beside: 4%;
   }
@@ -32,13 +33,13 @@
     background-color: transparent;
     outline: none;
   }
-  div:active, 
+  /* div:active, 
   span:active, 
   li:active, 
   dl:active {
     background-color: transparent;
     outline: none;
-  }
+  } */
 
   /* 选中高亮样式 */
   ::selection {
@@ -499,7 +500,6 @@
     min-width: 910px;
     width: auto;
     flex: 1;
-    padding: 0 var(--layout-padding);
   }
   #body_in_box {
     height: 100%;
@@ -516,6 +516,8 @@
     min-height: 420px;
     width: 100%;
     /* aspect-ratio: 16/5; 设置宽高比为16:5 你要宽高比干什么 */
+    box-sizing: border-box;
+    padding: 0 var(--layout-padding);
     /* background-color: rgb(215, 250, 215); */
     display: flex;
     gap: 1rem;
@@ -910,9 +912,11 @@
     flex: 1;
     margin-top: 1rem;
     /* background-color: rgb(255, 165, 165); */
+
+    --z-index-title: 10
   }
   #body_in_box_bottom_in {
-    height: 600rem;
+    height: 400rem;
     width: 100%;
     /* background-color: antiquewhite; */
     display: flex;
@@ -921,6 +925,7 @@
 
   #body_in_box_bottom_in > div {
     flex: 1;
+    overflow: hidden;
   }
   #body_in_box_bottom_in > div:nth-child(odd) {
     background-color: bisque;
@@ -935,33 +940,83 @@
     top: calc((100% - var(--bottom-div-in-relative-height)) / 2);
     background-color: rgb(0, 0, 0, 0.05);
     
-    --bottom-div-in-relative-height: 80%;
+    --bottom-div-in-relative-height: 100%;
+    /* --bottom-div-in-relative-height: 88%; */
   }
-  .bottom_div_in > .bottom_div_img {
+  .bottom_div_in > .bottom_div_title_box {
     height: 20%;
     width: 100%;
     position: absolute;
     top: 16%;
-    background-color: rgb(0, 0, 0, 0.05);
+    /* background-color: rgb(0, 0, 0, 0.05); */
+    transition: var(--transition-slow);
+    z-index: var(--z-index-title);
   }
-  .bottom_div_img > img {
+  .bottom_div_title_box > .bottom_div_title {
     position: absolute;
     top: 20%;
     left: 5%;
-    filter: drop-shadow(0px 0px 10px rgb(0, 0, 0, 0.2));
-    transition: calc(var(--transition-normal) * 2);
-    transform: translateX(0);
+    filter: drop-shadow(0px 0px 40px rgb(0, 0, 0, 0.4));
+    transition: var(--transition-slow);
   }
-  .bottom_div_img > img::selection {
+  .bottom_div_title_box > .bottom_div_title::selection {
     background-color: transparent; /* 透明 */
     color: inherit; /* 继承父元素的文字颜色 */
   }
-  .bottom_div_img:hover {
+  .bottom_div_in:hover {
     cursor: pointer; /* 鼠标变手 */
   }
-  .bottom_div_img:hover > img {
-    filter: drop-shadow(0px 0px 10px rgb(0, 0, 0, 0.2));
-    transform: translateX(4%);
+  .bottom_div_in:hover .bottom_div_title {
+    filter: drop-shadow(0px 0px 30px rgb(0, 0, 0, 0.3));
+    left: 6%;
+  }
+  .bottom_div_in:active .bottom_div_title_box {
+    top: 28%;
+  }
+  .bottom_div_in:active .bottom_div_title {
+    filter: drop-shadow(0px 0px 20px rgb(0, 0, 0, 0.3));
+    left: 46%;
+  }
+  .bottom_div_content_box {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 0, 0.05);
+    position: relative;
+  }
+  .bottom_div_content_blur {
+    height: 102%;
+    width: 102%;
+    position: absolute;
+    top: 0%;
+    backdrop-filter: blur(20px) brightness(88%);
+    background-color: rgba(255, 255, 255, 0.15);
+    transition: var(--transition-slow);
+    z-index: calc(var(--z-index-title) - 1);
+  }
+  .bottom_div_in:active .bottom_div_content_blur {
+    backdrop-filter: blur(0px) brightness(100%);
+    background-color: rgba(255, 255, 255, 0);
+  }
+  .bottom_div_content_background {
+    height: var(--bottom-div-content-background-height);
+    width: var(--bottom-div-content-background-width);
+    position: absolute;
+    left: calc((100% - var(--bottom-div-content-background-width)) / 2);
+    top: calc((100% - var(--bottom-div-content-background-height)) / 2);
+    background-image: url(File/img/test_background.jpg);
+    background-size: cover; /* 图片按比例填充 */
+    background-position: center; /* 图片居中显示 */
+    background-repeat: no-repeat; /* 防止图片平铺 */
+    object-fit: cover;
+    transition: var(--transition-slow);
+    z-index: calc(var(--z-index-title) - 2);
+
+    --bottom-div-content-background-height: 100%;
+    --bottom-div-content-background-width: 100%;
+  }
+  .bottom_div_in:active .bottom_div_content_background {
+    --bottom-div-content-background-height: 101%;
+    --bottom-div-content-background-width: 101%;
   }
   
   
@@ -972,7 +1027,7 @@
   
   /* 这尼玛又是什么神奇逻辑啊 */
   @media (max-width: 1399.9px) {
-    #body_in{
+    #body_in_box_top {
       padding: 0 40px;
     }
     #in_box_top_right_in .in_box_top_right_in_span:nth-last-child(-n+2) {
@@ -1306,99 +1361,155 @@
               </span> -->
               <div>
                 <div class="bottom_div_in">
-                  <div class="bottom_div_img">
-                    <img src="File/img/pilipala.png" alt="">
+                  <div class="bottom_div_title_box">
+                    <img class="bottom_div_title" id="bottom_div_title_0" src="File/img/pilipala.png" alt="">
+                  </div>
+                  <div class="bottom_div_content_box">
+                    <div class="bottom_div_content_blur"></div>
+                    <div class="bottom_div_content_background"></div>
                   </div>
                 </div>
               </div>
               <div>
                 <div class="bottom_div_in">
-                  <div class="bottom_div_img">
-                    <img src="File/img/pilipala.png" alt="">
+                  <div class="bottom_div_title_box">
+                    <img class="bottom_div_title" id="bottom_div_title_1" src="File/img/pilipala.png" alt="">
+                  </div>
+                  <div class="bottom_div_content_box">
+                    <div class="bottom_div_content_blur"></div>
+                    <div class="bottom_div_content_background"></div>
                   </div>
                 </div>
               </div>
               <div>
                 <div class="bottom_div_in">
-                  <div class="bottom_div_img">
-                    <img src="File/img/pilipala.png" alt="">
+                  <div class="bottom_div_title_box">
+                    <img class="bottom_div_title" id="bottom_div_title_2" src="File/img/pilipala.png" alt="">
+                  </div>
+                  <div class="bottom_div_content_box">
+                    <div class="bottom_div_content_blur"></div>
+                    <div class="bottom_div_content_background"></div>
                   </div>
                 </div>
               </div>
               <div>
                 <div class="bottom_div_in">
-                  <div class="bottom_div_img">
-                    <img src="File/img/pilipala.png" alt="">
+                  <div class="bottom_div_title_box">
+                    <img class="bottom_div_title" id="bottom_div_title_3" src="File/img/pilipala.png" alt="">
+                  </div>
+                  <div class="bottom_div_content_box">
+                    <div class="bottom_div_content_blur"></div>
+                    <div class="bottom_div_content_background"></div>
                   </div>
                 </div>
               </div>
               <div>
                 <div class="bottom_div_in">
-                  <div class="bottom_div_img">
-                    <img src="File/img/pilipala.png" alt="">
+                  <div class="bottom_div_title_box">
+                    <img class="bottom_div_title" id="bottom_div_title_4" src="File/img/pilipala.png" alt="">
+                  </div>
+                  <div class="bottom_div_content_box">
+                    <div class="bottom_div_content_blur"></div>
+                    <div class="bottom_div_content_background"></div>
                   </div>
                 </div>
               </div>
               <div>
                 <div class="bottom_div_in">
-                  <div class="bottom_div_img">
-                    <img src="File/img/pilipala.png" alt="">
+                  <div class="bottom_div_title_box">
+                    <img class="bottom_div_title" id="bottom_div_title_5" src="File/img/pilipala.png" alt="">
+                  </div>
+                  <div class="bottom_div_content_box">
+                    <div class="bottom_div_content_blur"></div>
+                    <div class="bottom_div_content_background"></div>
                   </div>
                 </div>
               </div>
               <div>
                 <div class="bottom_div_in">
-                  <div class="bottom_div_img">
-                    <img src="File/img/pilipala.png" alt="">
+                  <div class="bottom_div_title_box">
+                    <img class="bottom_div_title" id="bottom_div_title_6" src="File/img/pilipala.png" alt="">
+                  </div>
+                  <div class="bottom_div_content_box">
+                    <div class="bottom_div_content_blur"></div>
+                    <div class="bottom_div_content_background"></div>
                   </div>
                 </div>
               </div>
               <div>
                 <div class="bottom_div_in">
-                  <div class="bottom_div_img">
-                    <img src="File/img/pilipala.png" alt="">
+                  <div class="bottom_div_title_box">
+                    <img class="bottom_div_title" id="bottom_div_title_7" src="File/img/pilipala.png" alt="">
+                  </div>
+                  <div class="bottom_div_content_box">
+                    <div class="bottom_div_content_blur"></div>
+                    <div class="bottom_div_content_background"></div>
                   </div>
                 </div>
               </div>
               <div>
                 <div class="bottom_div_in">
-                  <div class="bottom_div_img">
-                    <img src="File/img/pilipala.png" alt="">
+                  <div class="bottom_div_title_box">
+                    <img class="bottom_div_title" id="bottom_div_title_8" src="File/img/pilipala.png" alt="">
+                  </div>
+                  <div class="bottom_div_content_box">
+                    <div class="bottom_div_content_blur"></div>
+                    <div class="bottom_div_content_background"></div>
                   </div>
                 </div>
               </div>
               <div>
                 <div class="bottom_div_in">
-                  <div class="bottom_div_img">
-                    <img src="File/img/pilipala.png" alt="">
+                  <div class="bottom_div_title_box">
+                    <img class="bottom_div_title" id="bottom_div_title_9" src="File/img/pilipala.png" alt="">
+                  </div>
+                  <div class="bottom_div_content_box">
+                    <div class="bottom_div_content_blur"></div>
+                    <div class="bottom_div_content_background"></div>
                   </div>
                 </div>
               </div>
               <div>
                 <div class="bottom_div_in">
-                  <div class="bottom_div_img">
-                    <img src="File/img/pilipala.png" alt="">
+                  <div class="bottom_div_title_box">
+                    <img class="bottom_div_title" id="bottom_div_title_10" src="File/img/pilipala.png" alt="">
+                  </div>
+                  <div class="bottom_div_content_box">
+                    <div class="bottom_div_content_blur"></div>
+                    <div class="bottom_div_content_background"></div>
                   </div>
                 </div>
               </div>
               <div>
                 <div class="bottom_div_in">
-                  <div class="bottom_div_img">
-                    <img src="File/img/pilipala.png" alt="">
+                  <div class="bottom_div_title_box">
+                    <img class="bottom_div_title" id="bottom_div_title_11" src="File/img/pilipala.png" alt="">
+                  </div>
+                  <div class="bottom_div_content_box">
+                    <div class="bottom_div_content_blur"></div>
+                    <div class="bottom_div_content_background"></div>
                   </div>
                 </div>
               </div>
               <div>
                 <div class="bottom_div_in">
-                  <div class="bottom_div_img">
-                    <img src="File/img/pilipala.png" alt="">
+                  <div class="bottom_div_title_box">
+                    <img class="bottom_div_title" id="bottom_div_title_12" src="File/img/pilipala.png" alt="">
+                  </div>
+                  <div class="bottom_div_content_box">
+                    <div class="bottom_div_content_blur"></div>
+                    <div class="bottom_div_content_background"></div>
                   </div>
                 </div>
               </div>
               <div>
                 <div class="bottom_div_in">
-                  <div class="bottom_div_img">
-                    <img src="File/img/pilipala.png" alt="">
+                  <div class="bottom_div_title_box">
+                    <img class="bottom_div_title" id="bottom_div_title_13" src="File/img/pilipala.png" alt="">
+                  </div>
+                  <div class="bottom_div_content_box">
+                    <div class="bottom_div_content_blur"></div>
+                    <div class="bottom_div_content_background"></div>
                   </div>
                 </div>
               </div>
