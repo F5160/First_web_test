@@ -870,13 +870,25 @@
 
         // 修改.bottom_div_content_left_blur的width属性为100%
         const leftBlurElement = this.closest('.bottom_div_content_box').querySelector('.bottom_div_content_left_blur');
+        const leftBlurTextElement = this.closest('.bottom_div_content_box').querySelector('.bottom_div_content_left_blur').querySelector('.bottom_div_content_left_text_box').querySelector('.bottom_div_content_left_text');
         if (leftBlurElement) {
           leftBlurElement.style.width = '100%';
+          // leftBlurElement.style.zIndex = '49';
+          // leftBlurElement.style.pointerEvents = 'none';
+          leftBlurElement.style.transitionTimingFunction = 'cubic-bezier(.53,0,.9,.58)';
+
+          leftBlurTextElement.style.opacity = '0%';
         }
       });
       // *点击其他.bottom_div_in时恢复.bottom_div_content_left_blur的宽度(反正现在跑对了就行)
       document.querySelectorAll('.bottom_div_content_left_blur').forEach(leftBlurElement => {
         leftBlurElement.style.width = '6.8%'; // 原始值为6.8%
+        // leftBlurElement.style.zIndex = '8';
+        // leftBlurElement.style.pointerEvents = 'auto';
+        leftBlurElement.style.transitionTimingFunction = 'ease-in-out';
+      });
+      document.querySelectorAll('.bottom_div_content_left_text').forEach(leftBlurTextElement => {
+        leftBlurTextElement.style.opacity = '100%';
       });
     });
   });
