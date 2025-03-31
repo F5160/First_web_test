@@ -61,9 +61,12 @@
   ::-webkit-scrollbar-thumb:hover {
     background: rgba(0, 0, 0, 0.5);
     cursor: pointer; /* 鼠标变手 */
+    /* 还是经典好用 */
+    /* cursor: grab; 鼠标变抓手 */
   }
   ::-webkit-scrollbar-thumb:active {
     background: rgba(0, 0, 0, 0.6);
+    /* cursor: grabbing; 抓手 */
   }
   
   body {
@@ -103,7 +106,38 @@
     transform: translateY(0);
     pointer-events: auto; /* 显示时可点击 */
   }
-  
+
+  #second_floor_box {
+    height: var(--second_floor_height);
+    width: 100%;
+    position: fixed;
+    top: var(--second_floor_height);
+    left: 0%;
+    background-color: rgba(255, 0, 0, 0.3);
+    z-index: 199;
+
+    --second_floor_height: 100dvh;
+  }
+  #second_floor_cover {
+    height: var(--second_floor_height);
+    width: 100%;
+    position: fixed;
+    background-color: rgba(0, 94, 255, 0.3);
+    transition: calc(var(--transition-very-slow) * 2.4);
+    transition-timing-function: cubic-bezier(.04,.99,.57,1);
+    transition-delay: calc(var(--transition-delay-macro) * 1.8);
+    transform: translateY(0);
+    z-index: 199;
+  }
+  #second_floor {
+    height: var(--second_floor_height);
+    width: 100%;
+    position: fixed;
+    background-color: rgba(0, 255, 149, 0.3);
+    transition-delay: calc(var(--transition-delay-macro) * 6.8);
+    transform: translateY(0);
+    z-index: 98;
+  }
   
   #background {
     height: 1000rem;
@@ -1051,7 +1085,7 @@
     width: 6.8%;
     position: absolute;
     backdrop-filter: blur(40px) brightness(100%);
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
     box-shadow: 2px 0px 12px 0px rgba(0, 0, 0, 0.42),
                 /* 注意性能 */
                 0px 20px 20px -20px rgba(0, 0, 0, 0.45) inset,
@@ -1072,6 +1106,7 @@
     transform: translateX(-75%);
   }
   .bottom_div_in.active .bottom_div_content_left_text_box {
+    transition-delay: var(--transition-delay-normal);
     transform: translateX(0);
   }
   .bottom_div_in.white_font .bottom_div_content_left_text, .bottom_div_in.black_font .bottom_div_content_left_text {

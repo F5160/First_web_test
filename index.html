@@ -32,6 +32,11 @@
     </div>
   </div>
 
+  <div id="second_floor_box">
+    <div id="second_floor_cover"></div>
+    <div id="second_floor"></div>
+  </div>
+
 
   <div id="background">
     <div id="head">
@@ -866,11 +871,15 @@
         // 阻止事件冒泡
         event.stopPropagation();
         // 为.has_active元素添加active_1类
+        // 下面这行现在没啥用了
+        // 《本程序依靠该bug运行》
         this.classList.add('active_1');
 
-        // 修改.bottom_div_content_left_blur的width属性为100%
+        // 修改.bottom_div_content_left_blur及text的属性
         const leftBlurElement = this.closest('.bottom_div_content_box').querySelector('.bottom_div_content_left_blur');
         const leftBlurTextElement = this.closest('.bottom_div_content_box').querySelector('.bottom_div_content_left_blur').querySelector('.bottom_div_content_left_text_box').querySelector('.bottom_div_content_left_text');
+        const secondFloorCoverElement = document.querySelector('#second_floor_cover');
+        const secondFloorElement = document.querySelector('#second_floor');
         if (leftBlurElement) {
           leftBlurElement.style.width = '100%';
           // leftBlurElement.style.zIndex = '49';
@@ -878,9 +887,15 @@
           leftBlurElement.style.transitionTimingFunction = 'cubic-bezier(.53,0,.9,.58)';
 
           leftBlurTextElement.style.opacity = '0%';
+
+          secondFloorCoverElement.style.transform = 'translateY(-100%)';
+          secondFloorElement.style.transform = 'translateY(-100%)';
         }
+
       });
-      // *点击其他.bottom_div_in时恢复.bottom_div_content_left_blur的宽度(反正现在跑对了就行)
+
+      // *点击其他.bottom_div_in时恢复.bottom_div_content_left_blur及text的属性(反正现在跑对了就行)
+      // 应该说是在点击时对所有.bottom_div_in的属性进行初始化，将所有对应元素初始成原始值，而不是简单地将某一元素的值恢复(老子真流啤)
       document.querySelectorAll('.bottom_div_content_left_blur').forEach(leftBlurElement => {
         leftBlurElement.style.width = '6.8%'; // 原始值为6.8%
         // leftBlurElement.style.zIndex = '8';
@@ -890,10 +905,12 @@
       document.querySelectorAll('.bottom_div_content_left_text').forEach(leftBlurTextElement => {
         leftBlurTextElement.style.opacity = '100%';
       });
+
     });
   });
 
-  // 为document添加点击事件监听器(点击别处时清空active和.has_active)
+  // 为document添加点击事件监听器
+  // 点击别处时清空active和.has_active并恢复原始值
   document.addEventListener('click', function() {
     // 移除所有.bottom_div_in的active类
     document.querySelectorAll('.bottom_div_in').forEach(div => {
@@ -904,9 +921,15 @@
       div.remove();
     });
 
-    // 恢复.bottom_div_content_left_blur的width属性为原始值
+    // *点击别处时恢复.bottom_div_content_left_blur及text的属性为原始值
+    // 缺少还原text的属性, 但视觉上似乎问题不大, 避免出bug或者搞混就先空着, 到时要写了参考上面的大方法就行 25/03/31 22:29 来自自己
+    // 现在就写好了哈哈哈老子太溜了 25/03/31 22:30 来自自己
     document.querySelectorAll('.bottom_div_content_left_blur').forEach(leftBlurElement => {
-      leftBlurElement.style.width = '6.8%'; // 假设原始值为6.8%
+      leftBlurElement.style.width = '6.8%'; // 原始值为6.8%
+      leftBlurElement.style.transitionTimingFunction = 'ease-in-out';
+    });
+    document.querySelectorAll('.bottom_div_content_left_text').forEach(leftBlurTextElement => {
+      leftBlurTextElement.style.opacity = '100%';
     });
   });
   
