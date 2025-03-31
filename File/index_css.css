@@ -1064,6 +1064,7 @@
     height: 100%;
     width: 100%;
     /* background-color: rgb(0, 0, 0, 0.5); */
+    /* 注意兼容性 */
     display: grid;
     place-items: center;  /* 同时水平和垂直居中 */
     transition: var(--transition-very-slow);
@@ -1074,9 +1075,13 @@
   }
   .bottom_div_in.white_font .bottom_div_content_left_text, .bottom_div_in.black_font .bottom_div_content_left_text {
     /* background-color: rgb(0, 0, 0, 0.5); */
+    width: 34px;
+    height: 233px;
+    white-space: normal; /* 允许自动换行 */
     font-size: 180%;
     letter-spacing: 8px;
     color: rgb(255, 255, 255, 1);
+    /* 注意兼容性 */
     writing-mode: sideways-rl;
     writing-mode: vertical-rl;
     text-shadow: 0px 0px 8px rgb(255, 255, 255, 0.2);
