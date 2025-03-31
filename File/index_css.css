@@ -1052,8 +1052,11 @@
     position: absolute;
     backdrop-filter: blur(40px) brightness(100%);
     background-color: rgba(0, 0, 0, 0.2);
-    box-shadow: 2px 0px 12px 0px rgba(0, 0, 0, 0.42);
-    z-index: calc(var(--z-index-title) - 2);
+    box-shadow: 2px 0px 12px 0px rgba(0, 0, 0, 0.42), 
+                /* 注意性能 */
+                0px 20px 20px -20px rgba(0, 0, 0, 0.45) inset,
+                0px -20px 16px -24px rgba(0, 0, 0, 0.45) inset;
+    z-index: calc(var(--z-index-title) + 1);
     transition: var(--transition-very-slow);
     transform: translateX(-120%);
   }
@@ -1187,16 +1190,16 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+    /* background-color: rgba(0, 119, 255, 0.3); */
     z-index: calc(var(--z-index-title) + 1);
   }
-  .has_active.active_1 {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
+  /* .has_active.active_1 {
+    background-color: rgba(255, 0, 0, 0.3);
+  } */
   /* 神奇特性 */
-  .bottom_div_content_box > .has_active.active_1 .bottom_div_content_left_blur {
+  /* .bottom_div_content_box > .has_active.active_1 .bottom_div_content_left_blur {
     width: 100%;
-  }
+  } */
   
   /* 宽度小于1040则变为移动端样式 */
   /* 难写, 不写了淦 */

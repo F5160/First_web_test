@@ -867,6 +867,16 @@
         event.stopPropagation();
         // 为.has_active元素添加active_1类
         this.classList.add('active_1');
+
+        // 修改.bottom_div_content_left_blur的width属性为100%
+        const leftBlurElement = this.closest('.bottom_div_content_box').querySelector('.bottom_div_content_left_blur');
+        if (leftBlurElement) {
+          leftBlurElement.style.width = '100%';
+        }
+      });
+      // *点击其他.bottom_div_in时恢复.bottom_div_content_left_blur的宽度(反正现在跑对了就行)
+      document.querySelectorAll('.bottom_div_content_left_blur').forEach(leftBlurElement => {
+        leftBlurElement.style.width = '6.8%'; // 原始值为6.8%
       });
     });
   });
@@ -880,6 +890,11 @@
     // 移除所有.bottom_div_in的.has_active子元素
     document.querySelectorAll('.bottom_div_in .has_active').forEach(div => {
       div.remove();
+    });
+
+    // 恢复.bottom_div_content_left_blur的width属性为原始值
+    document.querySelectorAll('.bottom_div_content_left_blur').forEach(leftBlurElement => {
+      leftBlurElement.style.width = '6.8%'; // 假设原始值为6.8%
     });
   });
   
