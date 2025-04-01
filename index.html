@@ -35,7 +35,10 @@
   <div id="second_floor_box">
     <div id="second_floor_cover_box">
       <div id="second_floor_cover_img"></div>
-      <div id="second_floor_cover_text"></div>
+      <div id="second_floor_cover_text_box">
+        <img src="File/img/billows.svg" alt="" id="second_floor_cover_text_title">
+        <img src="File/img/billows_description_singleLine.svg" alt="" id="second_floor_cover_text_description">
+      </div>
     </div>
     <div id="second_floor"></div>
   </div>
@@ -882,7 +885,8 @@
         const leftBlurElement = this.closest('.bottom_div_content_box').querySelector('.bottom_div_content_left_blur');
         const leftBlurTextElement = this.closest('.bottom_div_content_box').querySelector('.bottom_div_content_left_blur').querySelector('.bottom_div_content_left_text_box').querySelector('.bottom_div_content_left_text');
         const secondFloorCoverBoxElement = document.querySelector('#second_floor_cover_box');
-        const secondFloorCoverTextElement = document.querySelector('#second_floor_cover_text');
+        const secondFloorCoverTextBoxElement = document.querySelector('#second_floor_cover_text_box');
+        const secondFloorCoverTextDescriptionElement = document.querySelector('#second_floor_cover_text_description');
         const secondFloorElement = document.querySelector('#second_floor');
         if (leftBlurElement) {
           leftBlurElement.style.width = '100%';
@@ -893,9 +897,10 @@
           leftBlurTextElement.style.opacity = '0%';
 
           secondFloorCoverBoxElement.style.transform = 'translateY(-100%)';
-          secondFloorCoverTextElement.style.transform = 'translateY(-100%)';
-          secondFloorCoverTextElement.style.opacity = '100%';
-          // secondFloorCoverTextElement.style.backgroundColor = 'rgba(255, 136, 0, 0.3)';
+          secondFloorCoverTextBoxElement.style.transform = 'translateY(-100%)';
+          secondFloorCoverTextBoxElement.style.opacity = '100%';
+          // secondFloorCoverTextBoxElement.style.backgroundColor = 'rgba(255, 136, 0, 0.3)';
+          secondFloorCoverTextDescriptionElement.style.transform = 'translateY(0)';
           secondFloorElement.style.transform = 'translateY(-100%)';
         }
 
