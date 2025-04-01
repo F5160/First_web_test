@@ -337,7 +337,7 @@
                   <div class="bottom_div_title_box">
                     <img class="bottom_div_title" src="File/img/billows.svg" alt="">
                     <div class="bottom_div_title_description_box">
-                      <img class="bottom_div_title_description" src="File/img/billows_description.svg" alt="">
+                      <img class="bottom_div_title_description" id="bottom_div_in_3_doubleLineDescriptionWarning" src="File/img/billows_description.svg" alt="">
                     </div>
                     <div class="bottom_div_title_others">
                       <div class="bottom_div_title_count_box">
@@ -363,6 +363,17 @@
                 <div class="bottom_div_in black_font" id="bottom_div_in_4">
                   <div class="bottom_div_title_box">
                     <img class="bottom_div_title" src="File/img/pilipala.png" alt="">
+                    <div class="bottom_div_title_description_box">
+                      <img class="bottom_div_title_description" src="File/img/billows_description.svg" alt="">
+                    </div>
+                    <div class="bottom_div_title_others">
+                      <div class="bottom_div_title_count_box">
+                        <img class="bottom_div_title_count" src="File/img/billows_count.svg" alt="">
+                      </div>
+                      <div class="bottom_div_title_time_box">
+                        <img class="bottom_div_title_time" src="File/img/billows_time.svg" alt="">
+                      </div>
+                    </div>
                   </div>
                   <div class="bottom_div_content_box">
                     <div class="bottom_div_content_blur"></div>
@@ -885,7 +896,9 @@
         const leftBlurElement = this.closest('.bottom_div_content_box').querySelector('.bottom_div_content_left_blur');
         const leftBlurTextElement = this.closest('.bottom_div_content_box').querySelector('.bottom_div_content_left_blur').querySelector('.bottom_div_content_left_text_box').querySelector('.bottom_div_content_left_text');
         const secondFloorCoverBoxElement = document.querySelector('#second_floor_cover_box');
+        const secondFloorCoverImgElement = document.querySelector('#second_floor_cover_img');
         const secondFloorCoverTextBoxElement = document.querySelector('#second_floor_cover_text_box');
+        const secondFloorCoverTextTitleElement = document.querySelector('#second_floor_cover_text_title');
         const secondFloorCoverTextDescriptionElement = document.querySelector('#second_floor_cover_text_description');
         const secondFloorElement = document.querySelector('#second_floor');
         if (leftBlurElement) {
@@ -900,6 +913,29 @@
           secondFloorCoverTextBoxElement.style.transform = 'translateY(-100%)';
           secondFloorCoverTextBoxElement.style.opacity = '100%';
           // secondFloorCoverTextBoxElement.style.backgroundColor = 'rgba(255, 136, 0, 0.3)';
+          console.log(this);
+          const thisBackgroundImageElement = this.closest('.bottom_div_content_box').querySelector('.bottom_div_content_background');
+          const thisTextTitleElement = this.closest('.bottom_div_content_box').parentNode.querySelector('.bottom_div_title_box').querySelector('.bottom_div_title');
+          const thisTextTitleDescriptionElement = this.closest('.bottom_div_content_box').parentNode.querySelector('.bottom_div_title_box').querySelector('.bottom_div_title_description');
+          console.log(thisBackgroundImageElement);
+          console.log(thisTextTitleElement);
+          console.log(thisTextTitleDescriptionElement);
+          if (thisBackgroundImageElement) {
+              const thisBackgroundImageStyle = window.getComputedStyle(thisBackgroundImageElement);
+              if (thisBackgroundImageStyle) {
+                secondFloorCoverImgElement.style.backgroundImage = thisBackgroundImageStyle.backgroundImage;
+                secondFloorCoverTextTitleElement.src = thisTextTitleElement.src;
+                secondFloorCoverTextDescriptionElement.src = thisTextTitleDescriptionElement.src;
+                if (thisTextTitleDescriptionElement.id === 'bottom_div_in_3_doubleLineDescriptionWarning') {
+                  secondFloorCoverTextDescriptionElement.src = 'File/img/billows_description_singleLine.svg';
+                } else {
+                  secondFloorCoverTextDescriptionElement.src = thisTextTitleDescriptionElement.src;
+                }
+                console.log(thisBackgroundImageStyle.backgroundImage);
+                console.log(thisTextTitleElement.src);
+                console.log(thisTextTitleDescriptionElement.src);
+              }
+          }
           secondFloorCoverTextDescriptionElement.style.transform = 'translateY(0)';
           secondFloorElement.style.transform = 'translateY(-100%)';
         }

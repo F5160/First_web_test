@@ -154,7 +154,7 @@
     gap: 0.2rem;
   }
   #second_floor_cover_text_title {
-    height: clamp(80px, 6%, 160px);
+    height: clamp(40px, 12%, 120px);
     width: 80%;
   }
   #second_floor_cover_text_description {
