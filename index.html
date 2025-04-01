@@ -33,7 +33,10 @@
   </div>
 
   <div id="second_floor_box">
-    <div id="second_floor_cover"></div>
+    <div id="second_floor_cover_box">
+      <div id="second_floor_cover_img"></div>
+      <div id="second_floor_cover_text"></div>
+    </div>
     <div id="second_floor"></div>
   </div>
 
@@ -878,7 +881,8 @@
         // 修改.bottom_div_content_left_blur及text的属性
         const leftBlurElement = this.closest('.bottom_div_content_box').querySelector('.bottom_div_content_left_blur');
         const leftBlurTextElement = this.closest('.bottom_div_content_box').querySelector('.bottom_div_content_left_blur').querySelector('.bottom_div_content_left_text_box').querySelector('.bottom_div_content_left_text');
-        const secondFloorCoverElement = document.querySelector('#second_floor_cover');
+        const secondFloorCoverBoxElement = document.querySelector('#second_floor_cover_box');
+        const secondFloorCoverTextElement = document.querySelector('#second_floor_cover_text');
         const secondFloorElement = document.querySelector('#second_floor');
         if (leftBlurElement) {
           leftBlurElement.style.width = '100%';
@@ -888,7 +892,9 @@
 
           leftBlurTextElement.style.opacity = '0%';
 
-          secondFloorCoverElement.style.transform = 'translateY(-100%)';
+          secondFloorCoverBoxElement.style.transform = 'translateY(-100%)';
+          secondFloorCoverTextElement.style.transform = 'translateY(-100%)';
+          secondFloorCoverTextElement.style.backgroundColor = 'rgba(255, 136, 0, 0.3)';
           secondFloorElement.style.transform = 'translateY(-100%)';
         }
 
@@ -921,11 +927,13 @@
       div.remove();
     });
 
-    // *点击别处时恢复.bottom_div_content_left_blur及text的属性为原始值
+    // 点击别处时恢复.bottom_div_content_left_blur及text的属性为原始值
     // 缺少还原text的属性, 但视觉上似乎问题不大, 避免出bug或者搞混就先空着, 到时要写了参考上面的大方法就行 25/03/31 22:29 来自自己
     // 现在就写好了哈哈哈老子太溜了 25/03/31 22:30 来自自己
     document.querySelectorAll('.bottom_div_content_left_blur').forEach(leftBlurElement => {
       leftBlurElement.style.width = '6.8%'; // 原始值为6.8%
+        // leftBlurElement.style.zIndex = '8';
+        // leftBlurElement.style.pointerEvents = 'auto';
       leftBlurElement.style.transitionTimingFunction = 'ease-in-out';
     });
     document.querySelectorAll('.bottom_div_content_left_text').forEach(leftBlurTextElement => {
