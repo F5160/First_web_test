@@ -1133,8 +1133,8 @@
     letter-spacing: 8px;
     color: rgb(255, 255, 255, 1);
     /* 注意兼容性 */
+    writing-mode: vertical-rl;
     writing-mode: sideways-rl;
-    /* writing-mode: vertical-rl; */
     text-shadow: 0px 0px 8px rgb(255, 255, 255, 0.2);
     transition: var(--transition-slow);
   }
