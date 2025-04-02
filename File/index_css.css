@@ -133,9 +133,6 @@
   #second_floor_cover_img {
     height: var(--second_floor_height);
     width: 100%;
-    position: relative;
-    top: 0%;
-    left: 0%;
     background-color: rgba(55, 0, 255, 0.3);
     background-image: url(img/billows.jpg);
     background-size: cover; /* 图片按比例填充 */
@@ -181,7 +178,7 @@
     height: var(--second_floor_height);
     width: 100%;
     position: fixed;
-    background-color: rgba(0, 255, 149, 0.3);
+    background-color: rgb(255, 255, 255);
     transition-delay: calc(var(--transition-delay-macro) * 6.8);
     transform: translateY(0);
     z-index: 49;
@@ -1206,6 +1203,12 @@
   }
   .bottom_div_title_box:hover {
     cursor: pointer; /* 鼠标变手 */
+  }
+  .bottom_div_title_description_box:hover {
+    cursor: default; /* 初始鼠标 */
+  }
+  .bottom_div_title_others:hover {
+    cursor: default; /* 初始鼠标 */
   }
   .bottom_div_in.active .bottom_div_title {
     transition: var(--transition-slow);

@@ -947,9 +947,9 @@
           
           secondFloorElement.style.transform = 'translateY(-100%)';
 
-          // 覆盖层退出定时器
-          const coverDisappearTransitionTime = '1.3s';
-          const coverDisappearTimingFunction = 'cubic-bezier(.44,.06,.8,.29)';
+          // 覆盖层退出_定时器
+          const coverDisappearTransitionTime = '1.2s';
+          const coverDisappearTimingFunction = 'cubic-bezier(.65,-0.01,.81,.41)';
           const coverDisappearDelayTime = 5500
           setTimeout(() => {
             secondFloorCoverTextBoxElement.style.transition = coverDisappearTransitionTime;
@@ -959,10 +959,10 @@
           setTimeout(() => {
             secondFloorCoverImgElement.style.transition = coverDisappearTransitionTime;
             secondFloorCoverImgElement.style.transitionTimingFunction = coverDisappearTimingFunction;
-            secondFloorCoverImgElement.style.height = '4rem';
+            secondFloorCoverImgElement.style.height = '0';
           }, coverDisappearDelayTime + 200);
-          // 返回按钮还原属性_还没写
-          // secondFloorCoverTextBoxElement的过渡时间似乎有未知bug_应该直接还原为2.16就行
+          // 返回按钮还原属性_还没写_可能还有属性改变而未在此列出(晚些时候写下)
+          // secondFloorCoverTextBoxElement的过渡时间似乎有未知bug_应该直接还原为2.16(原始值)就行
           // // secondFloorCoverTextBoxElement.style.transition = '0s';
           // // secondFloorCoverTextBoxElement.style.transition = '2.16s';
           // secondFloorCoverTextBoxElement.style.transitionTimingFunction = 'cubic-bezier(.04,.99,.57,1)';
