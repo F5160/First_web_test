@@ -133,6 +133,9 @@
   #second_floor_cover_img {
     height: var(--second_floor_height);
     width: 100%;
+    position: relative;
+    top: 0%;
+    left: 0%;
     background-color: rgba(55, 0, 255, 0.3);
     background-image: url(img/billows.jpg);
     background-size: cover; /* 图片按比例填充 */
@@ -152,18 +155,27 @@
     justify-content: center;
     align-items: center;
     gap: 0.2rem;
+    opacity: 100%;
   }
   #second_floor_cover_text_title {
     height: clamp(40px, 12%, 120px);
     width: 80%;
+    object-fit: contain;
+    /* opacity: 60% */
+    /* 注意性能 */
+    filter: drop-shadow(0px 0px 8px rgb(0, 0, 0, 0.1));
   }
   #second_floor_cover_text_description {
     height: clamp(10px, 4%, 80px);
     width: 80%;
+    object-fit: contain;
     transition: calc(var(--transition-very-slow) * 2.4);
     transition-timing-function: cubic-bezier(.04,.99,.57,1);
     transition-delay: calc(var(--transition-delay-macro) * 2.4);
     transform: translateY(80%);
+    /* opacity: 40% */
+    /* 注意性能 */
+    filter: drop-shadow(0px 0px 4px rgb(0, 0, 0, 0.3));
   }
   #second_floor {
     height: var(--second_floor_height);

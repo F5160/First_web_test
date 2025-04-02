@@ -911,9 +911,14 @@
 
           secondFloorCoverBoxElement.style.transform = 'translateY(-100%)';
           secondFloorCoverTextBoxElement.style.transform = 'translateY(-100%)';
-          secondFloorCoverTextBoxElement.style.opacity = '100%';
           // secondFloorCoverTextBoxElement.style.backgroundColor = 'rgba(255, 136, 0, 0.3)';
+          // secondFloorCoverTextTitleElement.style.opacity = '100%';
+          // secondFloorCoverTextDescriptionElement.style.opacity = '100%';
+          secondFloorCoverTextDescriptionElement.style.transform = 'translateY(0)';
+          
+          // 覆盖层内容与当前点击的盒子的元素一致
           console.log(this);
+          // 获取当前点击的盒子的元素
           const thisBackgroundImageElement = this.closest('.bottom_div_content_box').querySelector('.bottom_div_content_background');
           const thisTextTitleElement = this.closest('.bottom_div_content_box').parentNode.querySelector('.bottom_div_title_box').querySelector('.bottom_div_title');
           const thisTextTitleDescriptionElement = this.closest('.bottom_div_content_box').parentNode.querySelector('.bottom_div_title_box').querySelector('.bottom_div_title_description');
@@ -921,11 +926,14 @@
           console.log(thisTextTitleElement);
           console.log(thisTextTitleDescriptionElement);
           if (thisBackgroundImageElement) {
+              // *获取当前点击的盒子的元素的最终属性
               const thisBackgroundImageStyle = window.getComputedStyle(thisBackgroundImageElement);
               if (thisBackgroundImageStyle) {
+                // 若不为空则将当前点击的盒子的元素的内容填入覆盖层
+                secondFloorCoverImgElement.style.transition = '0s';
                 secondFloorCoverImgElement.style.backgroundImage = thisBackgroundImageStyle.backgroundImage;
                 secondFloorCoverTextTitleElement.src = thisTextTitleElement.src;
-                secondFloorCoverTextDescriptionElement.src = thisTextTitleDescriptionElement.src;
+                // 若介绍为两行则填充单行版本_id及判断自己加
                 if (thisTextTitleDescriptionElement.id === 'bottom_div_in_3_doubleLineDescriptionWarning') {
                   secondFloorCoverTextDescriptionElement.src = 'File/img/billows_description_singleLine.svg';
                 } else {
@@ -936,8 +944,32 @@
                 console.log(thisTextTitleDescriptionElement.src);
               }
           }
-          secondFloorCoverTextDescriptionElement.style.transform = 'translateY(0)';
+          
           secondFloorElement.style.transform = 'translateY(-100%)';
+
+          // 覆盖层退出定时器
+          const coverDisappearTransitionTime = '1.3s';
+          const coverDisappearTimingFunction = 'cubic-bezier(.44,.06,.8,.29)';
+          const coverDisappearDelayTime = 5500
+          setTimeout(() => {
+            secondFloorCoverTextBoxElement.style.transition = coverDisappearTransitionTime;
+            secondFloorCoverTextBoxElement.style.transitionTimingFunction = coverDisappearTimingFunction;
+            secondFloorCoverTextBoxElement.style.opacity = '0%';
+          }, coverDisappearDelayTime);
+          setTimeout(() => {
+            secondFloorCoverImgElement.style.transition = coverDisappearTransitionTime;
+            secondFloorCoverImgElement.style.transitionTimingFunction = coverDisappearTimingFunction;
+            secondFloorCoverImgElement.style.height = '4rem';
+          }, coverDisappearDelayTime + 200);
+          // 返回按钮还原属性_还没写
+          // secondFloorCoverTextBoxElement的过渡时间似乎有未知bug_应该直接还原为2.16就行
+          // // secondFloorCoverTextBoxElement.style.transition = '0s';
+          // // secondFloorCoverTextBoxElement.style.transition = '2.16s';
+          // secondFloorCoverTextBoxElement.style.transitionTimingFunction = 'cubic-bezier(.04,.99,.57,1)';
+          // secondFloorCoverTextBoxElement.style.transform = 'translateY(-90%)';
+          // secondFloorCoverTextBoxElement.style.opacity = '100%';
+          // secondFloorCoverImgElement.style.height = '100%';
+
         }
 
       });
@@ -982,9 +1014,11 @@
       leftBlurTextElement.style.opacity = '100%';
     });
   });
+
+
+
+
   
-
-
 </script>
 
 </html>
