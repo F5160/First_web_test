@@ -1129,7 +1129,7 @@
     height: 100%;
     width: 6.8%;
     position: absolute;
-    backdrop-filter: blur(40px) brightness(100%);
+    backdrop-filter: blur(30px) brightness(100%);
     background-color: rgba(255, 255, 255, 0.1);
     box-shadow: 2px 0px 12px 0px rgba(0, 0, 0, 0.42),
                 /* 注意性能 */
@@ -1151,7 +1151,7 @@
     transform: translateX(-75%);
   }
   .bottom_div_in.active .bottom_div_content_left_text_box {
-    transition-delay: var(--transition-delay-normal);
+    transition-delay: var(--transition-delay-bit);
     transform: translateX(0);
   }
   .bottom_div_in.white_font .bottom_div_content_left_text, .bottom_div_in.black_font .bottom_div_content_left_text {
@@ -1177,7 +1177,7 @@
     width: 102%;
     position: absolute;
     top: 0%;
-    backdrop-filter: blur(20px) brightness(88%);
+    backdrop-filter: blur(10px) brightness(88%);
     background-color: rgba(255, 255, 255, 0.15);
     transition: var(--transition-slow);
     z-index: calc(var(--z-index-title) - 1);
@@ -1199,7 +1199,7 @@
     filter: drop-shadow(0px 0px 32px rgb(0, 0, 0, 0.5))
             drop-shadow(0px 0px 16px rgb(0, 0, 0, 0.1))
             ;
-    transform: translateX(6%);
+    transform: translateX(0.6rem);
   }
   .bottom_div_title_box:hover {
     cursor: pointer; /* 鼠标变手 */
@@ -1216,7 +1216,7 @@
             drop-shadow(0px 0px 28px rgb(0, 0, 0, 0.1))
             drop-shadow(0px 0px 8px rgb(0, 0, 0, 0.1))
             ;
-    transform: translateX(16%);
+    transform: translateX(1.6rem);
   }
   .bottom_div_in.active .bottom_div_content_left_blur {
     transform: translateX(0);
