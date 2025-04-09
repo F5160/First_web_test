@@ -28,11 +28,12 @@ window.onload = function() {
 
 
 // 鼠标进入二层时禁用*一层滚动
-const secondFloorBox = document.querySelector('#second_floor_box');
-secondFloorBox.addEventListener('wheel', function(event) {
-  event.preventDefault(); // 阻止默认滚动行为
-  event.stopPropagation(); // 阻止事件冒泡
-});
+// 这里将全局禁用滚动
+// const secondFloorBox = document.querySelector('#second_floor_box');
+// secondFloorBox.addEventListener('wheel', function(event) {
+//   event.preventDefault(); // 阻止默认滚动行为
+//   event.stopPropagation(); // 阻止事件冒泡
+// });
 
 
 
