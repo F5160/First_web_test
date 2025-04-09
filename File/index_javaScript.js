@@ -3,8 +3,9 @@ console.log("cl test");
 // 获取title元素
 const title = document.querySelector('#title');
 const head_title = document.querySelector('#head_title');
-// 监听滚动
-window.addEventListener('scroll', function() {
+// 监听滚动函数
+// 提取滚动事件处理函数
+function handleScroll() {
   // 获取滚动距离
   const scrollDistance = window.scrollY;
 
@@ -16,6 +17,21 @@ window.addEventListener('scroll', function() {
     title.classList.remove('visible');
     head_title.classList.remove('hidden');
   }
+}
+// 监听滚动
+window.addEventListener('scroll', handleScroll);
+// 页面加载完成后手动触发一次滚动事件处理函数
+window.onload = function() {
+  handleScroll();
+};
+
+
+
+// 鼠标进入二层时禁用*一层滚动
+const secondFloorBox = document.querySelector('#second_floor_box');
+secondFloorBox.addEventListener('wheel', function(event) {
+  event.preventDefault(); // 阻止默认滚动行为
+  event.stopPropagation(); // 阻止事件冒泡
 });
 
 
@@ -445,15 +461,20 @@ document.querySelectorAll('.bottom_div_in').forEach(item => {
           secondFloorCoverBoxElement.style.transform = 'translateY(0)';
           secondFloorCoverImgElement.style.transition = '0s';
           secondFloorCoverImgElement.style.height = '100%';
+          clearInterval(cycle_timeId);
+          console.log('进入二层, cycle_timeId停止');
         }, coverDisappearDelayTime + coverDisappearDelayTimeDelay + 1200); // 1200为coverDisappearTransitionTime, 变量原始格式不同所以不能直接相加
         // 返回按钮还原属性_还没写_可能还有属性改变而未在此列出(晚些时候写下)(记得再检查检查, 不过要是能跑就先不管[更晚些时候写下])
         // secondFloorCoverTextBoxElement的过渡时间似乎有未知bug_应该直接还原为2.16s(原始值)就行
         // secondFloorCoverTextBoxElement已修改逻辑: 初始过渡为0, 仅在需要时修改时长 25/04/07 23:27 来自自己
         const firstSectionSecondFloor = document.querySelector('#first_section_second_floor');
         firstSectionSecondFloor.addEventListener('click', function() {
-          secondFloorElement.style.transition = '0.8s';
-          secondFloorElement.style.transitionTimingFunction = 'cubic-bezier(.09,.41,.33,.99)';
-          // secondFloorElement.style.transitionTimingFunction = coverDisappearTimingFunction;
+          // 一层左模糊还原延迟200
+          // secondFloorElement.style.transition = '1.2s';
+          // secondFloorElement.style.transitionTimingFunction = 'cubic-bezier(.09,.41,.33,.99)';
+          // 一层左模糊还原延迟500
+          secondFloorElement.style.transition = '1s';
+          secondFloorElement.style.transitionTimingFunction = 'cubic-bezier(.22,-0.01,.98,.13)';
           secondFloorElement.style.transform = 'translate(100%, -100%)';
 
           secondFloorCoverTextBoxElement.style.transition = '0s';
@@ -467,7 +488,9 @@ document.querySelectorAll('.bottom_div_in').forEach(item => {
             secondFloorElement.style.transition = '0s';
             restore_bottom_div_content_left_blur();
             restore_bottom_div_content_left_text();
-          }, 0);
+            startCarousel();
+            console.log('退出二层, cycle_timeId重新启动');
+          }, 500);
         });
 
         // // secondFloorCoverBoxElement.style.transition = '0s';

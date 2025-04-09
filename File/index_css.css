@@ -175,6 +175,8 @@
     /* 注意性能 */
     filter: drop-shadow(0px 0px 4px rgb(0, 0, 0, 0.6));
   }
+
+
   #second_floor {
     height: var(--second_floor_height);
     width: 100%;
@@ -203,6 +205,31 @@
     background-color: rgb(202, 200, 255, 0.5);
     cursor: pointer; /* 鼠标变手 */
   }
+
+  #second_floor_body {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top: 4rem;
+    background-color: rgba(255, 0, 0, 0.3);
+  }
+  #second_floor_body_in {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(202, 200, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+  }
+  .second_floor_body_in_div {
+    flex: 1;
+  }
+  #second_floor_body_top {
+    background-color: rgb(255, 146, 18, 0.3);
+  }
+  #second_floor_body_bottom {
+    background-color: rgba(37, 164, 255, 0.3);
+  }
+
   
   #background {
     height: 1000rem;
