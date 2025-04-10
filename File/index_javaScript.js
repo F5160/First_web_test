@@ -475,7 +475,7 @@ document.querySelectorAll('.bottom_div_in').forEach(item => {
           // secondFloorElement.style.transitionTimingFunction = 'cubic-bezier(.09,.41,.33,.99)';
           // 一层左模糊还原延迟500
           secondFloorElement.style.transition = '1s';
-          secondFloorElement.style.transitionTimingFunction = 'cubic-bezier(.22,-0.01,.98,.13)';
+          secondFloorElement.style.transitionTimingFunction = 'cubic-bezier(.76,.07,.88,.24)';
           secondFloorElement.style.transform = 'translate(100%, -100%)';
 
           secondFloorCoverTextBoxElement.style.transition = '0s';
