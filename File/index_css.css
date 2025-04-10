@@ -176,7 +176,6 @@
     filter: drop-shadow(0px 0px 4px rgb(0, 0, 0, 0.6));
   }
 
-
   #second_floor {
     height: var(--second_floor_height);
     width: 100%;
@@ -208,7 +207,7 @@
 
   #second_floor_body {
     height: calc(100% - 4rem);
-    width: 80%;
+    width: 88%;
     position: relative;
     top: 4rem;
     margin: 0 auto; /* 水平居中 */
@@ -222,25 +221,25 @@
     display: flex;
     flex-direction: column;
   }
-  .second_floor_body_in_div {
-    flex: 1;
-  }
   #second_floor_body_top {
-    height: 100%;
     width: 100%;
+    box-sizing: border-box;
   }
   #second_floor_body_top_in {
-    height: 90%;
-    margin-top: 2.5%;
+    min-height: 420px;
+    height: 34rem;
+    max-height: 600px;
+    box-sizing: border-box;
+    margin: 2.5% var(--layout-padding);
     background-color: rgb(255, 146, 18, 0.3);
     display: flex;
   }
   #second_floor_body_top_left {
-    flex: 7;
+    aspect-ratio: 3/2; /* 宽高比3/2 */
     background-color: rgb(0, 0, 0, 0.2);
   }
   #second_floor_body_top_rigth {
-    flex: 3;
+    flex: 1;
     background-color: rgb(0, 0, 0, 0.1);
     overflow-y: auto; /* 添加垂直滚动条 */
   }
@@ -251,6 +250,7 @@
   }
   #second_floor_body_bottom {
     background-color: rgba(37, 164, 255, 0.3);
+    flex: 1;
   }
 
   
@@ -1419,23 +1419,43 @@
     }
   }
   @media (min-width: 3072px) {
-    #background {
+    #background, #second_floor_body {
       width: 80%;
+    }
+    #second_floor_body_top_left {
+      aspect-ratio: 2/1; /* 宽高比2/1 */
     }
   }
   @media (min-width: 4096px) {
-    #background {
-      width: 60%;
+    #background, #second_floor_body {
+      width: 55%;
+    }
+    #second_floor_body_top_left {
+      aspect-ratio: 21/9; /* 宽高比21/9 */
     }
   }
   @media (min-width: 5120px) {
-    #background {
+    #background, #second_floor_body {
       width: 40%;
+    }
+    #second_floor_body_top_left {
+      aspect-ratio: 2.35/1; /* 宽高比2.35/1 */
     }
   }
   
   @media (min-width: 1400px) {
     #in_box_top_left {
       --in-in-top-left-width: 40%
+    }
+  }
+  @media (min-width: 2059.9px) {
+    #second_floor_body_top_left {
+      aspect-ratio: 16/9; /* 宽高比16/9 */
+    }
+  }
+
+  @media (max-width: 1399.9px) {
+    #second_floor_body_top_left {
+      aspect-ratio: 4/3; /* 宽高比4/3 */
     }
   }
