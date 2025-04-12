@@ -376,12 +376,7 @@ document.querySelectorAll('.bottom_div_in').forEach(item => {
     hasActiveElement.addEventListener('click', function(event) {
       // 阻止事件冒泡
       event.stopPropagation();
-      // 为.has_active元素添加active_1类
-      // 下面这行现在没啥用了
-      // 《本程序依靠该bug运行》
-      this.classList.add('active_1');
-
-      // 修改.bottom_div_content_left_blur及text的属性
+      // 定义元素属性常量
       const leftBlurElement = this.closest('.bottom_div_content_box').querySelector('.bottom_div_content_left_blur');
       const leftBlurTextElement = this.closest('.bottom_div_content_box').querySelector('.bottom_div_content_left_blur').querySelector('.bottom_div_content_left_text_box').querySelector('.bottom_div_content_left_text');
       const secondFloorCoverBoxElement = document.querySelector('#second_floor_cover_box');
@@ -390,123 +385,155 @@ document.querySelectorAll('.bottom_div_in').forEach(item => {
       const secondFloorCoverTextTitleElement = document.querySelector('#second_floor_cover_text_title');
       const secondFloorCoverTextDescriptionElement = document.querySelector('#second_floor_cover_text_description');
       const secondFloorElement = document.querySelector('#second_floor');
-      if (leftBlurElement) {
+
+      // 如果恰是上次被点击的块则直接移动二层
+      if(hasActiveElement.classList.contains('active_1')) {
+        // *似乎是由于在首次进入二层时就已经给返回按钮(#first_section_second_floor)设定了功能, 所以无需在别处重复设定
+        // 左模糊延伸
         leftBlurElement.style.width = '100%';
         // leftBlurElement.style.zIndex = '49';
         // leftBlurElement.style.pointerEvents = 'none';
         leftBlurElement.style.transitionTimingFunction = 'cubic-bezier(.53,0,.9,.58)';
         leftBlurTextElement.style.opacity = '0%';
-
-        secondFloorCoverBoxElement.style.transition = 'all 2.16s cubic-bezier(.04,.99,.57,1) 0.9s';
-        secondFloorCoverBoxElement.style.transform = 'translateY(-100%)';
-        secondFloorCoverTextBoxElement.style.transition = 'all 2.16s cubic-bezier(.04,.99,.57,1) 1s';;
-        secondFloorCoverTextBoxElement.style.transform = 'translateY(-100%)';
-        // secondFloorCoverTextBoxElement.style.backgroundColor = 'rgba(255, 136, 0, 0.3)';
-        // secondFloorCoverTextTitleElement.style.opacity = '100%';
-        // secondFloorCoverTextDescriptionElement.style.opacity = '100%';
-        secondFloorCoverTextDescriptionElement.style.transition = 'all 2.16s cubic-bezier(.04,.99,.57,1) 1.2s';;
-        secondFloorCoverTextDescriptionElement.style.transform = 'translateY(0)';
-        
-        // 覆盖层内容与当前点击的盒子的元素一致
-        console.log(this);
-        // 获取当前点击的盒子的元素
-        const thisBackgroundImageElement = this.closest('.bottom_div_content_box').querySelector('.bottom_div_content_background');
-        const thisTextTitleElement = this.closest('.bottom_div_content_box').parentNode.querySelector('.bottom_div_title_box').querySelector('.bottom_div_title');
-        const thisTextTitleDescriptionElement = this.closest('.bottom_div_content_box').parentNode.querySelector('.bottom_div_title_box').querySelector('.bottom_div_title_description');
-        console.log(thisBackgroundImageElement);
-        console.log(thisTextTitleElement);
-        console.log(thisTextTitleDescriptionElement);
-        if (thisBackgroundImageElement) {
-            // *获取当前点击的盒子的元素的最终属性
-            const thisBackgroundImageStyle = window.getComputedStyle(thisBackgroundImageElement);
-            if (thisBackgroundImageStyle) {
-              // 若不为空则将当前点击的盒子的元素的内容填入覆盖层
-              secondFloorCoverImgElement.style.transition = '0s';
-              secondFloorCoverImgElement.style.backgroundImage = thisBackgroundImageStyle.backgroundImage;
-              secondFloorCoverTextTitleElement.src = thisTextTitleElement.src;
-              // 若介绍为两行则填充单行版本_id及判断自己加
-              if (thisTextTitleDescriptionElement && thisTextTitleDescriptionElement.id === 'bottom_div_in_3_doubleLineDescriptionWarning') {
-                secondFloorCoverTextDescriptionElement.src = 'File/img/billows/billows_description_singleLine.svg';
-                console.log(thisTextTitleDescriptionElement.src);
-              } else if (thisTextTitleDescriptionElement) {
-                secondFloorCoverTextDescriptionElement.src = thisTextTitleDescriptionElement.src;
-                console.log(thisTextTitleDescriptionElement.src);
-              } else {
-                // 处理 thisTextTitleDescriptionElement 为 null 的情况
-                console.warn('thisTextTitleDescriptionElement is null, skipping');
-              }
-              console.log(thisBackgroundImageStyle.backgroundImage);
-              console.log(thisTextTitleElement.src);
-            }
-        }
-        
-
-        // 覆盖层退出_定时器
-        const coverDisappearTransitionTime = '1.2s';
-        const coverDisappearTimingFunction = 'cubic-bezier(.65,-0.01,.81,.41)';
-        const coverDisappearDelayTime = 5000;
-        const coverDisappearDelayTimeDelay = 200;
         setTimeout(() => {
-          secondFloorCoverTextBoxElement.style.transition = coverDisappearTransitionTime;
-          secondFloorCoverTextBoxElement.style.transitionTimingFunction = coverDisappearTimingFunction;
-          secondFloorCoverTextBoxElement.style.opacity = '0%';
-          secondFloorElement.style.transform = 'translateY(-100%)';
-        }, coverDisappearDelayTime);
-        setTimeout(() => {
-          secondFloorCoverImgElement.style.transition = coverDisappearTransitionTime;
-          secondFloorCoverImgElement.style.transitionTimingFunction = coverDisappearTimingFunction;
-          secondFloorCoverImgElement.style.height = '0';
-        }, coverDisappearDelayTime + coverDisappearDelayTimeDelay);
-        setTimeout(() => {
-          secondFloorCoverBoxElement.style.transition = '0s';
-          secondFloorCoverBoxElement.style.transform = 'translateY(0)';
-          secondFloorCoverImgElement.style.transition = '0s';
-          secondFloorCoverImgElement.style.height = '100%';
-          clearInterval(cycle_timeId);
-          console.log('进入二层, cycle_timeId停止');
-        }, coverDisappearDelayTime + coverDisappearDelayTimeDelay + 1200); // 1200为coverDisappearTransitionTime, 变量原始格式不同所以不能直接相加
-        // 返回按钮还原属性_还没写_可能还有属性改变而未在此列出(晚些时候写下)(记得再检查检查, 不过要是能跑就先不管[更晚些时候写下])
-        // secondFloorCoverTextBoxElement的过渡时间似乎有未知bug_应该直接还原为2.16s(原始值)就行
-        // secondFloorCoverTextBoxElement已修改逻辑: 初始过渡为0, 仅在需要时修改时长 25/04/07 23:27 来自自己
-        const firstSectionSecondFloor = document.querySelector('#first_section_second_floor');
-        firstSectionSecondFloor.addEventListener('click', function() {
-          // 一层左模糊还原延迟200
-          // secondFloorElement.style.transition = '1.2s';
-          // secondFloorElement.style.transitionTimingFunction = 'cubic-bezier(.09,.41,.33,.99)';
-          // 一层左模糊还原延迟500
+          // 直接移动二层
+          // 注意延时和secondFloorCoverBoxElement一致(为了感官效果而非运行或者逻辑)
           secondFloorElement.style.transition = '1s';
-          secondFloorElement.style.transitionTimingFunction = 'cubic-bezier(.76,.07,.88,.24)';
-          secondFloorElement.style.transform = 'translate(100%, -100%)';
+          secondFloorElement.style.transitionTimingFunction = 'cubic-bezier(.09,.53,.17,1)';
+          secondFloorElement.style.transform = 'translateY(-100%)';
+        }, 900);
+      }else {
+        // 为.has_active元素添加active_1类
+        // 下面这行现在没啥用了
+        // 《本程序依靠该bug运行》
+        // 草草草现在还真又有用了(好几天后写下)
+        // 踏马的这就是所谓的升级接口吗
+        // 踏马的给过去的自己磕个头
+        this.classList.add('active_1');
 
-          secondFloorCoverTextBoxElement.style.transition = '0s';
-          secondFloorCoverTextBoxElement.style.transform = 'translateY(-90%)';
-          secondFloorCoverTextBoxElement.style.opacity = '100%';
+        // 修改.bottom_div_content_left_blur及text的属性
+        if (leftBlurElement) {
+          // 左模糊延伸
+          leftBlurElement.style.width = '100%';
+          // leftBlurElement.style.zIndex = '49';
+          // leftBlurElement.style.pointerEvents = 'none';
+          leftBlurElement.style.transitionTimingFunction = 'cubic-bezier(.53,0,.9,.58)';
+          leftBlurTextElement.style.opacity = '0%';
 
-          secondFloorCoverTextDescriptionElement.style.transition = '0s';;
-          secondFloorCoverTextDescriptionElement.style.transform = 'translateY(80%)';
-          
+          // 覆盖层进入
+          secondFloorCoverBoxElement.style.transition = 'all 2.16s cubic-bezier(.04,.99,.57,1) 0.9s';
+          secondFloorCoverBoxElement.style.transform = 'translateY(-100%)';
+          secondFloorCoverTextBoxElement.style.transition = 'all 2.16s cubic-bezier(.04,.99,.57,1) 1s';;
+          secondFloorCoverTextBoxElement.style.transform = 'translateY(-100%)';
+          // secondFloorCoverTextBoxElement.style.backgroundColor = 'rgba(255, 136, 0, 0.3)';
+          // secondFloorCoverTextTitleElement.style.opacity = '100%';
+          // secondFloorCoverTextDescriptionElement.style.opacity = '100%';
+          secondFloorCoverTextDescriptionElement.style.transition = 'all 2.16s cubic-bezier(.04,.99,.57,1) 1.2s';;
+          secondFloorCoverTextDescriptionElement.style.transform = 'translateY(0)';
+
+          // 覆盖层内容与当前点击的盒子的元素一致
+          console.log(this);
+          // 获取当前点击的盒子的元素
+          const thisBackgroundImageElement = this.closest('.bottom_div_content_box').querySelector('.bottom_div_content_background');
+          const thisTextTitleElement = this.closest('.bottom_div_content_box').parentNode.querySelector('.bottom_div_title_box').querySelector('.bottom_div_title');
+          const thisTextTitleDescriptionElement = this.closest('.bottom_div_content_box').parentNode.querySelector('.bottom_div_title_box').querySelector('.bottom_div_title_description');
+          console.log(thisBackgroundImageElement);
+          console.log(thisTextTitleElement);
+          console.log(thisTextTitleDescriptionElement);
+          if (thisBackgroundImageElement) {
+              // *获取当前点击的盒子的元素的最终属性
+              const thisBackgroundImageStyle = window.getComputedStyle(thisBackgroundImageElement);
+              if (thisBackgroundImageStyle) {
+                // 若不为空则将当前点击的盒子的元素的内容填入覆盖层
+                secondFloorCoverImgElement.style.transition = '0s';
+                secondFloorCoverImgElement.style.backgroundImage = thisBackgroundImageStyle.backgroundImage;
+                secondFloorCoverTextTitleElement.src = thisTextTitleElement.src;
+                // 若介绍为两行则填充单行版本_id及判断自己加
+                if (thisTextTitleDescriptionElement && thisTextTitleDescriptionElement.id === 'bottom_div_in_3_doubleLineDescriptionWarning') {
+                  secondFloorCoverTextDescriptionElement.src = 'File/img/billows/billows_description_singleLine.svg';
+                  console.log(thisTextTitleDescriptionElement.src);
+                } else if (thisTextTitleDescriptionElement) {
+                  secondFloorCoverTextDescriptionElement.src = thisTextTitleDescriptionElement.src;
+                  console.log(thisTextTitleDescriptionElement.src);
+                } else {
+                  // 处理 thisTextTitleDescriptionElement 为 null 的情况
+                  console.warn('thisTextTitleDescriptionElement is null, skipping');
+                }
+                console.log(thisBackgroundImageStyle.backgroundImage);
+                console.log(thisTextTitleElement.src);
+              }
+          }
+
+
+          // 覆盖层退出_定时器
+          const coverDisappearTransitionTime = '1.2s';
+          const coverDisappearTimingFunction = 'cubic-bezier(.65,-0.01,.81,.41)';
+          const coverDisappearDelayTime = 5000;
+          const coverDisappearDelayTimeDelay = 200;
           setTimeout(() => {
-            secondFloorElement.style.transition = '0s';
-            restore_bottom_div_content_left_blur();
-            restore_bottom_div_content_left_text();
-            startCarousel();
-            console.log('退出二层, cycle_timeId重新启动');
-          }, 500);
-        });
+            secondFloorCoverTextBoxElement.style.transition = coverDisappearTransitionTime;
+            secondFloorCoverTextBoxElement.style.transitionTimingFunction = coverDisappearTimingFunction;
+            secondFloorCoverTextBoxElement.style.opacity = '0%';
+            secondFloorElement.style.transform = 'translateY(-100%)';
+          }, coverDisappearDelayTime);
+          setTimeout(() => {
+            secondFloorCoverImgElement.style.transition = coverDisappearTransitionTime;
+            secondFloorCoverImgElement.style.transitionTimingFunction = coverDisappearTimingFunction;
+            secondFloorCoverImgElement.style.height = '0';
+          }, coverDisappearDelayTime + coverDisappearDelayTimeDelay);
+          setTimeout(() => {
+            secondFloorCoverBoxElement.style.transition = '0s';
+            secondFloorCoverBoxElement.style.transform = 'translateY(0)';
+            secondFloorCoverImgElement.style.transition = '0s';
+            secondFloorCoverImgElement.style.height = '100%';
+            clearInterval(cycle_timeId);
+            console.log('进入二层, cycle_timeId停止');
+          }, coverDisappearDelayTime + coverDisappearDelayTimeDelay + 1200); // 1200为coverDisappearTransitionTime, 变量原始格式不同所以不能直接相加
+          // 返回按钮还原属性_还没写_可能还有属性改变而未在此列出(晚些时候写下)(记得再检查检查, 不过要是能跑就先不管[更晚些时候写下])
+          // *似乎是由于在首次进入二层时就已经给返回按钮(#first_section_second_floor)设定了功能, 所以无需在别处重复设定
+          // secondFloorCoverTextBoxElement的过渡时间似乎有未知bug_应该直接还原为2.16s(原始值)就行
+          // secondFloorCoverTextBoxElement已修改逻辑: 初始过渡为0, 仅在需要时修改时长 25/04/07 23:27 来自自己
+          const firstSectionSecondFloor = document.querySelector('#first_section_second_floor');
+          firstSectionSecondFloor.addEventListener('click', function() {
+            // 一层左模糊还原延迟100
+            secondFloorElement.style.transition = '1s';
+            // secondFloorElement.style.transitionTimingFunction = 'cubic-bezier(.09,.41,.33,.99)';
+            secondFloorElement.style.transitionTimingFunction = 'cubic-bezier(.11,.42,.49,1.23)';
+            // 一层左模糊还原延迟500
+            // secondFloorElement.style.transition = '1s';
+            // secondFloorElement.style.transitionTimingFunction = 'cubic-bezier(.76,.07,.88,.24)';
+            secondFloorElement.style.transform = 'translate(100%, -100%)';
 
-        // // secondFloorCoverBoxElement.style.transition = '0s';
-        // // secondFloorCoverBoxElement.style.transform = 'translateY(0)';
+            secondFloorCoverTextBoxElement.style.transition = '0s';
+            secondFloorCoverTextBoxElement.style.transform = 'translateY(-90%)';
+            secondFloorCoverTextBoxElement.style.opacity = '100%';
 
-        // secondFloorCoverTextBoxElement.style.transition = '0s';
-        // secondFloorCoverTextBoxElement.style.transform = 'translateY(-90%)';
-        // secondFloorCoverTextBoxElement.style.opacity = '100%';
+            secondFloorCoverTextDescriptionElement.style.transition = '0s';;
+            secondFloorCoverTextDescriptionElement.style.transform = 'translateY(80%)';
 
-        // secondFloorCoverTextDescriptionElement.style.transition = '0s';;
-        // secondFloorCoverTextDescriptionElement.style.transform = 'translateY(80%)';
-        
-        // // secondFloorCoverImgElement.style.transition = '0s';
-        // // secondFloorCoverImgElement.style.height = '100%';
+            setTimeout(() => {
+              secondFloorElement.style.transition = '0s';
+              restore_bottom_div_content_left_blur();
+              restore_bottom_div_content_left_text();
+              startCarousel();
+              console.log('退出二层, cycle_timeId重新启动');
+            }, 100);
+          });
 
+          // // secondFloorCoverBoxElement.style.transition = '0s';
+          // // secondFloorCoverBoxElement.style.transform = 'translateY(0)';
+
+          // secondFloorCoverTextBoxElement.style.transition = '0s';
+          // secondFloorCoverTextBoxElement.style.transform = 'translateY(-90%)';
+          // secondFloorCoverTextBoxElement.style.opacity = '100%';
+
+          // secondFloorCoverTextDescriptionElement.style.transition = '0s';;
+          // secondFloorCoverTextDescriptionElement.style.transform = 'translateY(80%)';
+
+          // // secondFloorCoverImgElement.style.transition = '0s';
+          // // secondFloorCoverImgElement.style.height = '100%';
+
+        }
       }
 
     });

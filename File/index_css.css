@@ -230,9 +230,10 @@
     height: 34rem;
     max-height: 600px;
     box-sizing: border-box;
-    margin: 2.5% var(--layout-padding);
+    margin: calc(var(--layout-padding) / 2);
     background-color: rgb(255, 146, 18, 0.3);
     display: flex;
+    gap: 1rem;
   }
   #second_floor_body_top_left {
     aspect-ratio: 3/2; /* 宽高比3/2 */
