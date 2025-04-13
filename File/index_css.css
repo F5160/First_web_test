@@ -56,16 +56,16 @@
   }
   /* 滑块 */
   ::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.2);
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.25);
     cursor: pointer; /* 鼠标变手 */
     /* 还是经典好用 */
     /* cursor: grab; 鼠标变抓手 */
   }
   ::-webkit-scrollbar-thumb:active {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.3);
     /* cursor: grabbing; 抓手 */
   }
   
@@ -231,7 +231,7 @@
     max-height: 600px;
     box-sizing: border-box;
     margin: calc(var(--layout-padding) / 2);
-    background-color: rgb(255, 146, 18, 0.3);
+    /* background-color: rgb(255, 146, 18, 0.3); */
     display: flex;
     gap: 1rem;
   }
@@ -241,13 +241,45 @@
   }
   #second_floor_body_top_rigth {
     flex: 1;
-    background-color: rgb(0, 0, 0, 0.1);
+    background-color: rgb(0, 0, 0, 0.02);
     overflow-y: auto; /* 添加垂直滚动条 */
+    box-sizing: border-box;
+    border-top: 1px solid rgb(200, 200, 200);
+    border-bottom: 1px solid rgb(200, 200, 200);
+    box-shadow: 
+      inset 0px 6px 8px -9px gray, /* 顶部内阴影 */
+      inset 0px -6px 8px -9px gray; /* 底部内阴影 */
   }
   #second_floor_body_top_right_list {
-    height: 200%;
+    /* height: 200%; */
     width: 100%;
-    background-image:linear-gradient(180deg,#FFD26F 15%,#3677FF 100%);
+    color: black;
+    /* background-image:linear-gradient(180deg,#FFD26F 15%,#3677FF 100%); */
+  }
+  #second_floor_body_top_right_list_ul {
+    margin: 0;
+    /* 空出的padding添加影像计数 */
+    padding: 88px 18px 8px 18px;
+    list-style-type: none; /* 去掉列表项的默认样式(li的实心点) */
+  }
+  #second_floor_body_top_right_list_ul > li:first-child {
+    border-top: none;
+  }
+  #second_floor_body_top_right_list_ul > li {
+    padding: 16px 0;
+    border-top: 1px solid rgb(200, 200, 200);
+  }
+  #second_floor_body_top_right_list_ul > li > p {
+    margin: 0;
+    padding: 0 20%;
+    display: -webkit-box; /* 使用 WebKit 的盒模型 */
+    -webkit-line-clamp: 1; /* 限制行数为2行 */
+    -webkit-box-orient: vertical; /* 垂直排列内容 */ /* 不清楚是垂直排列还是什么反正没这行不行 */
+    overflow: hidden; /* 隐藏溢出的内容 */
+    text-overflow: ellipsis; /* 在溢出时显示省略号 */
+  
+    /* 补充标准属性（未来可能支持） */
+    line-clamp: 2; /* 限制行数为2行 */
   }
   #second_floor_body_bottom {
     background-color: rgba(37, 164, 255, 0.3);
@@ -1044,7 +1076,7 @@
     overflow-wrap: break-word; /* 确保长单词或 URL 换行 */
     display: -webkit-box; /* 使用 WebKit 的盒模型 */
     -webkit-line-clamp: 2; /* 限制行数为2行 */
-    -webkit-box-orient: vertical; /* 垂直排列内容 */
+    -webkit-box-orient: vertical; /* 垂直排列内容 */ /* 不清楚是垂直排列还是什么反正没这行不行 */
     overflow: hidden; /* 隐藏溢出的内容 */
     text-overflow: ellipsis; /* 在溢出时显示省略号 */
   
