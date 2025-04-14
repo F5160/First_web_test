@@ -245,7 +245,7 @@ cycle_img_top_shadow_Element.addEventListener('mousedown', (event) => {
   isDragging = true;
   mouse_startX = event.clientX;
   mouse_startY = event.clientY;
-  console.log('mousestart', mouse_startX, mouse_startY); // 添加调试信息
+  console.log('mouseStart', mouse_startX, mouse_startY); // 添加调试信息
 });
 cycle_img_top_shadow_Element.addEventListener('mousemove', (event) => {
   if (isDragging) {
@@ -261,7 +261,7 @@ cycle_img_top_shadow_Element.addEventListener('mouseup', (event) => {
     const endY = event.clientY;
     const deltaX = mouse_startX - endX;
     const deltaY = mouse_startY - endY;
-    console.log('mouseend', endX, endY, deltaX, deltaY); // 添加调试信息
+    console.log('mouseEnd', endX, endY, deltaX, deltaY); // 添加调试信息
 
     // 拖拽至少大于20单位
     if(Math.abs(deltaX) > 20) {
@@ -457,6 +457,7 @@ document.querySelectorAll('.bottom_div_in').forEach(item => {
                   console.log(thisTextTitleDescriptionElement.src);
                 } else {
                   // 处理 thisTextTitleDescriptionElement 为 null 的情况
+                  secondFloorCoverTextDescriptionElement.src = '';
                   console.warn('thisTextTitleDescriptionElement is null, skipping');
                 }
                 console.log(thisBackgroundImageStyle.backgroundImage);

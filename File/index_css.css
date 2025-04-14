@@ -239,7 +239,7 @@
     aspect-ratio: 3/2; /* 宽高比3/2 */
     background-color: rgb(0, 0, 0, 0.2);
   }
-  #second_floor_body_top_rigth {
+  #second_floor_body_top_right {
     flex: 1;
     background-color: rgb(0, 0, 0, 0.02);
     overflow-y: auto; /* 添加垂直滚动条 */
@@ -266,20 +266,29 @@
     border-top: none;
   }
   #second_floor_body_top_right_list_ul > li {
-    padding: 16px 0;
+    padding: 4px 0;
     border-top: 1px solid rgb(200, 200, 200);
   }
-  #second_floor_body_top_right_list_ul > li > p {
-    margin: 0;
-    padding: 0 20%;
+  #second_floor_body_top_right_list_ul > li > div {
+    padding: 12px 0;
+    cursor: pointer; /* 鼠标变手 */
+  }
+  #second_floor_body_top_right_list_ul > li > div:hover > p {
+    color: pink;
+    transition: 0s;
+  }
+  #second_floor_body_top_right_list_ul > li > div > p {
+    margin: 0 20%;
+    /* padding: 0 20%; */
+    transition: var(--transition-slow);
     display: -webkit-box; /* 使用 WebKit 的盒模型 */
-    -webkit-line-clamp: 1; /* 限制行数为2行 */
+    -webkit-line-clamp: 1; /* 限制行数为1行 */
     -webkit-box-orient: vertical; /* 垂直排列内容 */ /* 不清楚是垂直排列还是什么反正没这行不行 */
     overflow: hidden; /* 隐藏溢出的内容 */
     text-overflow: ellipsis; /* 在溢出时显示省略号 */
   
     /* 补充标准属性（未来可能支持） */
-    line-clamp: 2; /* 限制行数为2行 */
+    line-clamp: 1; /* 限制行数为1行 */
   }
   #second_floor_body_bottom {
     background-color: rgba(37, 164, 255, 0.3);
@@ -1121,6 +1130,8 @@
     /* --bottom-div-in-relative-height: 88%; */
     --bottom-div-content-background-height: 100%;
     --bottom-div-content-background-width: 100%;
+    --text-blur: 2px;
+    --text-shadow: 0px 0px 8px rgb(0, 0, 0, 0.4);
   }
   #body_in_box_bottom_in {
     height: 390rem;
@@ -1168,31 +1179,32 @@
     color: inherit; /* 继承父元素的文字颜色 */
   }
   .bottom_div_title_description_box {
-    height: 50%;
+    height: 30%;
     width: calc(100% - calc(var(--title-left) + 40px));
     position: absolute;
-    top: calc(var(--title-top) + var(--title-box-height) + 75%);
-    left: calc(var(--title-left) + 40px);
+    top: calc(var(--title-top) + var(--title-box-height) + 68%);
+    left: calc(var(--title-left) + 34px);
     /* margin-left: clamp(calc(var(--title-left) + 2%), calc(var(--title-left) + 2.3%), calc(var(--title-left) + 3%)); */
     /* background-color: rgba(0, 0, 0, 0.4); */
     z-index: calc(var(--z-index-title) - 2);
   }
   .bottom_div_in.white_font .bottom_div_title_description, .bottom_div_in.black_font .bottom_div_title_description {
     height: 100%;
-    filter: opacity(0%) drop-shadow(0px 0px 6px rgb(255, 255, 255));
+    filter: blur(var(--text-blur)) opacity(0%) drop-shadow(0px 0px 6px rgb(255, 255, 255));
     transition: var(--transition-slow);
     transition-delay: var(--transition-delay-none);
     transform: translateY(30%);
   }
-  .bottom_div_in.black_font .bottom_div_title_description {
+  /* 黑色字体类已弃用_原先是为了适配黑色阴影模拟模糊淡入淡出, 现已用blur代替 */
+  /* .bottom_div_in.black_font .bottom_div_title_description {
     filter: opacity(0%) drop-shadow(0px 0px 6px #1f1f1f);
-  }
+  } */
   .bottom_div_title_others {
     height: 25%;
     width: 80%;
     position: absolute;
     bottom: -220%;
-    left: calc(var(--title-left) + 40px);
+    left: calc(var(--title-left) + 34px);
     /* background-color: rgba(0, 0, 0, 0.4); */
     z-index: calc(var(--z-index-title) - 2);
     display: flex;
@@ -1204,14 +1216,15 @@
   }
   .bottom_div_in.white_font .bottom_div_title_count, .bottom_div_in.black_font .bottom_div_title_count, .bottom_div_in.white_font .bottom_div_title_time, .bottom_div_in.black_font .bottom_div_title_time {
     height: 100%;
-    filter: opacity(0%) drop-shadow(0px 0px 6px rgb(255, 255, 255));
+    filter: blur(var(--text-blur)) opacity(0%) drop-shadow(0px 0px 6px rgb(255, 255, 255));
     transition: var(--transition-slow);
     transition-delay: var(--transition-delay-normal);
     transform: translateY(30%);
   }
-  .bottom_div_in.black_font .bottom_div_title_count, .bottom_div_in.black_font .bottom_div_title_time {
+  /* 黑色字体类已弃用_原先是为了适配黑色阴影模拟模糊淡入淡出, 现已用blur代替 */
+  /* .bottom_div_in.black_font .bottom_div_title_count, .bottom_div_in.black_font .bottom_div_title_time {
     filter: opacity(0%) drop-shadow(0px 0px 6px #1f1f1f);
-  }
+  } */
   .bottom_div_title_time_box {
     flex: 1;
     /* background-color: rgba(0, 81, 255, 0.4); */
@@ -1339,32 +1352,37 @@
   
   .bottom_div_in.white_font.active .bottom_div_title_description, .bottom_div_in.black_font.active .bottom_div_title_description {
     transition-delay: var(--transition-delay-bit);
-    filter: opacity(100%) drop-shadow(0px 0px 0px rgb(255, 255, 255));
+    filter: blur(0px) opacity(100%) drop-shadow(var(--text-shadow));
     transform: translateY(0);
   }
-  .bottom_div_in.black_font.active .bottom_div_title_description {
+  /* 黑色字体类已弃用_原先是为了适配黑色阴影模拟模糊淡入淡出, 现已用blur代替 */
+  /* .bottom_div_in.black_font.active .bottom_div_title_description {
     filter: opacity(100%) drop-shadow(0px 0px 0px #1f1f1f);
-  }
+  } */
   .bottom_div_in.white_font.active .bottom_div_title_count, .bottom_div_in.black_font.active .bottom_div_title_count {
     transition-delay: var(--transition-delay-more);
-    filter: opacity(100%) drop-shadow(0px 0px 0px rgb(255, 255, 255));
+    filter: blur(0px) opacity(100%) drop-shadow(var(--text-shadow));
     transform: translateY(0);
   }
-  .bottom_div_in.black_font.active .bottom_div_title_count {
+  /* 黑色字体类已弃用_原先是为了适配黑色阴影模拟模糊淡入淡出, 现已用blur代替 */
+  /* .bottom_div_in.black_font.active .bottom_div_title_count {
     filter: opacity(100%) drop-shadow(0px 0px 0px #1f1f1f);
-  }
+  } */
   .bottom_div_in.white_font.active .bottom_div_title_time, .bottom_div_in.black_font.active .bottom_div_title_time {
     transition-delay: var(--transition-delay-macro);
-    filter: opacity(100%) drop-shadow(0px 0px 0px rgb(255, 255, 255));
+    filter: blur(0px) opacity(100%) drop-shadow(var(--text-shadow));
     transform: translateY(0);
   }
-  .bottom_div_in.black_font.active .bottom_div_title_time {
+  /* 黑色字体类已弃用_原先是为了适配黑色阴影模拟模糊淡入淡出, 现已用blur代替 */
+  /* .bottom_div_in.black_font.active .bottom_div_title_time {
     filter: opacity(100%) drop-shadow(0px 0px 0px #1f1f1f);
+  } */
+  #bottom_div_in_3 .bottom_div_title_description_box {
+    height: 50%;
   }
-
-  #bottom_div_in_3.active .bottom_div_title_count {
+  /* #bottom_div_in_3.active .bottom_div_title_count {
     padding-left: 0.2rem;
-  }
+  } */
   #bottom_div_in_3.active .bottom_div_content_left_blur {
     background-color: rgba(16, 27, 73, 0.2);
   }
