@@ -3,11 +3,13 @@ console.log("cl test");
 // 获取title元素
 const title = document.querySelector('#title');
 const head_title = document.querySelector('#head_title');
+// 获取滚动距离
+let scrollDistance = window.scrollY;
 // 监听滚动函数
 // 提取滚动事件处理函数
 function handleScroll() {
-  // 获取滚动距离
-  const scrollDistance = window.scrollY;
+  // 更新滚动距离
+  scrollDistance = window.scrollY;
 
   // 滚动距离超过设定值(px)则执行操作
   if (scrollDistance > 64) {
@@ -25,6 +27,86 @@ window.onload = function() {
   handleScroll();
 };
 
+
+
+
+
+// 按钮点击跳转相关
+// 首页按钮
+const firstSectionTitle0 = document.querySelectorAll('.first_section_title_0');
+firstSectionTitle0.forEach(title0 => {
+  title0.addEventListener('click', function() {
+    // 使用scrollTo方法实现平滑滚动到页面顶部
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+      duration: 500 // duration在这里不起作用, behavior: 'smooth'已经实现了平滑滚动
+    });
+  });
+})
+// // behavior不支持自定义曲线, 下面的方法可以
+// const firstSectionTitle = document.querySelector('.first_section_title_0');
+// firstSectionTitle.addEventListener('click', function() {
+//   // 获取当前滚动位置
+//   let start = window.scrollY;
+//   // 定义目标滚动位置（顶部）
+//   let end = 0;
+//   // 定义滚动持续时间（毫秒）
+//   let duration = 500;
+//   // 计算开始时间
+//   let startTime = null;
+//   // 定义滚动动画函数
+//   function step(timestamp) {
+//     if (!startTime) startTime = timestamp;
+//     let progress = timestamp - startTime;
+//     let scrollY = easeInOutQuad(progress, start, end - start, duration);
+//     window.scrollTo(0, scrollY);
+//     if (progress < duration) {
+//       requestAnimationFrame(step);
+//     }
+//   }
+//   // 定义缓动函数（easeInOutQuad）
+//   function easeInOutQuad(t, b, c, d) {
+//     t /= d / 2;
+//     if (t < 1) return c / 2 * t * t + b;
+//     t--;
+//     return -c / 2 * (t * (t - 2) - 1) + b;
+//   }
+//   // 开始滚动动画
+//   requestAnimationFrame(step);
+// });
+
+// 影集按钮
+const firstSectionTitle1 = document.querySelectorAll('.first_section_title_1');
+const bottomDivIn1 = document.querySelector('#bottom_div_in_1');
+firstSectionTitle1.forEach(title1 => {
+  title1.addEventListener('click', function() {
+    bottomDivIn1.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center' // 可选：'start', 'center', 'end', 'nearest'
+    });
+  });
+});
+
+const unfinishedFirstSectionTitles = document.querySelectorAll('.first_section_title_2, .first_section_title_4, .first_section_title_7, #search_btn');
+const promptInfo = document.querySelector('#prompt_info');
+const promptInfoText = document.querySelector('#prompt_info_text');
+unfinishedFirstSectionTitles.forEach(title => {
+  title.addEventListener('click', function() {
+    promptInfo.style.setProperty('--prompt-info-height', '50px');
+    title.style.pointerEvents = 'none';
+    setTimeout(() => {
+      promptInfoText.style.opacity = '100%';
+    }, 60)
+    setTimeout(() => {
+      promptInfoText.style.opacity = '0%';
+    }, 2000)
+    setTimeout(() => {
+      promptInfo.style.setProperty('--prompt-info-height', '0px');
+      title.style.pointerEvents = 'auto';
+    }, 2100)
+  });
+});
 
 
 // 鼠标进入二层时禁用*一层滚动
@@ -141,6 +223,7 @@ cycle_img_l_button_Element.addEventListener('click', () => {
 // 选择切换
 cycle_img_point_Elements.forEach((point, index) => {
   point.addEventListener('click', () => {
+    clearTimeout(cycle_timeId); // 清除当前的定时器
     // 检查是否已经包含 cycle_img_high_light_point 类
     if (!point.classList.contains('cycle_img_high_light_point')) {
       cycle_num = index + 1;
@@ -487,8 +570,9 @@ document.querySelectorAll('.bottom_div_in').forEach(item => {
             secondFloorCoverBoxElement.style.transform = 'translateY(0)';
             secondFloorCoverImgElement.style.transition = '0s';
             secondFloorCoverImgElement.style.height = '100%';
-            clearInterval(cycle_timeId);
-            console.log('进入二层, cycle_timeId停止');
+            // 似乎有bug, 通过此方式暂停再恢复播放后似乎会使循环时间混乱
+            // clearInterval(cycle_timeId);
+            // console.log('进入二层, cycle_timeId停止');
           }, coverDisappearDelayTime + coverDisappearDelayTimeDelay + 1200); // 1200为coverDisappearTransitionTime, 变量原始格式不同所以不能直接相加
           // 返回按钮还原属性_还没写_可能还有属性改变而未在此列出(晚些时候写下)(记得再检查检查, 不过要是能跑就先不管[更晚些时候写下])
           // *似乎是由于在首次进入二层时就已经给返回按钮(#first_section_second_floor)设定了功能, 所以无需在别处重复设定
@@ -516,8 +600,9 @@ document.querySelectorAll('.bottom_div_in').forEach(item => {
               secondFloorElement.style.transition = '0s';
               restore_bottom_div_content_left_blur();
               restore_bottom_div_content_left_text();
-              startCarousel();
-              console.log('退出二层, cycle_timeId重新启动');
+              // 似乎有bug, 通过此方式暂停再恢复播放后似乎会使循环时间混乱
+              // startCarousel();
+              // console.log('退出二层, cycle_timeId重新启动');
             }, 100);
           });
 
