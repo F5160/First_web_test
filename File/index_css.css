@@ -115,8 +115,9 @@
     top: calc(46% - var(--prompt-info-height) / 2);
     /* border-top: 2px solid #0058bc;
     border-bottom: 2px solid #0058bc; */
-    background-color: rgb(2, 5, 42, 0.92);
-    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
+    background-color: rgb(4, 2, 42, 0.92);
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(20px);
     z-index: 9999;
     transition: var(--transition-quick);
     display: flex;
@@ -129,6 +130,30 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 140%;
     font-weight: 600;
+    opacity: 0%;
+    transition: var(--transition-normal);
+  }
+  #prompt_info_bottom {
+    position: fixed;
+    height: var(--prompt-info-height);
+    width: 100%;
+    bottom: calc(var(--prompt-info-height) * -1.6);
+    background-color: rgba(45, 46, 42, 0.6);
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(20px);
+    z-index: 9999;
+    transition: var(--transition-quick);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    --prompt-info-height: 80px;
+  }
+  #prompt_info_bottom_text {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 140%;
+    font-weight: 600;
+    letter-spacing: 1px;
     opacity: 0%;
     transition: var(--transition-normal);
   }
@@ -448,9 +473,12 @@
   #first_section_title > span:hover + span {
     transform: translateY(var(--title-transform-down-beside));
   }
-  #first_section > span > span, #first_section_title > span > span{
+  .section > span >span {
     cursor: pointer;
   }
+  /* #first_section > span > span, #first_section_title > span > span{
+    cursor: pointer;
+  } */
   /* #first_section > span > span:hover{
     border-bottom: #FFF solid 2px;
   } 挺廉价的 25/03/13 22:33 来自自己 */
@@ -532,6 +560,7 @@
     background-size: 46%;
     background-position: center; /* 图片居中显示 */
     background-repeat: no-repeat; /* 防止图片平铺 */
+    cursor: pointer;
   }
   #second_section > #search > #search_btn:active, #second_section_title > #search > #search_btn:active {
     background-color: rgba(0, 0, 0, 0.2);
@@ -576,9 +605,9 @@
   #third_section_title > span:hover + span{
     transform: translateY(var(--title-transform-down-beside));
   }
-  #third_section > span > span, #third_section_title > span > span {
+  /* #third_section > span > span, #third_section_title > span > span {
     cursor: pointer;
-  }
+  } */
   
   
   #body {
@@ -639,7 +668,7 @@
     margin: 1rem 0;
   }
   
-  #head_first_section_left_in, #head_first_section_right_in {
+  .head_first_section_span {
     width: 100%;
     height: 80%;
     display: flex;
@@ -655,7 +684,7 @@
     border-radius: 100%;
     vertical-align: middle;
   }
-  #head_first_section_left_in:hover, #head_first_section_right_in:hover {
+  .head_first_section_span:hover {
     cursor: pointer; /* 鼠标变手 */
   }
   #head_first_section_left_icon {
@@ -1107,7 +1136,8 @@
   .content_box_img > img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 或者使用 contain */
+    /* object-fit: cover; */
+    /* object-fit: contain; */
     display: block; /* 去除图片下方的空白间隙 */
   }
   /* .in_box_top_right_in_span_in > .in_box_top_right_in_span_in_text {

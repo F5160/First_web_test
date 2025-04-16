@@ -32,54 +32,70 @@ window.onload = function() {
 
 
 // 按钮点击跳转相关
+// 跳转时长
+const animationTime = 1000;
+// 定义缓动函数
+function smoothAnimation(t, b, c, d) {
+  t /= d;
+  t--;
+  // 二次方缓动(需注释t--)
+  // return -c * t * (t - 2) + b;
+  // 三次方缓动
+  // return c * (t * t * t + 1) + b;
+  // 四次方缓动
+  // return -c * (t * t * t * t - 1) + b;
+  // 五次方缓动
+  return c * (t * t * t * t * t + 1) + b;
+  // 七次方缓动
+  // return c * (t * t * t * t * t * t * t + 1) + b;
+  // 九次方缓动
+  // return c * (t * t * t * t * t * t * t * t * t + 1) + b;
+}
+
 // 首页按钮
-const firstSectionTitle0 = document.querySelectorAll('.first_section_title_0');
-firstSectionTitle0.forEach(title0 => {
-  title0.addEventListener('click', function() {
-    // 使用scrollTo方法实现平滑滚动到页面顶部
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-      duration: 500 // duration在这里不起作用, behavior: 'smooth'已经实现了平滑滚动
-    });
+// const firstSectionSpan0 = document.querySelectorAll('.first_section_span_0');
+// firstSectionSpan0.forEach(span0 => {
+//   span0.addEventListener('click', function() {
+//     // 使用scrollTo方法实现平滑滚动到页面顶部
+//     window.scrollTo({
+//       top: 0,
+//       behavior: 'smooth',
+//       duration: 500 // duration在这里不起作用, behavior: 'smooth'已经实现了平滑滚动
+//     });
+//   });
+// })
+// behavior不支持自定义曲线, 下面的方法可以
+// 首页按钮
+const firstSectionSpan0 = document.querySelectorAll('.first_section_span_0');
+firstSectionSpan0.forEach(span0 => {
+  span0.addEventListener('click', function() {
+    // 获取当前滚动位置
+    let start = window.scrollY;
+    // 定义目标滚动位置（顶部）
+    let end = 0;
+    // 定义滚动时间
+    let duration = animationTime;
+    // 计算开始时间
+    let startTime = null;
+    // 使用缓动函数
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      let progress = timestamp - startTime;
+      let scrollY = smoothAnimation(progress, start, end - start, duration);
+      window.scrollTo(0, scrollY);
+      if (progress < duration) {
+        requestAnimationFrame(step);
+      }
+    }
+    // 开始滚动动画
+    requestAnimationFrame(step);
   });
 })
-// // behavior不支持自定义曲线, 下面的方法可以
-// const firstSectionTitle = document.querySelector('.first_section_title_0');
-// firstSectionTitle.addEventListener('click', function() {
-//   // 获取当前滚动位置
-//   let start = window.scrollY;
-//   // 定义目标滚动位置（顶部）
-//   let end = 0;
-//   // 定义滚动持续时间（毫秒）
-//   let duration = 500;
-//   // 计算开始时间
-//   let startTime = null;
-//   // 定义滚动动画函数
-//   function step(timestamp) {
-//     if (!startTime) startTime = timestamp;
-//     let progress = timestamp - startTime;
-//     let scrollY = easeInOutQuad(progress, start, end - start, duration);
-//     window.scrollTo(0, scrollY);
-//     if (progress < duration) {
-//       requestAnimationFrame(step);
-//     }
-//   }
-//   // 定义缓动函数（easeInOutQuad）
-//   function easeInOutQuad(t, b, c, d) {
-//     t /= d / 2;
-//     if (t < 1) return c / 2 * t * t + b;
-//     t--;
-//     return -c / 2 * (t * (t - 2) - 1) + b;
-//   }
-//   // 开始滚动动画
-//   requestAnimationFrame(step);
-// });
 
 // 影集按钮
-const firstSectionTitle1 = document.querySelectorAll('.first_section_title_1');
+const firstSectionSpan1 = document.querySelectorAll('.first_section_span_1');
 const bottomDivIn1 = document.querySelector('#bottom_div_in_1');
-firstSectionTitle1.forEach(title1 => {
+firstSectionSpan1.forEach(title1 => {
   title1.addEventListener('click', function() {
     bottomDivIn1.scrollIntoView({
       behavior: 'smooth',
@@ -88,24 +104,151 @@ firstSectionTitle1.forEach(title1 => {
   });
 });
 
-const unfinishedFirstSectionTitles = document.querySelectorAll('.first_section_title_2, .first_section_title_4, .first_section_title_7, #search_btn');
+// 源码下载按钮
+const firstSectionSpan3 = document.querySelectorAll('.first_section_span_3');
+firstSectionSpan3.forEach(span3 => {
+  span3.addEventListener('click', function() {
+    // 本页面打开
+    // window.location.href = 'https://github.com/F5160/First_web_test';
+    // 新页面打开
+    window.open('https://github.com/F5160/First_web_test', '_blank');
+  });
+});
+
+// 按钮群
+// 获取父元素
+const headSecondSectionIn = document.getElementById('head_second_section_in');
+// 绑定点击事件监听器到父元素
+headSecondSectionIn.addEventListener('click', function(event) {
+  // 获取点击的元素的id
+  const spanId = event.target.id;
+  // 根据元素的id构建目标元素id
+  const targetId = spanId.replace('head_second_section_in_', 'bottom_div_in_');
+  console.log('click the: [', spanId, '] jump to: [', targetId, ']')
+  // 获取目标元素
+  const targetElement = document.getElementById(targetId);
+  // 检查目标元素是否存在
+  if (targetElement) {
+    // 获取当前滚动位置
+    let start = window.scrollY;
+    // 获取视口高度
+    const viewportHeight = window.innerHeight;
+    // 获取目标元素的高度
+    const targetHeight = targetElement.offsetHeight;
+    // 计算目标滚动位置(目标元素停于屏幕中间)
+    let end = targetElement.offsetTop - (viewportHeight / 2) + (targetHeight / 2);
+    // 定义滚动时间
+    let duration = animationTime;
+    // 计算开始时间
+    let startTime = null;
+    // 使用缓动函数
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      let progress = timestamp - startTime;
+      let scrollY = smoothAnimation(progress, start, end - start, duration);
+      window.scrollTo(0, scrollY);
+      if (progress < duration) {
+        requestAnimationFrame(step);
+      }
+    }
+    // 开始滚动动画
+    requestAnimationFrame(step);
+  }
+
+  // 闪烁前的延迟(以对应块快要移到屏幕中心时为准)(通过按钮群跳转至对应块时, 对应的块闪烁)
+  const shineTime = animationTime - animationTime / 2;
+  // 利用递归实现函数指定执行次数以及每次循环的间隔
+  // func是要执行的函数, times是指定执行次数, delay是每次循环的间隔
+  function executeWithDelay(func, times, delay) {
+    // 执行次数计数
+    let count = 0
+    function execute() {
+      if(count < times) {
+        func();
+        count++;
+        setTimeout(execute, delay);
+        console.log(delay)
+      }
+    }
+    execute();
+  }
+  // 定义闪烁函数(通过按钮群跳转至对应块时, 对应的块闪烁)
+  function backgroundShine() {
+    setTimeout(() => {
+      // 边缘发光暂时不知道咋写 25/04/17 00:24 来自自己
+      // targetElement.style.boxShadow = '0px 0px 12px 0px rgba(0, 0, 0, 1)'
+      // targetElement.querySelector('.bottom_div_content_box').style.boxShadow = '0px 0px 12px 0px rgba(0, 0, 0, 1)'
+      targetElement.querySelector('.bottom_div_content_box').querySelector('.bottom_div_content_background').style.transition = '0.3s';
+      targetElement.querySelector('.bottom_div_content_box').querySelector('.bottom_div_content_background').style.filter = 'brightness(120%)';
+    }, shineTime)
+    setTimeout(() => {
+      // 过渡时间原始值为0.6s
+      targetElement.querySelector('.bottom_div_content_box').querySelector('.bottom_div_content_background').style.transition = '0.6s';
+      targetElement.querySelector('.bottom_div_content_box').querySelector('.bottom_div_content_background').style.filter = 'brightness(100%)';
+    }, shineTime + 550)
+  }
+  // 开始循环
+  executeWithDelay(backgroundShine, 2, 865);
+});
+
+// 未完成提示
+const unfinished = document.querySelectorAll('.first_section_span_2, .first_section_span_4, .first_section_span_5, .first_section_span_6, .first_section_span_7, #search_btn, .in_box_top_right_in_span , .head_first_section_span, .head_third_section_in_span');
 const promptInfo = document.querySelector('#prompt_info');
 const promptInfoText = document.querySelector('#prompt_info_text');
-unfinishedFirstSectionTitles.forEach(title => {
-  title.addEventListener('click', function() {
+unfinished.forEach(unfinishedIn => {
+  unfinishedIn.addEventListener('click', function() {
+    promptInfoText.textContent = '板块制作中, 预计5月上线';
     promptInfo.style.setProperty('--prompt-info-height', '50px');
-    title.style.pointerEvents = 'none';
+    // 经过该时间后隐藏
+    const hiddenTime = 3000;
     setTimeout(() => {
       promptInfoText.style.opacity = '100%';
+      unfinished.forEach(unfinishedInIn => {
+        unfinishedInIn.style.pointerEvents = 'none';
+      })
     }, 60)
     setTimeout(() => {
       promptInfoText.style.opacity = '0%';
-    }, 2000)
+    }, hiddenTime)
     setTimeout(() => {
       promptInfo.style.setProperty('--prompt-info-height', '0px');
-      title.style.pointerEvents = 'auto';
-    }, 2100)
+      unfinished.forEach(unfinishedInIn => {
+        unfinishedInIn.style.pointerEvents = 'auto';
+      })
+    }, hiddenTime + 100)
   });
+});
+
+const atHome = document.querySelectorAll('.first_section_span_0');
+const promptInfoBottom = document.querySelector('#prompt_info_bottom');
+const promptInfoTextBottom = document.querySelector('#prompt_info_bottom_text');
+atHome.forEach(atHomeIn => {
+    atHomeIn.addEventListener('click', function() {
+      // 单位为px
+      if(scrollDistance < 100) {
+        console.log(scrollDistance);
+        promptInfoTextBottom.textContent = '你已经在首页了';
+        promptInfoBottom.style.bottom = '0%';
+        // 经过该时间后隐藏
+        const hiddenTime = 3000;
+        setTimeout(() => {
+          promptInfoTextBottom.style.opacity = '100%';
+          atHome.forEach(atHomeInIn => {
+            atHomeInIn.style.pointerEvents = 'none';
+          });
+        }, 200);
+        setTimeout(() => {
+          promptInfoTextBottom.style.opacity = '0%';
+        }, hiddenTime);
+        setTimeout(() => {
+          // 原始值为-80px
+          promptInfoBottom.style.bottom = '-80px';
+          atHome.forEach(atHomeInIn => {
+            atHomeInIn.style.pointerEvents = 'auto';
+          });
+        }, hiddenTime + 220);
+      }
+    });
 });
 
 
@@ -187,7 +330,7 @@ updateCarousel_text_color_and_points();
 
 
 
-// 切换方法集成
+// 轮播图切换方法集成
 function updateCycleImg() {
   updateCarousel_visual();
   updateCarousel_text_color_and_points();
@@ -540,7 +683,8 @@ document.querySelectorAll('.bottom_div_in').forEach(item => {
                   console.log(thisTextTitleDescriptionElement.src);
                 } else {
                   // 处理 thisTextTitleDescriptionElement 为 null 的情况
-                  secondFloorCoverTextDescriptionElement.src = '';
+                  // 现已预设了内容及路径故无需再填充为空值 25/04/17 00:35 来自自己
+                  // secondFloorCoverTextDescriptionElement.src = '';
                   console.warn('thisTextTitleDescriptionElement is null, skipping');
                 }
                 console.log(thisBackgroundImageStyle.backgroundImage);
