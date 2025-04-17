@@ -34,7 +34,11 @@ window.onload = function() {
 // 按钮点击跳转相关
 // 跳转时长
 const animationTime = 1000;
-// 定义缓动函数
+// 线性移动(一次方)
+function linearAnimation(t, b, c, d) {
+  return c * (t / d) + b;
+}
+// 非线性缓动
 function smoothAnimation(t, b, c, d) {
   t /= d;
   t--;
@@ -50,6 +54,15 @@ function smoothAnimation(t, b, c, d) {
   // return c * (t * t * t * t * t * t * t + 1) + b;
   // 九次方缓动
   // return c * (t * t * t * t * t * t * t * t * t + 1) + b;
+}
+// 页面振动
+function pageShake() {
+  // 给body添加shake类
+  document.body.classList.add('upDownShake');
+  // 动画结束后移除shake类
+  document.body.addEventListener('animationend', () => {
+    document.body.classList.remove('upDownShake');
+  }, { once: true });
 }
 
 // 首页按钮
@@ -73,24 +86,78 @@ firstSectionSpan0.forEach(span0 => {
     let start = window.scrollY;
     // 定义目标滚动位置（顶部）
     let end = 0;
-    // 定义滚动时间
-    let duration = animationTime;
-    // 计算开始时间
-    let startTime = null;
-    // 使用缓动函数
-    function step(timestamp) {
-      if (!startTime) startTime = timestamp;
-      let progress = timestamp - startTime;
-      let scrollY = smoothAnimation(progress, start, end - start, duration);
-      window.scrollTo(0, scrollY);
-      if (progress < duration) {
-        requestAnimationFrame(step);
-      }
+    if(start < 5120) {
+      // 定义滚动时间
+      let duration = animationTime;
+      // 计算开始时间
+      let startTime = null;
+      // 使用缓动函数
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        let progress = timestamp - startTime;
+        let scrollY = smoothAnimation(progress, start, end - start, duration);
+        window.scrollTo(0, scrollY);
+        if (progress < duration) {
+          requestAnimationFrame(step);
+        };
+      };
+      // 开始滚动动画
+      requestAnimationFrame(step);
+    }else {
+      // 定义滚动时间
+      let duration = animationTime / 3;
+      // 计算开始时间
+      let startTime = null;
+      // 使用缓动函数
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        let progress = timestamp - startTime;
+        let scrollY = linearAnimation(progress, start, end - start, duration);
+        window.scrollTo(0, scrollY);
+        if (progress < duration) {
+          requestAnimationFrame(step);
+        };
+      };
+      setTimeout(() => {
+        pageShake();
+      }, duration - duration * 0.02);
+      // 开始滚动动画
+      requestAnimationFrame(step);
     }
-    // 开始滚动动画
-    requestAnimationFrame(step);
   });
 })
+// 已位于首页提示
+const atHome = document.querySelectorAll('.first_section_span_0');
+const promptInfoBottom = document.querySelector('#prompt_info_bottom');
+const promptInfoTextBottom = document.querySelector('#prompt_info_bottom_text');
+atHome.forEach(atHomeIn => {
+    atHomeIn.addEventListener('click', function() {
+      // 单位为px
+      if(scrollDistance < 256) {
+        console.log(scrollDistance);
+        promptInfoTextBottom.textContent = '你已经在首页了';
+        promptInfoBottom.style.bottom = '0%';
+        // 经过该时间后隐藏
+        const hiddenTime = 3000;
+        setTimeout(() => {
+          promptInfoTextBottom.style.opacity = '100%';
+          atHome.forEach(atHomeInIn => {
+            atHomeInIn.style.pointerEvents = 'none';
+          });
+        }, 200);
+        setTimeout(() => {
+          promptInfoTextBottom.style.opacity = '0%';
+        }, hiddenTime);
+        setTimeout(() => {
+          // 原始值为-80px
+          promptInfoBottom.style.bottom = '-80px';
+          atHome.forEach(atHomeInIn => {
+            atHomeInIn.style.pointerEvents = 'auto';
+          });
+        }, hiddenTime + 220);
+      }
+    });
+});
 
 // 影集按钮
 const firstSectionSpan1 = document.querySelectorAll('.first_section_span_1');
@@ -167,7 +234,6 @@ headSecondSectionIn.addEventListener('click', function(event) {
         func();
         count++;
         setTimeout(execute, delay);
-        console.log(delay)
       }
     }
     execute();
@@ -219,37 +285,7 @@ unfinished.forEach(unfinishedIn => {
   });
 });
 
-const atHome = document.querySelectorAll('.first_section_span_0');
-const promptInfoBottom = document.querySelector('#prompt_info_bottom');
-const promptInfoTextBottom = document.querySelector('#prompt_info_bottom_text');
-atHome.forEach(atHomeIn => {
-    atHomeIn.addEventListener('click', function() {
-      // 单位为px
-      if(scrollDistance < 100) {
-        console.log(scrollDistance);
-        promptInfoTextBottom.textContent = '你已经在首页了';
-        promptInfoBottom.style.bottom = '0%';
-        // 经过该时间后隐藏
-        const hiddenTime = 3000;
-        setTimeout(() => {
-          promptInfoTextBottom.style.opacity = '100%';
-          atHome.forEach(atHomeInIn => {
-            atHomeInIn.style.pointerEvents = 'none';
-          });
-        }, 200);
-        setTimeout(() => {
-          promptInfoTextBottom.style.opacity = '0%';
-        }, hiddenTime);
-        setTimeout(() => {
-          // 原始值为-80px
-          promptInfoBottom.style.bottom = '-80px';
-          atHome.forEach(atHomeInIn => {
-            atHomeInIn.style.pointerEvents = 'auto';
-          });
-        }, hiddenTime + 220);
-      }
-    });
-});
+
 
 
 // 鼠标进入二层时禁用*一层滚动
@@ -282,6 +318,100 @@ const cycle_img_text_Element = document.querySelector('#cycle_img_text');
 const cycle_img_point_Elements = document.querySelectorAll('#cycle_img_points dd');
 const cycle_img_r_button_Element = document.querySelector('#cycle_img_r_button');
 const cycle_img_l_button_Element = document.querySelector('#cycle_img_l_button');
+
+
+
+let cycle_img_second_floor_0 = [
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}
+]
+
+let cycle_img_second_floor_1 = [
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}
+]
+
+let cycle_img_second_floor_2 = [
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}
+]
+
+let cycle_img_second_floor_3 = [
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}
+]
 
 
 
@@ -412,7 +542,7 @@ cycle_img_Element.addEventListener('mouseleave', () => {
 
 
 
-// 触摸切换
+// 触控切换
 let touch_startX = 0;
 let touch_startY = 0;
 
@@ -658,14 +788,14 @@ document.querySelectorAll('.bottom_div_in').forEach(item => {
           secondFloorCoverTextDescriptionElement.style.transform = 'translateY(0)';
 
           // 覆盖层内容与当前点击的盒子的元素一致
-          console.log(this);
+          // console.log('click the', this);
           // 获取当前点击的盒子的元素
           const thisBackgroundImageElement = this.closest('.bottom_div_content_box').querySelector('.bottom_div_content_background');
           const thisTextTitleElement = this.closest('.bottom_div_content_box').parentNode.querySelector('.bottom_div_title_box').querySelector('.bottom_div_title');
           const thisTextTitleDescriptionElement = this.closest('.bottom_div_content_box').parentNode.querySelector('.bottom_div_title_box').querySelector('.bottom_div_title_description');
-          console.log(thisBackgroundImageElement);
-          console.log(thisTextTitleElement);
-          console.log(thisTextTitleDescriptionElement);
+          // console.log(thisBackgroundImageElement);
+          // console.log(thisTextTitleElement);
+          // console.log(thisTextTitleDescriptionElement);
           if (thisBackgroundImageElement) {
               // *获取当前点击的盒子的元素的最终属性
               const thisBackgroundImageStyle = window.getComputedStyle(thisBackgroundImageElement);
@@ -677,18 +807,19 @@ document.querySelectorAll('.bottom_div_in').forEach(item => {
                 // 若介绍为两行则填充单行版本_id及判断自己加
                 if (thisTextTitleDescriptionElement && thisTextTitleDescriptionElement.id === 'bottom_div_in_3_doubleLineDescriptionWarning') {
                   secondFloorCoverTextDescriptionElement.src = 'File/img/billows/billows_description_singleLine.svg';
-                  console.log(thisTextTitleDescriptionElement.src);
+                  // console.log(thisTextTitleDescriptionElement.src);
                 } else if (thisTextTitleDescriptionElement) {
                   secondFloorCoverTextDescriptionElement.src = thisTextTitleDescriptionElement.src;
-                  console.log(thisTextTitleDescriptionElement.src);
+                  // console.log(thisTextTitleDescriptionElement.src);
                 } else {
                   // 处理 thisTextTitleDescriptionElement 为 null 的情况
                   // 现已预设了内容及路径故无需再填充为空值 25/04/17 00:35 来自自己
-                  // secondFloorCoverTextDescriptionElement.src = '';
+                  // 需要填充为预设值否则将显示上一次填入的内容, *这里的填充相当于刷新为原样式 25/04/18 00:17 来自自己
+                  secondFloorCoverTextDescriptionElement.src = 'File/img/null_description.svg';
                   console.warn('thisTextTitleDescriptionElement is null, skipping');
                 }
-                console.log(thisBackgroundImageStyle.backgroundImage);
-                console.log(thisTextTitleElement.src);
+                // console.log(thisBackgroundImageStyle.backgroundImage);
+                // console.log(thisTextTitleElement.src);
               }
           }
 

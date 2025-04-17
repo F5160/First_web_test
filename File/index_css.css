@@ -16,6 +16,39 @@
   }
   
   
+  /* 定义抖动动画 */
+@keyframes upDownShake {
+  0% {
+    transform: translateY(0);
+}
+
+6.5% {
+    transform: translateY(3px);
+}
+
+18.5% {
+    transform: translateY(-2.5px);
+}
+
+31.5% {
+    transform: translateY(1.5px);
+}
+
+43.5% {
+    transform: translateY(-1px);
+}
+
+50% {
+    transform: translateY(0);
+}
+}
+
+/* 应用抖动动画到body */
+body.upDownShake {
+  animation: upDownShake 0.5s;
+}
+
+
   /* 移除移动端聚焦边框 */
   * {
    -webkit-tap-highlight-color: transparent; /* 透明 */
@@ -473,7 +506,7 @@
   #first_section_title > span:hover + span {
     transform: translateY(var(--title-transform-down-beside));
   }
-  .section > span >span {
+  .section > span {
     cursor: pointer;
   }
   /* #first_section > span > span, #first_section_title > span > span{
