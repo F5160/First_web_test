@@ -189,6 +189,10 @@ const headSecondSectionIn = document.getElementById('head_second_section_in');
 headSecondSectionIn.addEventListener('click', function(event) {
   // 获取点击的元素的id
   const spanId = event.target.id;
+  console.log(headSecondSectionIn);
+  console.log(event);
+  console.log(event.target);
+  console.log(event.target.id);
   // 根据元素的id构建目标元素id
   const targetId = spanId.replace('head_second_section_in_', 'bottom_div_in_');
   console.log('click the: [', spanId, '] jump to: [', targetId, ']')
@@ -342,7 +346,7 @@ let cycle_img_second_floor_0 = [
   {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
   {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
   {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}
-]
+];
 
 let cycle_img_second_floor_1 = [
   {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
@@ -365,7 +369,7 @@ let cycle_img_second_floor_1 = [
   {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
   {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
   {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}
-]
+];
 
 let cycle_img_second_floor_2 = [
   {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
@@ -388,7 +392,7 @@ let cycle_img_second_floor_2 = [
   {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
   {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
   {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}
-]
+];
 
 let cycle_img_second_floor_3 = [
   {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
@@ -411,7 +415,255 @@ let cycle_img_second_floor_3 = [
   {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
   {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
   {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}
-]
+];
+
+let cycle_img_second_floor_4 = [
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}
+];
+
+let cycle_img_second_floor_5 = [
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}
+];
+
+let cycle_img_second_floor_6 = [
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}
+];
+
+let cycle_img_second_floor_7 = [
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}
+];
+
+let cycle_img_second_floor_8 = [
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}
+];
+
+let cycle_img_second_floor_9 = [
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}
+];
+
+let cycle_img_second_floor_10 = [
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}
+];
+
+let cycle_img_second_floor_11 = [
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}
+];
+
+let cycle_img_second_floor_12 = [
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}
+];
+
+let cycle_img_second_floor_13 = [
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}
+];
+
+// 创建映射表
+const listMap = {
+  cycle_img_second_floor_0,
+  cycle_img_second_floor_1,
+  cycle_img_second_floor_2,
+  cycle_img_second_floor_3, 
+  cycle_img_second_floor_4,
+  cycle_img_second_floor_5,
+  cycle_img_second_floor_6,
+  cycle_img_second_floor_7, 
+  cycle_img_second_floor_8,
+  cycle_img_second_floor_9,
+  cycle_img_second_floor_10,
+  cycle_img_second_floor_11, 
+  cycle_img_second_floor_12, 
+  cycle_img_second_floor_13, 
+};
 
 
 
@@ -708,6 +960,40 @@ function restore_bottom_div_content_left_text() {
 // 为每个.bottom_div_in添加点击事件监听器
 document.querySelectorAll('.bottom_div_in').forEach(item => {
   item.addEventListener('click', function(event) {
+    console.log(item);
+    const itemId = item.id;
+    console.log(itemId);
+    const listId = itemId.replace('bottom_div_in_', 'cycle_img_second_floor_');
+    console.log(listId, listId.length, typeof itemId);
+    const listIdObj = listMap[listId];
+    // 注意: 数组和对象输出的类型都是'object'
+    console.log(listIdObj, listIdObj.length, typeof listIdObj);
+
+    // 查找父元素
+    const secondFloorBodyTopRightListUlElement = document.getElementById('second_floor_body_top_right_list_ul');
+    // 添加新的 <li> 元素方法
+    function addNewLi(listIn) {
+      // 二次赋值(以免变量混淆)
+      const secondFloorBodyTopRightListUlElementIn = secondFloorBodyTopRightListUlElement;
+    
+      const newLiElement = document.createElement('li');
+      const newDivElement = document.createElement('div');
+      const newParagraphElement = document.createElement('p');
+
+      newParagraphElement.dataset.insertUrl = listIn.url;
+      newParagraphElement.textContent = listIn.text;
+    
+      newDivElement.appendChild(newParagraphElement);
+      newLiElement.appendChild(newDivElement);
+      secondFloorBodyTopRightListUlElementIn.appendChild(newLiElement);
+    };
+    // 清除原有的全部子元素
+    document.getElementById('second_floor_body_top_right_list_ul').textContent = '';
+    // 逐个添加为列表中的元素
+    for(let itemIn of listIdObj) {
+      addNewLi(itemIn);
+    };
+
     // 阻止事件冒泡
     event.stopPropagation();
     // 移除所有.bottom_div_in的active类
