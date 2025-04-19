@@ -149,8 +149,8 @@ atHome.forEach(atHomeIn => {
           promptInfoTextBottom.style.opacity = '0%';
         }, hiddenTime);
         setTimeout(() => {
-          // 原始值为-80px
-          promptInfoBottom.style.bottom = '-80px';
+          // 原始值为-96px
+          promptInfoBottom.style.bottom = '-96px';
           atHome.forEach(atHomeInIn => {
             atHomeInIn.style.pointerEvents = 'auto';
           });
@@ -284,6 +284,7 @@ unfinished.forEach(unfinishedIn => {
       promptInfo.style.setProperty('--prompt-info-height', '0px');
       unfinished.forEach(unfinishedInIn => {
         unfinishedInIn.style.pointerEvents = 'auto';
+        promptInfoText.textContent = '';
       })
     }, hiddenTime + 100)
   });
@@ -1093,6 +1094,12 @@ document.querySelectorAll('.bottom_div_in').forEach(item => {
                 // 若介绍为两行则填充单行版本_id及判断自己加
                 if (thisTextTitleDescriptionElement && thisTextTitleDescriptionElement.id === 'bottom_div_in_3_doubleLineDescriptionWarning') {
                   secondFloorCoverTextDescriptionElement.src = 'File/img/billows/billows_description_singleLine.svg';
+                  // console.log(thisTextTitleDescriptionElement.src);
+                } else if (thisTextTitleDescriptionElement && thisTextTitleDescriptionElement.id === 'bottom_div_in_6_doubleLineDescriptionWarning') {
+                  secondFloorCoverTextDescriptionElement.src = 'File/img/flux_of_time/朝夕_描述_单行.svg';
+                  // console.log(thisTextTitleDescriptionElement.src);
+                } else if (thisTextTitleDescriptionElement && thisTextTitleDescriptionElement.id === 'bottom_div_in_8_doubleLineDescriptionWarning') {
+                  secondFloorCoverTextDescriptionElement.src = 'File/img/little_wonders/奇事_描述_单行.svg';
                   // console.log(thisTextTitleDescriptionElement.src);
                 } else if (thisTextTitleDescriptionElement) {
                   secondFloorCoverTextDescriptionElement.src = thisTextTitleDescriptionElement.src;
