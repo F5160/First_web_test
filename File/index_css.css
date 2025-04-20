@@ -1509,12 +1509,12 @@ body.upDownShake {
     filter: blur(0px) opacity(100%) drop-shadow(0px 0px 2px rgb(0, 0, 0, 0.8));
     transform: translateY(0);
   }
-  .bottom_div_in.white_font.active .bottom_div_title_count, .bottom_div_in.black_font.active .bottom_div_title_count {
+  .bottom_div_in_6.white_font.active .bottom_div_title_count, .bottom_div_in_6.black_font.active .bottom_div_title_count {
     transition-delay: var(--transition-delay-more);
     filter: blur(0px) opacity(100%) drop-shadow(0px 0px 2px rgb(0, 0, 0, 0.8));
     transform: translateY(0);
   }
-  .bottom_div_in.white_font.active .bottom_div_title_time, .bottom_div_in.black_font.active .bottom_div_title_time {
+  .bottom_div_in_6.white_font.active .bottom_div_title_time, .bottom_div_in_6.black_font.active .bottom_div_title_time {
     transition-delay: var(--transition-delay-macro);
     filter: blur(0px) opacity(100%) drop-shadow(0px 0px 2px rgb(0, 0, 0, 0.8));
     transform: translateY(0);

@@ -30,14 +30,49 @@ window.onload = function() {
 
 
 
-
 // 按钮点击跳转相关
+
+// 滚动函数_非线性
+function smoothRoll(targetElementIn, animationTimeIn) {
+  if (targetElementIn) {
+    // 获取当前滚动位置
+    let start = window.scrollY;
+    // 获取视口高度
+    const viewportHeight = window.innerHeight;
+    // 获取目标元素的高度
+    const targetHeight = targetElementIn.offsetHeight;
+    // 计算目标滚动位置(目标元素停于屏幕中间)
+    let end = targetElementIn.offsetTop - (viewportHeight / 2) + (targetHeight / 2);
+    // 定义滚动时间
+    let duration = animationTimeIn;
+    // 计算开始时间
+    let startTime = null;
+    // 使用缓动函数_非线性
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      let progress = timestamp - startTime;
+      let scrollY = smoothAnimation(progress, start, end - start, duration);
+      window.scrollTo(0, scrollY);
+      if (progress < duration) {
+        requestAnimationFrame(step);
+      }
+    }
+    // 开始滚动动画
+    requestAnimationFrame(step);
+  }
+}
+
+
 // 跳转时长
 const animationTime = 1000;
+
+
 // 线性移动(一次方)
 function linearAnimation(t, b, c, d) {
   return c * (t / d) + b;
 }
+
+
 // 非线性缓动
 function smoothAnimation(t, b, c, d) {
   t /= d;
@@ -55,6 +90,8 @@ function smoothAnimation(t, b, c, d) {
   // 九次方缓动
   // return c * (t * t * t * t * t * t * t * t * t + 1) + b;
 }
+
+
 // 页面振动
 function pageShake() {
   // 给body添加shake类
@@ -64,6 +101,10 @@ function pageShake() {
     document.body.classList.remove('upDownShake');
   }, { once: true });
 }
+
+
+
+
 
 // 首页按钮
 // const firstSectionSpan0 = document.querySelectorAll('.first_section_span_0');
@@ -91,7 +132,7 @@ firstSectionSpan0.forEach(span0 => {
       let duration = animationTime;
       // 计算开始时间
       let startTime = null;
-      // 使用缓动函数
+      // 使用缓动函数_非线性
       function step(timestamp) {
         if (!startTime) startTime = timestamp;
         let progress = timestamp - startTime;
@@ -108,7 +149,7 @@ firstSectionSpan0.forEach(span0 => {
       let duration = animationTime / 3;
       // 计算开始时间
       let startTime = null;
-      // 使用缓动函数
+      // 使用缓动函数_线性
       function step(timestamp) {
         if (!startTime) startTime = timestamp;
         let progress = timestamp - startTime;
@@ -182,7 +223,7 @@ firstSectionSpan3.forEach(span3 => {
   });
 });
 
-// 按钮群
+// 按钮群_跳转
 // 获取父元素
 const headSecondSectionIn = document.getElementById('head_second_section_in');
 // 绑定点击事件监听器到父元素
@@ -198,33 +239,8 @@ headSecondSectionIn.addEventListener('click', function(event) {
   console.log('click the: [', spanId, '] jump to: [', targetId, ']')
   // 获取目标元素
   const targetElement = document.getElementById(targetId);
-  // 检查目标元素是否存在
-  if (targetElement) {
-    // 获取当前滚动位置
-    let start = window.scrollY;
-    // 获取视口高度
-    const viewportHeight = window.innerHeight;
-    // 获取目标元素的高度
-    const targetHeight = targetElement.offsetHeight;
-    // 计算目标滚动位置(目标元素停于屏幕中间)
-    let end = targetElement.offsetTop - (viewportHeight / 2) + (targetHeight / 2);
-    // 定义滚动时间
-    let duration = animationTime;
-    // 计算开始时间
-    let startTime = null;
-    // 使用缓动函数
-    function step(timestamp) {
-      if (!startTime) startTime = timestamp;
-      let progress = timestamp - startTime;
-      let scrollY = smoothAnimation(progress, start, end - start, duration);
-      window.scrollTo(0, scrollY);
-      if (progress < duration) {
-        requestAnimationFrame(step);
-      }
-    }
-    // 开始滚动动画
-    requestAnimationFrame(step);
-  }
+  // 滚动函数执行
+  smoothRoll(targetElement, animationTime);
 
   // 闪烁前的延迟(以对应块快要移到屏幕中心时为准)(通过按钮群跳转至对应块时, 对应的块闪烁)
   const shineTime = animationTime - animationTime / 2;
@@ -1148,14 +1164,19 @@ document.querySelectorAll('.bottom_div_in').forEach(item => {
           // secondFloorCoverTextBoxElement已修改逻辑: 初始过渡为0, 仅在需要时修改时长 25/04/07 23:27 来自自己
           const firstSectionSecondFloor = document.querySelector('#first_section_second_floor');
           firstSectionSecondFloor.addEventListener('click', function() {
-            // 一层左模糊还原延迟100
+            // 使用此动画则一层左模糊还原延迟设为100
             secondFloorElement.style.transition = '1s';
             // secondFloorElement.style.transitionTimingFunction = 'cubic-bezier(.09,.41,.33,.99)';
             secondFloorElement.style.transitionTimingFunction = 'cubic-bezier(.11,.42,.49,1.23)';
-            // 一层左模糊还原延迟500
+            // 使用此动画则一层左模糊还原延迟设为500
             // secondFloorElement.style.transition = '1s';
             // secondFloorElement.style.transitionTimingFunction = 'cubic-bezier(.76,.07,.88,.24)';
             secondFloorElement.style.transform = 'translate(100%, -100%)';
+            // 获取目标元素
+            const targetElement = document.querySelector('.active_1').closest('.bottom_div_content_box').closest('.bottom_div_in');
+            console.log('roll to active_1', targetElement);
+            // 滚动函数执行
+            smoothRoll(targetElement, animationTime * 1.6);
 
             secondFloorCoverTextBoxElement.style.transition = '0s';
             secondFloorCoverTextBoxElement.style.transform = 'translateY(-90%)';
