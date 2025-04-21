@@ -105,6 +105,50 @@ function pageShake() {
 
 
 
+// 入场效果相关
+// 整页延时
+const pageDelay = 1000;
+
+// 首页六个小块
+const topRightInSpanInElement = document.querySelectorAll('.in_box_top_right_in_span_in');
+window.onload = topRightInSpanInElement.forEach((elementIn, index) => {
+  setTimeout(() => {
+    setTimeout(() => {
+      elementIn.classList.add('rollOnlyLeft');
+      elementIn.classList.remove('opacityDY0');
+      elementIn.classList.add('blockShine');
+      elementIn.addEventListener('animationend', () => {
+        elementIn.classList.remove('blockShine');
+      }, { once: true });
+      // 由上至下时, 每个小块的延时
+    }, index * 50);
+    setTimeout(() => {
+      // 获取前一半元素的数量
+      const halfLength = Math.ceil(topRightInSpanInElement.length / 2);
+      // 遍历并操作前一半的元素
+      topRightInSpanInElement.forEach((elementIn, index) => {
+        if (index < halfLength) {
+          elementIn.classList.remove('rollOnlyLeft');
+          elementIn.classList.remove('rollLeftAndUp');
+        }
+      });
+      setTimeout(() => {
+        topRightInSpanInElement.forEach((elementIn, index) => {
+          if (index >= halfLength) {
+            elementIn.classList.remove('rollOnlyLeft');
+            elementIn.classList.remove('rollLeftAndUp');
+          }
+        });
+      // 由左至右时, 上排和下排的延时
+      }, 50);
+    // 由上至下后, 进行由左至右前的延时
+    }, 500);
+  }, pageDelay);
+})
+
+
+
+
 
 // 首页按钮
 // const firstSectionSpan0 = document.querySelectorAll('.first_section_span_0');
@@ -922,20 +966,25 @@ cycle_img_top_shadow_Element.addEventListener('mouseup', (event) => {
 
 
 
-// 动态监听窗口宽度决定显示6个或4个内容, 显示4个内容时不显示最后2个
+// 动态监听窗口宽度决定显示6个或4个内容, 显示4个内容时不显示第3和第6个
 function adjustInBoxTopRightIn() {
   const inBoxTopRightIn = document.getElementById('in_box_top_right_in');
   const spans = inBoxTopRightIn.getElementsByClassName('in_box_top_right_in_span');
-  const lastTwoSpans = Array.from(spans).slice(-2);
-
   if (window.innerWidth <= 1399.9) {
-    lastTwoSpans.forEach(span => {
-      span.style.display = 'none';
-    });
+    // 隐藏第3和第6个元素
+    spans[2] && (spans[2].style.display = 'none');
+    spans[5] && (spans[5].style.display = 'none');
+    // 显示其他元素
+    for (let i = 0; i < spans.length; i++) {
+      if (i !== 2 && i !== 5) {
+        spans[i].style.display = 'block';
+      }
+    }
   } else {
-    lastTwoSpans.forEach(span => {
-      span.style.display = 'block';
-    });
+    // 显示所有元素
+    for (let i = 0; i < spans.length; i++) {
+      spans[i].style.display = 'block';
+    }
   }
 }
 adjustInBoxTopRightIn();

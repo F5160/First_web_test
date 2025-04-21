@@ -17,36 +17,31 @@
   
   
   /* 定义抖动动画 */
-@keyframes upDownShake {
-  0% {
-    transform: translateY(0);
-}
+  @keyframes upDownShake {
+    0% {
+      transform: translateY(0);
+    }
+    6.5% {
+        transform: translateY(3px);
+    }
+    18.5% {
+        transform: translateY(-2.5px);
+    }
+    31.5% {
+        transform: translateY(1.5px);
+    }
+    43.5% {
+        transform: translateY(-1px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+  }
 
-6.5% {
-    transform: translateY(3px);
-}
-
-18.5% {
-    transform: translateY(-2.5px);
-}
-
-31.5% {
-    transform: translateY(1.5px);
-}
-
-43.5% {
-    transform: translateY(-1px);
-}
-
-50% {
-    transform: translateY(0);
-}
-}
-
-/* 应用抖动动画到body */
-body.upDownShake {
-  animation: upDownShake 0.5s;
-}
+  /* 应用抖动动画到body */
+  body.upDownShake {
+    animation: upDownShake 0.5s;
+  }
 
 
   /* 移除移动端聚焦边框 */
@@ -831,7 +826,7 @@ body.upDownShake {
     width: 100%;
     /* aspect-ratio: 16/5; 设置宽高比为16:5 你要宽高比干什么 */
     box-sizing: border-box;
-    padding: 0 var(--layout-padding);
+    padding: 0 var(--layout-padding) var(--layout-padding) var(--layout-padding);
     /* background-color: rgb(215, 250, 215); */
     display: flex;
     gap: 1rem;
@@ -1107,9 +1102,43 @@ body.upDownShake {
     border-radius: var(--cards-border-radius);
     transition: var(--transition-normal);
   }
-  /* .in_box_top_right_in_span_in {
-    background-color: greenyellow;
-  } */
+  .in_box_top_right_in_span_in {
+    /* background-color: greenyellow; */
+    transition: transform var(--transition-slow) cubic-bezier(0,.64,.3,1);
+  }
+  @keyframes blockShine {
+    0% {
+      opacity: 0%;
+    }
+    20% {
+      opacity: 50%;
+    }
+    40% {
+      opacity: 10%;
+    }
+    60% {
+      opacity: 80%;
+    }
+    80% {
+      opacity: 30%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+  .in_box_top_right_in_span_in.blockShine {
+    animation: blockShine 0.1s
+  }
+  .opacityDY0 {
+    opacity: 0;
+  }
+  .rollLeftAndUp {
+    /* !注意: X和Y若都需变化就得一起写不能分开, 否则后面的会覆盖掉前面的 */
+    transform: translate(-1.2rem, -1.6rem);
+  }
+  .rollOnlyLeft {
+    transform: translate(-1.2rem, 0);
+  }
   .content_box_in {
     height: 100%;
     width: 100%;
