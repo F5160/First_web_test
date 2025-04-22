@@ -109,59 +109,129 @@ function pageShake() {
 // 整页延时
 const pageDelay = 1000;
 
-// 首页六个小块
+const secondSectionElement = document.querySelector('#second_section')
 const topRightInSpanInElement = document.querySelectorAll('.in_box_top_right_in_span_in');
-window.onload = topRightInSpanInElement.forEach((elementIn, index) => {
+const cycleImgElement = document.querySelector('.cycle_img');
+window.onload = function pageAnimation() {
+  // 搜索栏
   setTimeout(() => {
+    secondSectionElement.classList.remove('rollOnlyUpMore')
+  }, pageDelay - 200);
+
+
+  // 轮播图
+  setTimeout(() => {
+    cycleImgElement.style.transition = 'transform var(--transition-slow) cubic-bezier(0,.64,.3,1)'
+    cycleImgElement.classList.add('rollOnlyLeft');
+    cycleImgElement.classList.remove('opacityDY0');
+    cycleImgElement.classList.add('blockShine');
+    cycleImgElement.addEventListener('animationend', () => {
+      cycleImgElement.classList.remove('blockShine');
+    }, { once: true });
+    // 轮播图提前小块100ms
+  }, pageDelay - 100);
+  // 小块
+  topRightInSpanInElement.forEach((elementIn, index) => {
     setTimeout(() => {
-      elementIn.classList.add('rollOnlyLeft');
-      elementIn.classList.remove('opacityDY0');
-      elementIn.classList.add('blockShine');
-      elementIn.addEventListener('animationend', () => {
-        elementIn.classList.remove('blockShine');
-      }, { once: true });
-      // 由上至下时, 每个小块的延时
-    }, index * 50);
-    setTimeout(() => {
-      // 获取前一半元素的数量
-      const halfLength = Math.ceil(topRightInSpanInElement.length / 2);
-      // 遍历并操作前一半的元素
-      topRightInSpanInElement.forEach((elementIn, index) => {
-        if (index < halfLength) {
-          elementIn.classList.remove('rollOnlyLeft');
-          elementIn.classList.remove('rollLeftAndUp');
-        }
-      });
       setTimeout(() => {
-        topRightInSpanInElement.forEach((elementIn, index) => {
-          if (index >= halfLength) {
-            elementIn.classList.remove('rollOnlyLeft');
-            elementIn.classList.remove('rollLeftAndUp');
-          }
-        });
-      // 由左至右时, 上排和下排的延时
-      }, 50);
-    // 由上至下后, 进行由左至右前的延时
-    }, 500);
-  }, pageDelay);
-})
+        elementIn.classList.add('rollOnlyLeft');
+        elementIn.classList.remove('opacityDY0');
+        elementIn.classList.add('blockShine');
+        elementIn.addEventListener('animationend', () => {
+          elementIn.classList.remove('blockShine');
+        }, { once: true });
+        // 由上至下时, 每个小块的延时
+      }, index * 20);
+    }, pageDelay);
+  })
+  
 
-
-
-
+  // 应该从最后遍历至首个, for循环未知原因依然由首个遍历至最后_尝试使用while
+  // while一样
+  // 嘛的只能用递归
+  // 嘛的递归效率太劲爆低了
+  // 嘛的手动遍历
+  setTimeout(() => {
+    cycleImgElement.style.transition = 'transform var(--transition-slow) cubic-bezier(.8,0,0,1)'
+    topRightInSpanInElement.forEach(elementIn => {
+      elementIn.style.transition = 'transform var(--transition-slow) cubic-bezier(.8,0,0,1)';
+    })
+    setTimeout(() => {
+      topRightInSpanInElement[5].classList.remove('rollOnlyLeft');
+      topRightInSpanInElement[5].classList.remove('rollLeftAndUp');
+      // 由左至右时, 最后一个小块的延时
+    }, 20);
+    setTimeout(() => {
+      topRightInSpanInElement[4].classList.remove('rollOnlyLeft');
+      topRightInSpanInElement[4].classList.remove('rollLeftAndUp');
+      // 由左至右时, 倒数第二小块的延时
+    }, 40);
+    setTimeout(() => {
+      topRightInSpanInElement[3].classList.remove('rollOnlyLeft');
+      topRightInSpanInElement[3].classList.remove('rollLeftAndUp');
+      // 由左至右时, 倒数第三小块的延时
+    }, 60);
+    setTimeout(() => {
+      topRightInSpanInElement[2].classList.remove('rollOnlyLeft');
+      topRightInSpanInElement[2].classList.remove('rollLeftAndUp');
+      // 由左至右时, 倒数第四小块的延时
+    }, 80);
+    setTimeout(() => {
+      topRightInSpanInElement[1].classList.remove('rollOnlyLeft');
+      topRightInSpanInElement[1].classList.remove('rollLeftAndUp');
+      // 由左至右时, 倒数第五小块的延时
+    }, 100);
+    setTimeout(() => {
+      topRightInSpanInElement[0].classList.remove('rollOnlyLeft');
+      topRightInSpanInElement[0].classList.remove('rollLeftAndUp');
+      // 由左至右时, 首个小块的延时
+    }, 120);
+    setTimeout(() => {
+      cycleImgElement.classList.remove('rollOnlyLeft');
+      cycleImgElement.classList.remove('rollLeftAndUp');
+      // 轮播图延时_未知原因不随小块递增
+      // 曲线不同导致的
+      // 即便相同也需优化(跟入场时一样)
+    }, 160);
+    // for(let i = topRightInSpanInElement.length - 1; i>=0; i--) {
+    //   let elementFor = topRightInSpanInElement[i];
+    //   console.log(topRightInSpanInElement.length)
+    //   setTimeout(() => {
+    //     console.log(i);
+    //     console.log(elementFor);
+    //     elementFor.classList.remove('rollOnlyLeft');
+    //     elementFor.classList.remove('rollLeftAndUp');
+    //   // 由左至右时, 每个小块的延时
+    //   }, i * 20);
+    // }
+  // 由上至下后, 进行由左至右前的延时
+  }, pageDelay + 650);
+  
+  // setTimeout(() => {
+  //   // 获取前一半元素的数量
+  //   const halfLength = Math.ceil(topRightInSpanInElement.length / 2);
+  //   // 遍历前一半
+  //   topRightInSpanInElement.forEach((elementIn, index) => {
+  //     if (index < halfLength) {
+  //       elementIn.classList.remove('rollOnlyLeft');
+  //       elementIn.classList.remove('rollLeftAndUp');
+  //     }
+  //   });
+  //   setTimeout(() => {
+  //     // 遍历后一半
+  //     topRightInSpanInElement.forEach((elementIn, index) => {
+  //       if (index >= halfLength) {
+  //         elementIn.classList.remove('rollOnlyLeft');
+  //         elementIn.classList.remove('rollLeftAndUp');
+  //       }
+  //     });
+  //   // 由左至右时, 上排和下排的延时
+  //   }, 50);
+  // // 由上至下后, 进行由左至右前的延时
+  // }, pageDelay + 500);
+}
 
 // 首页按钮
-// const firstSectionSpan0 = document.querySelectorAll('.first_section_span_0');
-// firstSectionSpan0.forEach(span0 => {
-//   span0.addEventListener('click', function() {
-//     // 使用scrollTo方法实现平滑滚动到页面顶部
-//     window.scrollTo({
-//       top: 0,
-//       behavior: 'smooth',
-//       duration: 500 // duration在这里不起作用, behavior: 'smooth'已经实现了平滑滚动
-//     });
-//   });
-// })
 // behavior不支持自定义曲线, 下面的方法可以
 // 首页按钮
 const firstSectionSpan0 = document.querySelectorAll('.first_section_span_0');

@@ -449,6 +449,9 @@
     transform: translateY(-100%);
     pointer-events: none; /* 隐藏时不可点击 */
   }
+  .rollOnlyUpMore {
+    transform: translateY(-100%);
+  }
   .section {
     flex: 1; /* 每个子元素占据相等空间 */
     height: 100%; /* 子元素高度填满父容器 */
@@ -458,6 +461,7 @@
     text-align: center; /* 文本居中 */
     line-height: var(--background-head-title-line-height-normal); /* 文本垂直居中_行高等于容器 */
     text-shadow: 0px 0px 20px rgba(0, 0, 0, 0);
+    transition: var(--transition-normal);
   }
   #title > .section {
     line-height: var(--title-line-height-normal); /* 文本垂直居中_行高等于容器 */
@@ -1126,6 +1130,9 @@
       opacity: 100%;
     }
   }
+  .cycle_img.blockShine {
+    animation: blockShine 0.1s
+  }
   .in_box_top_right_in_span_in.blockShine {
     animation: blockShine 0.1s
   }
@@ -1134,10 +1141,13 @@
   }
   .rollLeftAndUp {
     /* !注意: X和Y若都需变化就得一起写不能分开, 否则后面的会覆盖掉前面的 */
-    transform: translate(-1.2rem, -1.6rem);
+    transform: translate(-2rem, -1.6rem);
   }
   .rollOnlyLeft {
-    transform: translate(-1.2rem, 0);
+    transform: translate(-2rem, 0);
+  }
+  .rollOnlyUp {
+    transform: translate(0, -1.6rem);
   }
   .content_box_in {
     height: 100%;
@@ -1152,6 +1162,7 @@
   } */
   .content_box_img {
     aspect-ratio: 2/1;
+    background-color: gainsboro;
     border: 0;
     border-radius: var(--cards-border-radius);
     overflow: hidden;
