@@ -109,22 +109,44 @@ function pageShake() {
 // 整页延时
 const pageDelay = 1000;
 
-const secondSectionElement = document.querySelector('#second_section')
+const firstSectionElements = document.querySelectorAll('.first_section_span');
+const secondSectionElement = document.querySelector('#second_section');
+const thirdSectionElements = document.querySelectorAll('.third_section_span');
+const headImgElement = document.querySelector('#head_img');
 const topRightInSpanInElement = document.querySelectorAll('.in_box_top_right_in_span_in');
 const cycleImgElement = document.querySelector('.cycle_img');
-window.onload = function pageAnimation() {
+
+function pageAnimation() {
+  // 左右选项
+  setTimeout(() => {
+    firstSectionElements.forEach((ElementIn, index) => {
+      setTimeout(() => {
+        ElementIn.classList.remove('opacityDY0', 'rollOnlyRightMore');
+      }, index * 60);
+    })
+    thirdSectionElements.forEach((ElementIn, index) => {
+      setTimeout(() => {
+        ElementIn.classList.remove('opacityDY0', 'rollOnlyLeftMore');
+      }, index * 60);
+    })
+  }, pageDelay);
   // 搜索栏
   setTimeout(() => {
-    secondSectionElement.classList.remove('rollOnlyUpMore')
-  }, pageDelay - 200);
+    secondSectionElement.classList.remove('rollOnlyUpMore');
+  }, pageDelay);
+
+  // logo
+  setTimeout(() => {
+    headImgElement.style.filter = 'drop-shadow(0px 0px 20px rgb(0, 0, 0))'
+    headImgElement.classList.remove('opacityDY0', 'rollOnlyRight');
+  }, pageDelay + 120);
 
 
   // 轮播图
   setTimeout(() => {
     cycleImgElement.style.transition = 'transform var(--transition-slow) cubic-bezier(0,.64,.3,1)'
-    cycleImgElement.classList.add('rollOnlyLeft');
+    cycleImgElement.classList.add('rollOnlyLeft', 'blockShine');
     cycleImgElement.classList.remove('opacityDY0');
-    cycleImgElement.classList.add('blockShine');
     cycleImgElement.addEventListener('animationend', () => {
       cycleImgElement.classList.remove('blockShine');
     }, { once: true });
@@ -134,9 +156,8 @@ window.onload = function pageAnimation() {
   topRightInSpanInElement.forEach((elementIn, index) => {
     setTimeout(() => {
       setTimeout(() => {
-        elementIn.classList.add('rollOnlyLeft');
+        elementIn.classList.add('rollOnlyLeft', 'blockShine');
         elementIn.classList.remove('opacityDY0');
-        elementIn.classList.add('blockShine');
         elementIn.addEventListener('animationend', () => {
           elementIn.classList.remove('blockShine');
         }, { once: true });
@@ -152,84 +173,38 @@ window.onload = function pageAnimation() {
   // 嘛的递归效率太劲爆低了
   // 嘛的手动遍历
   setTimeout(() => {
-    cycleImgElement.style.transition = 'transform var(--transition-slow) cubic-bezier(.8,0,0,1)'
+    cycleImgElement.style.transition = 'transform var(--transition-slow) cubic-bezier(.64,0,.1,1)'
     topRightInSpanInElement.forEach(elementIn => {
-      elementIn.style.transition = 'transform var(--transition-slow) cubic-bezier(.8,0,0,1)';
+      elementIn.style.transition = 'transform var(--transition-slow) cubic-bezier(.64,0,.1,1)';
     })
     setTimeout(() => {
-      topRightInSpanInElement[5].classList.remove('rollOnlyLeft');
-      topRightInSpanInElement[5].classList.remove('rollLeftAndUp');
-      // 由左至右时, 最后一个小块的延时
-    }, 20);
-    setTimeout(() => {
-      topRightInSpanInElement[4].classList.remove('rollOnlyLeft');
-      topRightInSpanInElement[4].classList.remove('rollLeftAndUp');
-      // 由左至右时, 倒数第二小块的延时
+      topRightInSpanInElement[5].classList.remove('rollOnlyLeft', 'rollLeftAndUp');
+      topRightInSpanInElement[2].classList.remove('rollOnlyLeft', 'rollLeftAndUp');
+      // 由左至右时, 最右侧小块的延时
     }, 40);
     setTimeout(() => {
-      topRightInSpanInElement[3].classList.remove('rollOnlyLeft');
-      topRightInSpanInElement[3].classList.remove('rollLeftAndUp');
-      // 由左至右时, 倒数第三小块的延时
-    }, 60);
-    setTimeout(() => {
-      topRightInSpanInElement[2].classList.remove('rollOnlyLeft');
-      topRightInSpanInElement[2].classList.remove('rollLeftAndUp');
-      // 由左至右时, 倒数第四小块的延时
+      topRightInSpanInElement[4].classList.remove('rollOnlyLeft', 'rollLeftAndUp');
+      topRightInSpanInElement[1].classList.remove('rollOnlyLeft', 'rollLeftAndUp');
+      // 由左至右时, 中间小块的延时
     }, 80);
     setTimeout(() => {
-      topRightInSpanInElement[1].classList.remove('rollOnlyLeft');
-      topRightInSpanInElement[1].classList.remove('rollLeftAndUp');
-      // 由左至右时, 倒数第五小块的延时
-    }, 100);
-    setTimeout(() => {
-      topRightInSpanInElement[0].classList.remove('rollOnlyLeft');
-      topRightInSpanInElement[0].classList.remove('rollLeftAndUp');
-      // 由左至右时, 首个小块的延时
+      topRightInSpanInElement[3].classList.remove('rollOnlyLeft', 'rollLeftAndUp');
+      topRightInSpanInElement[0].classList.remove('rollOnlyLeft', 'rollLeftAndUp');
+      // 由左至右时, 最左侧小块的延时
     }, 120);
     setTimeout(() => {
-      cycleImgElement.classList.remove('rollOnlyLeft');
-      cycleImgElement.classList.remove('rollLeftAndUp');
-      // 轮播图延时_未知原因不随小块递增
-      // 曲线不同导致的
+      cycleImgElement.classList.remove('rollOnlyLeft', 'rollLeftAndUp');
+      // 轮播图延时_未知原因延时不随小块递增_曲线不同导致的
       // 即便相同也需优化(跟入场时一样)
-    }, 160);
-    // for(let i = topRightInSpanInElement.length - 1; i>=0; i--) {
-    //   let elementFor = topRightInSpanInElement[i];
-    //   console.log(topRightInSpanInElement.length)
-    //   setTimeout(() => {
-    //     console.log(i);
-    //     console.log(elementFor);
-    //     elementFor.classList.remove('rollOnlyLeft');
-    //     elementFor.classList.remove('rollLeftAndUp');
-    //   // 由左至右时, 每个小块的延时
-    //   }, i * 20);
-    // }
+    }, 155);
   // 由上至下后, 进行由左至右前的延时
-  }, pageDelay + 650);
-  
-  // setTimeout(() => {
-  //   // 获取前一半元素的数量
-  //   const halfLength = Math.ceil(topRightInSpanInElement.length / 2);
-  //   // 遍历前一半
-  //   topRightInSpanInElement.forEach((elementIn, index) => {
-  //     if (index < halfLength) {
-  //       elementIn.classList.remove('rollOnlyLeft');
-  //       elementIn.classList.remove('rollLeftAndUp');
-  //     }
-  //   });
-  //   setTimeout(() => {
-  //     // 遍历后一半
-  //     topRightInSpanInElement.forEach((elementIn, index) => {
-  //       if (index >= halfLength) {
-  //         elementIn.classList.remove('rollOnlyLeft');
-  //         elementIn.classList.remove('rollLeftAndUp');
-  //       }
-  //     });
-  //   // 由左至右时, 上排和下排的延时
-  //   }, 50);
-  // // 由上至下后, 进行由左至右前的延时
-  // }, pageDelay + 500);
+  }, pageDelay + 300);
 }
+pageAnimation();
+setTimeout(() => {
+  // 恢复轮播图曲线(我也不知道小块曲线咋绑的)
+  cycleImgElement.style.transition = 'var(--transition-normal)'
+}, pageDelay + 1000);
 
 // 首页按钮
 // behavior不支持自定义曲线, 下面的方法可以

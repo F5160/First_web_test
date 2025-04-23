@@ -426,9 +426,9 @@
     --logo-left: 6rem;
     top: var(--logo-top);
     left: var(--logo-left);
-    filter: drop-shadow(0px 0px 20px rgb(0, 0, 0))
-            /* drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.3)) */
-            ;
+    filter: drop-shadow(0px 0px 0px rgb(0, 0, 0));
+    /* transition: transform var(--transition-normal); */
+    transition: var(--transition-normal);
   }
   
   #head_title {
@@ -1131,23 +1131,37 @@
     }
   }
   .cycle_img.blockShine {
-    animation: blockShine 0.1s
+    animation: blockShine 0.1s;
   }
   .in_box_top_right_in_span_in.blockShine {
-    animation: blockShine 0.1s
+    animation: blockShine 0.1s;
   }
   .opacityDY0 {
     opacity: 0;
   }
   .rollLeftAndUp {
     /* !注意: X和Y若都需变化就得一起写不能分开, 否则后面的会覆盖掉前面的 */
-    transform: translate(-2rem, -1.6rem);
+    transform: translate(-3rem, -1.6rem);
   }
   .rollOnlyLeft {
-    transform: translate(-2rem, 0);
+    transform: translate(-3rem, 0);
+  }
+  /* 不知道给啥盖了反正就零点几秒先important着 */
+  .rollOnlyLeftMore {
+    transform: translate(-5rem, 0) !important;
+  }
+  .rollOnlyRight {
+    transform: translate(3rem, 0);
+  }
+  /* 不知道给啥盖了反正就零点几秒先important着 */
+  .rollOnlyRightMore {
+    transform: translate(5rem, 0) !important;
   }
   .rollOnlyUp {
     transform: translate(0, -1.6rem);
+  }
+  .rollOnlyDown {
+    transform: translate(0, 1.6rem);
   }
   .content_box_in {
     height: 100%;
