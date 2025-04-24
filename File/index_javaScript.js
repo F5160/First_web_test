@@ -108,16 +108,15 @@ function pageShake() {
 // 入场效果相关
 // 整页延时
 const pageDelay = 1000;
-
-const firstSectionElements = document.querySelectorAll('.first_section_span');
-const secondSectionElement = document.querySelector('#second_section');
-const thirdSectionElements = document.querySelectorAll('.third_section_span');
-const headImgElement = document.querySelector('#head_img');
-const topRightInSpanInElement = document.querySelectorAll('.in_box_top_right_in_span_in');
+// 需要还原的元素定义在外部
+const headFirstSection = document.querySelectorAll('.head_first_section_in');
+const headSecondSection = document.querySelectorAll('.head_second_section_in_span');
 const cycleImgElement = document.querySelector('.cycle_img');
-
 function pageAnimation() {
-  // 左右选项
+  // 顶栏
+  const firstSectionElements = document.querySelectorAll('.first_section_span');
+  const secondSectionElement = document.querySelector('#second_section');
+  const thirdSectionElements = document.querySelectorAll('.third_section_span');
   setTimeout(() => {
     firstSectionElements.forEach((ElementIn, index) => {
       setTimeout(() => {
@@ -129,44 +128,100 @@ function pageAnimation() {
         ElementIn.classList.remove('opacityDY0', 'rollOnlyLeftMore');
       }, index * 60);
     })
-  }, pageDelay);
-  // 搜索栏
-  setTimeout(() => {
     secondSectionElement.classList.remove('rollOnlyUpMore');
-  }, pageDelay);
+  }, pageDelay - 100);
 
   // logo
+  const headImgElement = document.querySelector('#head_img');
   setTimeout(() => {
     headImgElement.style.filter = 'drop-shadow(0px 0px 20px rgb(0, 0, 0))'
-    headImgElement.classList.remove('opacityDY0', 'rollOnlyRight');
-  }, pageDelay + 120);
+    headImgElement.classList.remove('opacityDY0', 'rollOnlyLeft');
+  }, pageDelay - 120);
 
 
-  // 轮播图
+  // 按钮群
+  const headSectionEachDelay = 8;
+
+  // 区域一曲线需要还原故定义在外部
+  const headFirstSectionLength = headFirstSection.length;
+
+  const headSecondSectionLength = headSecondSection.length;
+  const headSecondSectionHalfLength = headSecondSectionLength / 2;
+
+  const headThirdSection = document.querySelectorAll('.head_third_section_in_span');
+  const headThirdSectionLength = headThirdSection.length;
+  const headThirdSectionHalfLength = headThirdSectionLength / 2;
+
+  // 区域一
   setTimeout(() => {
-    cycleImgElement.style.transition = 'transform var(--transition-slow) cubic-bezier(0,.64,.3,1)'
+    let headFirstSectionLengthTemp = headFirstSectionLength - 1;
+    const headFirstSectionInterval = setInterval(() => {
+      headFirstSection[headFirstSectionLengthTemp].style.transition = 'var(--transition-normal)';
+      headFirstSection[headFirstSectionLengthTemp].classList.remove('opacityDY0', 'rollOnlyRight');
+      headFirstSectionLengthTemp--;
+      if(headFirstSectionLengthTemp == -1) {
+        clearInterval(headFirstSectionInterval);
+      }
+    }, headSectionEachDelay);
+  }, pageDelay + headSectionEachDelay * headSecondSectionHalfLength  + headSectionEachDelay * headThirdSectionHalfLength);
+
+  // 区域二
+  // 写小块那会怎么没想到interval
+  setTimeout(() => {
+    let headSecondSectionLengthTemp = headSecondSectionLength - 1;
+    const headSecondSectionInterval = setInterval(() => {
+      headSecondSection[headSecondSectionLengthTemp].classList.remove('opacityDY0', 'rollOnlyRight');
+      headSecondSection[headSecondSectionLengthTemp - headSecondSectionHalfLength].classList.remove('opacityDY0', 'rollOnlyRight');
+      headSecondSectionLengthTemp--;
+      if(headSecondSectionLengthTemp == headSecondSectionHalfLength - 1) {
+        clearInterval(headSecondSectionInterval);
+      }
+    }, headSectionEachDelay);
+  }, pageDelay + headSectionEachDelay * headThirdSectionHalfLength);
+
+  // 区域三
+  setTimeout(() => {
+    let headThirdSectionLengthTemp = headThirdSectionLength - 1;
+    const headThirdSectionInterval = setInterval(() => {
+      headThirdSection[headThirdSectionLengthTemp].classList.remove('opacityDY0', 'rollOnlyRight');
+      headThirdSection[headThirdSectionLengthTemp - headThirdSectionHalfLength].classList.remove('opacityDY0', 'rollOnlyRight');
+      headThirdSectionLengthTemp--;
+      if(headThirdSectionLengthTemp == headThirdSectionHalfLength - 1) {
+        clearInterval(headThirdSectionInterval);
+      }
+    }, headSectionEachDelay)
+  }, pageDelay);
+
+
+  // 轮播图与小块_由上至下
+  // 轮播图曲线需要还原故定义在外部
+  const topRightInSpanInElement = document.querySelectorAll('.in_box_top_right_in_span_in');
+  const bodyInEachDelay = 24;
+  setTimeout(() => {
+    cycleImgElement.style.transition = 'transform var(--transition-slow) cubic-bezier(.1,.9,0,1)'
     cycleImgElement.classList.add('rollOnlyLeft', 'blockShine');
     cycleImgElement.classList.remove('opacityDY0');
     cycleImgElement.addEventListener('animationend', () => {
       cycleImgElement.classList.remove('blockShine');
     }, { once: true });
-    // 轮播图提前小块100ms
-  }, pageDelay - 100);
+    // 轮播图提前小块[]ms
+  }, pageDelay - bodyInEachDelay * 2);
   // 小块
   topRightInSpanInElement.forEach((elementIn, index) => {
     setTimeout(() => {
       setTimeout(() => {
+        elementIn.style.transition = 'transform var(--transition-slow) cubic-bezier(.1,.9,0,1)'
         elementIn.classList.add('rollOnlyLeft', 'blockShine');
         elementIn.classList.remove('opacityDY0');
         elementIn.addEventListener('animationend', () => {
           elementIn.classList.remove('blockShine');
         }, { once: true });
         // 由上至下时, 每个小块的延时
-      }, index * 20);
+      }, index * bodyInEachDelay);
     }, pageDelay);
   })
   
-
+  // 轮播图与小块_由左至右
   // 应该从最后遍历至首个, for循环未知原因依然由首个遍历至最后_尝试使用while
   // while一样
   // 嘛的只能用递归
@@ -202,8 +257,11 @@ function pageAnimation() {
 }
 pageAnimation();
 setTimeout(() => {
-  // 恢复轮播图曲线(我也不知道小块曲线咋绑的)
+  // 还原轮播图曲线(我也不知道小块曲线咋绑的)
   cycleImgElement.style.transition = 'var(--transition-normal)'
+  headFirstSection.forEach((elementIn) => {
+    elementIn.style.transition = '0';
+  })
 }, pageDelay + 1000);
 
 // 首页按钮

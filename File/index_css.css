@@ -770,7 +770,7 @@
     border: solid 1px #f1f2f3;
     border-radius: 6px;
     background-color: #f6f7f8;
-    transition: background-color var(--transition-normal);
+    transition: var(--transition-normal);
     cursor: pointer;
   }
   #head_second_section_in > span:hover {
@@ -1141,6 +1141,7 @@
   }
   .rollLeftAndUp {
     /* !注意: X和Y若都需变化就得一起写不能分开, 否则后面的会覆盖掉前面的 */
+    /* 为啥非得写了个LeftAndUp在这就因为这↑ */
     transform: translate(-3rem, -1.6rem);
   }
   .rollOnlyLeft {
@@ -1148,14 +1149,14 @@
   }
   /* 不知道给啥盖了反正就零点几秒先important着 */
   .rollOnlyLeftMore {
-    transform: translate(-5rem, 0) !important;
+    transform: translate(-6rem, 0) !important;
   }
   .rollOnlyRight {
     transform: translate(3rem, 0);
   }
   /* 不知道给啥盖了反正就零点几秒先important着 */
   .rollOnlyRightMore {
-    transform: translate(5rem, 0) !important;
+    transform: translate(6rem, 0) !important;
   }
   .rollOnlyUp {
     transform: translate(0, -1.6rem);
