@@ -108,14 +108,26 @@ function pageShake() {
 // 入场效果相关
 // 整页延时
 const pageDelay = 1000;
+// 部分间延时
+const eachDelay = 40;
 // 需要还原的元素定义在外部
-const headFirstSection = document.querySelectorAll('.head_first_section_in');
-const headSecondSection = document.querySelectorAll('.head_second_section_in_span');
+const headElement = document.querySelector('#head');
+const headImgElement = document.querySelector('#head_img');
+const headFirstSectionElements = document.querySelectorAll('.head_first_section_in');
+const headSecondSectionElements = document.querySelectorAll('.head_second_section_in_span');
+const headThirdSectionElements = document.querySelectorAll('.head_third_section_in_span');
 const cycleImgElement = document.querySelector('.cycle_img');
+
 function pageAnimation() {
+  // 顶部
+  setTimeout(() => {
+    headElement.style.transition = 'var(--transition-very-slow) cubic-bezier(.32,.64,0,.8)'
+    headElement.classList.remove('rollOnlyLeftLess');
+  }, pageDelay);
+
   // 顶栏
   const firstSectionElements = document.querySelectorAll('.first_section_span');
-  const secondSectionElement = document.querySelector('#second_section');
+  const secondSectionElements = document.querySelector('#second_section');
   const thirdSectionElements = document.querySelectorAll('.third_section_span');
   setTimeout(() => {
     firstSectionElements.forEach((ElementIn, index) => {
@@ -128,140 +140,131 @@ function pageAnimation() {
         ElementIn.classList.remove('opacityDY0', 'rollOnlyLeftMore');
       }, index * 60);
     })
-    secondSectionElement.classList.remove('rollOnlyUpMore');
+    secondSectionElements.classList.remove('rollOnlyUpMore');
   }, pageDelay - 100);
 
-  // logo
-  const headImgElement = document.querySelector('#head_img');
+  // logo需要还原曲线故定义在外部
   setTimeout(() => {
+    headImgElement.style.transition = 'var(--transition-normal)'
     headImgElement.style.filter = 'drop-shadow(0px 0px 20px rgb(0, 0, 0))'
-    headImgElement.classList.remove('opacityDY0', 'rollOnlyLeft');
+    headImgElement.classList.remove('opacityDY0', 'rollOnlyLeftLess');
   }, pageDelay - 120);
 
 
   // 按钮群
-  const headSectionEachDelay = 8;
+  const headSectionEachDelay = 18;
 
-  // 区域一曲线需要还原故定义在外部
-  const headFirstSectionLength = headFirstSection.length;
+  // 按钮群各区域曲线需要还原故定义在外部
+  const headFirstSectionElementsLength = headFirstSectionElements.length;
 
-  const headSecondSectionLength = headSecondSection.length;
-  const headSecondSectionHalfLength = headSecondSectionLength / 2;
+  const headSecondSectionElementsLength = headSecondSectionElements.length;
+  const headSecondSectionElementsHalfLength = headSecondSectionElementsLength / 2;
 
-  const headThirdSection = document.querySelectorAll('.head_third_section_in_span');
-  const headThirdSectionLength = headThirdSection.length;
-  const headThirdSectionHalfLength = headThirdSectionLength / 2;
+  const headThirdSectionElementsLength = headThirdSectionElements.length;
+  const headThirdSectionElementsHalfLength = headThirdSectionElementsLength / 2;
 
-  // 区域一
   setTimeout(() => {
-    let headFirstSectionLengthTemp = headFirstSectionLength - 1;
-    const headFirstSectionInterval = setInterval(() => {
-      headFirstSection[headFirstSectionLengthTemp].style.transition = 'var(--transition-normal)';
-      headFirstSection[headFirstSectionLengthTemp].classList.remove('opacityDY0', 'rollOnlyRight');
-      headFirstSectionLengthTemp--;
-      if(headFirstSectionLengthTemp == -1) {
-        clearInterval(headFirstSectionInterval);
-      }
-    }, headSectionEachDelay);
-  }, pageDelay + headSectionEachDelay * headSecondSectionHalfLength  + headSectionEachDelay * headThirdSectionHalfLength);
-
-  // 区域二
-  // 写小块那会怎么没想到interval
-  setTimeout(() => {
-    let headSecondSectionLengthTemp = headSecondSectionLength - 1;
-    const headSecondSectionInterval = setInterval(() => {
-      headSecondSection[headSecondSectionLengthTemp].classList.remove('opacityDY0', 'rollOnlyRight');
-      headSecondSection[headSecondSectionLengthTemp - headSecondSectionHalfLength].classList.remove('opacityDY0', 'rollOnlyRight');
-      headSecondSectionLengthTemp--;
-      if(headSecondSectionLengthTemp == headSecondSectionHalfLength - 1) {
-        clearInterval(headSecondSectionInterval);
-      }
-    }, headSectionEachDelay);
-  }, pageDelay + headSectionEachDelay * headThirdSectionHalfLength);
-
-  // 区域三
-  setTimeout(() => {
-    let headThirdSectionLengthTemp = headThirdSectionLength - 1;
-    const headThirdSectionInterval = setInterval(() => {
-      headThirdSection[headThirdSectionLengthTemp].classList.remove('opacityDY0', 'rollOnlyRight');
-      headThirdSection[headThirdSectionLengthTemp - headThirdSectionHalfLength].classList.remove('opacityDY0', 'rollOnlyRight');
-      headThirdSectionLengthTemp--;
-      if(headThirdSectionLengthTemp == headThirdSectionHalfLength - 1) {
-        clearInterval(headThirdSectionInterval);
-      }
-    }, headSectionEachDelay)
-  }, pageDelay);
-
-
-  // 轮播图与小块_由上至下
-  // 轮播图曲线需要还原故定义在外部
-  const topRightInSpanInElement = document.querySelectorAll('.in_box_top_right_in_span_in');
-  const bodyInEachDelay = 24;
-  setTimeout(() => {
-    cycleImgElement.style.transition = 'transform var(--transition-slow) cubic-bezier(.1,.9,0,1)'
-    cycleImgElement.classList.add('rollOnlyLeft', 'blockShine');
-    cycleImgElement.classList.remove('opacityDY0');
-    cycleImgElement.addEventListener('animationend', () => {
-      cycleImgElement.classList.remove('blockShine');
-    }, { once: true });
-    // 轮播图提前小块[]ms
-  }, pageDelay - bodyInEachDelay * 2);
-  // 小块
-  topRightInSpanInElement.forEach((elementIn, index) => {
+    // 区域一
     setTimeout(() => {
-      setTimeout(() => {
-        elementIn.style.transition = 'transform var(--transition-slow) cubic-bezier(.1,.9,0,1)'
-        elementIn.classList.add('rollOnlyLeft', 'blockShine');
-        elementIn.classList.remove('opacityDY0');
-        elementIn.addEventListener('animationend', () => {
-          elementIn.classList.remove('blockShine');
-        }, { once: true });
-        // 由上至下时, 每个小块的延时
-      }, index * bodyInEachDelay);
+      let headFirstSectionElementsLengthTemp = 0;
+      const headFirstSectionElementsInterval = setInterval(() => {
+        headFirstSectionElements[headFirstSectionElementsLengthTemp].style.transition = 'var(--transition-slow) cubic-bezier(0,.64,.3,1)';
+        headFirstSectionElements[headFirstSectionElementsLengthTemp].classList.remove('opacityDY0', 'rollOnlyLeftLess');
+        headFirstSectionElementsLengthTemp++;
+        if(headFirstSectionElementsLengthTemp == headFirstSectionElementsLength) {
+          clearInterval(headFirstSectionElementsInterval);
+        }
+      }, headSectionEachDelay);
     }, pageDelay);
-  })
-  
-  // 轮播图与小块_由左至右
-  // 应该从最后遍历至首个, for循环未知原因依然由首个遍历至最后_尝试使用while
-  // while一样
-  // 嘛的只能用递归
-  // 嘛的递归效率太劲爆低了
-  // 嘛的手动遍历
+
+    // 区域二
+    // 写小块那会怎么没想到interval
+    setTimeout(() => {
+      let headSecondSectionElementsLengthTemp = 0;
+      const headSecondSectionElementsInterval = setInterval(() => {
+        headSecondSectionElements[headSecondSectionElementsLengthTemp].style.transition = 'var(--transition-slow) cubic-bezier(0,.64,.3,1)';
+        headSecondSectionElements[headSecondSectionElementsLengthTemp].classList.remove('opacityDY0', 'rollOnlyLeftLess');
+        headSecondSectionElements[headSecondSectionElementsLengthTemp + headSecondSectionElementsHalfLength].style.transition = 'var(--transition-slow) cubic-bezier(0,.64,.3,1)';
+        headSecondSectionElements[headSecondSectionElementsLengthTemp + headSecondSectionElementsHalfLength].classList.remove('opacityDY0', 'rollOnlyLeftLess');
+        headSecondSectionElementsLengthTemp++;
+        if(headSecondSectionElementsLengthTemp == headSecondSectionElementsHalfLength) {
+          clearInterval(headSecondSectionElementsInterval);
+        }
+      }, headSectionEachDelay);
+    }, pageDelay + headSectionEachDelay * headThirdSectionElementsHalfLength);
+
+    // 区域三
+    setTimeout(() => {
+      let headThirdSectionElementsLengthTemp = 0;
+      const headThirdSectionElementsInterval = setInterval(() => {
+        headThirdSectionElements[headThirdSectionElementsLengthTemp].style.transition = 'var(--transition-slow) cubic-bezier(0,.64,.3,1)';
+        headThirdSectionElements[headThirdSectionElementsLengthTemp].classList.remove('opacityDY0', 'rollOnlyLeftLess');
+        headThirdSectionElements[headThirdSectionElementsLengthTemp + headThirdSectionElementsHalfLength].style.transition = 'var(--transition-slow) cubic-bezier(0,.64,.3,1)';
+        headThirdSectionElements[headThirdSectionElementsLengthTemp + headThirdSectionElementsHalfLength].classList.remove('opacityDY0', 'rollOnlyLeftLess');
+        headThirdSectionElementsLengthTemp++;
+        if(headThirdSectionElementsLengthTemp == headThirdSectionElementsHalfLength) {
+          clearInterval(headThirdSectionElementsInterval);
+        }
+      }, headSectionEachDelay)
+    }, pageDelay + headSectionEachDelay * headSecondSectionElementsHalfLength  + headSectionEachDelay * headThirdSectionElementsHalfLength);
+  }, eachDelay);
+
+
+  // 轮播图与小块
   setTimeout(() => {
-    cycleImgElement.style.transition = 'transform var(--transition-slow) cubic-bezier(.64,0,.1,1)'
-    topRightInSpanInElement.forEach(elementIn => {
-      elementIn.style.transition = 'transform var(--transition-slow) cubic-bezier(.64,0,.1,1)';
-    })
+    // 由上至下
+    // 轮播图曲线需要还原故定义在外部
+    const bodyInEachDelay = 64;
     setTimeout(() => {
-      topRightInSpanInElement[5].classList.remove('rollOnlyLeft', 'rollLeftAndUp');
-      topRightInSpanInElement[2].classList.remove('rollOnlyLeft', 'rollLeftAndUp');
-      // 由左至右时, 最右侧小块的延时
-    }, 40);
+      cycleImgElement.style.transition = 'var(--transition-very-slow) cubic-bezier(0,.64,.3,1)'
+      cycleImgElement.classList.remove('opacityDY0', 'rollOnlyUpLess');
+    }, pageDelay);
+    // 小块
     setTimeout(() => {
-      topRightInSpanInElement[4].classList.remove('rollOnlyLeft', 'rollLeftAndUp');
-      topRightInSpanInElement[1].classList.remove('rollOnlyLeft', 'rollLeftAndUp');
-      // 由左至右时, 中间小块的延时
-    }, 80);
-    setTimeout(() => {
-      topRightInSpanInElement[3].classList.remove('rollOnlyLeft', 'rollLeftAndUp');
-      topRightInSpanInElement[0].classList.remove('rollOnlyLeft', 'rollLeftAndUp');
-      // 由左至右时, 最左侧小块的延时
-    }, 120);
-    setTimeout(() => {
-      cycleImgElement.classList.remove('rollOnlyLeft', 'rollLeftAndUp');
-      // 轮播图延时_未知原因延时不随小块递增_曲线不同导致的
-      // 即便相同也需优化(跟入场时一样)
-    }, 155);
-  // 由上至下后, 进行由左至右前的延时
-  }, pageDelay + 300);
+      const topRightInSpanInElements = document.querySelectorAll('.in_box_top_right_in_span_in');
+      const topRightInSpanInElementsLength = topRightInSpanInElements.length;
+      const topRightInSpanInElementsHalfLength = topRightInSpanInElementsLength / 2;
+      let topRightInSpanInElementsLengthTemp = 0;
+      const topRightInSpanInElementsInterval = setInterval(() => {
+        topRightInSpanInElements[topRightInSpanInElementsLengthTemp].style.transition = 'var(--transition-very-slow) cubic-bezier(0,.64,.3,1)'
+        topRightInSpanInElements[topRightInSpanInElementsLengthTemp].classList.remove('opacityDY0', 'rollOnlyUpLess');
+        topRightInSpanInElements[topRightInSpanInElementsLengthTemp + topRightInSpanInElementsHalfLength].style.transition = 'var(--transition-very-slow) cubic-bezier(0,.64,.3,1)'
+        topRightInSpanInElements[topRightInSpanInElementsLengthTemp + topRightInSpanInElementsHalfLength].classList.remove('opacityDY0', 'rollOnlyUpLess');
+        topRightInSpanInElementsLengthTemp++;
+        if(topRightInSpanInElementsLengthTemp == topRightInSpanInElementsHalfLength) {
+          clearInterval(topRightInSpanInElementsInterval);
+        }
+      }, bodyInEachDelay * 1.2)
+    }, pageDelay);
+    
+    // 轮播图与小块_由左至右
+    // 应该从最后遍历至首个, for循环未知原因依然由首个遍历至最后_尝试使用while
+    // while一样
+    // 嘛的只能用递归
+    // 嘛的递归效率太劲爆低了
+    // 嘛的手动遍历
+    // 哈哈哈现在优化掉了用不着了白研究了哈哈哈
+  }, eachDelay * 2);
 }
+
 pageAnimation();
 setTimeout(() => {
+  // 还原顶部曲线
+  headElement.style.transition = ''
+  // 还原logo曲线
+  headImgElement.style.transition = '';
   // 还原轮播图曲线(我也不知道小块曲线咋绑的)
-  cycleImgElement.style.transition = 'var(--transition-normal)'
-  headFirstSection.forEach((elementIn) => {
-    elementIn.style.transition = '0';
-  })
+  cycleImgElement.style.transition = 'var(--transition-normal)';
+  // 还原按钮群曲线
+  headFirstSectionElements.forEach((elementIn) => {
+    elementIn.style.transition = '';
+  });
+  headSecondSectionElements.forEach((elementIn) => {
+    elementIn.style.transition = '';
+  });
+  headThirdSectionElements.forEach((elementIn) => {
+    elementIn.style.transition = '';
+  });
 }, pageDelay + 1000);
 
 // 首页按钮
@@ -372,12 +375,12 @@ firstSectionSpan3.forEach(span3 => {
 
 // 按钮群_跳转
 // 获取父元素
-const headSecondSectionIn = document.getElementById('head_second_section_in');
+const headSecondSectionElementsIn = document.getElementById('head_second_section_in');
 // 绑定点击事件监听器到父元素
-headSecondSectionIn.addEventListener('click', function(event) {
+headSecondSectionElementsIn.addEventListener('click', function(event) {
   // 获取点击的元素的id
   const spanId = event.target.id;
-  console.log(headSecondSectionIn);
+  console.log(headSecondSectionElementsIn);
   console.log(event);
   console.log(event.target);
   console.log(event.target.id);

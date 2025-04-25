@@ -408,7 +408,7 @@
     max-height: 240px;
     /* height: clamp(155px, 10.375vw, 240px); 有点问题 25/03/14 00:30 来自自己 */
     min-width: 1060px;
-    background-color: rgb(202, 200, 255);
+    background-color: rgb(200, 233, 255);
     background-image: url(img/head_img.png@3840w_360h_1c.webp);
     background-size: cover; /* 图片按比例填充 */
     background-position: center; /* 图片居中显示 */
@@ -416,6 +416,7 @@
     box-shadow: 0px 50px 40px 20px rgba(0, 0, 0, 0.17) inset,
                 0px 45px 30px 0px rgba(0, 0, 0, 0.15) inset,
                 0px 85px 40px 0px rgba(0, 0, 0, 0.1) inset;
+    
     --background-head-title-line-height-normal: 4rem;
   }
   
@@ -428,7 +429,6 @@
     left: var(--logo-left);
     filter: drop-shadow(0px 0px 0px rgb(0, 0, 0));
     /* transition: transform var(--transition-normal); */
-    transition: var(--transition-normal);
   }
   
   #head_title {
@@ -1144,6 +1144,9 @@
     /* 为啥非得写了个LeftAndUp在这就因为这↑ */
     transform: translate(-3rem, -1.6rem);
   }
+  .rollOnlyLeftLess {
+    transform: translate(-1.6rem, 0);
+  }
   .rollOnlyLeft {
     transform: translate(-3rem, 0);
   }
@@ -1157,6 +1160,9 @@
   /* 不知道给啥盖了反正就零点几秒先important着 */
   .rollOnlyRightMore {
     transform: translate(6rem, 0) !important;
+  }
+  .rollOnlyUpLess {
+    transform: translate(0, -1rem);
   }
   .rollOnlyUp {
     transform: translate(0, -1.6rem);
