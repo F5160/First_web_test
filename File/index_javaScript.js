@@ -107,8 +107,8 @@ function pageShake() {
 
 // 入场效果相关
 // 整页延时
-const pageDelay = 1000;
-// 部分间延时
+const pageDelay = 2000;
+// 首页部分间延时
 const eachDelay = 40;
 // 需要还原的元素定义在外部
 const headElement = document.querySelector('#head');
@@ -119,10 +119,22 @@ const headThirdSectionElements = document.querySelectorAll('.head_third_section_
 const cycleImgElement = document.querySelector('.cycle_img');
 
 function pageAnimation() {
+  // 页面覆盖层
+  const secondFloorBackgroundCoverBox = document.querySelector('#second_floor_background_cover_box');
+  const secondFloorBackgroundCoverBoxUpper = document.querySelector('#second_floor_background_cover_box_upper');
+  const backgroundCoverEachDelay = 420;
+  const backgroundCoverEarly = 60;
+  setTimeout(() => {
+    secondFloorBackgroundCoverBoxUpper.style.transform = 'translateX(100%)'
+    setTimeout(() => {
+      secondFloorBackgroundCoverBox.style.transform = 'translateX(100%)'
+    }, backgroundCoverEachDelay);
+  }, pageDelay - backgroundCoverEachDelay - backgroundCoverEarly);
+
   // 顶部
   setTimeout(() => {
-    headElement.style.transition = 'var(--transition-very-slow) cubic-bezier(.32,.64,0,.8)'
-    headElement.classList.remove('rollOnlyLeftLess');
+    headElement.style.transition = 'var(--transition-very-slow) cubic-bezier(.2,.6,0,1)'
+    headElement.classList.remove('rollOnlyLeftMore');
   }, pageDelay);
 
   // 顶栏
@@ -148,7 +160,7 @@ function pageAnimation() {
     headImgElement.style.transition = 'var(--transition-normal)'
     headImgElement.style.filter = 'drop-shadow(0px 0px 20px rgb(0, 0, 0))'
     headImgElement.classList.remove('opacityDY0', 'rollOnlyLeftLess');
-  }, pageDelay - 120);
+  }, pageDelay - 60);
 
 
   // 按钮群
@@ -217,8 +229,8 @@ function pageAnimation() {
     const bodyInEachDelay = 64;
     setTimeout(() => {
       cycleImgElement.style.transition = 'var(--transition-very-slow) cubic-bezier(0,.64,.3,1)'
-      cycleImgElement.classList.remove('opacityDY0', 'rollOnlyUpLess');
-    }, pageDelay);
+      cycleImgElement.classList.remove('opacityDY0', 'rollOnlyUp');
+    }, pageDelay - bodyInEachDelay);
     // 小块
     setTimeout(() => {
       const topRightInSpanInElements = document.querySelectorAll('.in_box_top_right_in_span_in');
@@ -245,10 +257,31 @@ function pageAnimation() {
     // 嘛的手动遍历
     // 哈哈哈现在优化掉了用不着了白研究了哈哈哈
   }, eachDelay * 2);
+
+  // 块
+  const bodyInBoxBottomInElements = document.querySelectorAll('.body_in_box_bottom_in');
+  const bodyInBoxBottomInElementsLength = bodyInBoxBottomInElements.length;
+  const bodyInBoxBottomInElementsEachDelay = 20;
+  setTimeout(() => {
+    let bodyInBoxBottomInElementsLengthTemp = 0;
+    const bodyInBoxBottomInElementsInterval = setInterval(() => {
+      bodyInBoxBottomInElements[bodyInBoxBottomInElementsLengthTemp].style.opacity = '100%';
+      bodyInBoxBottomInElements[bodyInBoxBottomInElementsLengthTemp].classList.remove('rollOnlyLeft');
+      bodyInBoxBottomInElementsLengthTemp++;
+      if(bodyInBoxBottomInElementsLengthTemp == bodyInBoxBottomInElementsLength) {
+        clearInterval(bodyInBoxBottomInElementsInterval)
+      }
+    }, bodyInBoxBottomInElementsEachDelay);
+  }, pageDelay + bodyInBoxBottomInElementsEachDelay * 2);
 }
 
 pageAnimation();
 setTimeout(() => {
+  // 移去交互覆盖层
+  const secondFloorBackgroundCoverBoxProhibitTouch = document.querySelector('#second_floor_background_cover_box_prohibit_touch');
+  if (secondFloorBackgroundCoverBoxProhibitTouch) {
+    secondFloorBackgroundCoverBoxProhibitTouch.remove();
+  }
   // 还原顶部曲线
   headElement.style.transition = ''
   // 还原logo曲线
@@ -265,7 +298,7 @@ setTimeout(() => {
   headThirdSectionElements.forEach((elementIn) => {
     elementIn.style.transition = '';
   });
-}, pageDelay + 1000);
+}, pageDelay + 1200);
 
 // 首页按钮
 // behavior不支持自定义曲线, 下面的方法可以
