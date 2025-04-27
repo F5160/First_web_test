@@ -40,7 +40,29 @@
   </div>
 
   <div class="cover_page background_cover_box" id="second_floor_background_cover_box"></div>
-  <div class="cover_page background_cover_box" id="second_floor_background_cover_box_upper"></div>
+  <div class="cover_page background_cover_box" id="second_floor_background_cover_box_upper">
+    <svg id="cover_box_upper_svg" width="64" height="64" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <style>
+        .spinner_clock {
+          transform-origin: center;
+        }
+        .spinner_hour {
+          animation: spinner_ZpfF 2.52s linear infinite;
+        }
+        .spinner_minutes {
+          animation: spinner_ZpfF .42s linear infinite;
+        }
+        @keyframes spinner_ZpfF {
+          100% {
+            transform: rotate(360deg)
+          }
+        }
+      </style>
+      <path d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,20a9,9,0,1,1,9-9A9,9,0,0,1,12,21Z" />
+      <rect class="spinner_clock spinner_hour" x="11" y="6" rx="1" width="2" height="7" />
+      <rect class="spinner_clock spinner_minutes" x="11" y="11" rx="1" width="2" height="9" />
+    </svg>
+  </div>
   <div class="cover_page background_cover_box" id="second_floor_background_cover_box_prohibit_touch"></div>
 
   <div id="second_floor_box">
@@ -140,7 +162,7 @@
           </div>
           <div class="head_section" id="head_second_section">
             <div id="head_second_section_in">
-              <span class="head_second_section_in_span opacityDY0 rollOnlyLeftLess" id="head_second_section_in_0">当下</span>
+              <span class="head_second_section_in_span opacityDY0 rollOnlyLeftLess" id="head_second_section_in_0">初见</span>
               <span class="head_second_section_in_span opacityDY0 rollOnlyLeftLess" id="head_second_section_in_1">待春来时</span>
               <span class="head_second_section_in_span opacityDY0 rollOnlyLeftLess" id="head_second_section_in_2">梦</span>
               <span class="head_second_section_in_span opacityDY0 rollOnlyLeftLess" id="head_second_section_in_3">浪花</span>
@@ -153,12 +175,12 @@
               <span class="head_second_section_in_span opacityDY0 rollOnlyLeftLess" id="head_second_section_in_10">珍典</span>
               <span class="head_second_section_in_span opacityDY0 rollOnlyLeftLess" id="head_second_section_in_11">帧间映画</span>
               <span class="head_second_section_in_span opacityDY0 rollOnlyLeftLess" id="head_second_section_in_12">漂光流影</span>
-              <span class="head_second_section_in_span opacityDY0 rollOnlyLeftLess" id="head_second_section_in_13">合辑</span>
+              <span class="head_second_section_in_span opacityDY0 rollOnlyLeftLess" id="head_second_section_in_13">当下</span>
             </div>
           </div>
           <div class="head_section" id="head_third_section">
             <div id="head_third_section_in">
-              <span class="head_third_section_in_span opacityDY0 rollOnlyLeftLess">留言(测试)</span>
+              <span class="head_third_section_in_span opacityDY0 rollOnlyLeftLess">留言板(测试)</span>
               <span class="head_third_section_in_span opacityDY0 rollOnlyLeftLess">投稿</span>
               <span class="head_third_section_in_span opacityDY0 rollOnlyLeftLess">建议及反馈</span>
               <span class="head_third_section_in_span opacityDY0 rollOnlyLeftLess">关于本站</span>
@@ -640,6 +662,9 @@
                     <div class="bottom_div_content_background"></div>
                   </div>
                 </div>
+              </div>
+              <div id="yuanShenQiDong_box">
+                <p id="yuanShenQiDong">前面的区域, 以后再来探索吧~</p>
               </div>
             </div>
           </div>

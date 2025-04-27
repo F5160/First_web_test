@@ -195,15 +195,24 @@
 
 
   .background_cover_box {
-    transition: calc(var(--transition-very-slow) * 1.6) cubic-bezier(.2,.6,0,1.02);
+    transition: calc(var(--transition-very-slow) * 1.6) cubic-bezier(.2,.6,0,1.2);
     transform: translateX(0);
   }
   #second_floor_background_cover_box {
-    background-color: #eee;
+    background-color: rgb(255, 233, 233);
+    /* backdrop-filter: blur(10rem); */
+    /* background: #eee url(img/loading_by_JIEJOE.svg) repeat;
+    background-size: 30%; */
   }
   #second_floor_background_cover_box_upper {
-    background-color: #aaa;
+    background-color: rgb(255, 220, 220);
     transition: calc(var(--transition-very-slow) * 1.5) cubic-bezier(.2,.84,.1,1.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #cover_box_upper_svg {
+    transition: var(--transition-quick);
   }
 
   .cover_page {
@@ -408,7 +417,7 @@
 
   
   #background {
-    height: 1000rem;
+    height: 500rem;
     width: 100%;
     min-width: 1060px;
     margin: 0 auto; /* 水平居中 */
@@ -1615,6 +1624,16 @@
     left: 0;
     /* background-color: rgba(0, 119, 255, 0.3); */
     z-index: calc(var(--z-index-title) + 1);
+  }
+
+  #yuanShenQiDong_box {
+    background-color: rgba(255, 255, 255, 0) !important;
+    display: flex;
+    justify-content: center;
+  }
+  #yuanShenQiDong {
+    margin: 42px 0;
+    color: black;
   }
   /* .has_active.active_1 {
     background-color: rgba(255, 0, 0, 0.3);

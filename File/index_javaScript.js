@@ -106,8 +106,13 @@ function pageShake() {
 
 
 // 入场效果相关
+// 生成随机缓冲
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+const randomInt = getRandomInt(2000, 3500);
 // 整页延时
-const pageDelay = 2000;
+const pageDelay = randomInt;
 // 首页部分间延时
 const eachDelay = 40;
 // 需要还原的元素定义在外部
@@ -122,14 +127,23 @@ function pageAnimation() {
   // 页面覆盖层
   const secondFloorBackgroundCoverBox = document.querySelector('#second_floor_background_cover_box');
   const secondFloorBackgroundCoverBoxUpper = document.querySelector('#second_floor_background_cover_box_upper');
+  const CoverBoxUpperSvg = document.querySelector('#cover_box_upper_svg');
   const backgroundCoverEachDelay = 420;
   const backgroundCoverEarly = 60;
   setTimeout(() => {
-    secondFloorBackgroundCoverBoxUpper.style.transform = 'translateX(100%)'
+    const svg = document.getElementById('cover_box_upper_svg');
+    const hourHand = svg.querySelector('.spinner_hour');
+    const minuteHand = svg.querySelector('.spinner_minutes');
+    hourHand.style.animationPlayState = 'paused';
+    minuteHand.style.animationPlayState = 'paused';
+    CoverBoxUpperSvg.style.opacity = '0%'
+    setTimeout(() => {
+      secondFloorBackgroundCoverBoxUpper.style.transform = 'translateX(100%)'
+    }, backgroundCoverEachDelay / 1.5);
     setTimeout(() => {
       secondFloorBackgroundCoverBox.style.transform = 'translateX(100%)'
-    }, backgroundCoverEachDelay);
-  }, pageDelay - backgroundCoverEachDelay - backgroundCoverEarly);
+    }, backgroundCoverEachDelay * 1.66);
+  }, pageDelay - backgroundCoverEachDelay * 1.66 - backgroundCoverEarly);
 
   // 顶部
   setTimeout(() => {
