@@ -61,6 +61,9 @@
     background-color: transparent;
     outline: none; /* 去掉点击时的聚焦边框 */
   }
+  a {
+    text-decoration: none;
+  }
   a:active {
     background-color: transparent;
     outline: none;
@@ -312,10 +315,9 @@
   }
 
   #second_floor_body {
-    height: calc(100% - 4rem);
+    height: 100%;
     width: 88%;
     position: relative;
-    top: 4rem;
     margin: 0 auto; /* 水平居中 */
     /* background-color: rgba(255, 0, 0, 0.3); */
     overflow-y: auto; /* 添加垂直滚动条 */
@@ -337,6 +339,7 @@
     max-height: 600px;
     box-sizing: border-box;
     margin: calc(var(--layout-padding) / 2);
+    margin-top: calc(var(--layout-padding) / 2 + 4rem);
     /* background-color: rgb(255, 146, 18, 0.3); */
     display: flex;
     gap: 1rem;
@@ -1272,7 +1275,7 @@
   .content_box_title {
     color: black;
     font-weight: 500;
-    font-size: 102.5%;
+    font-size: 16px;
     white-space: normal; /* 允许自动换行 */
     overflow-wrap: break-word; /* 确保长单词或 URL 换行 */
     display: -webkit-box; /* 使用 WebKit 的盒模型 */
