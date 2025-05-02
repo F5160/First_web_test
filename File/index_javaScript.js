@@ -461,7 +461,7 @@ headSecondSectionElementsIn.addEventListener('click', function(event) {
       // 边缘发光暂时不知道咋写 25/04/17 00:24 来自自己
       // targetElement.style.boxShadow = '0px 0px 12px 0px rgba(0, 0, 0, 1)'
       // targetElement.querySelector('.bottom_div_content_box').style.boxShadow = '0px 0px 12px 0px rgba(0, 0, 0, 1)'
-      targetElement.querySelector('.bottom_div_content_box').querySelector('.bottom_div_content_background').style.transition = '0.3s';
+      targetElement.querySelector('.bottom_div_content_box').querySelector('.bottom_div_content_background').style.transition = '0.1s';
       targetElement.querySelector('.bottom_div_content_box').querySelector('.bottom_div_content_background').style.filter = 'brightness(120%)';
     }, shineTime)
     setTimeout(() => {
