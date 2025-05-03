@@ -1122,9 +1122,10 @@
   .in_box_top_right_in_span {
     width: calc(33.33% - var(--in-in-top-right-in-gap));
     /* height: calc(51.8% - var(--in-in-top-right-in-gap)); */
+    height: calc(49.5% - var(--in-in-top-right-in-gap));
     /* 设置宽高比为4:3 */
-    aspect-ratio: 4/3;
-    margin-bottom: 1.6rem;
+    /* aspect-ratio: 4/3; */
+    margin-bottom: 0.8rem;
     background-color: white;
     /* overflow: hidden; */
     transition: transform var(--transition-normal), box-shadow var(--transition-normal); /* 仅对 transform 和 box-shadow 应用过渡效果 */
@@ -1272,6 +1273,9 @@
     display: flex;
     flex-direction: column;
   }
+  .content_box_placeholder {
+    height: 0.4rem;
+  }
   .content_box_title {
     color: black;
     font-weight: 500;
@@ -1291,7 +1295,7 @@
     background-color: deepskyblue;
   } */
   .content_box_others {
-    flex: 2;
+    flex: 1;
     color: gray;
     display: flex;
     justify-content: space-between;
