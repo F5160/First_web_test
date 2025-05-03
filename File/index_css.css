@@ -1287,9 +1287,14 @@
     -webkit-box-orient: vertical; /* 垂直排列内容 */ /* 不清楚是垂直排列还是什么反正没这行不行 */
     overflow: hidden; /* 隐藏溢出的内容 */
     text-overflow: ellipsis; /* 在溢出时显示省略号 */
+    transition: var(--transition-normal);
   
     /* 补充标准属性（未来可能支持） */
     line-clamp: 2; /* 限制行数为2行 */
+  }
+  .content_box_title:hover {
+    transition: var(--transition-very-quick);
+    color: pink;
   }
   /* .in_box_top_right_in_span_in_text > .in_box_top_right_in_span_in_text_others {
     background-color: deepskyblue;
