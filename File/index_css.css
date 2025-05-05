@@ -1293,7 +1293,7 @@
     line-clamp: 2; /* 限制行数为2行 */
   }
   .content_box_title:hover {
-    transition: var(--transition-very-quick);
+    transition: var(--transition-quick);
     color: pink;
   }
   /* .in_box_top_right_in_span_in_text > .in_box_top_right_in_span_in_text_others {
