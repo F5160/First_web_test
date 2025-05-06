@@ -475,12 +475,12 @@ headSecondSectionElementsIn.addEventListener('click', function(event) {
 });
 
 // 未完成提示
-const unfinished = document.querySelectorAll('.first_section_span_2, .first_section_span_4, .first_section_span_5, .first_section_span_6, .first_section_span_7, #search_btn, #in_box_top_right_in_span_in_4 , .head_first_section_span, .head_third_section_in_span');
+const unfinished = document.querySelectorAll('.first_section_span_2, .first_section_span_4, .first_section_span_5, .first_section_span_7, #search_btn, #in_box_top_right_in_span_in_4 , .head_first_section_span, .head_third_section_in_span');
 const promptInfo = document.querySelector('#prompt_info');
 const promptInfoText = document.querySelector('#prompt_info_text');
 unfinished.forEach(unfinishedIn => {
   unfinishedIn.addEventListener('click', function() {
-    promptInfoText.textContent = '板块制作中, 预计5月上线';
+    promptInfoText.textContent = '板块开发中, 预计6月上线';
     promptInfo.style.setProperty('--prompt-info-height', '50px');
     // 经过该时间后隐藏
     const hiddenTime = 3000;
@@ -1179,7 +1179,8 @@ document.querySelectorAll('.bottom_div_in').forEach(item => {
 
     // 查找父元素
     const secondFloorBodyTopRightListUlElement = document.getElementById('second_floor_body_top_right_list_ul');
-    // 添加新的 <li> 元素方法
+    // 添加新的<li>方法
+    // <li>之间的横线通过css生成
     function addNewLi(listIn) {
       // 二次赋值(以免变量混淆)
       const secondFloorBodyTopRightListUlElementIn = secondFloorBodyTopRightListUlElement;

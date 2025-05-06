@@ -14,11 +14,15 @@
     --transition-delay-more: 0.4s;
     --transition-delay-macro: 0.5s;
 
+    --transform-down-more: 12%;
     --transform-down-middle: 8%;
     --transform-down-beside: 4%;
 
     --second_floor_height: 100%;
     --second-floor-z-index: 199;
+    
+    --cards-border-radius: 0.3rem;
+    --cards-translateY-up: -1%;
   }
   
   
@@ -136,6 +140,7 @@
     pointer-events: none; /* 隐藏时不可点击 */
     z-index: 99;
     --title-line-height-normal: 4rem;
+    --title-transform-down-more: calc(var(--transform-down-more) / 2);
     --title-transform-down-middle: calc(var(--transform-down-middle) / 2);
     --title-transform-down-beside: calc(var(--transform-down-beside) / 2);
   }
@@ -203,9 +208,6 @@
   }
   #second_floor_background_cover_box {
     background-color: rgb(255, 233, 233);
-    /* backdrop-filter: blur(10rem); */
-    /* background: #eee url(img/loading_by_JIEJOE.svg) repeat;
-    background-size: 30%; */
   }
   #second_floor_background_cover_box_upper {
     background-color: rgb(255, 220, 220);
@@ -385,6 +387,7 @@
     padding: 88px 18px 8px 18px;
     list-style-type: none; /* 去掉列表项的默认样式(li的实心点) */
   }
+  /* 元素之间自动生成横线 */
   #second_floor_body_top_right_list_ul > li:first-child {
     border-top: none;
   }
@@ -444,6 +447,11 @@
     box-shadow: 0px 50px 40px 20px rgba(0, 0, 0, 0.17) inset,
                 0px 45px 30px 0px rgba(0, 0, 0, 0.15) inset,
                 0px 85px 40px 0px rgba(0, 0, 0, 0.1) inset;
+    /* 修改层级是为了确保下拉卡片不被遮挡 */
+    /* *z-index只作用于兄弟元素, 这里也只是为了高于#body, 故只设置2即可 */
+    /* TONGYI: 单纯增加 z-index 不起作用，是因为它们不在同一层叠上下文中。
+               使用 !important 强制提升 z-index 通常无效，除非整个上下文一致。 */
+    z-index: 2;
     
     --background-head-title-line-height-normal: 4rem;
   }
@@ -470,6 +478,7 @@
     pointer-events: auto; /* 显示时可点击 */
     transition: var(--transition-very-quick);
     transform: translateY(0);
+    --head-transform-down-more: var(--transform-down-more);
     --head-transform-down-middle: var(--transform-down-middle);
     --head-transform-down-beside: var(--transform-down-beside);
   }
@@ -634,6 +643,76 @@
     padding-right: 1rem;
     white-space: nowrap;
   }
+
+  /* 下拉卡片相关 */
+  #head_title_first_section_span_6:active {
+    transition: var(--transition-very-quick);
+    /* 不知道给啥盖了加个id选择器也没用现important着 */
+    /* 后面的hover用了id还盖了类估计不好改就先important着 */
+    transform: translateY(var(--head-transform-down-more)) !important;
+  }
+  #first_section_span_6:active {
+    transition: var(--transition-very-quick);
+    transform: translateY(var(--title-transform-down-more)) !important;
+  }
+  .first_section_span_span_6_tooltip {
+    position: absolute;
+    top: var(--first_section_span_span_6_tooltip_top);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.6rem 0;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: calc(var(--cards-border-radius) * 1.2);
+    background-color: white;
+    /* 未知原因#first_section_span_6未正常应用模糊效果 */
+    /* background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(50px); */
+    color: #1f1f1f;
+    border: #ddd solid 1px;
+    box-shadow: 0px 2px 30px #00000020;
+    transition: all 0.2s;
+    cursor: default;
+
+    --first_section_span_span_6_tooltip_top: 90%;
+  }
+  .first_section_span_span_6_tooltip div {
+    margin: 0;
+    line-height: normal;
+  }
+  .first_section_span_6:hover .first_section_span_span_6_tooltip {
+    top: calc(var(--first_section_span_span_6_tooltip_top) + 10%);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  }
+  .first_section_span_span_6_tooltip > div {
+    padding: 0.4rem 0;
+  }
+  .first_section_span_span_6_tooltip_div {
+    display: flex;
+  }
+  .first_section_span_span_6_tooltip_div > div {
+    padding: 0rem 1rem;
+  }
+  .span_span_6_tooltip_section_title {
+    font-size: 16px;
+    font-weight: 900;
+    text-align: left;
+  }
+  .span_span_6_tooltip_section_content {
+    font-size: 12px;
+  }
+  /* 元素之间自动生成横线 */
+  /* .first_section_span_span_6_tooltip > div {
+    padding: 4px 0;
+    border-top: 1px solid rgb(200, 200, 200);
+  }
+  .first_section_span_span_6_tooltip > div:first-child {
+    border-top: none;
+  } */
+
   #third_section_title {
     color: black;
   }
@@ -678,6 +757,10 @@
     flex-direction: column;
     /* justify-content: center; 水平居中 */
     /* align-items: center; 垂直居中 */
+    /* *z-index只作用于兄弟元素, 这里也只是相对于#head, 故只设置1即可 */
+    /* TONGYI: 单纯增加 z-index 不起作用，是因为它们不在同一层叠上下文中。
+               使用 !important 强制提升 z-index 通常无效，除非整个上下文一致。 */
+    z-index: 1;
   }
   
   
@@ -849,8 +932,6 @@
     /* background-color:rgb(255, 250, 150); */
     display: flex;
     flex-direction: column;
-    --cards-border-radius: 0.3rem;
-    --cards-translateY-up: -1%;
   }
   
   #body_in_box_top {
