@@ -364,6 +364,22 @@ firstSectionSpan0.forEach(span0 => {
     }
   });
 })
+// 底部提示栏
+const hiddenTime = 3000;  // 经过该时间后隐藏底部提示栏
+function promptInfoBottomFillInText(Text) {
+  promptInfoTextBottom.textContent = Text;
+  promptInfoBottom.style.bottom = '0%';
+  setTimeout(() => {
+    promptInfoTextBottom.style.opacity = '100%';
+  }, 200);
+  setTimeout(() => {
+    promptInfoTextBottom.style.opacity = '0%';
+  }, hiddenTime);
+  setTimeout(() => {
+    // 原始值为-96px
+    promptInfoBottom.style.bottom = '-96px';
+  }, hiddenTime + 220);
+};
 // 已位于首页提示
 const atHome = document.querySelectorAll('.first_section_span_0');
 const promptInfoBottom = document.querySelector('#prompt_info_bottom');
@@ -373,22 +389,13 @@ atHome.forEach(atHomeIn => {
       // 单位为px
       if(scrollDistance < 256) {
         console.log(scrollDistance);
-        promptInfoTextBottom.textContent = '你已经在首页了';
-        promptInfoBottom.style.bottom = '0%';
-        // 经过该时间后隐藏
-        const hiddenTime = 3000;
+        promptInfoBottomFillInText('你已经在首页了');
         setTimeout(() => {
-          promptInfoTextBottom.style.opacity = '100%';
           atHome.forEach(atHomeInIn => {
             atHomeInIn.style.pointerEvents = 'none';
           });
         }, 200);
         setTimeout(() => {
-          promptInfoTextBottom.style.opacity = '0%';
-        }, hiddenTime);
-        setTimeout(() => {
-          // 原始值为-96px
-          promptInfoBottom.style.bottom = '-96px';
           atHome.forEach(atHomeInIn => {
             atHomeInIn.style.pointerEvents = 'auto';
           });
@@ -419,6 +426,30 @@ firstSectionSpan3.forEach(span3 => {
     window.open('https://github.com/F5160/First_web_test', '_blank');
   });
 });
+
+// 联系按钮
+// 未知原因点击无反馈 25/05/07 18:41 来自自己
+// 可能点击的依然为整个“联系”按钮
+// 已通过设置覆盖按钮解决
+const no6tooltipSection1s = document.querySelectorAll('.no_6_tooltip_section_1_title_overlay-button');
+console.log(no6tooltipSection1s);
+no6tooltipSection1s.forEach(no6tooltipSection1 => {
+  no6tooltipSection1.addEventListener('click', async () => {
+    const textToCopy = 'bumblebee5160@qq.com';  // 要复制的文本
+    try {
+      // 复制到剪贴板
+      await navigator.clipboard.writeText(textToCopy);
+      console.log('#span_span_6_tooltip_section_1复制到剪贴板成功');
+      promptInfoBottomFillInText('邮箱地址已复制到剪切板');
+      // 限制点击时有未知bug导致交互混乱, 故删除
+    } catch (err) {
+      console.error('#span_span_6_tooltip_section_1复制到剪贴板失败:', err);
+    }
+  });
+});
+
+
+
 
 // 按钮群_跳转
 // 获取父元素
@@ -1298,7 +1329,9 @@ document.querySelectorAll('.bottom_div_in').forEach(item => {
                 // 若不为空则将当前点击的盒子的元素的内容填入覆盖层
                 secondFloorCoverImgElement.style.transition = '0s';
                 secondFloorCoverImgElement.style.backgroundImage = thisBackgroundImageStyle.backgroundImage;
-                secondFloorCoverTextTitleElement.src = thisTextTitleElement.src;
+                if(thisTextTitleElement) {
+                  secondFloorCoverTextTitleElement.src = thisTextTitleElement.src;
+                }
                 // 若介绍为两行则填充单行版本_id及判断自己加
                 if (thisTextTitleDescriptionElement && thisTextTitleDescriptionElement.id === 'bottom_div_in_3_doubleLineDescriptionWarning') {
                   secondFloorCoverTextDescriptionElement.src = 'File/img/billows/billows_description_singleLine.svg';
