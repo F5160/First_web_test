@@ -129,7 +129,7 @@
     width: 100%;
     box-sizing: border-box;
     padding: 0 36px;
-    background-color: rgba(0, 0, 0, 0.02);
+    background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(50px) brightness(100%);
     border-radius: 0px;
     box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
@@ -218,6 +218,59 @@
   }
   #cover_box_upper_svg {
     transition: var(--transition-quick);
+  }
+
+  #indispensablePage {
+    height: 120%;
+    background-color: rgb(233, 233, 233, 0.6);
+    backdrop-filter: blur(64px);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.4);
+    transition: transform 1.6s cubic-bezier(.21,.84,.3,1);
+    transform: translateY(-120%);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  #indispensableTextBox {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 12rem;
+    display: flex;
+    flex-direction: column;
+  }
+  #indispensableTextContent {
+    font-size: 20px;
+    color: rgb(64, 64, 64);
+    text-shadow: 0px 0.6px 2px rgb(93, 93, 93);
+    text-align: left;
+  }
+  #indispensableTextContent > div:first-child {
+    margin-top: 0;
+  }
+  #indispensableTextContent > div:last-child {
+    margin-bottom: 0;
+  }
+  #indispensableTextContent > div {
+    margin: 30px 0;
+  }
+  #indispensableTextContent > div > p {
+    margin: 10px 0;
+  }
+  #indispensableTextContent > div > p > span {
+    color: rgb(52, 52, 52);
+  }
+  #indispensablePageButtonBox {
+    width: 100%;
+  }
+  #indispensablePageButtonBox > button {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    border: rgba(0, 0, 0, 0);
+    cursor: pointer;
   }
 
   .cover_page {
@@ -620,7 +673,6 @@
     padding: 0.2rem;
     margin-right: 0.3rem;
     background-color: rgba(0, 0, 0, 0.1);
-    background-image: url(img/search.png);
     border-radius: 4px;
     border: 1.6px solid #aaaaaa00;
     transition: var(--transition-quick);
@@ -631,6 +683,9 @@
     background-position: center; /* 图片居中显示 */
     background-repeat: no-repeat; /* 防止图片平铺 */
     cursor: pointer;
+  }
+  #second_section > #search > #search_btn:hover, #second_section_title > #search > #search_btn:hover {
+    background-color: rgba(0, 0, 0, 0.06);
   }
   #second_section > #search > #search_btn:active, #second_section_title > #search > #search_btn:active {
     background-color: rgba(0, 0, 0, 0.2);
@@ -652,6 +707,14 @@
     transform: translateY(var(--head-transform-down-more)) !important;
   }
   #first_section_span_6:active {
+    transition: var(--transition-very-quick);
+    transform: translateY(var(--title-transform-down-more)) !important;
+  }
+  #head_title_first_section_span_5:active {
+    transition: var(--transition-very-quick);
+    transform: translateY(var(--head-transform-down-more)) !important;
+  }
+  #first_section_span_5:active {
     transition: var(--transition-very-quick);
     transform: translateY(var(--title-transform-down-more)) !important;
   }
@@ -680,6 +743,16 @@
   .first_section_span_span_6_tooltip div {
     margin: 0;
     line-height: normal;
+  }
+  .first_section_span_5 .first_section_span_span_6_tooltip {
+    transform: translateX(-60%);
+  }
+  .first_section_span_5:hover .first_section_span_span_6_tooltip {
+    top: calc(var(--first_section_span_span_6_tooltip_top) + 10%);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
   }
   .first_section_span_6:hover .first_section_span_span_6_tooltip {
     top: calc(var(--first_section_span_span_6_tooltip_top) + 10%);
@@ -712,6 +785,7 @@
     width: 100%;
     height: 100%;
     opacity: 0;
+    cursor: pointer;
     z-index: 2; /* 确保按钮在文本之上 */
   }
   .first_section_span_span_6_tooltip_div:hover, .first_section_span_span_6_tooltip > a:hover {
@@ -731,6 +805,18 @@
   .span_span_6_tooltip_section_title {
     font-size: 16px;
     font-weight: 900;
+  }
+  #span_span_6_tooltip_section_1_title, #head_title_span_span_6_tooltip_section_1_title {
+    color: #2c96ff;
+  }
+  #span_span_6_tooltip_section_2_title, #head_title_span_span_6_tooltip_section_2_title {
+    color: #ff7aa9;
+  }
+  #span_span_6_tooltip_section_3_title, #head_title_span_span_6_tooltip_section_3_title {
+    color: #252a2f;
+  }
+  #span_span_6_tooltip_section_4_title, #head_title_span_span_6_tooltip_section_4_title {
+    color: #ff782a;
   }
   .span_span_6_tooltip_section_content {
     font-size: 12px;

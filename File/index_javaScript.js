@@ -427,12 +427,12 @@ firstSectionSpan3.forEach(span3 => {
   });
 });
 
-// 联系按钮
+// 联系按钮 / 投递按钮_未完成
 // 未知原因点击无反馈 25/05/07 18:41 来自自己
 // 可能点击的依然为整个“联系”按钮
 // 已通过设置覆盖按钮解决
 const no6tooltipSection1s = document.querySelectorAll('.no_6_tooltip_section_1_title_overlay-button');
-console.log(no6tooltipSection1s);
+// console.log(no6tooltipSection1s);
 no6tooltipSection1s.forEach(no6tooltipSection1 => {
   no6tooltipSection1.addEventListener('click', async () => {
     const textToCopy = 'bumblebee5160@qq.com';  // 要复制的文本
@@ -448,6 +448,18 @@ no6tooltipSection1s.forEach(no6tooltipSection1 => {
   });
 });
 
+// 致谢按钮
+const firstSectionSpan4 = document.querySelectorAll('.first_section_span_4');
+const indispensablePageElement = document.querySelector('#indispensablePage');
+const indispensablePageButtonElement = document.querySelector('#indispensablePageButton');
+firstSectionSpan4.forEach(span4 => {
+  span4.addEventListener('click', function() {
+    indispensablePageElement.style.transform = 'translateY(-8%)'  // 高为120%, *移动值为(高-100%)/2, 同时计算元素间距
+  });
+});
+indispensablePageButtonElement.addEventListener('click', function() {
+  indispensablePageElement.style.transform = 'translateY(-120%)'  // 原始值为-120%
+});
 
 
 
@@ -506,7 +518,7 @@ headSecondSectionElementsIn.addEventListener('click', function(event) {
 });
 
 // 未完成提示
-const unfinished = document.querySelectorAll('.first_section_span_2, .first_section_span_4, .first_section_span_5, .first_section_span_7, #search_btn, #in_box_top_right_in_span_in_4 , .head_first_section_span, .head_third_section_in_span');
+const unfinished = document.querySelectorAll('.first_section_span_2, .first_section_span_7, #search_btn, #in_box_top_right_in_span_in_4 , .head_first_section_span, .head_third_section_in_span');
 const promptInfo = document.querySelector('#prompt_info');
 const promptInfoText = document.querySelector('#prompt_info_text');
 unfinished.forEach(unfinishedIn => {
