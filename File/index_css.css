@@ -221,12 +221,15 @@
   }
 
   #indispensablePage {
+    position: fixed;
+    /* 120%为元素高度, +5%是为了防止阴影溢出 */
+    top: -125%;
     height: 120%;
     background-color: rgb(233, 233, 233, 0.6);
     backdrop-filter: blur(64px);
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.4);
-    transition: transform 1.6s cubic-bezier(.21,.84,.3,1);
-    transform: translateY(-120%);
+    transition: 1.6s cubic-bezier(.21,.84,.3,1);
+    transform: translateY(0);
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -234,15 +237,23 @@
     align-content: center;
     justify-content: center;
     gap: 1rem;
+    --indispensablePage-text-size: 1.3vw;
   }
   #indispensableTextBox {
+    /* background-color: rgba(255, 0, 0, 0.306); */
     width: 100%;
     box-sizing: border-box;
     padding: 0 12rem;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
   }
   #indispensableTextContent {
+    min-width: 650px;
+    max-width: 1000px;
     font-size: 20px;
     color: rgb(64, 64, 64);
     text-shadow: 0px 0.6px 2px rgb(93, 93, 93);
@@ -259,19 +270,43 @@
   }
   #indispensableTextContent > div > p {
     margin: 10px 0;
+    font-size: 0px;
   }
   #indispensableTextContent > div > p > span {
+    font-size: 0px;
     color: rgb(52, 52, 52);
   }
   #indispensablePageButtonBox {
+    /* background-color: rgba(0, 102, 255, 0.306); */
+    min-width: 650px;
     width: 100%;
   }
-  #indispensablePageButtonBox > button {
+  #indispensablePageButton {
     width: 100%;
     background-color: rgba(0, 0, 0, 0);
     border: rgba(0, 0, 0, 0);
     cursor: pointer;
+    opacity: 0%;
   }
+  
+  #indispensableTextContent > div > p.visible {
+    font-size: clamp(18px, var(--indispensablePage-text-size), 30px);
+  }
+  #indispensableTextContent > div > p > span.visible {
+    font-size: clamp(24px, calc(var(--indispensablePage-text-size) + 0.7vw), 42px);
+  }
+  #indispensablePageButton.visible {
+    opacity: 100%;
+  }
+  @media (max-height: 649.9px) {
+    #indispensableTextContent > div > p.visible {
+      font-size: 10px;
+    }
+    #indispensableTextContent > div > p > span.visible {
+      font-size: 16px;
+    }
+  }
+
 
   .cover_page {
     height: var(--second_floor_height);

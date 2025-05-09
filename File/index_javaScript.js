@@ -451,14 +451,32 @@ no6tooltipSection1s.forEach(no6tooltipSection1 => {
 // 致谢按钮
 const firstSectionSpan4 = document.querySelectorAll('.first_section_span_4');
 const indispensablePageElement = document.querySelector('#indispensablePage');
+const indispensableTextContentDivParaElement = document.querySelectorAll('#indispensableTextContent > div > p');
+const indispensableTextContentDivParaSpanElement = document.querySelectorAll('#indispensableTextContent > div > p > span');
 const indispensablePageButtonElement = document.querySelector('#indispensablePageButton');
 firstSectionSpan4.forEach(span4 => {
   span4.addEventListener('click', function() {
-    indispensablePageElement.style.transform = 'translateY(-8%)'  // 高为120%, *移动值为(高-100%)/2, 同时计算元素间距
+    indispensableTextContentDivParaElement.forEach(paraElement => {
+      paraElement.classList.add('visible');
+    });
+    indispensableTextContentDivParaSpanElement.forEach(paraSpanElement => {
+      paraSpanElement.classList.add('visible');
+    });
+    indispensablePageButtonElement.classList.add('visible');
+    indispensablePageElement.style.top = '-10%';  // 高为120%, *移动值为(高-100%)/2
   });
 });
 indispensablePageButtonElement.addEventListener('click', function() {
-  indispensablePageElement.style.transform = 'translateY(-120%)'  // 原始值为-120%
+  indispensablePageElement.style.top = '-125%';  // 原始值为-125%
+  setTimeout(() => {
+    indispensableTextContentDivParaElement.forEach(paraElement => {
+      paraElement.classList.remove('visible');
+    });
+    indispensableTextContentDivParaSpanElement.forEach(paraSpanElement => {
+      paraSpanElement.classList.remove('visible');
+    });
+    indispensablePageButtonElement.classList.remove('visible');
+  }, 1600)  // css设置的过渡时间为1.6s
 });
 
 
