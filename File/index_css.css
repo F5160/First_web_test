@@ -250,6 +250,7 @@
     align-items: center;
     align-content: center;
     justify-content: center;
+    gap: 0.8rem;
   }
   #indispensableTextContent {
     min-width: 650px;
@@ -287,13 +288,27 @@
     border: rgba(0, 0, 0, 0);
     cursor: pointer;
     opacity: 0%;
+    transition: transform var(--transition-normal);
+  }
+  #indispensablePageButton:hover {
+    transform: translateY(-12%);
+  }
+  #indispensablePageButton:active {
+    transform: translateY(-4%);
+  }
+  #indispensablePageButton > svg {
+    filter: drop-shadow(0px 0.6px 10px rgb(93, 93, 93));
+    transition: var(--transition-normal);
+  }
+  #indispensablePageButton:hover > svg {
+    filter: drop-shadow(0px 0.6px 1px rgb(93, 93, 93));
   }
   
   #indispensableTextContent > div > p.visible {
-    font-size: clamp(18px, var(--indispensablePage-text-size), 30px);
+    font-size: clamp(18px, var(--indispensablePage-text-size), 24px);
   }
   #indispensableTextContent > div > p > span.visible {
-    font-size: clamp(24px, calc(var(--indispensablePage-text-size) + 0.7vw), 42px);
+    font-size: clamp(28px, calc(var(--indispensablePage-text-size) + 1vw), 42px);
   }
   #indispensablePageButton.visible {
     opacity: 100%;

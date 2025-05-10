@@ -467,6 +467,9 @@ firstSectionSpan4.forEach(span4 => {
   });
 });
 indispensablePageButtonElement.addEventListener('click', function() {
+  firstSectionSpan4.forEach(span4 => {
+    span4.style.pointerEvents = 'none';
+  });
   indispensablePageElement.style.top = '-125%';  // 原始值为-125%
   setTimeout(() => {
     indispensableTextContentDivParaElement.forEach(paraElement => {
@@ -476,6 +479,9 @@ indispensablePageButtonElement.addEventListener('click', function() {
       paraSpanElement.classList.remove('visible');
     });
     indispensablePageButtonElement.classList.remove('visible');
+    firstSectionSpan4.forEach(span4 => {
+      span4.style.pointerEvents = 'auto';
+    });
   }, 1600)  // css设置的过渡时间为1.6s
 });
 
