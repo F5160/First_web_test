@@ -542,7 +542,7 @@ headSecondSectionElementsIn.addEventListener('click', function(event) {
 });
 
 // 未完成提示
-const unfinished = document.querySelectorAll('.first_section_span_2, .first_section_span_7, #search_btn, #in_box_top_right_in_span_in_4 , .head_first_section_span, .head_third_section_in_span');
+const unfinished = document.querySelectorAll('.first_section_span_2, .first_section_span_7, #search_btn, #in_box_top_right_in_span_in_4 , .head_first_section_span, #head_third_section_in_span_4');
 const promptInfo = document.querySelector('#prompt_info');
 const promptInfoText = document.querySelector('#prompt_info_text');
 unfinished.forEach(unfinishedIn => {

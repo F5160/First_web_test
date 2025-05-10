@@ -237,7 +237,7 @@
     align-content: center;
     justify-content: center;
     gap: 1rem;
-    --indispensablePage-text-size: 1.3vw;
+    --indispensablePage-text-size: 1.3vh;
   }
   #indispensableTextBox {
     /* background-color: rgba(255, 0, 0, 0.306); */
@@ -290,35 +290,34 @@
     opacity: 0%;
     transition: transform var(--transition-normal);
   }
-  #indispensablePageButton:hover {
-    transform: translateY(-12%);
-  }
-  #indispensablePageButton:active {
-    transform: translateY(-4%);
-  }
   #indispensablePageButton > svg {
     filter: drop-shadow(0px 0.6px 10px rgb(93, 93, 93));
     transition: var(--transition-normal);
   }
   #indispensablePageButton:hover > svg {
     filter: drop-shadow(0px 0.6px 1px rgb(93, 93, 93));
+    transform: translateY(-12%);
+  }
+  #indispensablePageButton:active > svg {
+    filter: drop-shadow(0px 0.6px 1px rgb(93, 93, 93));
+    transform: translateY(-4%);
   }
   
   #indispensableTextContent > div > p.visible {
     font-size: clamp(18px, var(--indispensablePage-text-size), 24px);
   }
   #indispensableTextContent > div > p > span.visible {
-    font-size: clamp(28px, calc(var(--indispensablePage-text-size) + 1vw), 42px);
+    font-size: clamp(28px, calc(var(--indispensablePage-text-size) + 1vh), 42px);
   }
   #indispensablePageButton.visible {
     opacity: 100%;
   }
   @media (max-height: 649.9px) {
     #indispensableTextContent > div > p.visible {
-      font-size: 10px;
+      font-size: max(2vh, 6px);
     }
     #indispensableTextContent > div > p > span.visible {
-      font-size: 16px;
+      font-size: max(3.2vh, 9.6px);
     }
   }
 
@@ -934,6 +933,8 @@
   #in_head {
     width: auto;
     padding: 0 var(--layout-padding);
+    /* 相对#body_in的高度 */
+    z-index: 2;
   }
   #in_head_in {
     height: 7.5rem;
@@ -948,6 +949,7 @@
     /* background-color:rgb(255, 200, 200); */
     display: flex;
     justify-content: space-between;
+
     --in-in-section-width: 14.8%;
     --in-in-section-padding: 1rem;
   }
@@ -1005,12 +1007,18 @@
   #head_first_section_left_icon:hover {
     background-color: rgb(255, 162, 56);
   }
+  #head_first_section_left_icon:active {
+    background-color: rgb(242, 143, 30);
+  }
   #head_first_section_right_icon {
     background-color: #f07775;
     transition: var(--transition-quick);
   }
   #head_first_section_right_icon:hover {
     background-color: #f68785;
+  }
+  #head_first_section_right_icon:active {
+    background-color: #eb6563;
   }
   /* #head_first_section > #head_first_section_left {
     background-color: #56a8ff;
@@ -1055,6 +1063,10 @@
     color: #424242;
     background-color: rgb(231, 232, 233);
   }
+  #head_second_section_in > span:active {
+    transition: var(--transition-quick);
+    background-color: rgb(210, 210, 210);
+  }
   
   #head_third_section {
     height: 100%;
@@ -1073,6 +1085,7 @@
     --head-third-section-in-gap: 14px;
   }
   #head_third_section_in > span {
+    position: relative;
     height: var(--third-section-height);
     --third-section-height: 44px;
     width: calc(100px - var(--head-third-section-in-gap));
@@ -1085,12 +1098,37 @@
   #head_third_section_in > span:hover {
     color: pink;
   }
+  #head_third_section_in > span:active {
+    transition: var(--transition-very-quick);
+    color: rgb(255, 148, 166);
+  }
+  .head_third_section_in_span_upper {
+    z-index: 2;
+  }
+  .head_third_section_in_span_below {
+    z-index: 1;
+  }
+  #head_third_section_in > span > .first_section_span_span_6_tooltip {
+    width: 280%;
+  }
+  #head_third_section_in_span_2 .first_section_span_span_6_tooltip {
+    transform: translateX(-60%);
+  }
+  #head_third_section_in_span_1:hover .first_section_span_span_6_tooltip, #head_third_section_in_span_2:hover .first_section_span_span_6_tooltip, #head_third_section_in_span_3:hover .first_section_span_span_6_tooltip {
+    top: calc(var(--first_section_span_span_6_tooltip_top) + 10%);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  }
   
   
   #body_in {
     min-width: 910px;
     width: auto;
     flex: 1;
+    /* 相对#in_head的高度 */
+    z-index: 1;
   }
   #body_in_box {
     height: 100%;
