@@ -448,6 +448,18 @@
     display: flex;
     gap: 1rem;
   }
+  @media (max-width: 1139.9px) {
+    #second_floor_body_top_in {
+      margin-top: calc(var(--layout-padding) / 2 + 6rem);
+    }
+  }
+  @media (max-height: 649.9px) {
+    /* 避免图片溢出屏幕 */
+    #second_floor_body_top_left {
+    /* 等比缩小 */
+    transform: scale(0.66);
+    }
+  }
   #second_floor_body_top_left {
     aspect-ratio: 3/2; /* 宽高比3/2 */
     background-color: rgb(0, 0, 0, 0.2);
@@ -1115,11 +1127,7 @@
     transform: translateX(-60%);
   }
   /* 只显示4个小块时优化下拉卡片位置 */
-  /* @media (max-width: 1399.9) {
-    #head_third_section_in_span_2 .first_section_span_span_6_tooltip {
-      transform: translateX(-80%);
-    }
-  } */
+  /* 未知原因css不生效, 已移至js */
   #head_third_section_in_span_1:hover .first_section_span_span_6_tooltip, #head_third_section_in_span_2:hover .first_section_span_span_6_tooltip, #head_third_section_in_span_3:hover .first_section_span_span_6_tooltip {
     top: calc(var(--first_section_span_span_6_tooltip_top) + 10%);
     opacity: 1;
