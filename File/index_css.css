@@ -1099,7 +1099,7 @@
     color: pink;
   }
   #head_third_section_in > span:active {
-    transition: var(--transition-very-quick);
+    transition: 0s;
     color: rgb(255, 148, 166);
   }
   .head_third_section_in_span_upper {
@@ -1114,6 +1114,12 @@
   #head_third_section_in_span_2 .first_section_span_span_6_tooltip {
     transform: translateX(-60%);
   }
+  /* 只显示4个小块时优化下拉卡片位置 */
+  /* @media (max-width: 1399.9) {
+    #head_third_section_in_span_2 .first_section_span_span_6_tooltip {
+      transform: translateX(-80%);
+    }
+  } */
   #head_third_section_in_span_1:hover .first_section_span_span_6_tooltip, #head_third_section_in_span_2:hover .first_section_span_span_6_tooltip, #head_third_section_in_span_3:hover .first_section_span_span_6_tooltip {
     top: calc(var(--first_section_span_span_6_tooltip_top) + 10%);
     opacity: 1;

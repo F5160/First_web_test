@@ -1179,6 +1179,7 @@ cycle_img_top_shadow_Element.addEventListener('mouseup', (event) => {
 function adjustInBoxTopRightIn() {
   const inBoxTopRightIn = document.getElementById('in_box_top_right_in');
   const spans = inBoxTopRightIn.getElementsByClassName('in_box_top_right_in_span');
+  const subWorksCard = document.querySelector('#head_third_section_in_span_2 .first_section_span_span_6_tooltip');
   if (window.innerWidth <= 1399.9) {
     // 隐藏第3和第6个元素
     spans[2] && (spans[2].style.display = 'none');
@@ -1189,11 +1190,20 @@ function adjustInBoxTopRightIn() {
         spans[i].style.display = 'block';
       }
     }
+    // 只显示4个小块时优化下拉卡片位置
+    // 按钮群完全贴边之前再次优化
+    if (window.innerWidth <= 1140) {
+      subWorksCard.style.transform = 'translateX(-80%)';
+    }else {
+      subWorksCard.style.transform = 'translateX(-64%)';
+    }
   } else {
     // 显示所有元素
     for (let i = 0; i < spans.length; i++) {
       spans[i].style.display = 'block';
     }
+    // 恢复原始位置(-60%)
+    subWorksCard.style.transform = 'translateX(-60%)';
   }
 }
 adjustInBoxTopRightIn();
