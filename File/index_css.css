@@ -425,6 +425,10 @@
     margin: 0 auto; /* 水平居中 */
     /* background-color: rgba(255, 0, 0, 0.3); */
     overflow-y: auto; /* 添加垂直滚动条 */
+
+    --second-floor-body-top-right-info-height: 88px;
+    --list-leftAndRight-space: 8px;
+    --list-upAndBottom-space: 8px;
   }
   #second_floor_body_in {
     height: 200%;
@@ -438,6 +442,7 @@
     box-sizing: border-box;
   }
   #second_floor_body_top_in {
+    position: relative;
     min-height: 420px;
     height: 34rem;
     max-height: 600px;
@@ -463,18 +468,60 @@
   #second_floor_body_top_left {
     aspect-ratio: 3/2; /* 宽高比3/2 */
     background-color: rgb(0, 0, 0, 0.2);
+    background-image: url(img/head_img.png@3840w_360h_1c.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: var(--transition-quick);
+  }
+  #second_floor_body_top_right_box {
+    position: relative;
+    color: #1f1f1f;
+    flex: 1;
+    display: flex;
+  }
+  #second_floor_body_top_right_info {
+    position: absolute;
+    height: var(--second-floor-body-top-right-info-height);
+    width: 100%;
+    color: black;
+    background-color: rgb(233, 233, 233);
+    border-bottom: 1px solid rgb(200, 200, 200);
+    box-shadow: 0px 3px 6px -4px gray;
+  }
+  #second_floor_body_top_right_info_text_box {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #second_floor_body_top_right_info_title {
+    font-size: x-large;
+    display: -webkit-box; /* 使用 WebKit 的盒模型 */
+    -webkit-line-clamp: 1; /* 限制行数为1行 */
+    -webkit-box-orient: vertical; /* 垂直排列内容 */ /* 不清楚是垂直排列还是什么反正没这行不行 */
+    overflow: hidden; /* 隐藏溢出的内容 */
+    text-overflow: ellipsis; /* 在溢出时显示省略号 */
+  
+    /* 补充标准属性（未来可能支持） */
+    line-clamp: 1; /* 限制行数为1行 */
+  }
+  #second_floor_body_top_right_other {
+    color: #1f1f1f;
   }
   #second_floor_body_top_right {
-    /* position: relative; */
     flex: 1;
     background-color: rgb(0, 0, 0, 0.02);
     overflow-y: auto; /* 添加垂直滚动条 */
     box-sizing: border-box;
-    border-top: 1px solid rgb(200, 200, 200);
+    /* border-top: 1px solid rgb(200, 200, 200); */
     border-bottom: 1px solid rgb(200, 200, 200);
     box-shadow:
       /* 顶部内阴影 */
-      inset 0px 6px 8px -9px gray,
+      /* inset 0px 6px 8px -9px gray, */
       /* 底部内阴影 */
       inset 0px -6px 8px -9px gray;
   }
@@ -492,13 +539,12 @@
   #second_floor_body_top_right_list {
     /* height: 200%; */
     width: 100%;
-    color: black;
     /* background-image:linear-gradient(180deg,#FFD26F 15%,#3677FF 100%); */
   }
   #second_floor_body_top_right_list_ul {
     margin: 0;
     /* 空出的padding添加影像计数 */
-    padding: 88px 18px 8px 18px;
+    padding: calc(var(--second-floor-body-top-right-info-height) + var(--list-upAndBottom-space)) var(--list-leftAndRight-space) var(--list-upAndBottom-space) var(--list-leftAndRight-space);
     list-style-type: none; /* 去掉列表项的默认样式(li的实心点) */
   }
   /* 元素之间自动生成横线 */
@@ -508,14 +554,15 @@
   #second_floor_body_top_right_list_ul > li {
     padding: 4px 0;
     border-top: 1px solid rgb(200, 200, 200);
+    transition: var(--transition-normal);
+  }
+  #second_floor_body_top_right_list_ul > li.second_floor_list_has_active {
+    transition: var(--transition-very-quick);
+    background-color: rgb(255, 255, 255);
   }
   #second_floor_body_top_right_list_ul > li > div {
     padding: 12px 0;
     cursor: pointer; /* 鼠标变手 */
-  }
-  #second_floor_body_top_right_list_ul > li > div:hover > p {
-    color: pink;
-    transition: 0s;
   }
   #second_floor_body_top_right_list_ul > li > div > p {
     margin: 0 20%;
@@ -530,6 +577,25 @@
     /* 补充标准属性（未来可能支持） */
     line-clamp: 1; /* 限制行数为1行 */
   }
+  #second_floor_body_top_right_list_ul > li > div:hover > p {
+    transition: 0s;
+    color: pink;
+  }
+  #second_floor_body_top_right_list_ul > li > div:active > p {
+    transition: 0s;
+    color: rgb(255, 100, 126);
+  }
+  #second_floor_body_top_right_list_ul > li.second_floor_list_has_active > div > p {
+    color: rgb(255, 134, 154);
+  }
+  #second_floor_body_top_right_list_ul > li.second_floor_list_has_active > div:hover > p {
+    transition: var(--transition-quick);
+    color: pink;
+  }
+  #second_floor_body_top_right_list_ul > li.second_floor_list_has_active > div:active > p {
+    transition: 0s;
+    color: rgb(255, 100, 126);
+  }
   #second_floor_body_bottom {
     background-color: rgba(37, 164, 255, 0.3);
     flex: 1;
@@ -537,13 +603,18 @@
 
   
   #background {
-    height: 500rem;
+    height: 430rem;
     width: 100%;
     min-width: 1060px;
     margin: 0 auto; /* 水平居中 */
     display: flex;
     flex-direction: column;
     overflow: hidden; /* 隐藏溢出的内容 */
+  }
+  @media (min-width: 1559.9px) {
+    #background {
+      height: 450rem;
+    }
   }
   
   

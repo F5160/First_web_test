@@ -596,325 +596,325 @@ const cycle_img_l_button_Element = document.querySelector('#cycle_img_l_button')
 
 
 let cycle_img_second_floor_0 = [
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list'}
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}
 ];
 
 let cycle_img_second_floor_1 = [
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list'}
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_1 list', author: '#F5160', time: 'XX/XX/XX'}
 ];
 
 let cycle_img_second_floor_2 = [
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list'}
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}
 ];
 
 let cycle_img_second_floor_3 = [
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}, 
-  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list'}
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_1.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}
 ];
 
 let cycle_img_second_floor_4 = [
-  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
-  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
-  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
-  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
-  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
-  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
-  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
-  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
-  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
-  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
-  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
-  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
-  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
-  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
-  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
-  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
-  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
-  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
-  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}, 
-  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list'}
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_4.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}
 ];
 
 let cycle_img_second_floor_5 = [
-  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
-  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
-  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
-  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
-  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
-  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
-  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
-  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
-  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
-  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
-  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
-  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
-  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
-  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
-  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
-  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
-  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
-  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
-  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}, 
-  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list'}
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_5.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}
 ];
 
 let cycle_img_second_floor_6 = [
-  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
-  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
-  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
-  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
-  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
-  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
-  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
-  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
-  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
-  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
-  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
-  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
-  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
-  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
-  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
-  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
-  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
-  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
-  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}, 
-  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list'}
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_6.jpg', text: 'now is #bottom_div_in_6 list', author: '#F5160', time: 'XX/XX/XX'}
 ];
 
 let cycle_img_second_floor_7 = [
-  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
-  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
-  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
-  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
-  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
-  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
-  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
-  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
-  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
-  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
-  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
-  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
-  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
-  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
-  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
-  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
-  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
-  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
-  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}, 
-  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list'}
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_7.jpg', text: 'now is #bottom_div_in_7 list', author: '#F5160', time: 'XX/XX/XX'}
 ];
 
 let cycle_img_second_floor_8 = [
-  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
-  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
-  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
-  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
-  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
-  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
-  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
-  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
-  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
-  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
-  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
-  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
-  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
-  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
-  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
-  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
-  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
-  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
-  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}, 
-  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list'}
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_8.jpg', text: 'now is #bottom_div_in_8 list', author: '#F5160', time: 'XX/XX/XX'}
 ];
 
 let cycle_img_second_floor_9 = [
-  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
-  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
-  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
-  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
-  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
-  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
-  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
-  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
-  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
-  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
-  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
-  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
-  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
-  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
-  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
-  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
-  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
-  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
-  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}, 
-  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list'}
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_9.jpg', text: 'now is #bottom_div_in_9 list', author: '#F5160', time: 'XX/XX/XX'}
 ];
 
 let cycle_img_second_floor_10 = [
-  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
-  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
-  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
-  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
-  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
-  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
-  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
-  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
-  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
-  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
-  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
-  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
-  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
-  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
-  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
-  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
-  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
-  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
-  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}, 
-  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list'}
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_10.jpg', text: 'now is #bottom_div_in_10 list', author: '#F5160', time: 'XX/XX/XX'}
 ];
 
 let cycle_img_second_floor_11 = [
-  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
-  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
-  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
-  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
-  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
-  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
-  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
-  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
-  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
-  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
-  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
-  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
-  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
-  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
-  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
-  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
-  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
-  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
-  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}, 
-  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list'}
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_11.jpg', text: 'now is #bottom_div_in_11 list', author: '#F5160', time: 'XX/XX/XX'}
 ];
 
 let cycle_img_second_floor_12 = [
-  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
-  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
-  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
-  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
-  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
-  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
-  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
-  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
-  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
-  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
-  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
-  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
-  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
-  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
-  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
-  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
-  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
-  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
-  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}, 
-  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list'}
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_12.jpg', text: 'now is #bottom_div_in_12 list', author: '#F5160', time: 'XX/XX/XX'}
 ];
 
 let cycle_img_second_floor_13 = [
-  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
-  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
-  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
-  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
-  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
-  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
-  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
-  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
-  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
-  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
-  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
-  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
-  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
-  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
-  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
-  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
-  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
-  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
-  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}, 
-  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list'}
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list', author: '#F5160', time: 'XX/XX/XX'}, 
+  {url: 'File/img/test_13.jpg', text: 'now is #bottom_div_in_13 list', author: '#F5160', time: 'XX/XX/XX'}
 ];
 
 // 创建映射表
@@ -1254,32 +1254,6 @@ document.querySelectorAll('.bottom_div_in').forEach(item => {
     // 注意: 数组和对象输出的类型都是'object'
     console.log(listIdObj, listIdObj.length, typeof listIdObj);
 
-    // 查找父元素
-    const secondFloorBodyTopRightListUlElement = document.getElementById('second_floor_body_top_right_list_ul');
-    // 添加新的<li>方法
-    // <li>之间的横线通过css生成
-    function addNewLi(listIn) {
-      // 二次赋值(以免变量混淆)
-      const secondFloorBodyTopRightListUlElementIn = secondFloorBodyTopRightListUlElement;
-    
-      const newLiElement = document.createElement('li');
-      const newDivElement = document.createElement('div');
-      const newParagraphElement = document.createElement('p');
-
-      newParagraphElement.dataset.insertUrl = listIn.url;
-      newParagraphElement.textContent = listIn.text;
-    
-      newDivElement.appendChild(newParagraphElement);
-      newLiElement.appendChild(newDivElement);
-      secondFloorBodyTopRightListUlElementIn.appendChild(newLiElement);
-    };
-    // 清除原有的全部子元素
-    document.getElementById('second_floor_body_top_right_list_ul').textContent = '';
-    // 逐个添加为列表中的元素
-    for(let itemIn of listIdObj) {
-      addNewLi(itemIn);
-    };
-
     // 阻止事件冒泡
     event.stopPropagation();
     // 移除所有.bottom_div_in的active类
@@ -1302,6 +1276,72 @@ document.querySelectorAll('.bottom_div_in').forEach(item => {
 
     // 为.has_active元素添加点击事件监听器
     hasActiveElement.addEventListener('click', function(event) {
+
+      // 更新二层列表相关
+      // 查找父元素
+      const secondFloorBodyTopRightListUlElement = document.getElementById('second_floor_body_top_right_list_ul');
+      // 添加新的<li>的方法
+      // <li>之间的横线通过css生成
+      function addNewLi(listIn) {
+        // 二次赋值(以免变量混淆)
+        const secondFloorBodyTopRightListUlElementIn = secondFloorBodyTopRightListUlElement;
+      
+        const newLiElement = document.createElement('li');
+        const newDivElement = document.createElement('div');
+        const newParagraphElement = document.createElement('p');
+
+        newParagraphElement.dataset.insertUrl = listIn.url;
+        newParagraphElement.textContent = listIn.text;
+        newParagraphElement.dataset.insertAuthor = listIn.author;
+        newParagraphElement.dataset.insertTime = listIn.time;
+      
+        newDivElement.appendChild(newParagraphElement);
+        newLiElement.appendChild(newDivElement);
+        secondFloorBodyTopRightListUlElementIn.appendChild(newLiElement);
+      };
+      // 清除原有的全部子元素
+      document.getElementById('second_floor_body_top_right_list_ul').textContent = '';
+      // 逐个添加为列表中的元素
+      for(let itemIn of listIdObj) {
+        addNewLi(itemIn);
+      };
+      // active相关
+      const secondFloorListLis = document.querySelectorAll('#second_floor_body_top_right_list_ul > li');
+      const secondFloorListTitle = document.querySelector('#second_floor_body_top_right_info_title');
+      const secondFloorListAuthor = document.querySelector('#second_floor_body_top_right_info_author');
+      const secondFloorListTime = document.querySelector('#second_floor_body_top_right_info_time');
+      // 默认选中首个li
+      secondFloorListLis.forEach(li => li.classList.remove('second_floor_list_has_active'));
+      secondFloorListLis[0].classList.add('second_floor_list_has_active');
+      // 默认填入首个li的内容
+      const selectedText = secondFloorListLis[0].querySelector('p').textContent;
+      const imageAuthor  = secondFloorListLis[0].querySelector('p').dataset.insertAuthor;
+      const imageTime    = secondFloorListLis[0].querySelector('p').dataset.insertTime;
+      secondFloorListTitle.textContent = selectedText;
+      secondFloorListAuthor.textContent = imageAuthor;
+      secondFloorListTime.textContent = imageTime;
+      // 为选中的li添加second_floor_list_has_active类
+      secondFloorListLis.forEach(li => {
+        li.addEventListener('click', function () {
+          // 移除所有li的second_floor_list_has_active类
+          secondFloorListLis.forEach(li => li.classList.remove('second_floor_list_has_active'));
+          // 防止重复点击_用户不能重复点击同一个li
+          if (!this.classList.contains('second_floor_list_has_active')) {
+            secondFloorListLis.forEach(li => li.classList.remove('has_active'));
+            // 为当前点击的li添加has_active类
+            this.classList.add('second_floor_list_has_active');
+          }
+          const selectedText = this.querySelector('p').textContent;
+          const imageUrl     = this.querySelector('p').dataset.insertUrl;
+          const imageAuthor  = this.querySelector('p').dataset.insertAuthor;
+          const imageTime    = this.querySelector('p').dataset.insertTime;
+          console.log('Selected:', selectedText, 'Image URL:', imageUrl, 'Image Author:', imageAuthor, 'Image Time:', imageTime);
+          secondFloorListTitle.textContent = selectedText;
+          secondFloorListAuthor.textContent = imageAuthor;
+          secondFloorListTime.textContent = imageTime;
+        });
+      });
+
       // 阻止事件冒泡
       event.stopPropagation();
       // 定义元素属性常量
@@ -1516,7 +1556,6 @@ document.addEventListener('click', function() {
   restore_bottom_div_content_left_blur();
   restore_bottom_div_content_left_text();
 });
-
 
 
 
