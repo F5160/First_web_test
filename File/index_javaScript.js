@@ -1243,7 +1243,8 @@ function restore_bottom_div_content_left_text() {
 
 // 添加active类模拟强制:active(:active 伪类是浏览器自动管理的, 无法通过JS直接强制设置) 25/03/30 01:37 来自自己
 // 为每个.bottom_div_in添加点击事件监听器
-document.querySelectorAll('.bottom_div_in').forEach(item => {
+const bottomDivInElement = document.querySelectorAll('.bottom_div_in');
+bottomDivInElement.forEach(item => {
   item.addEventListener('click', function(event) {
     console.log(item);
     const itemId = item.id;
@@ -1355,7 +1356,8 @@ document.querySelectorAll('.bottom_div_in').forEach(item => {
       const secondFloorElement = document.querySelector('#second_floor');
 
       // 如果恰是上次被点击的块则直接移动二层
-      if(hasActiveElement.classList.contains('active_1')) {
+      // 已修改为[最后一次进入]的主题而不是[上次点击]的主题(lastTimeGoIn) 25/05/12 13:57 来自自己
+      if(item.classList.contains('lastTimeGoIn')) {
         // *似乎是由于在首次进入二层时就已经给返回按钮(#first_section_second_floor)设定了功能, 所以无需在别处重复设定
         // 左模糊延伸
         leftBlurElement.style.width = '100%';
@@ -1371,12 +1373,20 @@ document.querySelectorAll('.bottom_div_in').forEach(item => {
           secondFloorElement.style.transform = 'translateY(-100%)';
         }, 900);
       }else {
+        // 已修改为[最后一次进入]的主题而不是[上次点击]的主题(lastTimeGoIn) 25/05/12 13:57 来自自己
+        // 清除所有主题的标记
+        bottomDivInElement.forEach(clearItem => {
+          clearItem.classList.remove('lastTimeGoIn');
+        })
+        // 为目前进入的主题添加标记
+        item.classList.add('lastTimeGoIn');
         // 为.has_active元素添加active_1类
         // 下面这行现在没啥用了
         // 《本程序依靠该bug运行》
         // 草草草现在还真又有用了(好几天后写下)
         // 踏马的这就是所谓的升级接口吗
         // 踏马的给过去的自己磕个头
+        // 已修改为[最后一次进入]的主题而不是[上次点击]的主题(lastTimeGoIn) 25/05/12 13:57 来自自己
         this.classList.add('active_1');
 
         // 修改.bottom_div_content_left_blur及text的属性
@@ -1484,7 +1494,9 @@ document.querySelectorAll('.bottom_div_in').forEach(item => {
             // secondFloorElement.style.transitionTimingFunction = 'cubic-bezier(.76,.07,.88,.24)';
             secondFloorElement.style.transform = 'translate(100%, -100%)';
             // 获取目标元素
-            const targetElement = document.querySelector('.active_1').closest('.bottom_div_content_box').closest('.bottom_div_in');
+            // const targetElement = document.querySelector('.active_1').closest('.bottom_div_content_box').closest('.bottom_div_in');
+            // 牵连修改(lastTimeGoIn) 25/05/12 13:57 来自自己
+            const targetElement = item;
             console.log('roll to active_1', targetElement);
             // 滚动函数执行
             smoothRoll(targetElement, animationTime * 1.6);
