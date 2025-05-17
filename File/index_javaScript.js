@@ -1409,6 +1409,9 @@ bottomDivInElement.forEach(item => {
                 } else if (thisTextTitleDescriptionElement && thisTextTitleDescriptionElement.id === 'bottom_div_in_8_doubleLineDescriptionWarning') {
                   secondFloorCoverTextDescriptionElement.src = 'File/img/little_wonders/奇事_描述_单行.svg';
                   // console.log(thisTextTitleDescriptionElement.src);
+                } else if (thisTextTitleDescriptionElement && thisTextTitleDescriptionElement.id === 'bottom_div_in_9_doubleLineDescriptionWarning') {
+                  secondFloorCoverTextDescriptionElement.src = 'File/img/unclassified/残片_描述_单行.svg';
+                  // console.log(thisTextTitleDescriptionElement.src);
                 } else if (thisTextTitleDescriptionElement) {
                   secondFloorCoverTextDescriptionElement.src = thisTextTitleDescriptionElement.src;
                   // console.log(thisTextTitleDescriptionElement.src);
