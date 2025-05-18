@@ -439,11 +439,11 @@ no6tooltipSection1s.forEach(no6tooltipSection1 => {
     try {
       // 复制到剪贴板
       await navigator.clipboard.writeText(textToCopy);
-      console.log('#span_span_6_tooltip_section_1复制到剪贴板成功');
       promptInfoBottomFillInText('邮箱地址已复制到剪切板');
       // 限制点击时有未知bug导致交互混乱, 故删除
     } catch (err) {
       console.error('#span_span_6_tooltip_section_1复制到剪贴板失败:', err);
+      promptInfoBottomFillInText(`邮箱地址复制失败, 请手动复制: ${err}`);
     }
   });
 });
@@ -1314,6 +1314,69 @@ bottomDivInElement.forEach(item => {
         });
       });
 
+      // 双击全屏及退出
+      secondFloorBodyTopLeft.addEventListener('click', function () {
+        promptInfoText.textContent = '全屏预览开发中, 预计6月上线';
+        promptInfo.style.setProperty('--prompt-info-height', '50px');
+        // 经过该时间后隐藏
+        const hiddenTime = 3000;
+        setTimeout(() => {
+          promptInfoText.style.opacity = '100%';
+          secondFloorBodyTopLeft.style.pointerEvents = 'none';
+          
+        }, 60)
+        setTimeout(() => {
+          promptInfoText.style.opacity = '0%';
+        }, hiddenTime)
+        setTimeout(() => {
+          promptInfo.style.setProperty('--prompt-info-height', '0px');
+          secondFloorBodyTopLeft.style.pointerEvents = 'auto';
+          promptInfoText.textContent = '';
+        }, hiddenTime + 100)
+      });
+      // Fullscreen API无法进一步缩放(二选一即可)
+      // secondFloorBodyTopLeft.addEventListener('dblclick', function () {
+      //     if (!document.fullscreenElement) {
+      //         // 进入全屏
+      //         if (secondFloorBodyTopLeft.requestFullscreen) {
+      //             secondFloorBodyTopLeft.requestFullscreen();
+      //         } else if (secondFloorBodyTopLeft.mozRequestFullScreen) {      /* Firefox */
+      //             secondFloorBodyTopLeft.mozRequestFullScreen();
+      //         } else if (secondFloorBodyTopLeft.webkitRequestFullscreen) {   /* Chrome Safari Opera */
+      //             secondFloorBodyTopLeft.webkitRequestFullscreen();
+      //         } else if (secondFloorBodyTopLeft.msRequestFullscreen) {      /* IE/Edge */
+      //             secondFloorBodyTopLeft.msRequestFullscreen();
+      //         }
+      //         // 添加全屏样式(可选)
+      //         secondFloorBodyTopLeft.classList.add('fullscreen');
+      //     } else {
+      //         // 退出全屏
+      //         if (document.exitFullscreen) {
+      //             document.exitFullscreen();
+      //         } else if (document.mozCancelFullScreen) {
+      //             document.mozCancelFullScreen();
+      //         } else if (document.webkitExitFullscreen) {
+      //             document.webkitExitFullscreen();
+      //         } else if (document.msExitFullscreen) {
+      //             document.msExitFullscreen();
+      //         }
+      //         // 移除全屏样式(可选)
+      //         secondFloorBodyTopLeft.classList.remove('fullscreen');
+      //     }
+      // });
+      // Fullscreen API无法进一步缩放(二选一即可)
+      // secondFloorBodyTopLeft.addEventListener('dblclick', function () {
+      //     if (!secondFloorBodyTopLeft.classList.contains('fullscreen')) {
+      //         // 进入全屏
+      //         // 添加全屏样式
+      //         secondFloorBodyTopLeft.classList.add('fullscreen');
+      //     } else {
+      //         // 退出全屏
+      //         // 移除全屏样式
+      //         secondFloorBodyTopLeft.classList.remove('fullscreen');
+      //     }
+      // });
+
       // 阻止事件冒泡
       event.stopPropagation();
       // 定义元素属性常量
@@ -1457,7 +1520,7 @@ bottomDivInElement.forEach(item => {
           // *似乎是由于在首次进入二层时就已经给返回按钮(#first_section_second_floor)设定了功能, 所以无需在别处重复设定
           // secondFloorCoverTextBoxElement的过渡时间似乎有未知bug_应该直接还原为2.16s(原始值)就行
           // secondFloorCoverTextBoxElement已修改逻辑: 初始过渡为0, 仅在需要时修改时长 25/04/07 23:27 来自自己
-          const firstSectionSecondFloor = document.querySelector('#first_section_second_floor');
+          const firstSectionSecondFloor = document.querySelector('#first_section_second_floor_left');
           firstSectionSecondFloor.addEventListener('click', function() {
             // 使用此动画则一层左模糊还原延迟设为100
             secondFloorElement.style.transition = '1s';
