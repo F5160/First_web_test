@@ -122,6 +122,9 @@ const headFirstSectionElements = document.querySelectorAll('.head_first_section_
 const headSecondSectionElements = document.querySelectorAll('.head_second_section_in_span');
 const headThirdSectionElements = document.querySelectorAll('.head_third_section_in_span');
 const cycleImgElement = document.querySelector('.cycle_img');
+// 新地址引入通知横幅及关闭按钮
+const floatNoticeTestBox = document.querySelector('#float_notice_test_box');
+const floatNoticeCloseBox = document.querySelector('#float_notice_close_button');
 
 function pageAnimation() {
   // 页面覆盖层
@@ -288,8 +291,8 @@ function pageAnimation() {
     }, bodyInBoxBottomInElementsEachDelay);
   }, pageDelay + bodyInBoxBottomInElementsEachDelay * 2);
 }
-
 pageAnimation();
+
 setTimeout(() => {
   // 移去交互覆盖层
   const secondFloorBackgroundCoverBoxProhibitTouch = document.querySelector('#second_floor_background_cover_box_prohibit_touch');
@@ -313,6 +316,15 @@ setTimeout(() => {
     elementIn.style.transition = '';
   });
 }, pageDelay + 1200);
+
+setTimeout(() => {
+  // 通知横幅弹出
+  floatNoticeTestBox.classList.add('visible');
+}, pageDelay + 1225);
+// 关闭按钮
+floatNoticeCloseBox.addEventListener('click', function() {
+  floatNoticeTestBox.classList.remove('visible');
+});
 
 // 首页按钮
 // behavior不支持自定义曲线, 下面的方法可以

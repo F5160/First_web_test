@@ -129,7 +129,8 @@
     width: 100%;
     box-sizing: border-box;
     padding: 0 36px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(172, 172, 172, 0.4);
+    /* background-color: rgba(246, 246, 246, 0.4); */
     backdrop-filter: blur(50px) brightness(100%);
     border-radius: 0px;
     box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
@@ -743,7 +744,7 @@
     aspect-ratio: 3/2; /* 宽高比3/2 */
     background-color: rgb(0, 0, 0, 0.0);
     box-shadow: 0px 0px 3px 0px rgb(0, 0, 0, 0.3);
-    background-image: url(../waiting_for_a_new_dawn/waiting_for_a_new_dawn0.jpg);
+    background-image: url(../File/img/head_img.png@3840w_360h_1c.webp);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -897,6 +898,106 @@
     #background {
       height: 450rem;
     }
+  }
+
+
+  #float_notice_test_box {
+    /* 属性设为与#title相似 */
+    position: fixed;
+    top: calc(var(--float-notice-height) * -1 - 1rem);
+    left: calc(50% - calc(var(--float-notice-width) / 2));
+    height: var(--head-second-section-in-gap);
+    width: var(--float-notice-width);
+    color: #1f1f1f;
+    border-radius: 0.8rem;
+    /* border-radius: 2rem; */
+    background-color: rgba(232, 232, 232, 0.7);
+    /* background-color: rgba(246, 246, 246, 0.4); */
+    backdrop-filter: blur(50px);
+    box-shadow: 0px 6px 25px -3px rgba(0, 0, 0, 0.2);
+    /* z-index: 3;  大概试了下3就够 */
+    z-index: 100;  /* 100是为了高于#title */
+    transition: var(--transition-very-slow);
+
+    --float-notice-width: 28.5rem;
+    --float-notice-height: 4rem;
+  }
+  #float_notice_test_box.visible {
+    transform: translateY(calc(calc(var(--float-notice-height) * -1 - 1rem) * -2));
+  }
+  #float_notice_test {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.8rem 1rem;
+    /* padding: 0.8rem 1.8rem; */
+    border-radius: 0.8rem;
+    /* border-radius: 2rem; */
+    transition: var(--transition-normal);
+  }
+  #float_notice_test:hover {
+    background-color: rgba(242, 242, 242, 0.7);
+    cursor: pointer;
+  }
+  #float_notice_test:active {
+    transition: 0s;
+    background-color: rgba(219, 219, 219, 0.7);
+  }
+  #float_notice_box {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  #float_notice_left {
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #float_notice_title {
+    font-size: 14px;
+    font-weight: 700;
+  }
+  /* #float_notice_content {
+    font-size: smaller;
+  } */
+  #float_notice_right {
+    display: flex;
+    align-items: center;
+  }
+  #float_notice_close_button {
+    position: absolute;
+    top: -0.4rem;
+    right: -0.4rem;
+    height: 1.3rem;
+    width: 1.3rem;
+    background-color: rgb(228, 228, 228);
+    box-shadow: 0px 6px 15px -3px rgba(0, 0, 0, 0.4);
+    border-radius: 0.8rem;
+    /* 未知原因模糊不生效(似乎与下拉卡片一致) */
+    /* backdrop-filter: blur(4px); */
+    opacity: 0;
+    pointer-events: none; /* 隐藏时不可点击 */
+    transition: var(--transition-very-quick);
+  }
+  #float_notice_close_button:hover {
+    transition: var(--transition-normal);
+    cursor: pointer;
+    background-color: rgb(233, 233, 233);
+  }
+  #float_notice_close_button:active {
+    transition: 0s;
+    background-color: rgb(209, 209, 209);
+  }
+  #float_notice_test_box:hover #float_notice_close_button {
+    pointer-events: auto; /* 显示时可点击 */
+    opacity: 1;
+    box-shadow: 0px 6px 25px -3px rgba(0, 0, 0, 0.8);
+  }
+  #float_notice_close_button_svg_box {
+    height: 100%;
+    width: 100%;
   }
   
   
