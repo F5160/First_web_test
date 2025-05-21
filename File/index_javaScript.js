@@ -612,117 +612,118 @@ let cycle_img_second_floor_0 = [
 ];
 
 let cycle_img_second_floor_1 = [
-  {url: 'File/img/theme_contents/waiting_for_a_new_dawn/waiting_for_a_new_dawn0.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/waiting_for_a_new_dawn/waiting_for_a_new_dawn1.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/waiting_for_a_new_dawn/waiting_for_a_new_dawn2.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/waiting_for_a_new_dawn/waiting_for_a_new_dawn3.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/waiting_for_a_new_dawn/waiting_for_a_new_dawn4.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/waiting_for_a_new_dawn/waiting_for_a_new_dawn5.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/waiting_for_a_new_dawn/waiting_for_a_new_dawn6.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/waiting_for_a_new_dawn/waiting_for_a_new_dawn7.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/waiting_for_a_new_dawn/waiting_for_a_new_dawn8.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/waiting_for_a_new_dawn/waiting_for_a_new_dawn9.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/waiting_for_a_new_dawn/waiting_for_a_new_dawn10.jpg', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}
+  {url: 'File/img/theme_contents/waiting_for_a_new_dawn/waiting_for_a_new_dawn0.jpg', text: '幻境', author: '#F5160', time: '24/02/03'}, 
+  {url: 'File/img/theme_contents/waiting_for_a_new_dawn/waiting_for_a_new_dawn1.jpg', text: '日落', author: '#F5160', time: '24/02/03'}, 
+  {url: 'File/img/theme_contents/waiting_for_a_new_dawn/waiting_for_a_new_dawn2.jpg', text: '独秀', author: '#F5160', time: '24/02/03'}, 
+  {url: 'File/img/theme_contents/waiting_for_a_new_dawn/waiting_for_a_new_dawn3.jpg', text: '花田', author: '#F5160', time: '24/02/03'}, 
+  {url: 'File/img/theme_contents/waiting_for_a_new_dawn/waiting_for_a_new_dawn4.jpg', text: '花田 - 其一', author: '#F5160', time: '24/02/03'}, 
+  {url: 'File/img/theme_contents/waiting_for_a_new_dawn/waiting_for_a_new_dawn5.jpg', text: '花田 - 其二', author: '#F5160', time: '24/02/03'}, 
+  {url: 'File/img/theme_contents/waiting_for_a_new_dawn/waiting_for_a_new_dawn6.jpg', text: '"财神" - 摄于初五', author: '#F5160', time: '24/02/14'}, 
+  {url: 'File/img/theme_contents/waiting_for_a_new_dawn/waiting_for_a_new_dawn7.jpg', text: '风铃', author: '#F5160', time: '24/02/27'}, 
+  {url: 'File/img/theme_contents/waiting_for_a_new_dawn/waiting_for_a_new_dawn8.jpg', text: '枝头', author: '#F5160', time: '24/02/27'}, 
+  {url: 'File/img/theme_contents/waiting_for_a_new_dawn/waiting_for_a_new_dawn9.jpg', text: '枝头 - 其一', author: '#F5160', time: '24/02/27'}, 
+  {url: 'File/img/theme_contents/waiting_for_a_new_dawn/waiting_for_a_new_dawn10.jpg', text: '送春归', author: '#F5160', time: '24/02/27'}
 ];
 
 let cycle_img_second_floor_2 = [
-  {url: 'File/img/theme_contents/fantasy/fantasy0.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/fantasy/fantasy1.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/fantasy/fantasy2.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/fantasy/fantasy3.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/fantasy/fantasy4.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/fantasy/fantasy5.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/fantasy/fantasy6.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/fantasy/fantasy7.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/fantasy/fantasy8.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/fantasy/fantasy9.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/fantasy/fantasy10.jpg', text: 'now is #bottom_div_in_2 list', author: '#F5160', time: 'XX/XX/XX'}
+  {url: 'File/img/theme_contents/fantasy/fantasy0.jpg', text: '入眠', author: '#F5160', time: '24/06/23'}, 
+  {url: 'File/img/theme_contents/fantasy/fantasy1.jpg', text: '其实不用想太多', author: '#F5160', time: '24/07/05'}, 
+  {url: 'File/img/theme_contents/fantasy/fantasy2.jpg', text: '标题都是乱取的', author: '#F5160', time: '24/07/05'}, 
+  {url: 'File/img/theme_contents/fantasy/fantasy3.jpg', text: '只是为了看起来不空', author: '#F5160', time: '24/07/05'}, 
+  {url: 'File/img/theme_contents/fantasy/fantasy4.jpg', text: '没什么意义', author: '#F5160', time: '24/07/05'}, 
+  {url: 'File/img/theme_contents/fantasy/fantasy5.jpg', text: '也没什么内涵', author: '#F5160', time: '24/07/05'}, 
+  {url: 'File/img/theme_contents/fantasy/fantasy6.jpg', text: '因为我也不知道', author: '#F5160', time: '24/07/05'}, 
+  {url: 'File/img/theme_contents/fantasy/fantasy7.jpg', text: '还能填点什么', author: '#F5160', time: '24/07/10'}, 
+  {url: 'File/img/theme_contents/fantasy/fantasy8.jpg', text: '假装很有文化(划掉)', author: '#F5160', time: '24/07/10'}, 
+  {url: 'File/img/theme_contents/fantasy/fantasy9.jpg', text: '每个主题也就按风格分个大概', author: '#F5160', time: '24/12/06'}, 
+  {url: 'File/img/theme_contents/fantasy/fantasy10.jpg', text: '看得开心就好~', author: '#F5160', time: '24/12/06'}
 ];
 
 let cycle_img_second_floor_3 = [
-  {url: 'File/img/theme_contents/billows/billows0.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/billows/billows1.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/billows/billows2.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/billows/billows3.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/billows/billows4.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/billows/billows5.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/billows/billows6.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/billows/billows7.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/billows/billows8.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/billows/billows9.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/billows/billows10.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/billows/billows11.jpg', text: 'now is #bottom_div_in_3 list', author: '#F5160', time: 'XX/XX/XX'}
+  {url: 'File/img/theme_contents/billows/billows0.jpg', text: '当时这束光刚好打在这', author: '#F5160', time: '24/07/17'}, 
+  {url: 'File/img/theme_contents/billows/billows1.jpg', text: '是的这波浪也刚好拍在这', author: '#F5160', time: '24/07/17'}, 
+  {url: 'File/img/theme_contents/billows/billows2.jpg', text: '还好回了这个头, 可惜没开HDR', author: '#F5160', time: '24/07/17'}, 
+  {url: 'File/img/theme_contents/billows/billows3.jpg', text: '很少有机会看海了', author: '#F5160', time: '24/07/17'}, 
+  {url: 'File/img/theme_contents/billows/billows4.jpg', text: '来这里之前', author: '#F5160', time: '24/07/17'}, 
+  {url: 'File/img/theme_contents/billows/billows5.jpg', text: '(诶这张挺好的先不讲话)', author: '#F5160', time: '24/07/17'}, 
+  {url: 'File/img/theme_contents/billows/billows6.jpg', text: '我都快忘了大海原来这么辽阔', author: '#F5160', time: '24/07/17'}, 
+  {url: 'File/img/theme_contents/billows/billows7.jpg', text: '(这张云也不错不讲话)', author: '#F5160', time: '24/07/17'}, 
+  {url: 'File/img/theme_contents/billows/billows8.jpg', text: '反正就..唉思绪万千', author: '#F5160', time: '24/07/17'}, 
+  {url: 'File/img/theme_contents/billows/billows9.jpg', text: '跟那什么曼彻斯特似的', author: '#F5160', time: '24/07/17'}, 
+  {url: 'File/img/theme_contents/billows/billows10.jpg', text: '色彩', author: '#F5160', time: '24/07/18'}, 
+  {url: 'File/img/theme_contents/billows/billows11.jpg', text: '恍惚 - 凌晨三点', author: '#F5160', time: '24/07/18'}
 ];
 
 let cycle_img_second_floor_4 = [
-  {url: 'File/img/theme_contents/miniature/miniature0.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/miniature/miniature1.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/miniature/miniature2.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/miniature/miniature3.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/miniature/miniature4.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/miniature/miniature5.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/miniature/miniature6.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/miniature/miniature7.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/miniature/miniature8.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/miniature/miniature9.jpg', text: 'now is #bottom_div_in_4 list', author: '#F5160', time: 'XX/XX/XX'}
+  {url: 'File/img/theme_contents/miniature/miniature0.jpg', text: '地毯', author: '#F5160', time: '24/02/11'}, 
+  {url: 'File/img/theme_contents/miniature/miniature1.jpg', text: '(想不出标题)', author: '#F5160', time: '24/02/11'}, 
+  {url: 'File/img/theme_contents/miniature/miniature2.jpg', text: '台阶', author: '#F5160', time: '24/02/12'}, 
+  {url: 'File/img/theme_contents/miniature/miniature3.jpg', text: '台阶 - 其一', author: '#F5160', time: '24/02/12'}, 
+  {url: 'File/img/theme_contents/miniature/miniature4.jpg', text: '台阶 - 其二', author: '#F5160', time: '24/07/05'}, 
+  {url: 'File/img/theme_contents/miniature/miniature5.jpg', text: '草垛', author: '#F5160', time: '24/07/10'}, 
+  {url: 'File/img/theme_contents/miniature/miniature6.jpg', text: '水潭', author: '#F5160', time: '24/07/10'}, 
+  {url: 'File/img/theme_contents/miniature/miniature7.jpg', text: '移轴好可爱啊', author: '#F5160', time: '24/07/10'}, 
+  {url: 'File/img/theme_contents/miniature/miniature8.jpg', text: '棉花糖', author: '#F5160', time: '24/07/10'}, 
+  {url: 'File/img/theme_contents/miniature/miniature9.jpg', text: '雕刻', author: '#F5160', time: '24/07/23'}
 ];
 
 let cycle_img_second_floor_5 = [
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle0.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle1.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle2.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle3.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle4.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle5.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle6.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle7.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle8.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle9.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle10.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle11.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle12.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle13.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle14.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle15.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle16.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle17.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle18.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle19.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle20.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle21.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle22.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle23.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle24.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle25.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle26.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle27.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle28.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle29.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle30.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle31.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle32.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle33.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle34.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle35.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle36.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle37.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle38.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle39.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle40.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle41.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle42.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle43.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle44.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle45.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle46.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle47.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle48.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle49.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle51.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle52.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle53.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle54.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}, 
-  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle55.jpg', text: 'now is #bottom_div_in_5 list', author: '#F5160', time: 'XX/XX/XX'}
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle0.jpg', text: '集合', author: '#F5160', time: '24/03/17'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle1.jpg', text: '交汇', author: '#F5160', time: '24/03/17'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle2.jpg', text: '刻板印象', author: '#F5160', time: '24/03/17'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle3.jpg', text: '刻板印象 - 其一', author: '#F5160', time: '24/03/17'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle4.jpg', text: '刻板印象 - 其二', author: '#F5160', time: '24/03/17'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle5.jpg', text: '刻板印象 - 其三', author: '#F5160', time: '24/03/17'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle6.jpg', text: '刻板印象 - 其四', author: '#F5160', time: '24/03/17'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle7.jpg', text: '刻板印象 - 其五', author: '#F5160', time: '24/03/17'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle8.jpg', text: '"咕咕"', author: '#F5160', time: '24/03/17'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle9.jpg', text: '渴了..有水! 我喝! 渴了..有水! 我喝! 渴了..有水! 我喝! 渴了..有水! 我喝! ', author: '#F5160', time: '24/03/17'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle10.jpg', text: '我当时什么青光眼这批色彩弄成这样', author: '#F5160', time: '24/03/17'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle11.jpg', text: '抵达', author: '#F5160', time: '24/03/17'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle12.jpg', text: '告示', author: '#F5160', time: '24/03/17'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle13.jpg', text: '(想不出标题)', author: '#F5160', time: '24/03/17'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle14.jpg', text: '抵达 - 其一', author: '#F5160', time: '24/03/17'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle15.jpg', text: '刻板印象 - 其六', author: '#F5160', time: '24/03/17'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle16.jpg', text: '刻板印象 - 其七', author: '#F5160', time: '24/03/17'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle17.jpg', text: '刻板印象 - 其八', author: '#F5160', time: '24/03/17'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle18.jpg', text: '"你有事嘛?"', author: '#F5160', time: '24/03/17'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle19.jpg', text: '刻板印象 - 其九', author: '#F5160', time: '24/03/17'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle20.jpg', text: '刻板印象 - 其十', author: '#F5160', time: '24/03/17'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle21.jpg', text: '刻板印象 - 十一', author: '#F5160', time: '24/03/17'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle22.jpg', text: '方向', author: '#F5160', time: '24/03/17'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle23.jpg', text: '陈列', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle24.jpg', text: '陈列 - 其一', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle25.jpg', text: '如图', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle26.jpg', text: '"大革命"', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle27.jpg', text: '杂烩', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle28.jpg', text: '万千', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle29.jpg', text: '寄托', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle30.jpg', text: '愿念', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle31.jpg', text: '"风雨"', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle32.jpg', text: '(想不出标题)', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle33.jpg', text: '《规矩》 - xswl', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle34.jpg', text: '"没完没了"', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle35.jpg', text: '掌门', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle36.jpg', text: '借光', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle37.jpg', text: '(想不出标题)', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle38.jpg', text: '摩肩接踵', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle39.jpg', text: '列队', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle40.jpg', text: '"时代" - 哈哈哈哈还好押金退了', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle41.jpg', text: '(想不出标题)', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle42.jpg', text: '熙熙攘攘', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle43.jpg', text: '花丛', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle44.jpg', text: '山丘', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle45.jpg', text: '(这张挺好但真想不出别的弔标题了)', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle46.jpg', text: '山丘 - 其一', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle47.jpg', text: '花丛 - 其一', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle48.jpg', text: '花丛 - 其二', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle49.jpg', text: '挺好看的瓶子但想不出标题', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle50.jpg', text: '这张快能当封面了但想不出标题', author: '#F5160', time: '24/08/22'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle51.jpg', text: '你信吗反正我不信', author: '#F5160', time: '24/10/03'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle52.jpg', text: '拍得跟香港似的', author: '#F5160', time: '24/10/03'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle53.jpg', text: '哇好漂亮呀这个灯笼', author: '#F5160', time: '24/10/03'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle54.jpg', text: '哇好漂亮呀这几串灯', author: '#F5160', time: '24/10/03'}, 
+  {url: 'File/img/theme_contents/hustle_and_bustle/hustle_and_bustle55.jpg', text: '哇好漂亮呀这片叶子', author: '#F5160', time: '24/10/03'}
 ];
 
 let cycle_img_second_floor_6 = [
@@ -1271,6 +1272,7 @@ bottomDivInElement.forEach(item => {
         const newParagraphElement = document.createElement('p');
 
         newParagraphElement.dataset.insertUrl = listIn.url;
+        // newParagraphElement.textContent = listIn.text + ' ' + listIn.time;
         newParagraphElement.textContent = listIn.text;
         newParagraphElement.dataset.insertAuthor = listIn.author;
         newParagraphElement.dataset.insertTime = listIn.time;
@@ -1295,11 +1297,19 @@ bottomDivInElement.forEach(item => {
       secondFloorListLis.forEach(li => li.classList.remove('second_floor_list_has_active'));
       secondFloorListLis[0].classList.add('second_floor_list_has_active');
       // 默认填入首个li的内容
-      const selectedText = secondFloorListLis[0].querySelector('p').textContent;
-      const imageAuthor  = secondFloorListLis[0].querySelector('p').dataset.insertAuthor;
-      const imageTime    = secondFloorListLis[0].querySelector('p').dataset.insertTime;
-      const imageUrl     = secondFloorListLis[0].querySelector('p').dataset.insertUrl;
-      secondFloorListTitle.textContent = selectedText;
+      function sliceText(TextElement) {
+         // 截取除最后9个字符外的部分(不要时间)
+        const selectedText  = TextElement;
+        const truncatedText = selectedText.slice(0, -9);
+        return truncatedText;
+      }
+      // 1275行每个li中的的内容也需跟随修改(li中是否包含时间)(差不多这行反正往上个二三十行左右没多远)
+      // const titleText   = sliceText(secondFloorListLis[0].querySelector('p').textContent);
+      const titleText   = secondFloorListLis[0].querySelector('p').textContent;
+      const imageAuthor = secondFloorListLis[0].querySelector('p').dataset.insertAuthor;
+      const imageTime   = secondFloorListLis[0].querySelector('p').dataset.insertTime;
+      const imageUrl    = secondFloorListLis[0].querySelector('p').dataset.insertUrl;
+      secondFloorListTitle.textContent = titleText;
       secondFloorListAuthor.textContent = imageAuthor;
       secondFloorListTime.textContent = imageTime;
       secondFloorBodyTopLeft.style.backgroundImage = `url('${imageUrl}')`;
@@ -1314,12 +1324,14 @@ bottomDivInElement.forEach(item => {
             // 为当前点击的li添加has_active类
             this.classList.add('second_floor_list_has_active');
           }
-          const selectedText = this.querySelector('p').textContent;
+          // 1275行每个li中的的内容也需跟随修改(li中是否包含时间)(差不多这行反正往上个二三十行左右没多远)
+          // const titleText    = sliceText(this.querySelector('p').textContent);
+          const titleText    = this.querySelector('p').textContent;
           const imageAuthor  = this.querySelector('p').dataset.insertAuthor;
           const imageTime    = this.querySelector('p').dataset.insertTime;
           const imageUrl     = this.querySelector('p').dataset.insertUrl;
-          console.log('Selected:', selectedText, 'Image URL:', imageUrl, 'Image Author:', imageAuthor, 'Image Time:', imageTime);
-          secondFloorListTitle.textContent = selectedText;
+          console.log('Selected:', titleText, 'Image URL:', imageUrl, 'Image Author:', imageAuthor, 'Image Time:', imageTime);
+          secondFloorListTitle.textContent = titleText;
           secondFloorListAuthor.textContent = imageAuthor;
           secondFloorListTime.textContent = imageTime;
           secondFloorBodyTopLeft.style.backgroundImage = `url('${imageUrl}')`;
