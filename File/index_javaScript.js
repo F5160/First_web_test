@@ -554,7 +554,7 @@ headSecondSectionElementsIn.addEventListener('click', function(event) {
 });
 
 // 未完成提示
-const unfinished = document.querySelectorAll('.first_section_span_2, .first_section_span_7, #search_btn, #in_box_top_right_in_span_in_4 , .head_first_section_span, #head_third_section_in_span_4');
+const unfinished = document.querySelectorAll('.first_section_span_2, .first_section_span_7, #search_btn, .head_first_section_span, #head_third_section_in_span_4');
 const promptInfo = document.querySelector('#prompt_info');
 const promptInfoText = document.querySelector('#prompt_info_text');
 unfinished.forEach(unfinishedIn => {
@@ -648,7 +648,7 @@ let cycle_img_second_floor_3 = [
   {url: 'File/img/theme_contents/billows/billows5.jpg', text: '晕眩', author: '#F5160', time: '24/07/17'}, 
   {url: 'File/img/theme_contents/billows/billows6.jpg', text: '岸边 - 逐流', author: '#F5160', time: '24/07/17'}, 
   {url: 'File/img/theme_contents/billows/billows7.jpg', text: '眺望 - 假意', author: '#F5160', time: '24/07/17'}, 
-  {url: 'File/img/theme_contents/billows/billows8.jpg', text: '眺望 - 天边', author: '#F5160', time: '24/07/17'}, 
+  {url: 'File/img/theme_contents/billows/billows8.jpg', text: '眺望 - 此方', author: '#F5160', time: '24/07/17'}, 
   {url: 'File/img/theme_contents/billows/billows9.jpg', text: '眺望 - 无垠 - 其一', author: '#F5160', time: '24/07/17'}, 
   {url: 'File/img/theme_contents/billows/billows10.jpg', text: '眺望 - 色彩', author: '#F5160', time: '24/07/18'}, 
   {url: 'File/img/theme_contents/billows/billows11.jpg', text: '旧厂 - 凌晨三时', author: '#F5160', time: '24/07/18'}
@@ -1281,39 +1281,67 @@ bottomDivInElement.forEach(item => {
         newLiElement.appendChild(newDivElement);
         secondFloorBodyTopRightListUlElementIn.appendChild(newLiElement);
       };
-      // 清除原有的全部子元素
-      document.getElementById('second_floor_body_top_right_list_ul').textContent = '';
-      // 逐个添加为列表中的元素
-      for(let itemIn of listIdObj) {
-        addNewLi(itemIn);
+      
+      // 标题截取函数
+      function sliceText(TextElement) {
+         // 截取除最后9个字符外的部分(截去时间)
+        const selectedText  = TextElement;
+        const truncatedText = selectedText.slice(0, -9);
+        return truncatedText;
       };
+
+      // 粗略检查是否为同一个列表
+      const secondFloorListLisLength = document.querySelectorAll('#second_floor_body_top_right_list_ul > li').length;  // 当前显示的列表的长度
+      const secondFloorListFirstLi = document.querySelector('#second_floor_body_top_right_list_ul > li > div > p');  // 当前显示的列表的首个项
+      const secondFloorListFirstLiText = sliceText(secondFloorListFirstLi.textContent);  // 当前显示的列表的首个项中的标题(截去时间)
+      const listIdObjFirstTextLength = listIdObj.length;  // 准备填充的列表的长度
+      const listIdObjFirstText = listIdObj[0].text;  // 准备填充的列表的首个项中的标题
+      // 只有列表不同时才更新列表(首项及长度均不同时)
+      if( !( (secondFloorListFirstLiText == listIdObjFirstText) & (secondFloorListLisLength == listIdObjFirstTextLength) ) ) {
+        // 清除原有的全部子元素
+        document.getElementById('second_floor_body_top_right_list_ul').textContent = '';
+        // 逐个添加为列表中的元素
+        for(let itemIn of listIdObj) {
+          addNewLi(itemIn);
+        };
+        console.log('different list or null, refresh');
+      }else {
+        console.log('same list, stop refresh');
+      }
       // active相关
       const secondFloorListLis = document.querySelectorAll('#second_floor_body_top_right_list_ul > li');
       const secondFloorListTitle = document.querySelector('#second_floor_body_top_right_info_title');
       const secondFloorListAuthor = document.querySelector('#second_floor_body_top_right_info_author');
       const secondFloorListTime = document.querySelector('#second_floor_body_top_right_info_time');
       const secondFloorBodyTopLeft = document.querySelector('#second_floor_body_top_left');
-      // 默认选中首个li
-      secondFloorListLis.forEach(li => li.classList.remove('second_floor_list_has_active'));
-      secondFloorListLis[0].classList.add('second_floor_list_has_active');
-      // 默认填入首个li的内容
-      function sliceText(TextElement) {
-         // 截取除最后9个字符外的部分(不要时间)
-        const selectedText  = TextElement;
-        const truncatedText = selectedText.slice(0, -9);
-        return truncatedText;
-      }
-      // 1275行每个li中的的内容也需跟随修改(li中是否包含时间)(差不多这行反正往上个二三十行左右没多远)
-      const titleText   = sliceText(secondFloorListLis[0].querySelector('p').textContent);
-      // const titleText   = secondFloorListLis[0].querySelector('p').textContent;
-      const imageAuthor = secondFloorListLis[0].querySelector('p').dataset.insertAuthor;
-      const imageTime   = secondFloorListLis[0].querySelector('p').dataset.insertTime;
-      const imageUrl    = secondFloorListLis[0].querySelector('p').dataset.insertUrl;
-      secondFloorListTitle.textContent = titleText;
-      secondFloorListAuthor.textContent = imageAuthor;
-      secondFloorListTime.textContent = imageTime;
-      secondFloorBodyTopLeft.style.backgroundImage = `url('${imageUrl}')`;
-      // 为选中的li添加second_floor_list_has_active类
+      
+      // 检查列表是否包含second_floor_list_has_active类
+      const hasActiveClass = Array.from(secondFloorListLis).some(li => 
+        li.classList.contains('second_floor_list_has_active')
+      );
+      
+      if (hasActiveClass) {
+        // 若有则不执行操作(选中的依然为上次退出前的项)
+        console.log('list contain class \'second_floor_list_has_active\', no need to change the selected content');
+      } else {
+        console.log('list dose not contain class \'second_floor_list_has_active\', now select the first content');
+        // 若无则默认选中首个li
+        secondFloorListLis.forEach(li => li.classList.remove('second_floor_list_has_active'));
+        secondFloorListLis[0].classList.add('second_floor_list_has_active');
+        // 以及默认填入首个li的内容
+        // 1275行每个li中的的内容也需跟随修改(li中是否包含时间)(差不多这行反正往上个二三十行左右没多远)
+        const titleText   = sliceText(secondFloorListLis[0].querySelector('p').textContent);
+        // const titleText   = secondFloorListLis[0].querySelector('p').textContent;
+        const imageAuthor = secondFloorListLis[0].querySelector('p').dataset.insertAuthor;
+        const imageTime   = secondFloorListLis[0].querySelector('p').dataset.insertTime;
+        const imageUrl    = secondFloorListLis[0].querySelector('p').dataset.insertUrl;
+        secondFloorListTitle.textContent = titleText;
+        secondFloorListAuthor.textContent = imageAuthor;
+        secondFloorListTime.textContent = imageTime;
+        secondFloorBodyTopLeft.style.backgroundImage = `url('${imageUrl}')`;
+      };
+      
+      // 为选中(点击)的li添加second_floor_list_has_active类
       secondFloorListLis.forEach(li => {
         li.addEventListener('click', function () {
           // 移除所有li的second_floor_list_has_active类
@@ -1324,7 +1352,7 @@ bottomDivInElement.forEach(item => {
             // 为当前点击的li添加has_active类
             this.classList.add('second_floor_list_has_active');
           }
-          // 1275行每个li中的的内容也需跟随修改(li中是否包含时间)(差不多这行反正往上个二三十行左右没多远)
+          // 1275行每个li中的的内容也需跟随修改(li中是否包含时间)(差不多这行反正往上个四五十行左右没多远)
           const titleText    = sliceText(this.querySelector('p').textContent);
           // const titleText    = this.querySelector('p').textContent;
           const imageAuthor  = this.querySelector('p').dataset.insertAuthor;
