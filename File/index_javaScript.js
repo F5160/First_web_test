@@ -608,7 +608,12 @@ const cycle_img_l_button_Element = document.querySelector('#cycle_img_l_button')
 
 
 let cycle_img_second_floor_0 = [
-  {url: 'File/img/head_img.png@3840w_360h_1c.webp', text: 'now is #bottom_div_in_0 list', author: '#F5160', time: 'XX/XX/XX'}
+  {url: 'File/img/theme_contents/welcome/welcome0.jpg', text: '这里是站点简介', author: '#F5160', time: '25/03/05'}, 
+  {url: 'File/img/theme_contents/welcome/welcome1.jpg', text: '您可以先点击这里', author: '#F5160', time: '25/03/05'}, 
+  {url: 'File/img/theme_contents/welcome/welcome2.jpg', text: '然后点击这里', author: '#F5160', time: '25/03/05'}, 
+  {url: 'File/img/theme_contents/welcome/welcome3.jpg', text: '接着点击这里', author: '#F5160', time: '25/03/05'}, 
+  {url: 'File/img/theme_contents/welcome/welcome4.jpg', text: '最后是这里', author: '#F5160', time: '25/03/05'}, 
+  {url: 'File/img/theme_contents/welcome/welcome5.jpg', text: '祝愿各位..', author: '#F5160', time: '25/03/05'}
 ];
 
 let cycle_img_second_floor_1 = [
@@ -815,8 +820,8 @@ let cycle_img_second_floor_9 = [
   {url: 'File/img/theme_contents/unclassified/unclassified6.jpg', text: '门外 - 残阳', author: '#F5160', time: '22/12/21'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified7.jpg', text: '"凌晨五点"', author: '#F5160', time: '23/01/19'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified8.jpg', text: '高架 - 已于二四年拆除', author: '#F5160', time: '23/01/22'}, 
-  {url: 'File/img/theme_contents/unclassified/unclassified9.jpg', text: '街道 - 西部工业区', author: '#F5160', time: '23/01/22'}, 
-  {url: 'File/img/theme_contents/unclassified/unclassified10.jpg', text: '街道 - 飘扬', author: '#F5160', time: '23/02/19'}, 
+  {url: 'File/img/theme_contents/unclassified/unclassified9.jpg', text: '街区 - 西部工业区', author: '#F5160', time: '23/01/22'}, 
+  {url: 'File/img/theme_contents/unclassified/unclassified10.jpg', text: '街区 - 飘扬', author: '#F5160', time: '23/02/19'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified11.jpg', text: '"苏E是运河"', author: '#F5160', time: '23/04/22'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified12.jpg', text: '外滩 - 次级路口', author: '#F5160', time: '23/04/22'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified13.jpg', text: '"气吞山河"', author: '#F5160', time: '23/04/23'}, 
@@ -886,15 +891,16 @@ let cycle_img_second_floor_10 = [
 ];
 
 let cycle_img_second_floor_11 = [
-  {url: 'File/img/head_img.png@3840w_360h_1c.webp', text: 'now is #bottom_div_in_11 list', author: '#F5160', time: 'XX/XX/XX'}
+  {url: 'File/img/theme_contents/the_videos/the_videos0.jpg', text: '[内容准备中]', author: 'Author', time: 'YR/MO/DA'}
 ];
 
 let cycle_img_second_floor_12 = [
-  {url: 'File/img/head_img.png@3840w_360h_1c.webp', text: 'now is #bottom_div_in_12 list', author: '#F5160', time: 'XX/XX/XX'}
+  {url: 'File/img/theme_contents/frame_by_u/frame_by_u0.jpg', text: '[内容准备中]', author: 'Author', time: 'YR/MO/DA'}, 
+  {url: 'File/img/theme_contents/frame_by_u/frame_by_u1.jpg', text: '投稿按钮位置指示', author: 'Author', time: 'YR/MO/DA'}
 ];
 
 let cycle_img_second_floor_13 = [
-  {url: 'File/img/head_img.png@3840w_360h_1c.webp', text: 'now is #bottom_div_in_13 list', author: '#F5160', time: 'XX/XX/XX'}
+  {url: 'File/img/theme_contents/treasured/treasured0.jpg', text: '[内容准备中]', author: 'Author', time: 'YR/MO/DA'}
 ];
 
 // 创建映射表
@@ -1291,13 +1297,15 @@ bottomDivInElement.forEach(item => {
       };
 
       // 粗略检查是否为同一个列表
-      const secondFloorListLisLength = document.querySelectorAll('#second_floor_body_top_right_list_ul > li').length;  // 当前显示的列表的长度
       const secondFloorListFirstLi = document.querySelector('#second_floor_body_top_right_list_ul > li > div > p');  // 当前显示的列表的首个项
+      const secondFloorListLisLength = document.querySelectorAll('#second_floor_body_top_right_list_ul > li').length;  // 当前显示的列表的长度
       const secondFloorListFirstLiText = sliceText(secondFloorListFirstLi.textContent);  // 当前显示的列表的首个项中的标题(截去时间)
+      const secondFloorListFirstLiUrl = secondFloorListFirstLi.dataset.insertUrl;  // 当前显示的列表的首个项的url
       const listIdObjFirstTextLength = listIdObj.length;  // 准备填充的列表的长度
       const listIdObjFirstText = listIdObj[0].text;  // 准备填充的列表的首个项中的标题
-      // 只有列表不同时才更新列表(首项及长度均不同时)
-      if( !( (secondFloorListFirstLiText == listIdObjFirstText) & (secondFloorListLisLength == listIdObjFirstTextLength) ) ) {
+      const listIdObjFirstUrl = listIdObj[0].url;  // 准备填充的列表的首个项中的标题
+      // 只有列表不同时才更新列表(首项及长度及url均不同时)
+      if( !( (secondFloorListFirstLiText == listIdObjFirstText) & (secondFloorListLisLength == listIdObjFirstTextLength) & (secondFloorListFirstLiUrl == listIdObjFirstUrl) ) ) {
         // 清除原有的全部子元素
         document.getElementById('second_floor_body_top_right_list_ul').textContent = '';
         // 逐个添加为列表中的元素
@@ -1526,6 +1534,9 @@ bottomDivInElement.forEach(item => {
                   // console.log(thisTextTitleDescriptionElement.src);
                 } else if (thisTextTitleDescriptionElement && thisTextTitleDescriptionElement.id === 'bottom_div_in_9_doubleLineDescriptionWarning') {
                   secondFloorCoverTextDescriptionElement.src = 'File/img/unclassified/残片_描述_单行.svg';
+                  // console.log(thisTextTitleDescriptionElement.src);
+                } else if (thisTextTitleDescriptionElement && thisTextTitleDescriptionElement.id === 'bottom_div_in_13_anotherSentence') {
+                  secondFloorCoverTextDescriptionElement.src = 'File/img/treasured/treasured_description_secondSentence.svg';
                   // console.log(thisTextTitleDescriptionElement.src);
                 } else if (thisTextTitleDescriptionElement) {
                   secondFloorCoverTextDescriptionElement.src = thisTextTitleDescriptionElement.src;

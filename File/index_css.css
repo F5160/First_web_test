@@ -1875,8 +1875,8 @@
   }
   .in_box_top_right_in_span {
     width: calc(33.33% - var(--in-in-top-right-in-gap));
-    /* height: calc(51.8% - var(--in-in-top-right-in-gap)); */
-    height: calc(49.5% - var(--in-in-top-right-in-gap));
+    height: calc(51.8% - var(--in-in-top-right-in-gap));
+    /* height: calc(49.5% - var(--in-in-top-right-in-gap)); */
     /* 设置宽高比为4:3 */
     /* aspect-ratio: 4/3; */
     margin-bottom: 0.8rem;
