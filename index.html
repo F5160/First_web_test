@@ -9,6 +9,7 @@
   <link rel="icon" href="File/img/pilipalaIcon_pink.ico" type="image/x-icon">
 </head>
 <link rel="stylesheet" href="File/index_css.css">
+<link rel="stylesheet" href="File/commentSection_css.css">
 <style>
 </style>
 
@@ -660,7 +661,90 @@
               </div>
             </div>
           </div>
-          <div class="second_floor_body_in_div" id="second_floor_body_bottom"></div>
+          <div class="second_floor_body_in_div" id="second_floor_body_bottom">
+            <div class="main">
+              <h2>评论</h2>
+              <div class="comment">
+                <div class="main_comment">
+                  <div class="account">
+                    <img class="account_img" src="File/img/theme_contents/commentSection/profilePicture/default.webp">
+                    <select class="account_list" name="account">
+                      <option value="默认用户" selected="selected">默认用户</option>
+                      <option value="草履虫">草履虫</option>
+                      <option value="bananaMace">bananaMace</option>
+                    </select>
+                  </div>
+                  <div class="comment_write">
+                    <textarea class="comment-input" id="commentInput" placeholder="评论电波捕获中..."></textarea>
+                    <button class="submit-btn">发布</button>
+                  </div>
+                </div>
+                <div class="main_others">
+                  <div class="char-count">0/0字</div>
+                  <div class="limit_count_warning">字数超出上限!</div>
+                  <div class="null_warning" style="display: none;">内容不能为空!</div>
+                </div>
+              </div>
+              <div class="comments-list" style="display: block;">
+                <div class="comments-list_in">
+                  <img class="comments_account_img" src="File/img/theme_contents/commentSection/profilePicture/default.webp">
+                  <div class="comments_text">
+                    <div class="comments_account">默认用户</div>
+                    <div class="comments_comment">评论系统尚在搭建中</div>
+                    <div class="comments_other">
+                      <div class="comments_commentTime">2025-01-16 20:55:12</div>
+                      <button class="reply-btn">回复</button>
+                    </div>
+                    <div class="replies_list_input" style="display: none;">
+                      <textarea class="comment-input_reply" placeholder="Reply..."></textarea>
+                      <button class="submit-btn_reply">Push</button>
+                    </div>
+                    <div class="reply_list_in">
+                      <div class=reply-item>
+                        <div class=reply_list_in_in><img class="comments_account_img_reply" src="File/img/theme_contents/commentSection/profilePicture/shenZhouPad.jpg">
+                          <div class=comments_text_reply>
+                            <div class=comments_account_reply>bananaMace</div>
+                            <div class=comments_comment_reply>此评论区未连接数据库, 任何形式的留言均不会以任何形式保存或上传至任何位置</div>
+                            <div class=comments_other_reply>
+                              <div class=comments_commentTime_reply>2025-01-16 20:55:25</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class=reply-item>
+                        <div class=reply_list_in_in><img class="comments_account_img_reply" src="File/img/theme_contents/commentSection/profilePicture/paramecium.jpg">
+                          <div class=comments_text_reply>
+                            <div class=comments_account_reply>草履虫</div>
+                            <div class=comments_comment_reply>目前评论功能暂无法使用, 仅提供交互预览, 敬请谅解</div>
+                            <div class=comments_other_reply>
+                              <div class=comments_commentTime_reply>2025-01-16 20:56:42</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="comments-list_in">
+                  <img class="comments_account_img" src="File/img/theme_contents/commentSection/profilePicture/default.webp">
+                  <div class="comments_text">
+                    <div class="comments_account">默认用户</div>
+                    <div class="comments_comment">若有需要, 则暂请前往首页右侧的"留言板"处进行留言
+或直接返回上一级, 通过顶部导航栏右侧的"联系我"直接向站长发送邮件</div>
+                    <div class="comments_other">
+                      <div class="comments_commentTime">2025-01-16 20:57:01</div>
+                      <button class="reply-btn">回复</button>
+                    </div>
+                    <div class="replies_list_input" style="display: none;">
+                      <textarea class="comment-input_reply" placeholder="Reply..."></textarea>
+                      <button class="submit-btn_reply">Push</button>
+                    </div>
+                    <div class="reply_list_in"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1653,5 +1737,6 @@
 </body>
 
 <script src="File/index_javaScript.js"></script>
+<script src="File/commentSection_javaScript.js"></script>
 
 </html>
