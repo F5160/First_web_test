@@ -680,7 +680,7 @@
     --list-upAndBottom-space: 8px;
   }
   #second_floor_body_in {
-    height: 200%;
+    height: 105%;
     width: 100%;
     /* background-color: rgb(202, 200, 255, 0.3); */
     display: flex;
@@ -697,7 +697,8 @@
     /* max-height: 600px; */
     box-sizing: border-box;
     margin: calc(var(--layout-padding) / 2);
-    margin-top: calc(var(--layout-padding) / 2 + 4rem);
+    margin-top: calc(var(--layout-padding) / 2 + 4rem + 1rem);
+    margin-bottom: calc(var(--layout-padding) / 2 + 1rem);
     /* background-color: rgb(255, 146, 18, 0.3); */
     display: flex;
     gap: 1rem;
@@ -723,6 +724,21 @@
     /* 底部媒体选择器控制图片比例相关 */
     #second_floor_body_top_in {
       height: 420px;
+    }
+    /* 避免贴合边缘时视效混乱 */
+    #second_floor_body_top_left {
+      /* 不知道给啥盖了先important */
+      box-shadow: 0px 0px 3px 0px rgb(0, 0, 0, 0) !important;
+    }
+    #second_floor_body_top_right {
+      border-bottom: 1px solid rgb(255, 255, 255) !important;
+      /* box-shadow: */
+        /* 底部内阴影 */
+        /* inset 0px -6px 8px -9px gray; */
+    }
+    /* 底部贴边 */
+    #second_floor_body_top_in {
+      margin-bottom: calc(var(--layout-padding) / 2);
     }
   }
   @media (max-height: 649.9px) {
@@ -814,6 +830,7 @@
       /* inset 0px 6px 8px -9px gray, */
       /* 底部内阴影 */
       inset 0px -6px 8px -9px gray;
+    transition: var(--transition-normal);
   }
   #second_floor_body_top_right_list {
     /* height: 200%; */
@@ -880,7 +897,7 @@
     color: rgb(255, 100, 126);
   }
   #second_floor_body_bottom {
-    background-color: rgba(37, 164, 255, 0.3);
+    /* background-color: rgba(37, 164, 255, 0.3); */
     flex: 1;
   }
 
