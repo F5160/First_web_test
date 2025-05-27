@@ -46,6 +46,11 @@ comment_input_Element.addEventListener('input', () => {
   is_limit();
 });
 
+// 搭建未完成提示
+comment_input_Element.addEventListener('click', () => {
+  alert(`请注意: 评论系统尚在搭建中, 您在此处的评论不会保存, 也不会上传至任何位置`);
+});
+
 // 字数是否超过上限
 function is_limit() {
   if(comment_input_Element.value.length>input_max_length) {

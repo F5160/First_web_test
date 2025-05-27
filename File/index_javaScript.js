@@ -392,6 +392,22 @@ function promptInfoBottomFillInText(Text) {
     promptInfoBottom.style.bottom = '-96px';
   }, hiddenTime + 220);
 };
+function promptInfoBottomFillInTextWarning(Text) {
+  promptInfoTextBottom.textContent = Text;
+  promptInfoBottom.style.bottom = '0%';
+  promptInfoTextBottom.style.color = 'rgb(255, 255, 140)';
+  setTimeout(() => {
+    promptInfoTextBottom.style.opacity = '100%';
+  }, 200);
+  setTimeout(() => {
+    promptInfoTextBottom.style.opacity = '0%';
+  }, hiddenTime);
+  setTimeout(() => {
+    // 原始值为-96px
+    promptInfoBottom.style.bottom = '-96px';
+    promptInfoTextBottom.style.color = 'white';
+  }, hiddenTime + 220);
+};
 // 已位于首页提示
 const atHome = document.querySelectorAll('.first_section_span_0');
 const promptInfoBottom = document.querySelector('#prompt_info_bottom');
@@ -455,7 +471,7 @@ no6tooltipSection1s.forEach(no6tooltipSection1 => {
       // 限制点击时有未知bug导致交互混乱, 故删除
     } catch (err) {
       console.error('#span_span_6_tooltip_section_1复制到剪贴板失败:', err);
-      promptInfoBottomFillInText(`邮箱地址复制失败, 请手动复制: ${err}`);
+      promptInfoBottomFillInTextWarning(`邮箱地址复制失败, 请尝试手动复制: ${err}`);
     }
   });
 });
@@ -559,7 +575,7 @@ const promptInfo = document.querySelector('#prompt_info');
 const promptInfoText = document.querySelector('#prompt_info_text');
 unfinished.forEach(unfinishedIn => {
   unfinishedIn.addEventListener('click', function() {
-    promptInfoText.textContent = '板块开发中, 预计6月上线';
+    promptInfoText.textContent = '板块开发中, 预计7月上线';
     promptInfo.style.setProperty('--prompt-info-height', '50px');
     // 经过该时间后隐藏
     const hiddenTime = 3000;
@@ -776,12 +792,12 @@ let cycle_img_second_floor_7 = [
   {url: 'File/img/theme_contents/just_relax/just_relax3.jpg', text: '时分', author: '《Islanders》· #F5160', time: '24/02/17'}, 
   {url: 'File/img/theme_contents/just_relax/just_relax4.jpg', text: '"我们一起!"', author: '《战地风云Ⅴ》· #F5160', time: '24/08/15'}, 
   {url: 'File/img/theme_contents/just_relax/just_relax5.jpg', text: '(我真的想不出什么装文雅的词儿了)', author: '《黑神话·悟空》· #F5160', time: '24/10/15'}, 
-  {url: 'File/img/theme_contents/just_relax/just_relax6.jpg', text: '拍几张照而已', author: '《黑神话·悟空》· #F5160', time: '24/10/18'}, 
+  {url: 'File/img/theme_contents/just_relax/just_relax6.jpg', text: '拍几张烂照而已', author: '《黑神话·悟空》· #F5160', time: '24/10/18'}, 
   {url: 'File/img/theme_contents/just_relax/just_relax7.jpg', text: '哪来什么门道和内涵', author: '《黑神话·悟空》· #F5160', time: '24/10/18'}, 
   {url: 'File/img/theme_contents/just_relax/just_relax8.jpg', text: '把自己折腾成啥样', author: '《黑神话·悟空》· #F5160', time: '24/10/20'}, 
   {url: 'File/img/theme_contents/just_relax/just_relax9.jpg', text: '没那本事还想吃那饭', author: '《黑神话·悟空》· #F5160', time: '24/10/25'}, 
   {url: 'File/img/theme_contents/just_relax/just_relax10.jpg', text: '你到底在干嘛', author: '《黑神话·悟空》· #F5160', time: '24/10/27'}, 
-  {url: 'File/img/theme_contents/just_relax/just_relax11.jpg', text: '反正也没几个会翻到这儿的', author: '《黑神话·悟空》· #F5160', time: '24/10/29'}, 
+  {url: 'File/img/theme_contents/just_relax/just_relax11.jpg', text: '反正也没人会翻到这儿', author: '《黑神话·悟空》· #F5160', time: '24/10/29'}, 
   {url: 'File/img/theme_contents/just_relax/just_relax12.jpg', text: '差不多得了', author: '《黑神话·悟空》· #F5160', time: '25/02/07'}, 
   {url: 'File/img/theme_contents/just_relax/just_relax13.jpg', text: '(嘛的当初闲出什么病搞这东西)', author: '《黑神话·悟空》· #F5160', time: '25/02/07'}, 
   {url: 'File/img/theme_contents/just_relax/just_relax14.jpg', text: '123', author: '《黑神话·悟空》· #F5160', time: '25/02/12'}, 
@@ -824,21 +840,21 @@ let cycle_img_second_floor_9 = [
   {url: 'File/img/theme_contents/unclassified/unclassified10.jpg', text: '街区 - 飘扬', author: '#F5160', time: '23/02/19'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified11.jpg', text: '"苏E是运河"', author: '#F5160', time: '23/04/22'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified12.jpg', text: '外滩 - 次级路口', author: '#F5160', time: '23/04/22'}, 
-  {url: 'File/img/theme_contents/unclassified/unclassified13.jpg', text: '"气吞山河"', author: '#F5160', time: '23/04/23'}, 
+  {url: 'File/img/theme_contents/unclassified/unclassified13.jpg', text: '夢雲吞氣', author: '#F5160', time: '23/04/23'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified14.jpg', text: '三叶草', author: '#F5160', time: '23/05/18'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified15.jpg', text: '破铜钱', author: '#F5160', time: '23/05/19'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified16.jpg', text: '家门 - 花坛', author: '#F5160', time: '23/05/25'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified17.jpg', text: '店外 - 砖缝', author: '#F5160', time: '23/05/25'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified18.jpg', text: '教室 - 台前', author: '#F5160', time: '23/06/04'}, 
-  {url: 'File/img/theme_contents/unclassified/unclassified19.jpg', text: '沙河街道', author: '#F5160', time: '23/06/22'}, 
+  {url: 'File/img/theme_contents/unclassified/unclassified19.jpg', text: '(想不出标题)', author: '#F5160', time: '23/06/22'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified20.jpg', text: '"十一年前"', author: '#F5160', time: '23/07/14'}, 
-  {url: 'File/img/theme_contents/unclassified/unclassified21.jpg', text: '(想不出标题)', author: '#F5160', time: '23/07/14'}, 
-  {url: 'File/img/theme_contents/unclassified/unclassified22.jpg', text: '(也想不出标题)', author: '#F5160', time: '23/07/14'}, 
+  {url: 'File/img/theme_contents/unclassified/unclassified21.jpg', text: '(也想不出标题)', author: '#F5160', time: '23/07/14'}, 
+  {url: 'File/img/theme_contents/unclassified/unclassified22.jpg', text: '(还是想不出标题)', author: '#F5160', time: '23/07/14'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified23.jpg', text: '长阳自治县 - 饭馆', author: '#F5160', time: '23/07/23'}, 
-  {url: 'File/img/theme_contents/unclassified/unclassified24.jpg', text: '(还是想不出标题)', author: '#F5160', time: '23/08/30'}, 
-  {url: 'File/img/theme_contents/unclassified/unclassified25.jpg', text: '(其实没必要强行起意)', author: '#F5160', time: '23/09/24'}, 
-  {url: 'File/img/theme_contents/unclassified/unclassified26.jpg', text: '(为赋新词强说愁~)', author: '#F5160', time: '23/09/26'}, 
-  {url: 'File/img/theme_contents/unclassified/unclassified27.jpg', text: '(却道天凉好个秋~)', author: '#F5160', time: '23/09/29'}, 
+  {url: 'File/img/theme_contents/unclassified/unclassified24.jpg', text: '(为赋新词强说愁~)', author: '#F5160', time: '23/08/30'}, 
+  {url: 'File/img/theme_contents/unclassified/unclassified25.jpg', text: '(却道天凉好个秋~)', author: '#F5160', time: '23/09/24'}, 
+  {url: 'File/img/theme_contents/unclassified/unclassified26.jpg', text: '(找个机会去看星星~)', author: '#F5160', time: '23/09/26'}, 
+  {url: 'File/img/theme_contents/unclassified/unclassified27.jpg', text: '(不过啥时候才能出门..)', author: '#F5160', time: '23/09/29'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified28.jpg', text: '"飘落"', author: '#F5160', time: '23/10/09'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified29.jpg', text: '"飘落" - 其一', author: '#F5160', time: '23/10/09'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified30.jpg', text: '"飘落" - 其二', author: '#F5160', time: '23/10/09'}, 
@@ -853,7 +869,7 @@ let cycle_img_second_floor_9 = [
   {url: 'File/img/theme_contents/unclassified/unclassified39.jpg', text: '浮彩', author: '#F5160', time: '24/01/22'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified40.jpg', text: '遐想', author: '#F5160', time: '24/01/22'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified41.jpg', text: '碎金', author: '#F5160', time: '24/01/22'}, 
-  {url: 'File/img/theme_contents/unclassified/unclassified42.jpg', text: '(难想, 难想就别想辣)', author: '#F5160', time: '24/05/03'}, 
+  {url: 'File/img/theme_contents/unclassified/unclassified42.jpg', text: '(想不出标题还是别想了)', author: '#F5160', time: '24/05/03'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified43.jpg', text: '演艺中心 - 上联', author: '#F5160', time: '24/05/07'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified44.jpg', text: '光明顶 - 花丛', author: '#F5160', time: '24/07/13'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified45.jpg', text: '光明顶 - 花丛 - 其一', author: '#F5160', time: '24/07/13'}, 
@@ -876,8 +892,8 @@ let cycle_img_second_floor_9 = [
   {url: 'File/img/theme_contents/unclassified/unclassified62.jpg', text: '一百二十 - 其三', author: '#F5160', time: '25/02/10'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified63.jpg', text: '归途 - 上午六点', author: '#F5160', time: '25/02/11'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified64.jpg', text: '梧桐顶 - 塔楼', author: '#F5160', time: '25/02/17'}, 
-  {url: 'File/img/theme_contents/unclassified/unclassified65.jpg', text: '"想什么呢~"', author: '#F5160', time: '25/02/22'}, 
-  {url: 'File/img/theme_contents/unclassified/unclassified66.jpg', text: '桌台', author: '#F5160', time: '25/03/05'}, 
+  {url: 'File/img/theme_contents/unclassified/unclassified65.jpg', text: '(毕业前能去吗)', author: '#F5160', time: '25/02/22'}, 
+  {url: 'File/img/theme_contents/unclassified/unclassified66.jpg', text: '(我是这群小鸭子多好..)', author: '#F5160', time: '25/03/05'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified67.jpg', text: '面馆 - 小食', author: '#F5160', time: '25/04/26'}
 ];
 
@@ -1376,7 +1392,7 @@ bottomDivInElement.forEach(item => {
 
       // 双击全屏及退出
       secondFloorBodyTopLeft.addEventListener('click', function () {
-        promptInfoText.textContent = '全屏预览开发中, 预计6月上线';
+        promptInfoText.textContent = '全屏预览开发中, 预计7月上线';
         promptInfo.style.setProperty('--prompt-info-height', '50px');
         // 经过该时间后隐藏
         const hiddenTime = 3000;

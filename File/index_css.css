@@ -181,9 +181,9 @@
     height: var(--prompt-info-height);
     width: 100%;
     bottom: calc(var(--prompt-info-height) * -1.2);
-    background-color: rgba(45, 46, 42, 0.6);
-    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.88);
-    backdrop-filter: blur(20px);
+    background-color: rgba(45, 46, 42, 0.5);
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.68);
+    backdrop-filter: blur(30px);
     z-index: 9999;
     transition: calc(var(--transition-quick) * 1.2);
     display: flex;
@@ -900,6 +900,46 @@
     /* background-color: rgba(37, 164, 255, 0.3); */
     flex: 1;
   }
+  .link_text {
+    color: #1f1f1f;
+  }
+  #jumpToAskingBox_Box {
+    height: var(--jumpToAskingBox-Box-height);
+    margin-bottom: calc(var(--jumpToAskingBox-Box-height) / 2);
+    /* background-color: rgba(85, 170, 255, 0.42); */
+
+    --jumpToAskingBox-Box-height: 4rem;
+  }
+  #jumpToAskingBox_Box #jumpLinkBox {
+    height: 100%;
+    transition: var(--transition-normal);
+  }
+  #jumpToAskingBox_Box #jumpLinkBox > a {
+    height: 100%;
+  }
+  #jumpToAskingBox_Box #jumpLinkBox .jumpLink_content {
+    height: 100%;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #jumpToAskingBox_Box .jumpLink_content_title, #jumpToAskingBox_Box svg {
+    transition: var(--transition-normal);
+    color: rgb(60, 178, 173);
+  }
+  #jumpToAskingBox_Box #jumpLinkBox:hover .jumpLink_content_title {
+    transform: translateX(4px);
+    text-shadow: 0px 0px 5px rgba(113, 255, 248, 0.466);
+  }
+  #jumpToAskingBox_Box #jumpLinkBox:hover svg {
+    transform: translateX(5.5px);
+    filter: drop-shadow(0px 0px 3px rgba(113, 255, 248, 0.466));
+  }
+  #jumpToAskingBox_Box #jumpLinkBox:active{
+    transform: translateY(1.2px);
+    transition: var(--transition-very-quick);
+  }
 
   
   #background {
@@ -975,10 +1015,12 @@
   #float_notice_title {
     font-size: 14px;
     font-weight: 700;
+    margin-bottom: 0.2rem;
   }
-  /* #float_notice_content {
-    font-size: smaller;
-  } */
+  #float_notice_content {
+    line-height: 114%;
+    margin-bottom: 0.2rem;
+  }
   #float_notice_right {
     display: flex;
     align-items: center;
