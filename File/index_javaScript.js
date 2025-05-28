@@ -321,6 +321,8 @@ setTimeout(() => {
   // 通知横幅弹出
   floatNoticeTestBox.classList.add('visible');
 }, pageDelay + 1225);
+  // 非首要问题延时
+// }, pageDelay + 6000);
 // 关闭按钮
 floatNoticeCloseBox.addEventListener('click', function() {
   floatNoticeTestBox.classList.remove('visible');
@@ -893,7 +895,7 @@ let cycle_img_second_floor_9 = [
   {url: 'File/img/theme_contents/unclassified/unclassified63.jpg', text: '归途 - 上午六点', author: '#F5160', time: '25/02/11'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified64.jpg', text: '梧桐顶 - 塔楼', author: '#F5160', time: '25/02/17'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified65.jpg', text: '(毕业前能去吗)', author: '#F5160', time: '25/02/22'}, 
-  {url: 'File/img/theme_contents/unclassified/unclassified66.jpg', text: '(我是这群小鸭子多好..)', author: '#F5160', time: '25/03/05'}, 
+  {url: 'File/img/theme_contents/unclassified/unclassified66.jpg', text: '(我是这群小鸭子多好)', author: '#F5160', time: '25/03/05'}, 
   {url: 'File/img/theme_contents/unclassified/unclassified67.jpg', text: '面馆 - 小食', author: '#F5160', time: '25/04/26'}
 ];
 
@@ -1392,7 +1394,7 @@ bottomDivInElement.forEach(item => {
 
       // 双击全屏及退出
       secondFloorBodyTopLeft.addEventListener('click', function () {
-        promptInfoText.textContent = '全屏预览开发中, 预计7月上线';
+        promptInfoText.textContent = '全屏预览及其他控件尚在开发中, 预计7月上线';
         promptInfo.style.setProperty('--prompt-info-height', '50px');
         // 经过该时间后隐藏
         const hiddenTime = 3000;
