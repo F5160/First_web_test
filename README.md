@@ -12,8 +12,7 @@
 
 ## 项目站点
 GitHub Pages站点: [https://f5160.github.io/First_web_test/](https://f5160.github.io/First_web_test/)  
-~~虚拟主机站点(推荐访问, 加载较快): [http://f5160.xzin.top/](http://f5160.xzin.top/)~~  
-请注意, 虚拟主机站点 ~~(http://f5160.xzin.top/)~~ 目前已被屏蔽, 该站点暂时不可访问 [25/07/23]
+虚拟主机站点(推荐访问, 加载较快): [http://f5160.xozv.top/](http://f5160.xozv.top/)  
 
 ## 项目简介
 
